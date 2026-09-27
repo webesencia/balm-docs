@@ -2,6 +2,10 @@
 (function () {
   'use strict';
 
+  /* The site root, read from this script's own URL (assets/docs.js). Search results
+     resolve against it, so they work from the 404 page, which is served at any depth. */
+  var siteRoot = document.currentScript ? new URL('../', document.currentScript.src).href : '';
+
   /* ---------------------------------------------------------------- mobile menu */
   var toggle = document.querySelector('.nav-toggle');
   var sidebar = document.getElementById('sidebar');
@@ -130,7 +134,7 @@
       '</p>';
     if (res.length) {
       html += '<ul>' + res.map(function (r) {
-        return '<li><a href="' + escapeHtml(r.u) + '">' +
+        return '<li><a href="' + escapeHtml(siteRoot ? new URL(r.u, siteRoot).href : r.u) + '">' +
           '<span class="r-title">' + highlight(r.t, words) + '</span>' +
           '<span class="r-page">' + escapeHtml(r.p) + '</span>' +
           (r.x ? '<span class="r-snip">' + highlight(snippet(r.x, words), words) + '</span>' : '') +

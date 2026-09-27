@@ -397,13 +397,16 @@ class Outline(HTMLParser):
             self.cur['text'].append(data)
 
 
-def layout(fname, title, desc, body, toc):
+def layout(fname, title, desc, body, toc, root=''):
+    # root prefixes every page and asset URL. Pages sit at the domain root and link
+    # relatively (root ''); the 404 is served for any missing path, however deep, so
+    # it links from the domain root (root '/').
     nav = []
     for f, label, _ in PAGES:
         cur = f == fname
         cls = ' class="current"' if cur else ''
         aria = ' aria-current="page"' if cur else ''
-        item = f'<li{cls}><a href="{f}"{aria}>{e(label)}</a>'
+        item = f'<li{cls}><a href="{root}{f}"{aria}>{e(label)}</a>'
         if cur and toc:
             item += '<ul class="toc">' + ''.join(f'<li><a href="#{i}">{e(tt)}</a></li>' for i, tt in toc) + '</ul>'
         item += '</li>'
@@ -414,8 +417,8 @@ def layout(fname, title, desc, body, toc):
         prev_p = PAGES[idx - 1] if idx > 0 else None
         next_p = PAGES[idx + 1] if idx + 1 < len(PAGES) else None
         pager = '<nav class="pager" aria-label="Previous and next page">'
-        pager += (f'<a class="prev" href="{prev_p[0]}"><span>Previous</span>{e(prev_p[1])}</a>' if prev_p else '<span></span>')
-        pager += (f'<a class="next" href="{next_p[0]}"><span>Next</span>{e(next_p[1])}</a>' if next_p else '<span></span>')
+        pager += (f'<a class="prev" href="{root}{prev_p[0]}"><span>Previous</span>{e(prev_p[1])}</a>' if prev_p else '<span></span>')
+        pager += (f'<a class="next" href="{root}{next_p[0]}"><span>Next</span>{e(next_p[1])}</a>' if next_p else '<span></span>')
         pager += '</nav>'
     page_title = f'{title} | Balm theme documentation' if fname != 'index.html' else 'Balm theme documentation'
     return f'''<!doctype html>
@@ -425,18 +428,18 @@ def layout(fname, title, desc, body, toc):
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{e(page_title)}</title>
 <meta name="description" content="{e(desc)}">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="preload" href="assets/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="{root}assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="{root}assets/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{root}assets/style.css">
 <script>document.documentElement.classList.replace('no-js', 'js');</script>
-<script src="assets/search-index.js" defer></script>
-<script src="assets/docs.js" defer></script>
+<script src="{root}assets/search-index.js" defer></script>
+<script src="{root}assets/docs.js" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="topbar">
   <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="sidebar"><span class="nav-toggle__bars" aria-hidden="true"></span><span class="nav-toggle__label">Menu</span></button>
-  <a class="brand" href="index.html"><span class="brand__mark" aria-hidden="true">B</span><span class="brand__name">Balm</span><span class="brand__sub">Documentation</span></a>
+  <a class="brand" href="{root}index.html"><span class="brand__mark" aria-hidden="true">B</span><span class="brand__name">Balm</span><span class="brand__sub">Documentation</span></a>
   <div class="search" role="search">
     <label class="visually-hidden" for="search-input">Search the documentation</label>
     <input id="search-input" type="search" placeholder="Search the docs" autocomplete="off" spellcheck="false" aria-describedby="search-hint" aria-controls="search-results">
@@ -454,7 +457,7 @@ def layout(fname, title, desc, body, toc):
 {body}
     </article>
     {pager}
-    <footer class="site-footer"><p>Balm theme documentation, version 1.0.0. Questions? See <a href="support.html">Support</a>.</p></footer>
+    <footer class="site-footer"><p>Balm theme documentation, version 1.0.0. Questions? See <a href="{root}support.html">Support</a>.</p></footer>
   </main>
 </div>
 </body>
@@ -654,7 +657,8 @@ def main():
     with open(os.path.join(OUT, '404.html'), 'w', encoding='utf-8') as fh:
         fh.write(layout('404.html', 'Page not found', 'This page does not exist.',
                         page_head('Page not found', 'This page does not exist, or it has moved.')
-                        + '<p>Try the search above, or start again from <a href="index.html">Getting started</a>.</p>', []))
+                        + '<p>Try the search above, or start again from <a href="/index.html">Getting started</a>.</p>', [],
+                        root='/'))
     with open(os.path.join(OUT, 'assets', 'search-index.js'), 'w', encoding='utf-8') as fh:
         fh.write('window.BALM_SEARCH=' + json.dumps(SEARCH, ensure_ascii=False, separators=(',', ':')) + ';\n')
     print('pages written, search entries:', len(SEARCH))
