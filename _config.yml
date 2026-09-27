@@ -1,0 +1,4 @@
+# The site is plain HTML: GitHub Pages copies the files as they are.
+# Folders whose name starts with an underscore, such as _tools, are not published.
+exclude:
+  - README.md
