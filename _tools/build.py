@@ -336,7 +336,7 @@ def markdown(md, id_prefix='v'):
 
 # ---------------------------------------------------------------- pages
 PAGES = [
-    ('index.html', 'Getting started', 'Install Balm, choose a preset and set up your store.'),
+    ('index.html', 'Getting started', 'Install Balm and set up your store, step by step.'),
     ('theme-settings.html', 'Theme settings', 'Every group of Balm theme settings, explained in the order of the theme editor.'),
     ('sections.html', 'Sections', 'Every Balm section, its settings and a typical use.'),
     ('product-page.html', 'Product page blocks', 'The Balm product page, its blocks, buy button styles and backgrounds.'),

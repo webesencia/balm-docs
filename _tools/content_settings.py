@@ -1,16 +1,16 @@
 INTRO = ('Theme settings apply to the whole store. Open them in the theme editor with the '
          '<strong>Theme settings</strong> icon (the gear) in the left bar. The groups below follow the order of the '
          'editor, and every label is written exactly as the editor shows it. The Default column gives the theme\'s '
-         'built in value; each <a href="index.html#presets">preset</a> replaces the colors, fonts, corners, glass and '
-         'typography values with its own.')
+         'built in value; the <a href="index.html#preset">Balm preset</a>, which your store starts from, replaces the '
+         'colors, fonts, corners, glass and typography values with its own.')
 
 GROUPS = {
     'Colors': '''
 <p>Balm organizes its colors in <strong>color schemes</strong>. A scheme is a set of seven colors designed to work
 together, and every section, popup and drawer picks one scheme with its own <strong>Color scheme</strong> setting.
 Edit a scheme here and every place that uses it follows.</p>
-<p>Each preset ships two schemes. Scheme 1 is the main one; Scheme 2 is its contrasting partner, dark on the Balm and
-Citrus presets and light on Midnight. Add as many schemes as you need with <strong>Add scheme</strong>.</p>
+<p>The Balm preset ships two schemes. Scheme 1 is the main one, white; Scheme 2 is its contrasting partner, near
+black. Add as many schemes as you need with <strong>Add scheme</strong>.</p>
 <ul>
   <li><strong>Background</strong>: the section background. <strong>Background gradient</strong> is optional and replaces it where set.</li>
   <li><strong>Text</strong>: body text, headings and icons.</li>
@@ -41,7 +41,7 @@ available in italic for the default font.</p>
 <strong>Cards and panels</strong>, <strong>Form fields</strong> and <strong>Images and media</strong>. Each value is a
 ceiling: elements designed with smaller corners keep them, and 0 gives square corners everywhere. Section settings that
 carry their own radius, such as the floating header or the cart drawer, are capped by these values too.</p>
-<p>Each preset ships its own set, so switching preset restyles every corner at once.</p>
+<p>The Balm preset sets buttons and form fields to 12 px, cards and media to 20 px.</p>
 ''',
     'Product badges': '''
 <p>Four badges can sit on the product cards: <strong>Sale</strong> and <strong>Sold out</strong> follow the prices and

@@ -18,7 +18,7 @@ GETTING_STARTED = '''
 <h2 id="install">Install Balm from the Theme Store</h2>
 <ol class="steps">
   <li>Open the Balm page on the <a href="https://themes.shopify.com/">Shopify Theme Store</a> while logged in to your store.</li>
-  <li>Pick the preset you want to start from: <strong>Balm</strong>, <strong>Citrus</strong> or <strong>Midnight</strong>. Each one has its own demo store, so you can browse it first.</li>
+  <li>Select <strong>View demo store</strong> to browse Balm with its content before you install it.</li>
   <li>Select <strong>Try theme</strong> to add a trial copy to your theme library, or buy the theme straight away. A trial lets you customize everything; you pay when you publish.</li>
   <li>In your admin, go to <strong>Online Store, Themes</strong>. Balm is in your theme library. Select <strong>Customize</strong> to open the theme editor.</li>
   <li>When the store is ready, open the theme's <strong>...</strong> menu in the theme library and choose <strong>Publish</strong>.</li>
@@ -32,19 +32,16 @@ library as a separate copy that keeps your theme editor settings and content, so
 Changes made directly in the theme code are not carried over: see <a href="custom-code.html">Custom code</a>. What changed
 in each version is listed in the <a href="changelog.html">Changelog</a>.</p>
 
-<h2 id="presets">Choose a preset</h2>
-<p>A preset is a starting style: color schemes, font pairing, corner radii, glass recipe and typography recipes. The
-sections and templates are the same in all three.</p>
-<div class="table-wrap"><table class="plain">
-<thead><tr><th scope="col">Preset</th><th scope="col">Look</th><th scope="col">Fonts</th><th scope="col">Corners</th></tr></thead>
-<tbody>
-<tr><th scope="row">Balm</th><td>Clean and neutral: a white scheme and a near black scheme, sentence case headings and buttons. A calm base that lets product photography lead.</td><td>Inter 600 for headings, Inter for body text</td><td>Softly rounded: buttons 12 px, cards 20 px</td></tr>
-<tr><th scope="row">Citrus</th><td>Warm and bright: cream and burnt orange, with a dark roast scheme. Italic uppercase headings, uppercase buttons and labels, a warm tinted glass.</td><td>Chivo 800 for headings, Nunito Sans for body text</td><td>Round: pill buttons, cards 30 px</td></tr>
-<tr><th scope="row">Midnight</th><td>Deep and moody: near black surfaces, light text and a gold accent, with a light scheme for contrast. Italic uppercase headings, a blue tinted glass with a stronger blur.</td><td>Archivo 800 for headings, DM Sans for body text</td><td>Tight: buttons 4 px, cards 10 px</td></tr>
-</tbody></table></div>
-<p>You can switch preset later from the theme editor, in <strong>Theme settings</strong>, where Shopify lists the theme
-styles. Applying one replaces the colors, fonts, corners, glass and typography settings. Your sections, blocks and
-content stay as they are.</p>
+<h2 id="preset">The Balm preset</h2>
+<p>A preset is a starting style: color schemes, font pairing, corner radii, glass recipe and typography recipes. Balm
+comes with one preset, also named Balm, and your store starts from it.</p>
+<ul>
+  <li><strong>Look.</strong> Clean and neutral: a white scheme and a near black scheme, sentence case headings and buttons, a white frosted glass. A calm base that lets product photography lead.</li>
+  <li><strong>Fonts.</strong> Inter 600 for headings, Inter for body text.</li>
+  <li><strong>Corners.</strong> Softly rounded: buttons 12 px, cards 20 px.</li>
+</ul>
+<p>Every value of the preset is a starting point. Change the colors, fonts, corners, glass and typography in
+<a href="theme-settings.html">Theme settings</a>; your sections, blocks and content stay as they are.</p>
 
 <h2 id="editor">How the theme editor is organized</h2>
 <ul>
@@ -60,7 +57,7 @@ the editor to preview both.</p>
 <h2 id="first-setup">First setup, step by step</h2>
 <ol class="steps">
   <li><strong>Logo and menu.</strong> Open the <a href="sections.html#s-header">Header</a> section. Set <strong>Logo type</strong> and upload your <strong>Logo image</strong>, then pick your main menu under <strong>Menu</strong>. Menus themselves are edited in your admin, under Content, Menus (Online Store, Navigation on older admins).</li>
-  <li><strong>Colors.</strong> In <a href="theme-settings.html#ts-colors">Theme settings, Colors</a>, adjust the two color schemes of your preset to your brand. Every section picks one of them.</li>
+  <li><strong>Colors.</strong> In <a href="theme-settings.html#ts-colors">Theme settings, Colors</a>, adjust the two color schemes of the Balm preset to your brand. Every section picks one of them.</li>
   <li><strong>Fonts and corners.</strong> Set the <strong>Heading font</strong> and <strong>Body font</strong> in <a href="theme-settings.html#ts-typography">Typography</a>, and the corner radii in <a href="theme-settings.html#ts-corner-style">Corner style</a>.</li>
   <li><strong>Home page.</strong> The home page starts with a Hero, a Marquee, a Products showcase, Socials, Image with text, Rich text and the Newsletter popup. Replace their images and texts, remove what you do not need, and add sections with <strong>Add section</strong>.</li>
   <li><strong>Product page.</strong> Open a product in the editor and review the block stack. See <a href="product-page.html">Product page blocks</a>, and <a href="metafields.html">Metafields</a> if each product should carry its own color or texts.</li>
