@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Features | Balm theme documentation</title>
+<meta name="description" content="Quick view, badges, page loader, age verifier, gift wrapping and the other Balm features.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/style.css">
+<script>document.documentElement.classList.replace('no-js', 'js');</script>
+<script src="assets/search-index.js" defer></script>
+<script src="assets/docs.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="topbar">
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="sidebar"><span class="nav-toggle__bars" aria-hidden="true"></span><span class="nav-toggle__label">Menu</span></button>
+  <a class="brand" href="index.html"><span class="brand__mark" aria-hidden="true">B</span><span class="brand__name">Balm</span><span class="brand__sub">Documentation</span></a>
+  <div class="search" role="search">
+    <label class="visually-hidden" for="search-input">Search the documentation</label>
+    <input id="search-input" type="search" placeholder="Search the docs" autocomplete="off" spellcheck="false" aria-describedby="search-hint" aria-controls="search-results">
+    <kbd class="search__key" aria-hidden="true">/</kbd>
+    <p id="search-hint" class="visually-hidden">Results appear below as you type. Use the arrow keys to move through them.</p>
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+</header>
+<div class="layout">
+  <nav id="sidebar" class="sidebar" aria-label="Documentation">
+    <ul class="nav"><li><a href="index.html">Getting started</a></li><li><a href="theme-settings.html">Theme settings</a></li><li><a href="sections.html">Sections</a></li><li><a href="product-page.html">Product page blocks</a></li><li class="current"><a href="features.html" aria-current="page">Features</a><ul class="toc"><li><a href="#quick-view">Quick view</a></li><li><a href="#product-badges">Product badges</a></li><li><a href="#page-loader">Page loader</a></li><li><a href="#age-verifier">Age verifier</a></li><li><a href="#gift-wrapping">Gift wrapping</a></li><li><a href="#lookbook">Lookbook</a></li><li><a href="#compare-products">Compare products</a></li><li><a href="#recently-viewed">Recently viewed</a></li><li><a href="#pagination">Pagination</a></li><li><a href="#translations">Translations</a></li><li><a href="#combined-listings">Combined listings</a></li><li><a href="#pre-order">Pre-order</a></li></ul></li><li><a href="metafields.html">Metafields</a></li><li><a href="custom-code.html">Custom code</a></li><li><a href="faq.html">FAQ</a></li><li><a href="changelog.html">Changelog</a></li><li><a href="support.html">Support</a></li></ul>
+  </nav>
+  <main id="main" class="content" tabindex="-1">
+    <article class="doc">
+<header class="doc-head"><h1>Features</h1><p class="lead">The features that span several sections or the whole store: what they do, where to turn them on and what to know before you rely on them.</p></header>
+<nav class="contents" aria-label="Features"><ol class="contents__list contents__list--cols">
+<li><a href="#quick-view">Quick view</a></li><li><a href="#product-badges">Product badges</a></li>
+<li><a href="#page-loader">Page loader</a></li><li><a href="#age-verifier">Age verifier</a></li>
+<li><a href="#gift-wrapping">Gift wrapping</a></li><li><a href="#lookbook">Lookbook</a></li>
+<li><a href="#compare-products">Compare products</a></li><li><a href="#recently-viewed">Recently viewed</a></li>
+<li><a href="#pagination">Pagination</a></li><li><a href="#translations">Translations</a></li>
+<li><a href="#combined-listings">Combined listings</a></li><li><a href="#pre-order">Pre-order</a></li>
+</ol></nav>
+
+<section class="entry" id="quick-view-entry">
+<h2 id="quick-view">Quick view</h2>
+<p>Quick view opens a product in a modal from its card, so shoppers choose a variant and add to cart without leaving
+the page. The modal shows the gallery with thumbnails, the price with its badges and unit price, the rating, the same
+variant picker as the product page (swatches included), quantity rules, purchase options, the add to cart button, pickup
+availability, a short description and a link to the full product page. Adding to cart opens the cart drawer.</p>
+<h3 id="quick-view-on">Turn it on</h3>
+<ol class="steps">
+  <li>Open a section that shows product cards: Collection, Featured collection, Search, Recently viewed or Lookbook.</li>
+  <li>Set <strong>Quick view</strong> to <strong>Button on hover</strong> or <strong>Icon</strong>. On touch screens the button is always visible.</li>
+  <li>In <a href="theme-settings.html#ts-quick-view">Theme settings, Quick view</a>, choose what the modal shows and its card style: Solid, Tinted glass or Glass.</li>
+</ol>
+<p><strong>Short description metafield</strong> takes the namespace and key of a product metafield, for example
+<code>custom.short_description</code>; products without it show the first paragraph of their description, cut to
+<strong>Description length</strong>. <strong>Preload on hover</strong> loads the product when the pointer rests on its
+card so the modal opens at once, at the cost of more data. Without JavaScript the button simply opens the product page.</p>
+<p>Quick view is separate from <strong>Quick add</strong>, the setting that puts an add to cart button on the card
+itself: Off, Single-variant products, or All products (which opens an option picker for products with variants).</p>
+</section>
+
+<section class="entry" id="product-badges-entry">
+<h2 id="product-badges">Product badges</h2>
+<p>Four badges can appear on product cards and, through the Badge block, on the product page. Their position, shape and
+colors are set once in <a href="theme-settings.html#ts-product-badges">Theme settings, Product badges</a>.</p>
+<div class="table-wrap"><table class="plain">
+<thead><tr><th scope="col">Badge</th><th scope="col">Shown when</th><th scope="col">Options</th></tr></thead>
+<tbody>
+<tr><th scope="row">Sale</th><td>The variant shown on the card has a compare-at price above its price.</td><td><strong>Sale badge text</strong>: Sale, Percentage off or Amount saved.</td></tr>
+<tr><th scope="row">Sold out</th><td>The product can no longer be bought.</td><td>Colors.</td></tr>
+<tr><th scope="row">New</th><td>The product was created less than the number of days in <strong>Show New badge for</strong>.</td><td>0 days turns the badge off.</td></tr>
+<tr><th scope="row">Custom</th><td>The product has a value in the metafield you name.</td><td>Colors. The text is the metafield value.</td></tr>
+</tbody></table></div>
+<h3 id="custom-badge">Set up the Custom badge</h3>
+<ol class="steps">
+  <li>In your admin, go to <strong>Settings, Custom data, Products</strong> and add a definition named <q>Badge label</q>, key <code>custom.badge_label</code>, type <strong>Single line text</strong>.</li>
+  <li>Fill it on the products that need a badge, for example <q>Limited edition</q> or <q>Vegan</q>.</li>
+  <li>In the theme editor, type <code>custom.badge_label</code> in <strong>Custom badge metafield</strong> on each section that shows product cards: Collection, Search, Featured collection, Product recommendations, Recently viewed and Lookbook.</li>
+  <li>On the product page, add a <strong>Badge</strong> block, set <strong>Badge type</strong> to <strong>Automatic (Sale, Sold out, New, Custom)</strong> and type the same key in its <strong>Custom badge metafield</strong>.</li>
+</ol>
+</section>
+
+<section class="entry" id="page-loader-entry">
+<h2 id="page-loader">Page loader</h2>
+<p>An optional loading screen shown while pages open, with your logo, a progress bar or a spinner, and an exit animation.
+Turn it on in <a href="theme-settings.html#ts-loader">Theme settings, Loader</a>, under <strong>Page loader</strong>:</p>
+<ul>
+  <li><strong>First visit only</strong> (recommended) shows it once per visit.</li>
+  <li><strong>Every page</strong> shows it on each page view. It can lower speed scores, because the page stays covered while it loads.</li>
+</ul>
+<p><strong>Layout</strong> combines the logo with a progress bar or a spinner, or shows the bar alone. The logo is the
+<strong>Logo image</strong> you pick here, or else the header logo, then the brand logo from your Shopify settings, then
+the store name. <strong>Background</strong> is Solid or Glass, on the <strong>Color scheme</strong> you choose. The
+<strong>Exit animation</strong> (Fade, Slide up, Split, Zoom, Circle reveal) plays when the page is ready, never before
+the <strong>Minimum display time</strong> and never after the <strong>Maximum display time</strong>.
+<strong>Page transitions</strong> plays the exit in reverse when a visitor follows a link to another page of the store.</p>
+<p>To adjust the look, check <strong>Preview in the theme editor</strong>. To test First visit only on the live store,
+open a private window, or add <code>?preview_loader=1</code> to a page address while the preview is on. Visitors who ask
+for reduced motion see no animation, and without JavaScript the loader never shows.</p>
+</section>
+
+<section class="entry" id="age-verifier-entry">
+<h2 id="age-verifier">Age verifier</h2>
+<p>A modal that asks visitors to confirm their age before they browse the store. It shows on every page of the online
+store, never at checkout, and waits for the page loader to leave first.</p>
+<ol class="steps">
+  <li>In <a href="theme-settings.html#ts-age-verifier">Theme settings, Age verifier</a>, check <strong>Enable the age verifier</strong>.</li>
+  <li>Set the <strong>Minimum age</strong>. Write <code>[age]</code> in the texts to print it. Fields left empty use the translated storefront text.</li>
+  <li>Choose what happens when the visitor declines: <strong>Show a message</strong> or <strong>Redirect to a link</strong>.</li>
+  <li>Set <strong>Remember the answer for</strong>: the number of days before the same browser is asked again. 0 asks on every visit.</li>
+  <li>Style it with a background image, a color scheme and a card style. Check <strong>Preview in the theme editor</strong> to see it while you edit; answers are not remembered while previewing.</li>
+</ol>
+<p>Raising the minimum age asks every visitor again. A decline is never remembered. The age verifier is a
+self-declaration, not an identity check: make sure it meets the rules that apply to your products in the countries you
+sell to.</p>
+</section>
+
+<section class="entry" id="gift-wrapping-entry">
+<h2 id="gift-wrapping">Gift wrapping</h2>
+<p>Adds a gift wrapping checkbox, and an optional gift message, to the cart drawer and the cart page. Checking the box
+adds your wrapping product to the cart in quantity 1 and records the cart attribute <strong>Gift wrapping: Yes</strong>.
+The message is saved as the cart attribute <strong>Gift message</strong>. Both appear on the order in your admin.</p>
+<ol class="steps">
+  <li>Create a product for the wrapping, for example <q>Gift wrapping</q>, with the price the buyer pays and an image. Make it available on the Online Store sales channel, and keep it out of your collections.</li>
+  <li>In <a href="theme-settings.html#ts-gift-wrapping">Theme settings, Gift wrapping</a>, check <strong>Offer gift wrapping</strong> and pick it as the <strong>Wrapping product</strong>. The option only shows once an available product is chosen.</li>
+  <li>Adjust the <strong>Checkbox label</strong>, the help text, the gift message and its maximum length, and where it shows: cart drawer, cart page or both.</li>
+</ol>
+<p>The wrapping line stays at quantity 1, and a cart that holds only the wrapping is emptied, so nobody checks out with
+the wrapping alone.</p>
+</section>
+
+<section class="entry" id="lookbook-entry">
+<h2 id="lookbook">Lookbook</h2>
+<p>The <a href="sections.html#s-lookbook">Lookbook</a> section turns a photo into a shop: each point on the image opens
+the product card, with its quick add. On a phone a tap opens the same content as a sheet from the bottom of the screen.</p>
+<ol class="steps">
+  <li>Add a <strong>Lookbook</strong> section and choose an image, plus an optional mobile image.</li>
+  <li>Add one <strong>Hotspot</strong> block per product and pick the product. A hotspot can carry a text and a link instead.</li>
+  <li>Place each hotspot with <strong>Horizontal position</strong> and <strong>Vertical position</strong>, in percent of the image: 0% is the left or top edge, 100% the right or bottom edge. Desktop and mobile positions are separate.</li>
+  <li>For a shoppable list, set <strong>Layout</strong> to <strong>Image with product list</strong>: the products line up beside the image, and hovering a card lights its hotspot.</li>
+</ol>
+</section>
+
+<section class="entry" id="compare-products-entry">
+<h2 id="compare-products">Compare products</h2>
+<p>The <a href="sections.html#s-compare-products">Compare products</a> section sets up to five products side by side.
+Built in rows show the image, price, availability, vendor and rating. Your own rows read product metafields.</p>
+<ol class="steps">
+  <li>Create one product metafield definition per fact you want to compare, in Settings, Custom data, Products. For example <code>specs.caffeine</code> (Integer), <code>specs.serving</code> (Single line text), <code>specs.vegan</code> (True or false).</li>
+  <li>Fill the values on each product.</li>
+  <li>Add the section, pick the products, then add one <strong>Row</strong> block per fact: a <strong>Label</strong>, the <strong>Product metafield</strong> key, and a <strong>Value type</strong>: Text, Number with unit (with its <strong>Unit</strong>, such as mg) or Yes or no.</li>
+</ol>
+<p>Empty values show as n/a. <strong>Highlight differences</strong> marks the rows where products differ. On a phone the
+label column stays in place while the product columns scroll.</p>
+</section>
+
+<section class="entry" id="recently-viewed-entry">
+<h2 id="recently-viewed">Recently viewed</h2>
+<p>The product page records each product a visitor opens, in that visitor's own browser. The
+<a href="sections.html#s-recently-viewed">Recently viewed</a> section reads that list and shows the products, newest
+first. Nothing is sent to a server and no app or account is needed. The section takes no space until the visitor has a
+history; in the theme editor it shows example cards instead.</p>
+<p>Add it to the product template, below Product recommendations, with <strong>Exclude the current product</strong> on,
+or to the cart, collection or home page. <strong>Maximum products</strong> caps the list.</p>
+</section>
+
+<section class="entry" id="pagination-entry">
+<h2 id="pagination">Pagination</h2>
+<p>The Collection and Search sections have a <strong>Pagination</strong> setting with three modes:</p>
+<ul>
+  <li><strong>Page numbers</strong>: classic numbered pages.</li>
+  <li><strong>Load more button</strong>: the next page is added under the grid when the shopper asks for it.</li>
+  <li><strong>Infinite scroll</strong>: the next page is added as the shopper reaches the end of the grid. After three pages a Load more button takes over, so the footer stays reachable.</li>
+</ul>
+<p>Load more and infinite scroll show a Showing X of Y counter. The number of products per page is set with
+<strong>Products per page</strong> on collections and <strong>Results per page</strong> on search. The blog, the list of
+collections and blog post comments use page numbers, with their own per page setting. Promo tiles appear on the first
+page only.</p>
+</section>
+
+<section class="entry" id="translations-entry">
+<h2 id="translations">Translations</h2>
+<p>Balm ships in five languages: English, French, German, Italian and Spanish. That covers every storefront text of the
+theme (buttons, cart, forms, filters, accessibility labels) and the theme editor itself, which follows the language of
+your admin.</p>
+<ol class="steps">
+  <li>Add and publish your languages in <strong>Settings, Languages</strong>. The theme's own texts switch automatically.</li>
+  <li>Translate the content you typed in the editor (headings, paragraphs, button labels) with Shopify's free Translate &amp; Adapt app.</li>
+  <li>Leave the text settings marked <em>Leave empty to use the translated default</em> empty on a multilingual store: they then show the built in text in each language.</li>
+</ol>
+<p>To change the wording of a theme text, use <strong>Edit default theme content</strong> in the theme's <strong>...</strong>
+menu in your theme library. For a language Balm does not ship, Translate &amp; Adapt can translate the theme texts too.</p>
+</section>
+
+<section class="entry" id="combined-listings-entry">
+<h2 id="combined-listings">Combined listings</h2>
+<p>Combined listings group separate products into one listing, for example one product per color, and are available to
+Shopify Plus stores through Shopify's Combined Listings app. Balm supports them with nothing to configure:</p>
+<ul>
+  <li>On the product page, picking a value that belongs to another product of the listing switches the page to that product without a reload, keeping the values already chosen and updating the address.</li>
+  <li>Swatches on product cards link to the matching product.</li>
+  <li>In quick view, a value from another product loads that product into the modal.</li>
+  <li>In the quick add option picker, such a value opens that product's page, where the full picker takes over.</li>
+</ul>
+</section>
+
+<section class="entry" id="pre-order-entry">
+<h2 id="pre-order">Pre-order</h2>
+<p>A variant that keeps selling once its stock reaches 0 is a pre-order. In the product admin, track its quantity and
+check <strong>Continue selling when out of stock</strong>. At 0 stock, the add to cart button, the sticky add to cart bar
+and the quick add button then read <strong>Pre-order</strong>, or the <strong>Button label</strong> you set in
+<a href="theme-settings.html#ts-pre-order">Theme settings, Pre-order</a>. The Stock status block keeps its own text.</p>
+<p>The label does not change how checkout works: the order is paid at checkout like any other. To take a deposit or
+charge later, use a pre-order app that creates selling plans; its options then show in the Purchase options block.
+Tell buyers when the product will ship, for example in a Text block or a Collapsible row.</p>
+</section>
+
+    </article>
+    <nav class="pager" aria-label="Previous and next page"><a class="prev" href="product-page.html"><span>Previous</span>Product page blocks</a><a class="next" href="metafields.html"><span>Next</span>Metafields</a></nav>
+    <footer class="site-footer"><p>Balm theme documentation, version 1.0.0. Questions? See <a href="support.html">Support</a>.</p></footer>
+  </main>
+</div>
+</body>
+</html>

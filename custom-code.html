@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Custom code | Balm theme documentation</title>
+<meta name="description" content="What to know before editing the Balm theme code.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/style.css">
+<script>document.documentElement.classList.replace('no-js', 'js');</script>
+<script src="assets/search-index.js" defer></script>
+<script src="assets/docs.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="topbar">
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="sidebar"><span class="nav-toggle__bars" aria-hidden="true"></span><span class="nav-toggle__label">Menu</span></button>
+  <a class="brand" href="index.html"><span class="brand__mark" aria-hidden="true">B</span><span class="brand__name">Balm</span><span class="brand__sub">Documentation</span></a>
+  <div class="search" role="search">
+    <label class="visually-hidden" for="search-input">Search the documentation</label>
+    <input id="search-input" type="search" placeholder="Search the docs" autocomplete="off" spellcheck="false" aria-describedby="search-hint" aria-controls="search-results">
+    <kbd class="search__key" aria-hidden="true">/</kbd>
+    <p id="search-hint" class="visually-hidden">Results appear below as you type. Use the arrow keys to move through them.</p>
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+</header>
+<div class="layout">
+  <nav id="sidebar" class="sidebar" aria-label="Documentation">
+    <ul class="nav"><li><a href="index.html">Getting started</a></li><li><a href="theme-settings.html">Theme settings</a></li><li><a href="sections.html">Sections</a></li><li><a href="product-page.html">Product page blocks</a></li><li><a href="features.html">Features</a></li><li><a href="metafields.html">Metafields</a></li><li class="current"><a href="custom-code.html" aria-current="page">Custom code</a><ul class="toc"><li><a href="#hire-a-partner">Get help from a Shopify Partner</a></li><li><a href="#before-coding">Try the editor first</a></li><li><a href="#updates-and-code">Theme updates and your code</a></li><li><a href="#support-scope">What support covers</a></li></ul></li><li><a href="faq.html">FAQ</a></li><li><a href="changelog.html">Changelog</a></li><li><a href="support.html">Support</a></li></ul>
+  </nav>
+  <main id="main" class="content" tabindex="-1">
+    <article class="doc">
+<header class="doc-head"><h1>Custom code</h1><p class="lead">Balm is built to be shaped from the theme editor, without code. If you or a developer do edit the theme code, read this page first.</p></header>
+<div class="callout callout--warn" role="note">
+  <p class="callout__title">Duplicate the theme before any code change</p>
+  <p>Before you edit a single file, make a copy of the theme: in your admin, go to <strong>Online Store, Themes</strong>,
+  open the <strong>...</strong> menu of Balm and choose <strong>Duplicate</strong>. Make your changes on the copy, preview
+  it, and publish it only once it works. Your live theme stays untouched, and you can go back to it at any moment.</p>
+</div>
+
+<h2 id="hire-a-partner">Get help from a Shopify Partner</h2>
+<p>Code customizations are outside the scope of Balm support. For custom features, design changes or integrations, we
+recommend working with a Shopify Partner: developers and agencies vetted by Shopify, listed in the
+<a href="https://www.shopify.com/partners/directory">Shopify Partner Directory</a>.</p>
+
+<h2 id="before-coding">Try the editor first</h2>
+<p>Many changes need no edit to the theme files:</p>
+<ul>
+  <li>The <a href="sections.html#s-custom-liquid">Custom Liquid</a> section, and the Liquid blocks of the product page and of the content sections, accept your own Liquid, HTML and app snippets.</li>
+  <li>Shopify's <strong>Custom CSS</strong> field, at the bottom of each section's settings and in Theme settings, takes CSS scoped to that section or to the whole store.</li>
+  <li>The <a href="sections.html#s-apps">Apps</a> section and app blocks place app content without touching the code.</li>
+</ul>
+<p>Code added this way is kept when you update the theme.</p>
+
+<h2 id="updates-and-code">Theme updates and your code</h2>
+<p>When you update Balm, Shopify installs the new version as a separate copy and carries over your theme editor settings
+and content, but not the changes you made in the theme files. Keep a list of every file you changed and why, so the
+changes can be applied again to the new version.</p>
+
+<h2 id="support-scope">What support covers</h2>
+<p>Balm support covers the theme as shipped. When a problem shows up on a theme whose code was modified, we may ask you
+to reproduce it on an unmodified copy of Balm first. See <a href="support.html">Support</a>.</p>
+
+    </article>
+    <nav class="pager" aria-label="Previous and next page"><a class="prev" href="metafields.html"><span>Previous</span>Metafields</a><a class="next" href="faq.html"><span>Next</span>FAQ</a></nav>
+    <footer class="site-footer"><p>Balm theme documentation, version 1.0.0. Questions? See <a href="support.html">Support</a>.</p></footer>
+  </main>
+</div>
+</body>
+</html>

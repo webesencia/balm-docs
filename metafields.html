@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Metafields | Balm theme documentation</title>
+<meta name="description" content="The product and shop metafields Balm reads, with their keys and types.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/style.css">
+<script>document.documentElement.classList.replace('no-js', 'js');</script>
+<script src="assets/search-index.js" defer></script>
+<script src="assets/docs.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="topbar">
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="sidebar"><span class="nav-toggle__bars" aria-hidden="true"></span><span class="nav-toggle__label">Menu</span></button>
+  <a class="brand" href="index.html"><span class="brand__mark" aria-hidden="true">B</span><span class="brand__name">Balm</span><span class="brand__sub">Documentation</span></a>
+  <div class="search" role="search">
+    <label class="visually-hidden" for="search-input">Search the documentation</label>
+    <input id="search-input" type="search" placeholder="Search the docs" autocomplete="off" spellcheck="false" aria-describedby="search-hint" aria-controls="search-results">
+    <kbd class="search__key" aria-hidden="true">/</kbd>
+    <p id="search-hint" class="visually-hidden">Results appear below as you type. Use the arrow keys to move through them.</p>
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+</header>
+<div class="layout">
+  <nav id="sidebar" class="sidebar" aria-label="Documentation">
+    <ul class="nav"><li><a href="index.html">Getting started</a></li><li><a href="theme-settings.html">Theme settings</a></li><li><a href="sections.html">Sections</a></li><li><a href="product-page.html">Product page blocks</a></li><li><a href="features.html">Features</a></li><li class="current"><a href="metafields.html" aria-current="page">Metafields</a><ul class="toc"><li><a href="#before-you-start">Before you start</a></li><li><a href="#per-product-background">Per product background colors, step by step</a></li><li><a href="#product-metafields">Product metafields</a></li><li><a href="#typed-keys">Metafields you type by key</a></li><li><a href="#product-lists">Product list metafields</a></li><li><a href="#shop-metafields">Shop metafields</a></li><li><a href="#reviews">Review metafields</a></li><li><a href="#compare">Compare products rows</a></li><li><a href="#empty-values">What happens on a product with no value</a></li><li><a href="#not-connectable">Settings that cannot be connected</a></li></ul></li><li><a href="custom-code.html">Custom code</a></li><li><a href="faq.html">FAQ</a></li><li><a href="changelog.html">Changelog</a></li><li><a href="support.html">Support</a></li></ul>
+  </nav>
+  <main id="main" class="content" tabindex="-1">
+    <article class="doc">
+<header class="doc-head"><h1>Metafields</h1><p class="lead">Metafields let one template give every product its own colors, texts and images. This page lists the metafields Balm reads, with the exact name, key and type to create.</p></header>
+<h2 id="before-you-start">Before you start</h2>
+<p><strong>The theme cannot create a metafield definition; only you can, in your admin.</strong> This is a platform rule:
+a setting can only be connected to a definition that already exists, with the right type. So the definition always comes
+first, the connection second, the values third.</p>
+<ul>
+  <li>Definitions are created in <strong>Settings, Custom data</strong>, under <strong>Products</strong> or <strong>Shop</strong>.</li>
+  <li>Type the <strong>Name</strong> exactly as listed below. The admin derives the key from the name, in lowercase with underscores, so the key matches on its own. If you rename a definition, check its key before saving: the connection works by key.</li>
+  <li>Names are shown in quotation marks here and in the theme editor so you can see where they start and end. The quotation marks are not part of the name.</li>
+  <li>The namespace and key are suggestions; the <strong>type</strong> is not. A setting refuses a definition of the wrong type.</li>
+  <li>Every connectable setting repeats the definition it expects in its own help text in the editor.</li>
+</ul>
+
+<h2 id="per-product-background">Per product background colors, step by step</h2>
+<p>The most common use: one product template, a different background shade on every product.</p>
+<h3 id="step-1">Step 1. Create the definition (once)</h3>
+<ol class="steps">
+  <li>In your admin, open <strong>Settings, Custom data, Products</strong> and choose <strong>Add definition</strong>.</li>
+  <li>Name: <q>Background color</q>. Namespace and key: <code>custom.background_color</code>. Type: <strong>Color</strong>.</li>
+  <li>Save.</li>
+</ol>
+<h3 id="step-2">Step 2. Connect it to the setting (once)</h3>
+<ol class="steps">
+  <li>In the theme editor, open a product page and select the <strong>Product</strong> section.</li>
+  <li>Set <strong>Background mode</strong> to <strong>Solid color</strong> (or Gradient (two colors), or Radial halo; the same idea applies to each of their colors).</li>
+  <li>Next to <strong>Background color</strong>, select the dynamic source icon (a small database symbol) and pick <strong>Background color</strong>.</li>
+  <li>The field now shows the metafield name instead of a swatch. Save.</li>
+</ol>
+<h3 id="step-3">Step 3. Fill in the values (per product)</h3>
+<ol class="steps">
+  <li>In your admin, open a product and scroll to the <strong>Metafields</strong> card.</li>
+  <li>Set <strong>Background color</strong> to that product's shade and save. Products you leave empty fall back cleanly, as explained below.</li>
+</ol>
+<h3 id="step-4">Step 4. Check it</h3>
+<p>Open two products on the storefront, one with a value and one without. The first shows its own shade, the second
+falls back. If both look the same, the connection of step 2 was not saved.</p>
+<p>For a gradient, repeat step 1 with <q>Background color end</q> (<code>custom.background_color_end</code>) and connect
+it to <strong>Gradient end</strong>. For a halo, create <q>Accent color</q> (<code>custom.accent_color</code>) and
+connect it to <strong>Halo color</strong>.</p>
+
+<h2 id="product-metafields">Product metafields</h2>
+<p>Create these in <strong>Settings, Custom data, Products</strong>, then connect them with the dynamic source icon next
+to the setting.</p>
+<div class="table-wrap"><table class="plain">
+<thead><tr><th scope="col">Name</th><th scope="col">Namespace and key</th><th scope="col">Type</th><th scope="col">Connect it to</th></tr></thead>
+<tbody><tr><td><q>Background color</q></td><td><code>custom.background_color</code></td><td>Color</td><td>Product: Background color, Gradient start, Base color</td></tr><tr><td><q>Background color end</q></td><td><code>custom.background_color_end</code></td><td>Color</td><td>Product: Gradient end</td></tr><tr><td><q>Accent color</q></td><td><code>custom.accent_color</code></td><td>Color</td><td>Product: Halo color</td></tr><tr><td><q>Overlay color</q></td><td><code>custom.overlay_color</code></td><td>Color</td><td>Product: Overlay color</td></tr><tr><td><q>Curve color</q></td><td><code>custom.curve_color</code></td><td>Color</td><td>Product: Curve color</td></tr><tr><td><q>Background image</q></td><td><code>custom.background_image</code></td><td>File</td><td>Product: Background image</td></tr><tr><td><q>Background media</q></td><td><code>custom.background_media</code></td><td>File</td><td>Product: Vignette image</td></tr><tr><td><q>Badge label</q></td><td><code>custom.badge_label</code></td><td>Single line text</td><td>Product: Badge text; Badge block: Text; Spinning badge: Text</td></tr><tr><td><q>Badge background</q></td><td><code>custom.badge_background</code></td><td>Color</td><td>Badge block: Badge background</td></tr><tr><td><q>Badge text color</q></td><td><code>custom.badge_text_color</code></td><td>Color</td><td>Badge block: Badge text color</td></tr><tr><td><q>Tagline</q></td><td><code>custom.tagline</code></td><td>Single line text</td><td>Text block: Text. The mega menu Products block shows it under each product when Show product tagline is on in the Header.</td></tr><tr><td><q>Buy button label</q></td><td><code>custom.buy_button_label</code></td><td>Single line text</td><td>Buy buttons: Add to cart label</td></tr><tr><td><q>Specs label</q></td><td><code>custom.specs_label</code></td><td>Single line text</td><td>Popup: Trigger label</td></tr><tr><td><q>Specifications</q></td><td><code>custom.specifications</code></td><td>Rich text</td><td>Popup: Content</td></tr><tr><td><q>Row heading</q></td><td><code>custom.row_heading</code></td><td>Single line text</td><td>Collapsible row: Heading</td></tr><tr><td><q>Ingredients</q></td><td><code>custom.ingredients</code></td><td>Rich text</td><td>Collapsible row: Content</td></tr><tr><td><q>Claim title</q></td><td><code>custom.claim_title</code></td><td>Single line text</td><td>Icon item: Heading</td></tr><tr><td><q>Claim body</q></td><td><code>custom.claim_body</code></td><td>Single line text</td><td>Icon item: Text</td></tr><tr><td><q>Claim icon</q></td><td><code>custom.claim_icon</code></td><td>File</td><td>Icon item: Icon image</td></tr><tr><td><q>Product image</q></td><td><code>custom.product_image</code></td><td>File</td><td>Image block: Image</td></tr><tr><td><q>Image caption</q></td><td><code>custom.image_caption</code></td><td>Single line text</td><td>Image block: Caption</td></tr><tr><td><q>Spec label</q></td><td><code>custom.spec_label</code></td><td>Single line text</td><td>Specification: Label</td></tr><tr><td><q>Net weight</q></td><td><code>custom.net_weight</code></td><td>Single line text</td><td>Specification: Value</td></tr></tbody></table></div>
+
+<h2 id="typed-keys">Metafields you type by key</h2>
+<p>A few settings are plain text fields where you type the <code>namespace.key</code> yourself instead of using the
+dynamic source icon.</p>
+<div class="table-wrap"><table class="plain">
+<thead><tr><th scope="col">Where</th><th scope="col">What to type</th><th scope="col">Metafield type</th></tr></thead>
+<tbody>
+<tr><td>Product section, Packshot captions: <strong>Caption source</strong> set to Product metafield (list), then <strong>Metafield</strong></td><td><code>custom.media_captions</code></td><td>List of single line text on products. Entry 1 captions media 1, and so on; media without an entry use their alt text.</td></tr>
+<tr><td><strong>Custom badge metafield</strong> on Collection, Search, Featured collection, Product recommendations, Recently viewed, Lookbook and the Badge block</td><td><code>custom.badge_label</code>, or any text metafield</td><td>Single line text on products. Shown as the Custom badge. See <a href="features.html#custom-badge">Product badges</a>.</td></tr>
+<tr><td>Theme settings, Quick view: <strong>Short description metafield</strong></td><td>For example <code>custom.short_description</code></td><td>Single line or multi-line text on products. Without it, quick view shows the first paragraph of the description.</td></tr>
+<tr><td>Compare products, Row block: <strong>Product metafield</strong></td><td>For example <code>specs.caffeine</code></td><td>Any type that fits the row's <strong>Value type</strong>. See <a href="#compare">below</a>.</td></tr>
+</tbody></table></div>
+
+<h2 id="product-lists">Product list metafields</h2>
+<p>The <strong>Products</strong> setting of the Product upsell block, of the Complementary products block and of the
+cart drawer suggestions can be connected to a product metafield of type <strong>Product</strong>, set to accept a list of
+products. Each product then carries its own hand picked selection, for example <q>Upsell products</q> with the key
+<code>custom.upsell_products</code>. The block's <strong>Products come from</strong> setting must be on
+<strong>A manual selection</strong>.</p>
+
+<h2 id="shop-metafields">Shop metafields</h2>
+<p>Every other section that paints a background (rich text, featured collection, FAQ, contact, image with text and so on)
+offers the same <a href="sections.html#section-background">Section background</a> settings. Those sections are not tied
+to a product, so their colors connect to <strong>shop</strong> metafields, created in <strong>Settings, Custom data,
+Shop</strong>. One value then applies storewide, which lets you restyle every connected section at once.</p>
+<div class="table-wrap"><table class="plain">
+<thead><tr><th scope="col">Name</th><th scope="col">Namespace and key</th><th scope="col">Type</th><th scope="col">Connect it to</th></tr></thead>
+<tbody><tr><td><q>Background color</q></td><td><code>shop.background_color</code></td><td>Color</td><td>Background color, Gradient start, Base color</td></tr><tr><td><q>Background color end</q></td><td><code>shop.background_color_end</code></td><td>Color</td><td>Gradient end</td></tr><tr><td><q>Accent color</q></td><td><code>shop.accent_color</code></td><td>Color</td><td>Halo color</td></tr><tr><td><q>Overlay color</q></td><td><code>shop.overlay_color</code></td><td>Color</td><td>Overlay color</td></tr><tr><td><q>Background image</q></td><td><code>shop.background_image</code></td><td>File</td><td>Background image</td></tr></tbody></table></div>
+
+<h2 id="reviews">Review metafields</h2>
+<p>The Rating block, the ratings on product cards, in quick view and in Compare products read Shopify's standard review
+metafields, <code>reviews.rating</code> (Rating) and <code>reviews.rating_count</code> (Integer). Review apps fill them;
+you have nothing to create. Until they are filled, the ratings stay hidden.</p>
+
+<h2 id="compare">Compare products rows</h2>
+<p>Each Row block of the <a href="features.html#compare-products">Compare products</a> section reads one product
+metafield. Match its <strong>Value type</strong> to the metafield type:</p>
+<ul>
+  <li><strong>Text</strong>: single line text, multi-line text, or any value you want printed as it is.</li>
+  <li><strong>Number with unit</strong>: an integer or decimal, followed by the <strong>Unit</strong> you type (mg, ml, g). Leave the unit empty for weight, volume and dimension metafields, which carry their own.</li>
+  <li><strong>Yes or no</strong>: a True or false metafield.</li>
+</ul>
+
+<h2 id="empty-values">What happens on a product with no value</h2>
+<p>Nothing breaks and nothing goes blank, which is what lets you fill only the products you care about. A background
+color that comes back empty falls through, in this order:</p>
+<ol>
+  <li>the <strong>Fallback background color</strong> setting, if you set one;</li>
+  <li>otherwise the background of the section's color scheme.</li>
+</ol>
+<p>Never connect the fallback color itself to a metafield: it is the safety net. If one end of a gradient is empty, the
+other end fills the whole wash; if a halo color is empty, the halo is not drawn and the base color stays. Empty text,
+rich text and image metafields leave their block empty, and blocks that exist only to carry the value (rating, badges,
+popup, a claim line) hide themselves.</p>
+
+<h2 id="not-connectable">Settings that cannot be connected</h2>
+<p>Shopify only allows connections on colors, text, rich text, images, videos, links, pages, collections, products and
+metaobjects. Sliders, checkboxes, dropdowns, the color scheme and Liquid code are fixed for the whole template. When one
+product needs a different value for one of those, give it a
+<a href="product-page.html#second-template">second product template</a>.</p>
+
+    </article>
+    <nav class="pager" aria-label="Previous and next page"><a class="prev" href="features.html"><span>Previous</span>Features</a><a class="next" href="custom-code.html"><span>Next</span>Custom code</a></nav>
+    <footer class="site-footer"><p>Balm theme documentation, version 1.0.0. Questions? See <a href="support.html">Support</a>.</p></footer>
+  </main>
+</div>
+</body>
+</html>

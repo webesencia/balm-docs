@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Changelog | Balm theme documentation</title>
+<meta name="description" content="What changed in each version of Balm.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/style.css">
+<script>document.documentElement.classList.replace('no-js', 'js');</script>
+<script src="assets/search-index.js" defer></script>
+<script src="assets/docs.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="topbar">
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="sidebar"><span class="nav-toggle__bars" aria-hidden="true"></span><span class="nav-toggle__label">Menu</span></button>
+  <a class="brand" href="index.html"><span class="brand__mark" aria-hidden="true">B</span><span class="brand__name">Balm</span><span class="brand__sub">Documentation</span></a>
+  <div class="search" role="search">
+    <label class="visually-hidden" for="search-input">Search the documentation</label>
+    <input id="search-input" type="search" placeholder="Search the docs" autocomplete="off" spellcheck="false" aria-describedby="search-hint" aria-controls="search-results">
+    <kbd class="search__key" aria-hidden="true">/</kbd>
+    <p id="search-hint" class="visually-hidden">Results appear below as you type. Use the arrow keys to move through them.</p>
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+</header>
+<div class="layout">
+  <nav id="sidebar" class="sidebar" aria-label="Documentation">
+    <ul class="nav"><li><a href="index.html">Getting started</a></li><li><a href="theme-settings.html">Theme settings</a></li><li><a href="sections.html">Sections</a></li><li><a href="product-page.html">Product page blocks</a></li><li><a href="features.html">Features</a></li><li><a href="metafields.html">Metafields</a></li><li><a href="custom-code.html">Custom code</a></li><li><a href="faq.html">FAQ</a></li><li class="current"><a href="changelog.html" aria-current="page">Changelog</a><ul class="toc"><li><a href="#v-unreleased">Unreleased</a></li><li><a href="#v-1-0-0-2026-09-09">1.0.0 (2026-09-09)</a></li></ul></li><li><a href="support.html">Support</a></li></ul>
+  </nav>
+  <main id="main" class="content" tabindex="-1">
+    <article class="doc">
+<header class="doc-head"><h1>Changelog</h1><p class="lead">What changed in each version of Balm. The version installed in your store is shown in your theme library, under the theme name.</p></header><p>All notable changes to the Balm theme are recorded here. Versions follow semantic versioning. The version number of the installed theme is visible in the theme editor under Theme settings and in <code>config/settings_schema.json</code>.</p>
+<h2 id="v-unreleased">Unreleased</h2>
+<h3 id="v-added">Added</h3>
+<ul><li>Quick view: a Quick view setting (Off, Button on hover, Icon) on the collection, featured collection, search, recently viewed and lookbook sections opens a product in a modal without leaving the page: gallery with thumbnails, price with badges and unit price, rating, the product page&#x27;s variant picker with swatches, quantity rules, purchase options, add to cart (the cart drawer opens), pickup availability, a short description and a link to the product page. Theme settings, Quick view sets what the modal shows, the description source and length, the colour scheme and the card material (Solid, Tinted glass, Glass), and can preload a product when the pointer rests on its card. Without JavaScript the trigger opens the product page.</li><li>Quick add on the product cards is one setting, Quick add (Off, Single-variant products, All products), on the collection, search and featured collection sections, with a Quick add label per section. All products opens an option picker in a modal for products with variants; single-variant products add in one click, the cart drawer opens and the page never reloads. A value of a combined listing hands over to the sibling product page. The historical Quick add (single variant) checkbox is removed, and values it had stored are no longer read.</li><li>Theme settings, Product badges: position (top left, top right), shape (button corners or pill), and background and text colours for Sale, Sold out, New and Custom. Sale can read Sale, the percentage off or the amount saved. New follows the product creation date, for a number of days set there. Custom reads a product metafield named on each product grid section, now including search, featured collection and product recommendations. The product page Badge block gains an Automatic kind that draws the same badges, and the gallery badge follows the same colours and position.</li><li>Theme settings, Pre-order: a variant that keeps selling at 0 stock shows Pre-order on the add to cart button, the sticky bar and the quick add button, with an optional custom label.</li><li>Second image on hover on the featured collection cards.</li><li>Theme settings, Back to top: a round button in a bottom corner, shown after a set scroll distance, on desktop and mobile separately. It lifts above the sticky add to cart bar and steps aside from the hero video controls; the scroll is smooth, or instant when the visitor prefers reduced motion.</li><li>Theme settings, Age verifier: a modal that asks visitors to confirm their age, with the minimum age, texts and button labels, a message or a redirect on decline, a memory in days, an optional background image, a colour scheme and the three card materials of the newsletter popup. It waits for the page loader and shows in the theme editor only with Preview checked.</li><li>Collection page: a Collection navigation menu shown as a row of pills above or below the banner, the current collection highlighted, scrolling sideways on mobile.</li><li>New section, Before and after: two images compared with a draggable handle, horizontal or vertical, with labels, a starting position, a round or line handle, contained or full width, heading and text, and keyboard access through a slider.</li></ul>
+<h3 id="v-fixed">Fixed</h3>
+<ul><li>The Frequently bought together skeleton stayed painted above the loaded products.</li><li>The sticky add to cart bar in position Top sat behind a floating header and its announcement bar; it now sits flush under the header stack in every announcement mode, and survives a variant change when placed as a block.</li></ul>
+<h2 id="v-1-0-0-2026-09-09">1.0.0 (2026-09-09)</h2>
+<p>Initial release.</p>
+<h3 id="v-presets">Presets</h3>
+<ul><li>Three presets: Balm (warm paper, serif display), Citrus (bright, condensed sans) and Midnight (deep surfaces, light ink). Each preset carries its own color schemes, font pairing, button typography and header style.</li></ul>
+<h3 id="v-home-page-and-sections">Home page and sections</h3>
+<ul><li>Product spotlights: full-screen product slides with a scroll-driven wipe on desktop, a snap mode on mobile and a stacked mode when animations are off. The animation library loads only when the section approaches the viewport and the animated mode applies.</li><li>Hero, slideshow, marquee, featured set, featured collection, collection list, image with text, multicolumn, rich text, testimonials, logo list, video, countdown, newsletter, FAQ, contact, find us, socials, divider, custom Liquid and apps sections, all with color schemes, section backgrounds (solid, gradient, image, radial halo), bottom shapes and independent desktop and mobile spacing.</li><li>About page sections: hero, &quot;does this sound like you&quot; checklist, problem and solution panels, community grid.</li><li>Header with solid, glass or transparent surface, floating layout, mega menus built from blocks (columns, images, banners, products, promos), three-level menus, predictive search, currency and country selector, customer accounts component and cart counter.</li><li>Footer with menu columns, newsletter, social links, Follow on Shop and payment methods.</li><li>Newsletter popup with delay, frequency and its own color scheme.</li><li>Announcement bar.</li></ul>
+<h3 id="v-product-page">Product page</h3>
+<ul><li>One product template built from blocks: title, vendor, text, price, SKU, variant picker (buttons, dropdown, color and image swatches, signature pills, packs), quantity with quantity rules, volume pricing, purchase options, gift card recipient, buy buttons with dynamic checkout and Shop Pay Installments, back in stock, pickup availability, payment icons, product upsell, icon list, description, collapsible rows, popup, specifications, image, rating, badges, product navigation, complementary products, share, sticky add to cart and custom Liquid.</li><li>Five buy button styles (solid, outline, soft, signature pill, glass) with a welded packs picker.</li><li>Section background per product through metafields, with a fallback color and the color scheme as safety net.</li><li>Media gallery with thumbnails, captions, zoom, video, 3D models and AR.</li><li>Product recommendations and a sticky add to cart bar below the section.</li><li>Works without JavaScript: variant selection and add to cart fall back to standard form submissions.</li></ul>
+<h3 id="v-collection-search-cart-and-other-templates">Collection, search, cart and other templates</h3>
+<ul><li>Collection and search pages with filters and sorting from Search and Discovery, product cards with swatches, quick add, custom badges and hover images.</li><li>Cart page and cart drawer with quantity rules, order note, free shipping progress, tax note and dynamic checkout. The cart page works without JavaScript.</li><li>Blog, article, page, list of collections, 404, password and gift card templates.</li></ul>
+<h3 id="v-accessibility-and-performance">Accessibility and performance</h3>
+<ul><li>Visible focus styles, focus traps on the popup and the drawer, live regions for variant changes, carousels with tab semantics and pause controls, one h1 per template and 24 px touch targets.</li><li>One image per device on the slideshow, eager loading reserved for the first section of the template, glass surfaces that fall back to a near-opaque fill under reduced transparency, and on phones when the merchant picks Near opaque under Glass on phones.</li><li>Stylesheets scoped per section and block, subset by page.</li></ul>
+<h3 id="v-localization">Localization</h3>
+<ul><li>All storefront and editor strings are translatable; the theme ships with English (United States).</li></ul>
+    </article>
+    <nav class="pager" aria-label="Previous and next page"><a class="prev" href="faq.html"><span>Previous</span>FAQ</a><a class="next" href="support.html"><span>Next</span>Support</a></nav>
+    <footer class="site-footer"><p>Balm theme documentation, version 1.0.0. Questions? See <a href="support.html">Support</a>.</p></footer>
+  </main>
+</div>
+</body>
+</html>

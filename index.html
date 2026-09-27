@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Balm theme documentation</title>
+<meta name="description" content="Install Balm, choose a preset and set up your store.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/style.css">
+<script>document.documentElement.classList.replace('no-js', 'js');</script>
+<script src="assets/search-index.js" defer></script>
+<script src="assets/docs.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="topbar">
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="sidebar"><span class="nav-toggle__bars" aria-hidden="true"></span><span class="nav-toggle__label">Menu</span></button>
+  <a class="brand" href="index.html"><span class="brand__mark" aria-hidden="true">B</span><span class="brand__name">Balm</span><span class="brand__sub">Documentation</span></a>
+  <div class="search" role="search">
+    <label class="visually-hidden" for="search-input">Search the documentation</label>
+    <input id="search-input" type="search" placeholder="Search the docs" autocomplete="off" spellcheck="false" aria-describedby="search-hint" aria-controls="search-results">
+    <kbd class="search__key" aria-hidden="true">/</kbd>
+    <p id="search-hint" class="visually-hidden">Results appear below as you type. Use the arrow keys to move through them.</p>
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+</header>
+<div class="layout">
+  <nav id="sidebar" class="sidebar" aria-label="Documentation">
+    <ul class="nav"><li class="current"><a href="index.html" aria-current="page">Getting started</a><ul class="toc"><li><a href="#install">Install Balm from the Theme Store</a></li><li><a href="#presets">Choose a preset</a></li><li><a href="#editor">How the theme editor is organized</a></li><li><a href="#first-setup">First setup, step by step</a></li><li><a href="#templates">Templates included</a></li><li><a href="#help">Need help?</a></li></ul></li><li><a href="theme-settings.html">Theme settings</a></li><li><a href="sections.html">Sections</a></li><li><a href="product-page.html">Product page blocks</a></li><li><a href="features.html">Features</a></li><li><a href="metafields.html">Metafields</a></li><li><a href="custom-code.html">Custom code</a></li><li><a href="faq.html">FAQ</a></li><li><a href="changelog.html">Changelog</a></li><li><a href="support.html">Support</a></li></ul>
+  </nav>
+  <main id="main" class="content" tabindex="-1">
+    <article class="doc">
+<header class="doc-head"><h1>Getting started</h1><p class="lead">Balm is an Online Store 2.0 theme for Shopify: every page is built from sections and blocks that you add, remove and reorder in the theme editor, without code. This guide takes you from installation to a store ready to publish.</p></header>
+<ul class="cards">
+  <li><a href="theme-settings.html"><strong>Theme settings</strong><span>Colors, fonts, corners and storewide features.</span></a></li>
+  <li><a href="sections.html"><strong>Sections</strong><span>Every section, its settings and a typical use.</span></a></li>
+  <li><a href="product-page.html"><strong>Product page blocks</strong><span>Build the product page, block by block.</span></a></li>
+  <li><a href="features.html"><strong>Features</strong><span>Quick view, badges, age verifier, gift wrapping and more.</span></a></li>
+  <li><a href="metafields.html"><strong>Metafields</strong><span>Per product colors, texts and images.</span></a></li>
+  <li><a href="faq.html"><strong>FAQ</strong><span>Answers to the questions merchants ask most.</span></a></li>
+</ul>
+
+<h2 id="install">Install Balm from the Theme Store</h2>
+<ol class="steps">
+  <li>Open the Balm page on the <a href="https://themes.shopify.com/">Shopify Theme Store</a> while logged in to your store.</li>
+  <li>Pick the preset you want to start from: <strong>Balm</strong>, <strong>Citrus</strong> or <strong>Midnight</strong>. Each one has its own demo store, so you can browse it first.</li>
+  <li>Select <strong>Try theme</strong> to add a trial copy to your theme library, or buy the theme straight away. A trial lets you customize everything; you pay when you publish.</li>
+  <li>In your admin, go to <strong>Online Store, Themes</strong>. Balm is in your theme library. Select <strong>Customize</strong> to open the theme editor.</li>
+  <li>When the store is ready, open the theme's <strong>...</strong> menu in the theme library and choose <strong>Publish</strong>.</li>
+</ol>
+<p>Balm needs no app to work. Apps that offer app blocks, such as reviews, subscriptions or bundles, plug into the
+product page and into most sections.</p>
+
+<h3 id="updates">Updating Balm</h3>
+<p>When a new version is released, your theme library shows an update notice. Shopify adds the new version to your
+library as a separate copy that keeps your theme editor settings and content, so you can review it before publishing.
+Changes made directly in the theme code are not carried over: see <a href="custom-code.html">Custom code</a>. What changed
+in each version is listed in the <a href="changelog.html">Changelog</a>.</p>
+
+<h2 id="presets">Choose a preset</h2>
+<p>A preset is a starting style: color schemes, font pairing, corner radii, glass recipe and typography recipes. The
+sections and templates are the same in all three.</p>
+<div class="table-wrap"><table class="plain">
+<thead><tr><th scope="col">Preset</th><th scope="col">Look</th><th scope="col">Fonts</th><th scope="col">Corners</th></tr></thead>
+<tbody>
+<tr><th scope="row">Balm</th><td>Clean and neutral: a white scheme and a near black scheme, sentence case headings and buttons. A calm base that lets product photography lead.</td><td>Inter 600 for headings, Inter for body text</td><td>Softly rounded: buttons 12 px, cards 20 px</td></tr>
+<tr><th scope="row">Citrus</th><td>Warm and bright: cream and burnt orange, with a dark roast scheme. Italic uppercase headings, uppercase buttons and labels, a warm tinted glass.</td><td>Chivo 800 for headings, Nunito Sans for body text</td><td>Round: pill buttons, cards 30 px</td></tr>
+<tr><th scope="row">Midnight</th><td>Deep and moody: near black surfaces, light text and a gold accent, with a light scheme for contrast. Italic uppercase headings, a blue tinted glass with a stronger blur.</td><td>Archivo 800 for headings, DM Sans for body text</td><td>Tight: buttons 4 px, cards 10 px</td></tr>
+</tbody></table></div>
+<p>You can switch preset later from the theme editor, in <strong>Theme settings</strong>, where Shopify lists the theme
+styles. Applying one replaces the colors, fonts, corners, glass and typography settings. Your sections, blocks and
+content stay as they are.</p>
+
+<h2 id="editor">How the theme editor is organized</h2>
+<ul>
+  <li><strong>Header group</strong>: the Announcement bar and the Header, shared by every page.</li>
+  <li><strong>Template</strong>: the sections of the page you are editing. Switch page type with the menu at the top of the editor (Home page, Products, Collections and so on).</li>
+  <li><strong>Footer group</strong>: the Footer, shared by every page.</li>
+  <li><strong>Theme settings</strong> (the gear icon): colors, fonts and storewide features. See <a href="theme-settings.html">Theme settings</a>.</li>
+</ul>
+<p>Most sizes and spacings have two settings, one ending in <strong>(desktop)</strong> and one ending in
+<strong>(mobile)</strong>, so you can tune phones without touching large screens. Use the device switch at the top of
+the editor to preview both.</p>
+
+<h2 id="first-setup">First setup, step by step</h2>
+<ol class="steps">
+  <li><strong>Logo and menu.</strong> Open the <a href="sections.html#s-header">Header</a> section. Set <strong>Logo type</strong> and upload your <strong>Logo image</strong>, then pick your main menu under <strong>Menu</strong>. Menus themselves are edited in your admin, under Content, Menus (Online Store, Navigation on older admins).</li>
+  <li><strong>Colors.</strong> In <a href="theme-settings.html#ts-colors">Theme settings, Colors</a>, adjust the two color schemes of your preset to your brand. Every section picks one of them.</li>
+  <li><strong>Fonts and corners.</strong> Set the <strong>Heading font</strong> and <strong>Body font</strong> in <a href="theme-settings.html#ts-typography">Typography</a>, and the corner radii in <a href="theme-settings.html#ts-corner-style">Corner style</a>.</li>
+  <li><strong>Home page.</strong> The home page starts with a Hero, a Marquee, a Products showcase, Socials, Image with text, Rich text and the Newsletter popup. Replace their images and texts, remove what you do not need, and add sections with <strong>Add section</strong>.</li>
+  <li><strong>Product page.</strong> Open a product in the editor and review the block stack. See <a href="product-page.html">Product page blocks</a>, and <a href="metafields.html">Metafields</a> if each product should carry its own color or texts.</li>
+  <li><strong>Collections and search.</strong> Install Shopify's free Search &amp; Discovery app to choose the filters shown on collection and search pages, then set their layout in the <a href="sections.html#s-main-collection">Collection</a> section.</li>
+  <li><strong>Cart.</strong> Open the <a href="sections.html#s-cart-drawer">Cart drawer</a> for the reward progress bar, suggestions and the order note. Turn on <a href="features.html#gift-wrapping">gift wrapping</a> if you offer it.</li>
+  <li><strong>Footer.</strong> Add your menus, newsletter, social links and, if you sell in several countries, the Localization block.</li>
+  <li><strong>Favicon and sharing.</strong> Upload a favicon and a fallback share image in Theme settings.</li>
+  <li><strong>Pages.</strong> Create your About, Contact, FAQ and Where to buy pages in Online Store, Pages, and assign them the matching template under <strong>Theme template</strong>: <code>page.about</code>, <code>page.contact</code>, <code>page.faq</code>, <code>page.find-us</code>. The <code>page.products</code> template presents your range with a Featured set and a Products showcase.</li>
+  <li><strong>Check and publish.</strong> Preview every page type on desktop and on a phone, place a test order, then publish.</li>
+</ol>
+
+<h2 id="templates">Templates included</h2>
+<p>Home page, product, collection, list of collections, search, cart, blog, blog post, page, 404, password and gift card,
+plus five page templates: <code>page.about</code> (About), <code>page.contact</code> (Contact), <code>page.faq</code> (FAQ),
+<code>page.find-us</code> (Store locator) and <code>page.products</code> (Products). All of them are built from sections,
+so you can reshape any of them in the editor.</p>
+
+<h2 id="help">Need help?</h2>
+<p>Search this documentation with the box at the top of the page, read the <a href="faq.html">FAQ</a>, or contact
+<a href="support.html">Balm support</a>.</p>
+
+    </article>
+    <nav class="pager" aria-label="Previous and next page"><span></span><a class="next" href="theme-settings.html"><span>Next</span>Theme settings</a></nav>
+    <footer class="site-footer"><p>Balm theme documentation, version 1.0.0. Questions? See <a href="support.html">Support</a>.</p></footer>
+  </main>
+</div>
+</body>
+</html>
