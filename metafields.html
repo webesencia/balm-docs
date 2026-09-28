@@ -51,7 +51,9 @@ connect in the theme editor. Create them with exactly this namespace and key.</p
 <thead><tr><th scope="col">Name</th><th scope="col">Namespace and key</th><th scope="col">Type</th><th scope="col">Where it shows</th></tr></thead>
 <tbody>
 <tr><td><q>Badge label</q></td><td><code>custom.badge_label</code></td><td>Single line text</td><td>The Custom badge on product cards, in quick view, in Compare products, on the gallery (Badges on media set to Automatic) and in the Badge block (Automatic); the text of the Spinning badge.</td></tr>
-<tr><td><q>Tagline</q></td><td><code>custom.tagline</code></td><td>Single line text</td><td>The Text block with <strong>Source</strong> set to <strong>Tagline</strong>, under the title in the default product template; under each product of a mega menu Products block when <strong>Show product tagline</strong> is on in the Header.</td></tr>
+<tr><td><q>Tagline</q></td><td><code>custom.tagline</code></td><td>Single line text</td><td>The Text block with <strong>Source</strong> set to <strong>Tagline</strong>, under the title in the default product template; under each product of a mega menu Products block when <strong>Show product tagline</strong> is on in the Header; under the name of a Products showcase spotlight and under the heading of Featured set, for the product picked in them.</td></tr>
+<tr><td><q>Background color</q></td><td><code>custom.background_color</code></td><td>Color</td><td>The background of a Products showcase spotlight and of Featured set, for the product picked in them. On the product page the same metafield is connected instead: see <a href="#per-product-background">below</a>.</td></tr>
+<tr><td><q>Background color end</q></td><td><code>custom.background_color_end</code></td><td>Color</td><td>The end of a Products showcase spotlight's background gradient. Without it, the spotlight is one color.</td></tr>
 <tr><td><em>Shopify standard</em></td><td><code>reviews.rating</code>, <code>reviews.rating_count</code></td><td>Rating, Integer</td><td>The Rating block, the ratings on cards, in quick view and in Compare products. Filled by review apps; see <a href="#reviews">Review metafields</a>.</td></tr>
 </tbody></table></div>
 
@@ -76,6 +78,17 @@ page it shows when <strong>Badges on media</strong> is on Automatic or a Badge b
 </ol>
 <p>A product without a tagline shows nothing there, not even the space of the line. In the theme editor, a dimmed
 example stands in so you can place and size the block.</p>
+
+<h3 id="showcase">Products showcase and Featured set, step by step</h3>
+<ol class="steps">
+  <li>In <strong>Settings, Custom data, Products</strong>, create the definitions you want: <q>Tagline</q> (<code>custom.tagline</code>, <strong>Single line text</strong>), <q>Background color</q> (<code>custom.background_color</code>, <strong>Color</strong>) and <q>Background color end</q> (<code>custom.background_color_end</code>, <strong>Color</strong>).</li>
+  <li>Fill them on each product, for example a deep blue and a deeper blue for a berry drink.</li>
+  <li>In the theme editor, open a <strong>Spotlight</strong> block of the Products showcase, or the Featured set section, and pick the product in <strong>Product</strong>. There is nothing to connect: the name, the link, the tagline, the colors and the image follow.</li>
+  <li>Keep the fields of the <strong>Override (optional)</strong> group empty: a filled field wins over the product. A spotlight set up before these settings existed keeps what was typed in it (name, tagline, colors, image, link) as overrides; clear those fields to let the product take over.</li>
+</ol>
+<p>A product without these values falls back cleanly: no tagline line, and the background of the section's color
+scheme. A spotlight with a background color and no end color is one color. In the theme editor a dimmed example stands
+in for a missing tagline.</p>
 
 <h2 id="per-product-background">Per product background colors, step by step</h2>
 <p>The most common use: one product template, a different background shade on every product.</p>
@@ -159,6 +172,8 @@ color that comes back empty falls through, in this order:</p>
   <li>the <strong>Fallback background color</strong> setting, if you set one;</li>
   <li>otherwise the background of the section's color scheme.</li>
 </ol>
+<p>In a Products showcase spotlight and in Featured set, the order is the override field, then the product's
+metafield, then the background of the section's color scheme.</p>
 <p>Never connect the fallback color itself to a metafield: it is the safety net. If one end of a gradient is empty, the
 other end fills the whole wash; if a halo color is empty, the halo is not drawn and the base color stays. An empty
 text, rich text or image metafield shows nothing on the storefront: never an example text, never an empty box. The

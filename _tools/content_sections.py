@@ -174,15 +174,30 @@ Slides change on their own or on demand, with a slide or fade transition, arrows
 scroll pinned wipe reveals the next product as the visitor scrolls, progressively or with a snap and a pause; phones get
 the same animation with a layout of their own, or a simple vertical stack. When animations are off, or the visitor asks
 for reduced motion, spotlights stack. The animation library loads only when the section comes near the screen.</p>
-<p>Each spotlight carries a name, a tagline, a media image, a Shop now button, highlights (a title and up to four claims
-with icons), an optional featured set cartouche, a two color gradient and a watermark. Section settings share the media
-sizing and texts across every spotlight, and can hide the header while the section holds the screen.</p>
-''', 'Presenting a small range, three to five products, one by one on the home page or on the Products page template.'),
+<p>Pick a <strong>Product</strong> and the spotlight fills itself: the product's title as the name, linked to its
+page, its <code>custom.tagline</code> metafield as the tagline, its <code>custom.background_color</code> and
+<code>custom.background_color_end</code> metafields as the background gradient, and its main image.
+<strong>Show the price</strong> adds the price under the tagline. The button opens the product page; with
+<strong>Action</strong> set to Add to cart, a product with a single variant goes to the cart in one click and the cart
+drawer opens, while a product with options, or sold out, keeps the link to its page. The metafields are read directly:
+there is nothing to connect. See <a href="metafields.html#showcase">Metafields</a>.</p>
+<p>Each field of the <strong>Override (optional)</strong> group replaces one of those values: name, tagline, background
+color, background color end, image and link. Leave a field empty to use the product's value. Without a product, the
+override fields are the spotlight's content. A background that neither the override nor the product colors takes the
+background of the section's <strong>Color scheme</strong>; a start color without an end color gives a single color.</p>
+<p>Each spotlight also carries highlights (a title and up to four claims with icons), an optional featured set
+cartouche and a watermark. Section settings share the ingredients, the size subtitle, the spinning badge, the color
+scheme and the image sizing across every spotlight, and can hide the header while the section holds the screen.</p>
+''', 'Presenting a small range, three to five products, one by one on the home page or on the Products page template: pick each product once, and its metafields keep the spotlight in step with the catalog.'),
 
     'featured-set': ('''
-<p>One product, usually a bundle or a discovery set, presented as a full width banner: a heading, two taglines and an
-add to cart button. The background is your own desktop and mobile image, or the product image when none is set,
-darkened by an optional overlay. Until a product is picked, the section shows a placeholder in the editor.</p>
+<p>One product, usually a bundle or a discovery set, presented as a full width banner: a heading, a tagline in two
+parts and an add to cart button. Pick the <strong>Product</strong> and the section fills itself: its title as the
+heading, its <code>custom.tagline</code> metafield as the tagline, its <code>custom.background_color</code> metafield as
+the background, and its image. Each field of the <strong>Override (optional)</strong> group replaces one of those
+values; a background that neither gives takes the color scheme's. Your own desktop and mobile background images
+replace the product image, darkened by an optional overlay. Until a product is picked, the section shows a placeholder
+in the editor and nothing on the storefront.</p>
 ''', 'Promoting a discovery set at the top of the Products page template (page.products), which opens with this section.'),
 
     'image-with-text': ('''
@@ -430,7 +445,7 @@ BLOCK_TEXT = {
     'footer/text': '<p>A heading and rich text, for an address or a short note.</p>',
     'footer/localization': '<p>Country or currency, and language selectors. Each appears only when your markets and languages offer more than one choice.</p>',
     'slideshow/slide': '<p>One slide: images, overlay, heading, subtext, content position and up to two buttons.</p>',
-    'products-showcase/spotlight': '<p>One product spotlight: content, media, the Shop now button, highlights, the featured set cartouche, colors and watermark.</p>',
+    'products-showcase/spotlight': '<p>One product spotlight: the product that fills it, the override fields, the image size and position, the Shop now or Add to cart button, highlights, the featured set cartouche, visibility and watermark.</p>',
     'featured-collection/promo_tile': '<p>A tile that takes the place of a product card at the position you choose, on the first page of the grid only.</p>',
     'main-collection/promo_tile': '<p>A tile that takes the place of a product card at the position you choose, on the first page of the grid only.</p>',
     'collection-list/collection': '<p>One collection card.</p>',
