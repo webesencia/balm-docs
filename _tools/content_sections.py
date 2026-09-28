@@ -168,9 +168,11 @@ with your usual logo and colors, and the announcement bar returns to its own sch
 <p><strong>Country and language selectors</strong> adds them to the header: Both (the default), Country/region only,
 Language only, or Off. On desktop a globe sits just before the search, account and cart icons, at their size, stroke
 and colors, the transparent header colors included. <strong>Selector style</strong> shows the globe alone (Icon only) or
-followed by the current language and currency codes, such as EN · USD (Icon and code). A click opens a panel under the
-header, in the material of the mega menu: a Country/region list that gives each country's currency, with a search field
-once there are more than ten countries, and a Language list. The current country and language are checked. On phones
+followed by the current language and currency codes, such as EN · USD (Icon and code). A click opens a panel in the
+material of the mega menu: a Country/region list that gives each country's currency, with a search field once there
+are more than ten countries, and a Language list. The current country and language are checked. The panel hangs under
+the header, aligned on the globe. While a transparent header sits at rest over the first section, with no background
+drawn, it opens just under the globe instead, and an open panel follows the header as it materializes on scroll. On phones
 and tablets the selectors sit at the bottom of the mobile menu, sheet or drawer, as a compact row of buttons that each
 open their own list. Choosing a country or a language reloads the same page with it.</p>
 <p>A selector shows only when there is a choice to make: the country selector needs at least two countries or regions,
@@ -302,10 +304,11 @@ have separate desktop and mobile positions.</p>
 
     'compare-products': ('''
 <p>Up to five products side by side. Built in rows show the image, price, availability, vendor and rating; each
-<strong>Row</strong> block adds a line read from a product metafield, as text, a number with its unit, or yes and no.
-<strong>Highlight differences</strong> marks the rows where products differ. On a phone the label column stays in
-place while the product columns scroll.</p>
-''', 'Comparing the three formulas of a range on their key facts: caffeine, sugar, serving size and whether they are vegan.'),
+<strong>Row</strong> block adds a line read from the product metafield of your choice, by its key, as text, a number
+with its unit, or yes and no. <strong>Highlight differences</strong> marks the rows where products differ. On a phone
+the label column stays in place while the product columns scroll. See <a href="metafields.html#compare">Metafields,
+Compare products rows</a> for an example.</p>
+''', 'Comparing the three creams of a range on their key facts: texture, skin type and whether they are fragrance free.'),
 
     'recently-viewed': ('''
 <p>The products the visitor opened most recently, newest first. The list is kept in the visitor's own browser, so it
@@ -413,7 +416,7 @@ stacked gallery, a radial halo background and a spinning badge.</p>
 <p>Product cards under the product page, filled by Shopify: <strong>Related (similar products)</strong> are generated
 automatically, <strong>Complementary (pairs well with)</strong> are the ones you curate in the Search &amp; Discovery
 app.</p>
-''', 'Four related products under every product page, with the custom badge showing on new flavors.'),
+''', 'Four related products under every product page, with the custom badge showing on new formulas.'),
 
     'sticky-atc': ('''
 <p>A bar with the product thumbnail, title, selected variant, price and add to cart button that stays at the top or

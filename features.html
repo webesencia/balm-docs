@@ -158,14 +158,16 @@ the product card, with its quick add. On a phone a tap opens the same content as
 <section class="entry" id="compare-products-entry">
 <h2 id="compare-products">Compare products</h2>
 <p>The <a href="sections.html#s-compare-products">Compare products</a> section sets up to five products side by side.
-Built in rows show the image, price, availability, vendor and rating. Your own rows read product metafields.</p>
+Built in rows show the image, price, availability, vendor and rating. Each row you add reads the product metafield of
+your choice, by its key.</p>
 <ol class="steps">
-  <li>Create one product metafield definition per fact you want to compare, in Settings, Custom data, Products. For example <code>specs.caffeine</code> (Integer), <code>specs.serving</code> (Single line text), <code>specs.vegan</code> (True or false).</li>
+  <li>Create one product metafield definition per fact you want to compare, in Settings, Custom data, Products. For example <code>custom.texture</code> and <code>custom.skin_type</code> (Single line text), <code>custom.fragrance_free</code> (True or false).</li>
   <li>Fill the values on each product.</li>
-  <li>Add the section, pick the products, then add one <strong>Row</strong> block per fact: a <strong>Label</strong>, the <strong>Product metafield</strong> key, and a <strong>Value type</strong>: Text, Number with unit (with its <strong>Unit</strong>, such as mg) or Yes or no.</li>
+  <li>Add the section, pick the products, then add one <strong>Row</strong> block per fact: a <strong>Label</strong>, the <strong>Product metafield</strong> key, and a <strong>Value type</strong>: Text, Number with unit (with its <strong>Unit</strong>, such as ml) or Yes or no.</li>
 </ol>
-<p>Empty values show as n/a, and a row that no product has a value for is left out of the storefront. <strong>Highlight differences</strong> marks the rows where products differ. On a phone the
-label column stays in place while the product columns scroll.</p>
+<p>A product without a value shows a dash, and a row that no product has a value for is left out of the storefront.
+<strong>Highlight differences</strong> marks the rows where products differ. On a phone the label column stays in place
+while the product columns scroll. The full example is in <a href="metafields.html#compare">Metafields, Compare products rows</a>.</p>
 </section>
 
 <section class="entry" id="recently-viewed-entry">

@@ -211,14 +211,16 @@ the product card, with its quick add. On a phone a tap opens the same content as
 <section class="entry" id="compare-products-entry">
 <h2 id="compare-products">Compare products</h2>
 <p>The <a href="sections.html#s-compare-products">Compare products</a> section sets up to five products side by side.
-Built in rows show the image, price, availability, vendor and rating. Your own rows read product metafields.</p>
+Built in rows show the image, price, availability, vendor and rating. Each row you add reads the product metafield of
+your choice, by its key.</p>
 <ol class="steps">
-  <li>Create one product metafield definition per fact you want to compare, in Settings, Custom data, Products. For example <code>specs.caffeine</code> (Integer), <code>specs.serving</code> (Single line text), <code>specs.vegan</code> (True or false).</li>
+  <li>Create one product metafield definition per fact you want to compare, in Settings, Custom data, Products. For example <code>custom.texture</code> and <code>custom.skin_type</code> (Single line text), <code>custom.fragrance_free</code> (True or false).</li>
   <li>Fill the values on each product.</li>
-  <li>Add the section, pick the products, then add one <strong>Row</strong> block per fact: a <strong>Label</strong>, the <strong>Product metafield</strong> key, and a <strong>Value type</strong>: Text, Number with unit (with its <strong>Unit</strong>, such as mg) or Yes or no.</li>
+  <li>Add the section, pick the products, then add one <strong>Row</strong> block per fact: a <strong>Label</strong>, the <strong>Product metafield</strong> key, and a <strong>Value type</strong>: Text, Number with unit (with its <strong>Unit</strong>, such as ml) or Yes or no.</li>
 </ol>
-<p>Empty values show as n/a, and a row that no product has a value for is left out of the storefront. <strong>Highlight differences</strong> marks the rows where products differ. On a phone the
-label column stays in place while the product columns scroll.</p>
+<p>A product without a value shows a dash, and a row that no product has a value for is left out of the storefront.
+<strong>Highlight differences</strong> marks the rows where products differ. On a phone the label column stays in place
+while the product columns scroll. The full example is in <a href="metafields.html#compare">Metafields, Compare products rows</a>.</p>
 </section>
 
 <section class="entry" id="recently-viewed-entry">
@@ -342,16 +344,19 @@ first, the connection second, the values third.</p>
 
 <h2 id="read-directly">Metafields the theme reads directly</h2>
 <p>These keys need a definition and a value, and nothing else: the theme reads them by key, so there is nothing to
-connect in the theme editor. Create them with exactly this namespace and key.</p>
+connect in the theme editor. Create each definition once, with exactly this namespace and key, then fill the value on
+each product, in the <strong>Metafields</strong> card of the product page in your admin.</p>
 <div class="table-wrap"><table class="plain">
-<thead><tr><th scope="col">Name</th><th scope="col">Namespace and key</th><th scope="col">Type</th><th scope="col">Where it shows</th></tr></thead>
+<thead><tr><th scope="col">Name</th><th scope="col">Namespace and key</th><th scope="col">Type</th><th scope="col">Where it shows</th><th scope="col">How to create it</th></tr></thead>
 <tbody>
-<tr><td><q>Badge label</q></td><td><code>custom.badge_label</code></td><td>Single line text</td><td>The Custom badge on product cards, in quick view, in Compare products, on the gallery (Badges on media set to Automatic) and in the Badge block (Automatic); the text of the Spinning badge.</td></tr>
-<tr><td><q>Tagline</q></td><td><code>custom.tagline</code></td><td>Single line text</td><td>The Text block with <strong>Source</strong> set to <strong>Tagline</strong>, under the title in the default product template; under each product of a mega menu Products block when <strong>Show product tagline</strong> is on in the Header; under the name of a Products showcase spotlight and under the heading of Featured set, for the product picked in them.</td></tr>
-<tr><td><q>Background color</q></td><td><code>custom.background_color</code></td><td>Color</td><td>The background of a Products showcase spotlight and of Featured set, for the product picked in them. On the product page the same metafield is connected instead: see <a href="#per-product-background">below</a>.</td></tr>
-<tr><td><q>Background color end</q></td><td><code>custom.background_color_end</code></td><td>Color</td><td>The end of a Products showcase spotlight's background gradient. Without it, the spotlight is one color.</td></tr>
-<tr><td><em>Shopify standard</em></td><td><code>reviews.rating</code>, <code>reviews.rating_count</code></td><td>Rating, Integer</td><td>The Rating block, the ratings on cards, in quick view and in Compare products. Filled by review apps; see <a href="#reviews">Review metafields</a>.</td></tr>
+<tr><td><q>Tagline</q></td><td><code>custom.tagline</code></td><td>Single line text</td><td>On the product page, the Text block with <strong>Source</strong> set to <strong>Tagline</strong>, under the title in the default template. Under the name of a Products showcase spotlight and under the heading of Featured set, for the product picked in them. Under each product of a mega menu Products block, when <strong>Show product tagline</strong> is on in the Header.</td><td><strong>Settings, Custom data, Products</strong>, <strong>Add definition</strong>: name <q>Tagline</q>, type <strong>Single line text</strong>, one value. <a href="#tagline">Step by step</a>.</td></tr>
+<tr><td><q>Background color</q></td><td><code>custom.background_color</code></td><td>Color</td><td>The background of a Products showcase spotlight (the start of its gradient) and of Featured set, for the product picked in them. On the product page the same metafield is connected instead: see <a href="#per-product-background">Per product background colors</a>.</td><td><strong>Settings, Custom data, Products</strong>, <strong>Add definition</strong>: name <q>Background color</q>, type <strong>Color</strong>. <a href="#showcase">Step by step</a>.</td></tr>
+<tr><td><q>Background color end</q></td><td><code>custom.background_color_end</code></td><td>Color</td><td>The end of a Products showcase spotlight's background gradient. Without it, the spotlight is one color. Featured set paints one color and does not read it.</td><td><strong>Settings, Custom data, Products</strong>, <strong>Add definition</strong>: name <q>Background color end</q>, type <strong>Color</strong>. <a href="#showcase">Step by step</a>.</td></tr>
+<tr><td><q>Badge label</q></td><td><code>custom.badge_label</code></td><td>Single line text</td><td>The Custom badge: on product cards, in quick view, in Compare products, and on the product page, on the gallery (<strong>Badges on media</strong> set to Automatic) and in the Badge block (Automatic). Also the text of the Spinning badge block.</td><td><strong>Settings, Custom data, Products</strong>, <strong>Add definition</strong>: name <q>Badge label</q>, type <strong>Single line text</strong>, one value. <a href="#badge-label">Step by step</a>.</td></tr>
+<tr><td><em>Shopify standard</em></td><td><code>reviews.rating</code>, <code>reviews.rating_count</code></td><td>Rating, Integer</td><td>The Rating block, the ratings on cards, in quick view and in Compare products.</td><td>Nothing to create: a review app creates and fills them. See <a href="#reviews">Review metafields</a>.</td></tr>
 </tbody></table></div>
+<p>Compare products reads no fixed key: each of its rows reads the metafield you choose. See
+<a href="#compare">Compare products rows</a>.</p>
 
 <h3 id="badge-label">Badge label, step by step</h3>
 <ol class="steps">
@@ -369,7 +374,7 @@ page it shows when <strong>Badges on media</strong> is on Automatic or a Badge b
 <ol class="steps">
   <li>In <strong>Settings, Custom data, Products</strong>, choose <strong>Add definition</strong>.</li>
   <li>Name: <q>Tagline</q>, namespace and key <code>custom.tagline</code>, type <strong>Single line text</strong>. Save.</li>
-  <li>Fill it on each product, for example <q>Tart, bright and barely sweet</q>.</li>
+  <li>Fill it on each product, for example <q>Rich overnight repair for dry skin</q>.</li>
   <li>The default product template already has a Text block with <strong>Source</strong> set to <strong>Tagline</strong> under the title. On another template, add a Text block and choose that source.</li>
 </ol>
 <p>A product without a tagline shows nothing there, not even the space of the line. In the theme editor, a dimmed
@@ -378,7 +383,7 @@ example stands in so you can place and size the block.</p>
 <h3 id="showcase">Products showcase and Featured set, step by step</h3>
 <ol class="steps">
   <li>In <strong>Settings, Custom data, Products</strong>, create the definitions you want: <q>Tagline</q> (<code>custom.tagline</code>, <strong>Single line text</strong>), <q>Background color</q> (<code>custom.background_color</code>, <strong>Color</strong>) and <q>Background color end</q> (<code>custom.background_color_end</code>, <strong>Color</strong>).</li>
-  <li>Fill them on each product, for example a deep blue and a deeper blue for a berry drink.</li>
+  <li>Fill them on each product, for example a soft sage and a deeper sage for a calming balm.</li>
   <li>In the theme editor, open a <strong>Spotlight</strong> block of the Products showcase, or the Featured set section, and pick the product in <strong>Product</strong>. There is nothing to connect: the name, the link, the tagline, the colors and the image follow.</li>
   <li>Keep the fields of the <strong>Override (optional)</strong> group empty: a filled field wins over the product. A spotlight set up before these settings existed keeps what was typed in it (name, tagline, colors, image, link) as overrides; clear those fields to let the product take over.</li>
 </ol>
@@ -428,7 +433,7 @@ dynamic source icon.</p>
 <tbody>
 <tr><td>Product section, Packshot captions: <strong>Caption source</strong> set to Product metafield (list), then <strong>Metafield</strong></td><td><code>custom.media_captions</code></td><td>List of single line text on products. Entry 1 captions media 1, and so on; media without an entry use their alt text.</td></tr>
 <tr><td>Theme settings, Quick view: <strong>Short description metafield</strong></td><td>For example <code>custom.short_description</code></td><td>Single line or multi-line text on products. Without it, quick view shows the first paragraph of the description.</td></tr>
-<tr><td>Compare products, Row block: <strong>Product metafield</strong></td><td>For example <code>specs.caffeine</code></td><td>Any type that fits the row's <strong>Value type</strong>. See <a href="#compare">below</a>.</td></tr>
+<tr><td>Compare products, Row block: <strong>Product metafield</strong></td><td>For example <code>custom.texture</code></td><td>Any type that fits the row's <strong>Value type</strong>. See <a href="#compare">Compare products rows</a>.</td></tr>
 </tbody></table></div>
 
 <h2 id="product-lists">Product list metafields</h2>
@@ -453,13 +458,30 @@ metafields, <code>reviews.rating</code> (Rating) and <code>reviews.rating_count<
 you have nothing to create. Until they are filled, the ratings stay hidden.</p>
 
 <h2 id="compare">Compare products rows</h2>
-<p>Each Row block of the <a href="features.html#compare-products">Compare products</a> section reads one product
-metafield. Match its <strong>Value type</strong> to the metafield type:</p>
+<p><a href="features.html#compare-products">Compare products</a> has no metafield of its own. Each Row block reads the
+product metafield of your choice: you type its <code>namespace.key</code> in the row's <strong>Product metafield</strong>
+setting, so you decide which facts the table compares, and each row can read a different metafield. For example, to
+compare three creams of a range:</p>
+<div class="table-wrap"><table class="plain">
+<thead><tr><th scope="col">Name</th><th scope="col">Namespace and key</th><th scope="col">Type</th><th scope="col">Where it shows</th><th scope="col">How to create it</th></tr></thead>
+<tbody>
+<tr><td><q>Texture</q></td><td><code>custom.texture</code></td><td>Single line text</td><td>A Row block with <strong>Product metafield</strong> <code>custom.texture</code> and <strong>Value type</strong> Text. Each product shows its value, for example <q>Rich balm</q> or <q>Light gel</q>.</td><td><strong>Settings, Custom data, Products</strong>, <strong>Add definition</strong>: name <q>Texture</q>, type <strong>Single line text</strong>, one value.</td></tr>
+<tr><td><q>Skin type</q></td><td><code>custom.skin_type</code></td><td>Single line text</td><td>A Row block with <strong>Product metafield</strong> <code>custom.skin_type</code> and <strong>Value type</strong> Text, for example <q>Dry to very dry</q>.</td><td><strong>Settings, Custom data, Products</strong>, <strong>Add definition</strong>: name <q>Skin type</q>, type <strong>Single line text</strong>, one value.</td></tr>
+<tr><td><q>Fragrance free</q></td><td><code>custom.fragrance_free</code></td><td>True or false</td><td>A Row block with <strong>Product metafield</strong> <code>custom.fragrance_free</code> and <strong>Value type</strong> Yes or no: a check mark for true, a cross for false.</td><td><strong>Settings, Custom data, Products</strong>, <strong>Add definition</strong>: name <q>Fragrance free</q>, type <strong>True or false</strong>.</td></tr>
+</tbody></table></div>
+<ol class="steps">
+  <li>Create one definition per fact, as in the table. These names and keys are examples: any namespace and key work, as long as the row reads the same key.</li>
+  <li>Fill the values on each product you compare, in the <strong>Metafields</strong> card of the product.</li>
+  <li>In the theme editor, open the Compare products section and add one <strong>Row</strong> block per fact. Type the <strong>Label</strong> shown in the first column, for example <q>Texture</q>, and the <strong>Product metafield</strong> key, for example <code>custom.texture</code>, without spaces. Then choose the <strong>Value type</strong>.</li>
+</ol>
+<p>Match the <strong>Value type</strong> to the metafield type:</p>
 <ul>
   <li><strong>Text</strong>: single line text, multi-line text, or any value you want printed as it is.</li>
-  <li><strong>Number with unit</strong>: an integer or decimal, followed by the <strong>Unit</strong> you type (mg, ml, g). Leave the unit empty for weight, volume and dimension metafields, which carry their own.</li>
-  <li><strong>Yes or no</strong>: a True or false metafield.</li>
+  <li><strong>Number with unit</strong>: an integer or decimal, followed by the <strong>Unit</strong> you type (ml, g, %). Leave the unit empty for weight, volume and dimension metafields, which carry their own.</li>
+  <li><strong>Yes or no</strong>: a True or false metafield, drawn as a check mark or a cross.</li>
 </ul>
+<p>A product without a value shows a dash in that row. A row that no product has a value for is left out of the
+storefront; the theme editor keeps it so you can fix the key. A row without a label shows its key instead.</p>
 
 <h2 id="empty-values">What happens on a product with no value</h2>
 <p>Nothing breaks and nothing goes blank, which is what lets you fill only the products you care about. A background
