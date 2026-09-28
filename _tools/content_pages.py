@@ -116,23 +116,31 @@ itself: Off, Single-variant products, or All products (which opens an option pic
 
 <section class="entry" id="product-badges-entry">
 <h2 id="product-badges">Product badges</h2>
-<p>Four badges can appear on product cards and, through the Badge block, on the product page. Their position, shape and
-colors are set once in <a href="theme-settings.html#ts-product-badges">Theme settings, Product badges</a>.</p>
+<p>Four badges can appear on product cards, in quick view, in Compare products and on the product page. Every one of
+them states a fact of the product: nothing shows a text typed once for all products. Their position, shape and colors
+are set once in <a href="theme-settings.html#ts-product-badges">Theme settings, Product badges</a>.</p>
 <div class="table-wrap"><table class="plain">
 <thead><tr><th scope="col">Badge</th><th scope="col">Shown when</th><th scope="col">Options</th></tr></thead>
 <tbody>
-<tr><th scope="row">Sale</th><td>The variant shown on the card has a compare-at price above its price.</td><td><strong>Sale badge text</strong>: Sale, Percentage off or Amount saved.</td></tr>
-<tr><th scope="row">Sold out</th><td>The product can no longer be bought.</td><td>Colors.</td></tr>
-<tr><th scope="row">New</th><td>The product was created less than the number of days in <strong>Show New badge for</strong>.</td><td>0 days turns the badge off.</td></tr>
-<tr><th scope="row">Custom</th><td>The product has a value in the metafield you name.</td><td>Colors. The text is the metafield value.</td></tr>
+<tr><th scope="row">Sale</th><td>Automatically, when the variant shown has a compare-at price above its price. Never on a price without a compare-at price.</td><td><strong>Sale badge text</strong>: Sale, Percentage off or Amount saved.</td></tr>
+<tr><th scope="row">Sold out</th><td>Automatically, when the product can no longer be bought. It then replaces Sale and New.</td><td>Colors.</td></tr>
+<tr><th scope="row">New</th><td>Off by default. With <strong>New badge</strong> set to <strong>Product tag</strong>: the product carries the tag you name in <strong>Tag</strong> (<code>new</code> by default, upper and lower case ignored). Set to <strong>Created in the last X days</strong>: the product was created fewer days ago than <strong>Number of days (X)</strong>.</td><td>Colors. A tag is the safer choice: a store whose products were all imported recently would otherwise show New everywhere.</td></tr>
+<tr><th scope="row">Custom</th><td>The product has a value in its <code>custom.badge_label</code> metafield.</td><td>Colors. The text is the metafield value.</td></tr>
 </tbody></table></div>
 <h3 id="custom-badge">Set up the Custom badge</h3>
 <ol class="steps">
-  <li>In your admin, go to <strong>Settings, Custom data, Products</strong> and add a definition named <q>Badge label</q>, key <code>custom.badge_label</code>, type <strong>Single line text</strong>.</li>
-  <li>Fill it on the products that need a badge, for example <q>Limited edition</q> or <q>Vegan</q>.</li>
-  <li>In the theme editor, type <code>custom.badge_label</code> in <strong>Custom badge metafield</strong> on each section that shows product cards: Collection, Search, Featured collection, Product recommendations, Recently viewed and Lookbook.</li>
-  <li>On the product page, add a <strong>Badge</strong> block, set <strong>Badge type</strong> to <strong>Automatic (Sale, Sold out, New, Custom)</strong> and type the same key in its <strong>Custom badge metafield</strong>.</li>
+  <li>Create the <code>custom.badge_label</code> definition once, as described in <a href="metafields.html#badge-label">Metafields, Badge label</a>.</li>
+  <li>Fill it on the products that need a badge, for example <q>Limited edition</q> or <q>Vegan</q>. Leave it empty on the others.</li>
+  <li>That is all: the cards, quick view, Compare products and the product page read the metafield directly. There is no key to type and nothing to connect in the theme editor.</li>
 </ol>
+<h3 id="badges-product-page">Badges on the product page</h3>
+<ul>
+  <li><strong>Badges on media</strong>, in the Product section settings, shows the badges in the corner of the gallery: <strong>Off</strong> (the default) or <strong>Automatic</strong>, the same Sale, Sold out, New and Custom badges as the cards.</li>
+  <li>The <strong>Badge</strong> block, in the information column, draws the same badges in a row when its <strong>Badge type</strong> is <strong>Automatic (Sale, Sold out, New, Custom)</strong>, the default. Its other type, <strong>Image</strong>, places your own artwork in a corner of the product area.</li>
+  <li>The <strong>Spinning badge</strong> block turns the <code>custom.badge_label</code> text around a ring. A product without the metafield shows no ring.</li>
+</ul>
+<p>On the product page, Sale and Sold out follow the selected variant: choosing a variant without a compare-at price
+removes Sale, choosing a sold out one shows Sold out. When no badge applies, nothing is drawn and no space is left.</p>
 </section>
 
 <section class="entry" id="page-loader-entry">
@@ -205,7 +213,7 @@ Built in rows show the image, price, availability, vendor and rating. Your own r
   <li>Fill the values on each product.</li>
   <li>Add the section, pick the products, then add one <strong>Row</strong> block per fact: a <strong>Label</strong>, the <strong>Product metafield</strong> key, and a <strong>Value type</strong>: Text, Number with unit (with its <strong>Unit</strong>, such as mg) or Yes or no.</li>
 </ol>
-<p>Empty values show as n/a. <strong>Highlight differences</strong> marks the rows where products differ. On a phone the
+<p>Empty values show as n/a, and a row that no product has a value for is left out of the storefront. <strong>Highlight differences</strong> marks the rows where products differ. On a phone the
 label column stays in place while the product columns scroll.</p>
 </section>
 
@@ -261,10 +269,12 @@ Shopify Plus stores through Shopify's Combined Listings app. Balm supports them 
 
 <section class="entry" id="pre-order-entry">
 <h2 id="pre-order">Pre-order</h2>
-<p>A variant that keeps selling once its stock reaches 0 is a pre-order. In the product admin, track its quantity and
-check <strong>Continue selling when out of stock</strong>. At 0 stock, the add to cart button, the sticky add to cart bar
-and the quick add button then read <strong>Pre-order</strong>, or the <strong>Button label</strong> you set in
-<a href="theme-settings.html#ts-pre-order">Theme settings, Pre-order</a>. The Stock status block keeps its own text.</p>
+<p>Pre-order turns itself on: there is nothing to enable. A variant becomes a pre-order when its quantity is tracked,
+its stock is at 0 and <strong>Continue selling when out of stock</strong> is checked in the product admin. The add to
+cart button, the sticky add to cart bar and the quick add button then read <strong>Pre-order</strong>, or the
+<strong>Button label</strong> you set in <a href="theme-settings.html#ts-pre-order">Theme settings, Pre-order</a>. The
+variant can still be bought, so the accelerated checkout buttons (Buy it now) stay visible, unlike on a sold out variant.
+The Stock status block keeps its own text.</p>
 <p>The label does not change how checkout works: the order is paid at checkout like any other. To take a deposit or
 charge later, use a pre-order app that creates selling plans; its options then show in the Purchase options block.
 Tell buyers when the product will ship, for example in a Text block or a Collapsible row.</p>
@@ -283,10 +293,6 @@ META_ROWS_PRODUCT = [
     ('Curve color', 'custom.curve_color', 'Color', 'Product: Curve color'),
     ('Background image', 'custom.background_image', 'File', 'Product: Background image'),
     ('Background media', 'custom.background_media', 'File', 'Product: Vignette image'),
-    ('Badge label', 'custom.badge_label', 'Single line text', 'Product: Badge text; Badge block: Text; Spinning badge: Text'),
-    ('Badge background', 'custom.badge_background', 'Color', 'Badge block: Badge background'),
-    ('Badge text color', 'custom.badge_text_color', 'Color', 'Badge block: Badge text color'),
-    ('Tagline', 'custom.tagline', 'Single line text', 'Text block: Text. The mega menu Products block shows it under each product when Show product tagline is on in the Header.'),
     ('Buy button label', 'custom.buy_button_label', 'Single line text', 'Buy buttons: Add to cart label'),
     ('Specs label', 'custom.specs_label', 'Single line text', 'Popup: Trigger label'),
     ('Specifications', 'custom.specifications', 'Rich text', 'Popup: Content'),
@@ -330,6 +336,39 @@ first, the connection second, the values third.</p>
   <li>Every connectable setting repeats the definition it expects in its own help text in the editor.</li>
 </ul>
 
+<h2 id="read-directly">Metafields the theme reads directly</h2>
+<p>These keys need a definition and a value, and nothing else: the theme reads them by key, so there is nothing to
+connect in the theme editor. Create them with exactly this namespace and key.</p>
+<div class="table-wrap"><table class="plain">
+<thead><tr><th scope="col">Name</th><th scope="col">Namespace and key</th><th scope="col">Type</th><th scope="col">Where it shows</th></tr></thead>
+<tbody>
+<tr><td><q>Badge label</q></td><td><code>custom.badge_label</code></td><td>Single line text</td><td>The Custom badge on product cards, in quick view, in Compare products, on the gallery (Badges on media set to Automatic) and in the Badge block (Automatic); the text of the Spinning badge.</td></tr>
+<tr><td><q>Tagline</q></td><td><code>custom.tagline</code></td><td>Single line text</td><td>The Text block with <strong>Source</strong> set to <strong>Tagline</strong>, under the title in the default product template; under each product of a mega menu Products block when <strong>Show product tagline</strong> is on in the Header.</td></tr>
+<tr><td><em>Shopify standard</em></td><td><code>reviews.rating</code>, <code>reviews.rating_count</code></td><td>Rating, Integer</td><td>The Rating block, the ratings on cards, in quick view and in Compare products. Filled by review apps; see <a href="#reviews">Review metafields</a>.</td></tr>
+</tbody></table></div>
+
+<h3 id="badge-label">Badge label, step by step</h3>
+<ol class="steps">
+  <li>In your admin, open <strong>Settings</strong>, then <strong>Custom data</strong>, then <strong>Products</strong>.</li>
+  <li>Choose <strong>Add definition</strong>.</li>
+  <li>Name: <q>Badge label</q>. Check that the namespace and key read <code>custom.badge_label</code>.</li>
+  <li>Select the type <strong>Single line text</strong> (under Text), keep <strong>One value</strong>, and save.</li>
+  <li>Open a product, find the <strong>Metafields</strong> card, type the badge text in <strong>Badge label</strong>, for example <q>Limited edition</q>, and save.</li>
+</ol>
+<p>The badge now shows wherever that product appears as a card, in quick view and in Compare products. On the product
+page it shows when <strong>Badges on media</strong> is on Automatic or a Badge block is in the column. Its colors are in
+<a href="theme-settings.html#ts-product-badges">Theme settings, Product badges</a>. Clear the value and the badge goes.</p>
+
+<h3 id="tagline">Tagline, step by step</h3>
+<ol class="steps">
+  <li>In <strong>Settings, Custom data, Products</strong>, choose <strong>Add definition</strong>.</li>
+  <li>Name: <q>Tagline</q>, namespace and key <code>custom.tagline</code>, type <strong>Single line text</strong>. Save.</li>
+  <li>Fill it on each product, for example <q>Tart, bright and barely sweet</q>.</li>
+  <li>The default product template already has a Text block with <strong>Source</strong> set to <strong>Tagline</strong> under the title. On another template, add a Text block and choose that source.</li>
+</ol>
+<p>A product without a tagline shows nothing there, not even the space of the line. In the theme editor, a dimmed
+example stands in so you can place and size the block.</p>
+
 <h2 id="per-product-background">Per product background colors, step by step</h2>
 <p>The most common use: one product template, a different background shade on every product.</p>
 <h3 id="step-1">Step 1. Create the definition (once)</h3>
@@ -357,9 +396,9 @@ falls back. If both look the same, the connection of step 2 was not saved.</p>
 it to <strong>Gradient end</strong>. For a halo, create <q>Accent color</q> (<code>custom.accent_color</code>) and
 connect it to <strong>Halo color</strong>.</p>
 
-<h2 id="product-metafields">Product metafields</h2>
+<h2 id="product-metafields">Product metafields you connect</h2>
 <p>Create these in <strong>Settings, Custom data, Products</strong>, then connect them with the dynamic source icon next
-to the setting.</p>
+to the setting. The names and keys are suggestions; only the type matters.</p>
 <div class="table-wrap"><table class="plain">
 <thead><tr><th scope="col">Name</th><th scope="col">Namespace and key</th><th scope="col">Type</th><th scope="col">Connect it to</th></tr></thead>
 <tbody>''' + _rows(META_ROWS_PRODUCT) + '''</tbody></table></div>
@@ -371,7 +410,6 @@ dynamic source icon.</p>
 <thead><tr><th scope="col">Where</th><th scope="col">What to type</th><th scope="col">Metafield type</th></tr></thead>
 <tbody>
 <tr><td>Product section, Packshot captions: <strong>Caption source</strong> set to Product metafield (list), then <strong>Metafield</strong></td><td><code>custom.media_captions</code></td><td>List of single line text on products. Entry 1 captions media 1, and so on; media without an entry use their alt text.</td></tr>
-<tr><td><strong>Custom badge metafield</strong> on Collection, Search, Featured collection, Product recommendations, Recently viewed, Lookbook and the Badge block</td><td><code>custom.badge_label</code>, or any text metafield</td><td>Single line text on products. Shown as the Custom badge. See <a href="features.html#custom-badge">Product badges</a>.</td></tr>
 <tr><td>Theme settings, Quick view: <strong>Short description metafield</strong></td><td>For example <code>custom.short_description</code></td><td>Single line or multi-line text on products. Without it, quick view shows the first paragraph of the description.</td></tr>
 <tr><td>Compare products, Row block: <strong>Product metafield</strong></td><td>For example <code>specs.caffeine</code></td><td>Any type that fits the row's <strong>Value type</strong>. See <a href="#compare">below</a>.</td></tr>
 </tbody></table></div>
@@ -414,9 +452,10 @@ color that comes back empty falls through, in this order:</p>
   <li>otherwise the background of the section's color scheme.</li>
 </ol>
 <p>Never connect the fallback color itself to a metafield: it is the safety net. If one end of a gradient is empty, the
-other end fills the whole wash; if a halo color is empty, the halo is not drawn and the base color stays. Empty text,
-rich text and image metafields leave their block empty, and blocks that exist only to carry the value (rating, badges,
-popup, a claim line) hide themselves.</p>
+other end fills the whole wash; if a halo color is empty, the halo is not drawn and the base color stays. An empty
+text, rich text or image metafield shows nothing on the storefront: never an example text, never an empty box. The
+tagline, a popup, an accordion row, a claim line, a specification row, the rating and the badges hide themselves and
+leave no gap. In the theme editor a dimmed example stands in.</p>
 
 <h2 id="not-connectable">Settings that cannot be connected</h2>
 <p>Shopify only allows connections on colors, text, rich text, images, videos, links, pages, collections, products and

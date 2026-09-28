@@ -13,27 +13,28 @@ that offers a block (reviews, subscriptions, bundles) drops straight into the co
 <thead><tr><th scope="col">Order</th><th scope="col">Block</th><th scope="col">What it does</th></tr></thead>
 <tbody>
 <tr><td>1</td><td>Title</td><td>The product title.</td></tr>
-<tr><td>2</td><td>Text</td><td>A short tagline under the title. Rich text, so you can bold or link.</td></tr>
-<tr><td>3</td><td>Popup</td><td>A small Specifications link that opens a dialog, for ingredients, sizing or nutrition.</td></tr>
+<tr><td>2</td><td>Text</td><td>A short tagline under the title, read from the product's <code>custom.tagline</code> metafield. Nothing shows on a product without it.</td></tr>
+<tr><td>3</td><td>Popup</td><td>A small Specifications link that opens a dialog, for ingredients, sizing or nutrition, shown once it has content.</td></tr>
 <tr><td>4</td><td>Price</td><td>Price, compare-at price and unit price.</td></tr>
 <tr><td>5</td><td>Variant picker</td><td>The options the customer chooses from.</td></tr>
 <tr><td>6</td><td>Quantity</td><td>Quantity selector, with any per order limits you have set.</td></tr>
 <tr><td>7</td><td>Volume pricing</td><td>Quantity break pricing, shown only when the variant has price breaks.</td></tr>
 <tr><td>8</td><td>Purchase options</td><td>Subscription or delivery options, shown only when the product has selling plans.</td></tr>
 <tr><td>9</td><td>Gift card recipient</td><td>Recipient name, email and message, shown only on gift card products.</td></tr>
-<tr><td>10</td><td>Buy buttons</td><td>Add to cart and the accelerated checkout buttons. A variant that keeps selling at 0 stock says Pre-order instead.</td></tr>
+<tr><td>10</td><td>Buy buttons</td><td>Add to cart and the accelerated checkout buttons, hidden while the selected variant is sold out. A variant that keeps selling at 0 stock says Pre-order instead and keeps both.</td></tr>
 <tr><td>11</td><td>Back in stock</td><td>A Notify me when available form, shown only when the selected variant is sold out.</td></tr>
 <tr><td>12</td><td>Pickup availability</td><td>Local pickup for the selected variant, shown only when a location offers it.</td></tr>
 <tr><td>13</td><td>Payment icons</td><td>A secure checkout line with your store's payment icons.</td></tr>
 <tr><td>14</td><td>Product upsell</td><td>Frequently bought together, picked automatically.</td></tr>
-<tr><td>15</td><td>Icon list</td><td>Three short reassurance claims with icons.</td></tr>
+<tr><td>15</td><td>Icon list</td><td>Three short reassurance claims with icons, each shown once it has a heading or a text.</td></tr>
 <tr><td>16</td><td>Description</td><td>The product description from the product admin page.</td></tr>
-<tr><td>17</td><td>Collapsible row</td><td>Details, a closed accordion row.</td></tr>
-<tr><td>18</td><td>Collapsible row</td><td>Shipping and returns, a closed accordion row.</td></tr>
+<tr><td>17</td><td>Collapsible row</td><td>Details, a closed accordion row, shown once it has content.</td></tr>
+<tr><td>18</td><td>Collapsible row</td><td>Shipping and returns, a closed accordion row, shown once it has content.</td></tr>
 <tr><td>19</td><td>Product navigation</td><td>Previous and next links to the neighboring products.</td></tr>
 </tbody></table></div>
 <p>Blocks marked <em>shown only when</em> render nothing on products that do not need them, so the page stays short even
-though the stack is long. Below the section, the template also places <a href="sections.html#s-product-recommendations">Product
+though the stack is long. The template carries no example text: a block whose text is empty shows nothing on the
+storefront, not even its spacing, and a dimmed example in the theme editor. Below the section, the template also places <a href="sections.html#s-product-recommendations">Product
 recommendations</a> and a <a href="sections.html#s-sticky-atc">Sticky add to cart</a> bar.</p>
 <p>The section picker offers a second version of the section, <strong>Balm spotlight</strong>: a dark page with a stacked
 gallery, a radial halo background, a spinning badge, a specifications popup, an icon list and three collapsible rows.
@@ -125,6 +126,9 @@ on <a href="metafields.html#per-product-background">Metafields</a>.</p>
 <p>With <strong>Dynamic checkout buttons</strong> on, the wallet buttons (Shop Pay, PayPal, Google Pay, Apple Pay) show
 under Add to cart. Which ones appear depends on the payment methods your store has enabled and on the visitor's browser,
 so the row differs from one shopper to the next.</p>
+<p>The row follows the selected variant: it is hidden while that variant is sold out or unavailable and comes back as
+soon as a variant that can be bought is chosen. A pre-order variant can be bought, so it keeps the row. Quick view and
+the sticky add to cart bar have no accelerated checkout buttons.</p>
 <p>These buttons are drawn by Shopify, inside an element no theme and no app can style directly. Shopify exposes a short
 list of settings instead, and Balm sets all of them from your Add to cart button:</p>
 <div class="table-wrap"><table class="plain"><thead><tr><th scope="col">What</th><th scope="col">Follows</th></tr></thead><tbody>
@@ -166,7 +170,7 @@ BLOCK_TEXT = {
     '_product-price': '<p>The price, the compare-at price, the unit price and an optional taxes and shipping note. It follows the selected variant.</p>',
     '_product-sku': '<p>The SKU of the selected variant, with an optional prefix.</p>',
     '_product-rating': '<p>Stars, the numeric value and the review count, read from the standard <code>reviews.rating</code> and <code>reviews.rating_count</code> metafields that review apps fill. It renders nothing until an app fills them.</p>',
-    '_product-text': '<p>A free rich text paragraph. Connect it to the <code>custom.tagline</code> metafield to give each product its own tagline.</p>',
+    '_product-text': '<p>A free rich text paragraph, the same on every product, or with <strong>Source</strong> set to <strong>Tagline</strong>, the product\'s own <code>custom.tagline</code> metafield, read directly. Empty, it shows nothing on the storefront.</p>',
     '_product-variant-picker': '<p>The options the customer chooses from, in one of six styles (see <a href="#variant-picker-styles">Variant picker styles</a>). It handles products with many variants, combined listings and unavailable combinations.</p>',
     '_product-quantity': '<p>The quantity selector. It respects the minimum, maximum and increment of quantity rules set in B2B catalogs.</p>',
     '_product-volume-pricing': '<p>Quantity price breaks, as a table or a list. It renders nothing when the variant has none.</p>',
@@ -180,15 +184,15 @@ BLOCK_TEXT = {
     '_product-upsell': '<p>Products to buy alongside this one, from Shopify recommendations or your own selection. <strong>Bundle (tick boxes, one total)</strong> adds every ticked product in one action; <strong>Simple list (add one by one)</strong> adds them separately.</p>',
     '_product-complementary': '<p>A small grid of product cards: complementary products from Shopify recommendations, curated in the Search &amp; Discovery app, or your own selection, which can be connected to a product list metafield.</p>',
     '_product-description': '<p>The product description from the product admin page.</p>',
-    '_product-collapsible-row': '<p>An accordion row whose content is rich text, which can be connected to a metafield, or a page, to share one policy page across every product. The Product section can keep only one row open at a time.</p>',
-    '_product-popup': '<p>A link or button that opens a dialog with rich text or a page. The Under-title link style sits right below the product title.</p>',
+    '_product-collapsible-row': '<p>An accordion row whose content is rich text, which can be connected to a metafield, or a page, to share one policy page across every product. A row without heading or content shows nothing on the storefront. The Product section can keep only one row open at a time.</p>',
+    '_product-popup': '<p>A link or button that opens a dialog with rich text or a page. The Under-title link style sits right below the product title. Without content, it shows nothing on the storefront.</p>',
     '_product-specs': '<p>A label and value table built from Specification blocks, with lines, dots or zebra stripes between rows.</p>',
     '_product-spec-row': '<p>One row of the Specifications block. Both the label and the value can be connected to product metafields.</p>',
     '_product-icon-list': '<p>Reassurance claims built from Icon item blocks, stacked, side by side, or on one row with a button.</p>',
     '_product-icon-item': '<p>One claim of the Icon list: a built in glyph or your own image, a heading and a text.</p>',
     '_product-image': '<p>An image inside the information column, with an optional caption. Connect it to a metafield to show a different image per product.</p>',
-    '_product-badge': '<p><strong>Automatic (Sale, Sold out, New, Custom)</strong> shows the same badges as the product cards, styled in Theme settings, Product badges. <strong>Text</strong> and <strong>Image</strong> place a sticker of your own in a corner of the gallery.</p>',
-    '_product-spin-badge': '<p>A round badge with text turning around a ring, placed over a corner of the product image or behind it. The rotation stops for visitors who ask for reduced motion.</p>',
+    '_product-badge': '<p><strong>Automatic (Sale, Sold out, New, Custom)</strong>, the default, shows the same badges as the product cards, styled in Theme settings, Product badges, and nothing when none applies. Sale and Sold out follow the selected variant. <strong>Image</strong> places your own artwork in a corner of the product area.</p>',
+    '_product-spin-badge': '<p>The product\'s <code>custom.badge_label</code> text turning around a ring, placed over a corner of the product image or behind it. A product without the metafield shows no ring. The rotation stops for visitors who ask for reduced motion.</p>',
     '_product-share': '<p>Share links for X, Facebook and Pinterest, and a copy link button.</p>',
     '_product-nav': '<p>Links to the previous and next product of a collection (the product\'s first collection by default). Only the first 50 products of the collection are read.</p>',
     '_product-sticky-atc': '<p>The sticky add to cart bar as a block, for a product template that does not use the Sticky add to cart section. Use one or the other, not both.</p>',

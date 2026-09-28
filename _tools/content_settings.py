@@ -44,18 +44,19 @@ carry their own radius, such as the floating header or the cart drawer, are capp
 <p>The Balm preset sets buttons and form fields to 12 px, cards and media to 20 px.</p>
 ''',
     'Product badges': '''
-<p>Four badges can sit on the product cards: <strong>Sale</strong> and <strong>Sold out</strong> follow the prices and
-the stock, <strong>New</strong> follows the product creation date, and <strong>Custom</strong> prints the value of a
-product metafield. This group sets their position, shape and colors once for the whole store.</p>
-<p>The Custom badge needs one more step: name the metafield in the <strong>Custom badge metafield</strong> setting of
-each section that shows product cards (Collection, Search, Featured collection, Product recommendations, Recently
-viewed, Lookbook) and of the product page Badge block. The same badges appear on the product page when you add a
-<strong>Badge</strong> block and set <strong>Badge type</strong> to <strong>Automatic (Sale, Sold out, New, Custom)</strong>.
-See <a href="features.html#product-badges">Product badges</a> for the full walkthrough.</p>
+<p>Four badges can sit on the product cards, in quick view, in Compare products and on the product page.
+<strong>Sale</strong> shows automatically when the compare-at price is above the price, <strong>Sold out</strong> when
+the product can no longer be bought. <strong>New</strong> is off by default: set <strong>New badge</strong> to
+<strong>Product tag</strong> and name the tag, or to <strong>Created in the last X days</strong> and set the number of
+days. <strong>Custom</strong> prints the product's <code>custom.badge_label</code> metafield, read directly. This group
+sets their position, shape and colors once for the whole store.</p>
+<p>On the product page, turn on <strong>Badges on media</strong> in the Product section, or add a <strong>Badge</strong>
+block. See <a href="features.html#product-badges">Product badges</a> for the full walkthrough.</p>
 ''',
     'Pre-order': '''
-<p>A variant that keeps selling once its stock reaches 0 is treated as a pre-order. The add to cart button, the sticky
-add to cart bar and the quick add button then read <strong>Pre-order</strong>, or the label you type here. See
+<p>Pre-order turns itself on for a variant whose quantity is tracked, whose stock is at 0 and that has
+<strong>Continue selling when out of stock</strong> checked. The add to cart button, the sticky add to cart bar and the
+quick add button then read <strong>Pre-order</strong>, or the label you type here. See
 <a href="features.html#pre-order">Pre-order</a>.</p>
 ''',
     'Quick view': '''

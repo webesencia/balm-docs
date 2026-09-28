@@ -27,7 +27,7 @@
 </header>
 <div class="layout">
   <nav id="sidebar" class="sidebar" aria-label="Documentation">
-    <ul class="nav"><li><a href="index.html">Getting started</a></li><li><a href="theme-settings.html">Theme settings</a></li><li><a href="sections.html">Sections</a></li><li><a href="product-page.html">Product page blocks</a></li><li><a href="features.html">Features</a></li><li class="current"><a href="metafields.html" aria-current="page">Metafields</a><ul class="toc"><li><a href="#before-you-start">Before you start</a></li><li><a href="#per-product-background">Per product background colors, step by step</a></li><li><a href="#product-metafields">Product metafields</a></li><li><a href="#typed-keys">Metafields you type by key</a></li><li><a href="#product-lists">Product list metafields</a></li><li><a href="#shop-metafields">Shop metafields</a></li><li><a href="#reviews">Review metafields</a></li><li><a href="#compare">Compare products rows</a></li><li><a href="#empty-values">What happens on a product with no value</a></li><li><a href="#not-connectable">Settings that cannot be connected</a></li></ul></li><li><a href="custom-code.html">Custom code</a></li><li><a href="faq.html">FAQ</a></li><li><a href="changelog.html">Changelog</a></li><li><a href="support.html">Support</a></li></ul>
+    <ul class="nav"><li><a href="index.html">Getting started</a></li><li><a href="theme-settings.html">Theme settings</a></li><li><a href="sections.html">Sections</a></li><li><a href="product-page.html">Product page blocks</a></li><li><a href="features.html">Features</a></li><li class="current"><a href="metafields.html" aria-current="page">Metafields</a><ul class="toc"><li><a href="#before-you-start">Before you start</a></li><li><a href="#read-directly">Metafields the theme reads directly</a></li><li><a href="#per-product-background">Per product background colors, step by step</a></li><li><a href="#product-metafields">Product metafields you connect</a></li><li><a href="#typed-keys">Metafields you type by key</a></li><li><a href="#product-lists">Product list metafields</a></li><li><a href="#shop-metafields">Shop metafields</a></li><li><a href="#reviews">Review metafields</a></li><li><a href="#compare">Compare products rows</a></li><li><a href="#empty-values">What happens on a product with no value</a></li><li><a href="#not-connectable">Settings that cannot be connected</a></li></ul></li><li><a href="custom-code.html">Custom code</a></li><li><a href="faq.html">FAQ</a></li><li><a href="changelog.html">Changelog</a></li><li><a href="support.html">Support</a></li></ul>
   </nav>
   <main id="main" class="content" tabindex="-1">
     <article class="doc">
@@ -43,6 +43,39 @@ first, the connection second, the values third.</p>
   <li>The namespace and key are suggestions; the <strong>type</strong> is not. A setting refuses a definition of the wrong type.</li>
   <li>Every connectable setting repeats the definition it expects in its own help text in the editor.</li>
 </ul>
+
+<h2 id="read-directly">Metafields the theme reads directly</h2>
+<p>These keys need a definition and a value, and nothing else: the theme reads them by key, so there is nothing to
+connect in the theme editor. Create them with exactly this namespace and key.</p>
+<div class="table-wrap"><table class="plain">
+<thead><tr><th scope="col">Name</th><th scope="col">Namespace and key</th><th scope="col">Type</th><th scope="col">Where it shows</th></tr></thead>
+<tbody>
+<tr><td><q>Badge label</q></td><td><code>custom.badge_label</code></td><td>Single line text</td><td>The Custom badge on product cards, in quick view, in Compare products, on the gallery (Badges on media set to Automatic) and in the Badge block (Automatic); the text of the Spinning badge.</td></tr>
+<tr><td><q>Tagline</q></td><td><code>custom.tagline</code></td><td>Single line text</td><td>The Text block with <strong>Source</strong> set to <strong>Tagline</strong>, under the title in the default product template; under each product of a mega menu Products block when <strong>Show product tagline</strong> is on in the Header.</td></tr>
+<tr><td><em>Shopify standard</em></td><td><code>reviews.rating</code>, <code>reviews.rating_count</code></td><td>Rating, Integer</td><td>The Rating block, the ratings on cards, in quick view and in Compare products. Filled by review apps; see <a href="#reviews">Review metafields</a>.</td></tr>
+</tbody></table></div>
+
+<h3 id="badge-label">Badge label, step by step</h3>
+<ol class="steps">
+  <li>In your admin, open <strong>Settings</strong>, then <strong>Custom data</strong>, then <strong>Products</strong>.</li>
+  <li>Choose <strong>Add definition</strong>.</li>
+  <li>Name: <q>Badge label</q>. Check that the namespace and key read <code>custom.badge_label</code>.</li>
+  <li>Select the type <strong>Single line text</strong> (under Text), keep <strong>One value</strong>, and save.</li>
+  <li>Open a product, find the <strong>Metafields</strong> card, type the badge text in <strong>Badge label</strong>, for example <q>Limited edition</q>, and save.</li>
+</ol>
+<p>The badge now shows wherever that product appears as a card, in quick view and in Compare products. On the product
+page it shows when <strong>Badges on media</strong> is on Automatic or a Badge block is in the column. Its colors are in
+<a href="theme-settings.html#ts-product-badges">Theme settings, Product badges</a>. Clear the value and the badge goes.</p>
+
+<h3 id="tagline">Tagline, step by step</h3>
+<ol class="steps">
+  <li>In <strong>Settings, Custom data, Products</strong>, choose <strong>Add definition</strong>.</li>
+  <li>Name: <q>Tagline</q>, namespace and key <code>custom.tagline</code>, type <strong>Single line text</strong>. Save.</li>
+  <li>Fill it on each product, for example <q>Tart, bright and barely sweet</q>.</li>
+  <li>The default product template already has a Text block with <strong>Source</strong> set to <strong>Tagline</strong> under the title. On another template, add a Text block and choose that source.</li>
+</ol>
+<p>A product without a tagline shows nothing there, not even the space of the line. In the theme editor, a dimmed
+example stands in so you can place and size the block.</p>
 
 <h2 id="per-product-background">Per product background colors, step by step</h2>
 <p>The most common use: one product template, a different background shade on every product.</p>
@@ -71,12 +104,12 @@ falls back. If both look the same, the connection of step 2 was not saved.</p>
 it to <strong>Gradient end</strong>. For a halo, create <q>Accent color</q> (<code>custom.accent_color</code>) and
 connect it to <strong>Halo color</strong>.</p>
 
-<h2 id="product-metafields">Product metafields</h2>
+<h2 id="product-metafields">Product metafields you connect</h2>
 <p>Create these in <strong>Settings, Custom data, Products</strong>, then connect them with the dynamic source icon next
-to the setting.</p>
+to the setting. The names and keys are suggestions; only the type matters.</p>
 <div class="table-wrap"><table class="plain">
 <thead><tr><th scope="col">Name</th><th scope="col">Namespace and key</th><th scope="col">Type</th><th scope="col">Connect it to</th></tr></thead>
-<tbody><tr><td><q>Background color</q></td><td><code>custom.background_color</code></td><td>Color</td><td>Product: Background color, Gradient start, Base color</td></tr><tr><td><q>Background color end</q></td><td><code>custom.background_color_end</code></td><td>Color</td><td>Product: Gradient end</td></tr><tr><td><q>Accent color</q></td><td><code>custom.accent_color</code></td><td>Color</td><td>Product: Halo color</td></tr><tr><td><q>Overlay color</q></td><td><code>custom.overlay_color</code></td><td>Color</td><td>Product: Overlay color</td></tr><tr><td><q>Curve color</q></td><td><code>custom.curve_color</code></td><td>Color</td><td>Product: Curve color</td></tr><tr><td><q>Background image</q></td><td><code>custom.background_image</code></td><td>File</td><td>Product: Background image</td></tr><tr><td><q>Background media</q></td><td><code>custom.background_media</code></td><td>File</td><td>Product: Vignette image</td></tr><tr><td><q>Badge label</q></td><td><code>custom.badge_label</code></td><td>Single line text</td><td>Product: Badge text; Badge block: Text; Spinning badge: Text</td></tr><tr><td><q>Badge background</q></td><td><code>custom.badge_background</code></td><td>Color</td><td>Badge block: Badge background</td></tr><tr><td><q>Badge text color</q></td><td><code>custom.badge_text_color</code></td><td>Color</td><td>Badge block: Badge text color</td></tr><tr><td><q>Tagline</q></td><td><code>custom.tagline</code></td><td>Single line text</td><td>Text block: Text. The mega menu Products block shows it under each product when Show product tagline is on in the Header.</td></tr><tr><td><q>Buy button label</q></td><td><code>custom.buy_button_label</code></td><td>Single line text</td><td>Buy buttons: Add to cart label</td></tr><tr><td><q>Specs label</q></td><td><code>custom.specs_label</code></td><td>Single line text</td><td>Popup: Trigger label</td></tr><tr><td><q>Specifications</q></td><td><code>custom.specifications</code></td><td>Rich text</td><td>Popup: Content</td></tr><tr><td><q>Row heading</q></td><td><code>custom.row_heading</code></td><td>Single line text</td><td>Collapsible row: Heading</td></tr><tr><td><q>Ingredients</q></td><td><code>custom.ingredients</code></td><td>Rich text</td><td>Collapsible row: Content</td></tr><tr><td><q>Claim title</q></td><td><code>custom.claim_title</code></td><td>Single line text</td><td>Icon item: Heading</td></tr><tr><td><q>Claim body</q></td><td><code>custom.claim_body</code></td><td>Single line text</td><td>Icon item: Text</td></tr><tr><td><q>Claim icon</q></td><td><code>custom.claim_icon</code></td><td>File</td><td>Icon item: Icon image</td></tr><tr><td><q>Product image</q></td><td><code>custom.product_image</code></td><td>File</td><td>Image block: Image</td></tr><tr><td><q>Image caption</q></td><td><code>custom.image_caption</code></td><td>Single line text</td><td>Image block: Caption</td></tr><tr><td><q>Spec label</q></td><td><code>custom.spec_label</code></td><td>Single line text</td><td>Specification: Label</td></tr><tr><td><q>Net weight</q></td><td><code>custom.net_weight</code></td><td>Single line text</td><td>Specification: Value</td></tr></tbody></table></div>
+<tbody><tr><td><q>Background color</q></td><td><code>custom.background_color</code></td><td>Color</td><td>Product: Background color, Gradient start, Base color</td></tr><tr><td><q>Background color end</q></td><td><code>custom.background_color_end</code></td><td>Color</td><td>Product: Gradient end</td></tr><tr><td><q>Accent color</q></td><td><code>custom.accent_color</code></td><td>Color</td><td>Product: Halo color</td></tr><tr><td><q>Overlay color</q></td><td><code>custom.overlay_color</code></td><td>Color</td><td>Product: Overlay color</td></tr><tr><td><q>Curve color</q></td><td><code>custom.curve_color</code></td><td>Color</td><td>Product: Curve color</td></tr><tr><td><q>Background image</q></td><td><code>custom.background_image</code></td><td>File</td><td>Product: Background image</td></tr><tr><td><q>Background media</q></td><td><code>custom.background_media</code></td><td>File</td><td>Product: Vignette image</td></tr><tr><td><q>Buy button label</q></td><td><code>custom.buy_button_label</code></td><td>Single line text</td><td>Buy buttons: Add to cart label</td></tr><tr><td><q>Specs label</q></td><td><code>custom.specs_label</code></td><td>Single line text</td><td>Popup: Trigger label</td></tr><tr><td><q>Specifications</q></td><td><code>custom.specifications</code></td><td>Rich text</td><td>Popup: Content</td></tr><tr><td><q>Row heading</q></td><td><code>custom.row_heading</code></td><td>Single line text</td><td>Collapsible row: Heading</td></tr><tr><td><q>Ingredients</q></td><td><code>custom.ingredients</code></td><td>Rich text</td><td>Collapsible row: Content</td></tr><tr><td><q>Claim title</q></td><td><code>custom.claim_title</code></td><td>Single line text</td><td>Icon item: Heading</td></tr><tr><td><q>Claim body</q></td><td><code>custom.claim_body</code></td><td>Single line text</td><td>Icon item: Text</td></tr><tr><td><q>Claim icon</q></td><td><code>custom.claim_icon</code></td><td>File</td><td>Icon item: Icon image</td></tr><tr><td><q>Product image</q></td><td><code>custom.product_image</code></td><td>File</td><td>Image block: Image</td></tr><tr><td><q>Image caption</q></td><td><code>custom.image_caption</code></td><td>Single line text</td><td>Image block: Caption</td></tr><tr><td><q>Spec label</q></td><td><code>custom.spec_label</code></td><td>Single line text</td><td>Specification: Label</td></tr><tr><td><q>Net weight</q></td><td><code>custom.net_weight</code></td><td>Single line text</td><td>Specification: Value</td></tr></tbody></table></div>
 
 <h2 id="typed-keys">Metafields you type by key</h2>
 <p>A few settings are plain text fields where you type the <code>namespace.key</code> yourself instead of using the
@@ -85,7 +118,6 @@ dynamic source icon.</p>
 <thead><tr><th scope="col">Where</th><th scope="col">What to type</th><th scope="col">Metafield type</th></tr></thead>
 <tbody>
 <tr><td>Product section, Packshot captions: <strong>Caption source</strong> set to Product metafield (list), then <strong>Metafield</strong></td><td><code>custom.media_captions</code></td><td>List of single line text on products. Entry 1 captions media 1, and so on; media without an entry use their alt text.</td></tr>
-<tr><td><strong>Custom badge metafield</strong> on Collection, Search, Featured collection, Product recommendations, Recently viewed, Lookbook and the Badge block</td><td><code>custom.badge_label</code>, or any text metafield</td><td>Single line text on products. Shown as the Custom badge. See <a href="features.html#custom-badge">Product badges</a>.</td></tr>
 <tr><td>Theme settings, Quick view: <strong>Short description metafield</strong></td><td>For example <code>custom.short_description</code></td><td>Single line or multi-line text on products. Without it, quick view shows the first paragraph of the description.</td></tr>
 <tr><td>Compare products, Row block: <strong>Product metafield</strong></td><td>For example <code>specs.caffeine</code></td><td>Any type that fits the row's <strong>Value type</strong>. See <a href="#compare">below</a>.</td></tr>
 </tbody></table></div>
@@ -128,9 +160,10 @@ color that comes back empty falls through, in this order:</p>
   <li>otherwise the background of the section's color scheme.</li>
 </ol>
 <p>Never connect the fallback color itself to a metafield: it is the safety net. If one end of a gradient is empty, the
-other end fills the whole wash; if a halo color is empty, the halo is not drawn and the base color stays. Empty text,
-rich text and image metafields leave their block empty, and blocks that exist only to carry the value (rating, badges,
-popup, a claim line) hide themselves.</p>
+other end fills the whole wash; if a halo color is empty, the halo is not drawn and the base color stays. An empty
+text, rich text or image metafield shows nothing on the storefront: never an example text, never an empty box. The
+tagline, a popup, an accordion row, a claim line, a specification row, the rating and the badges hide themselves and
+leave no gap. In the theme editor a dimmed example stands in.</p>
 
 <h2 id="not-connectable">Settings that cannot be connected</h2>
 <p>Shopify only allows connections on colors, text, rich text, images, videos, links, pages, collections, products and

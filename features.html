@@ -63,23 +63,31 @@ itself: Off, Single-variant products, or All products (which opens an option pic
 
 <section class="entry" id="product-badges-entry">
 <h2 id="product-badges">Product badges</h2>
-<p>Four badges can appear on product cards and, through the Badge block, on the product page. Their position, shape and
-colors are set once in <a href="theme-settings.html#ts-product-badges">Theme settings, Product badges</a>.</p>
+<p>Four badges can appear on product cards, in quick view, in Compare products and on the product page. Every one of
+them states a fact of the product: nothing shows a text typed once for all products. Their position, shape and colors
+are set once in <a href="theme-settings.html#ts-product-badges">Theme settings, Product badges</a>.</p>
 <div class="table-wrap"><table class="plain">
 <thead><tr><th scope="col">Badge</th><th scope="col">Shown when</th><th scope="col">Options</th></tr></thead>
 <tbody>
-<tr><th scope="row">Sale</th><td>The variant shown on the card has a compare-at price above its price.</td><td><strong>Sale badge text</strong>: Sale, Percentage off or Amount saved.</td></tr>
-<tr><th scope="row">Sold out</th><td>The product can no longer be bought.</td><td>Colors.</td></tr>
-<tr><th scope="row">New</th><td>The product was created less than the number of days in <strong>Show New badge for</strong>.</td><td>0 days turns the badge off.</td></tr>
-<tr><th scope="row">Custom</th><td>The product has a value in the metafield you name.</td><td>Colors. The text is the metafield value.</td></tr>
+<tr><th scope="row">Sale</th><td>Automatically, when the variant shown has a compare-at price above its price. Never on a price without a compare-at price.</td><td><strong>Sale badge text</strong>: Sale, Percentage off or Amount saved.</td></tr>
+<tr><th scope="row">Sold out</th><td>Automatically, when the product can no longer be bought. It then replaces Sale and New.</td><td>Colors.</td></tr>
+<tr><th scope="row">New</th><td>Off by default. With <strong>New badge</strong> set to <strong>Product tag</strong>: the product carries the tag you name in <strong>Tag</strong> (<code>new</code> by default, upper and lower case ignored). Set to <strong>Created in the last X days</strong>: the product was created fewer days ago than <strong>Number of days (X)</strong>.</td><td>Colors. A tag is the safer choice: a store whose products were all imported recently would otherwise show New everywhere.</td></tr>
+<tr><th scope="row">Custom</th><td>The product has a value in its <code>custom.badge_label</code> metafield.</td><td>Colors. The text is the metafield value.</td></tr>
 </tbody></table></div>
 <h3 id="custom-badge">Set up the Custom badge</h3>
 <ol class="steps">
-  <li>In your admin, go to <strong>Settings, Custom data, Products</strong> and add a definition named <q>Badge label</q>, key <code>custom.badge_label</code>, type <strong>Single line text</strong>.</li>
-  <li>Fill it on the products that need a badge, for example <q>Limited edition</q> or <q>Vegan</q>.</li>
-  <li>In the theme editor, type <code>custom.badge_label</code> in <strong>Custom badge metafield</strong> on each section that shows product cards: Collection, Search, Featured collection, Product recommendations, Recently viewed and Lookbook.</li>
-  <li>On the product page, add a <strong>Badge</strong> block, set <strong>Badge type</strong> to <strong>Automatic (Sale, Sold out, New, Custom)</strong> and type the same key in its <strong>Custom badge metafield</strong>.</li>
+  <li>Create the <code>custom.badge_label</code> definition once, as described in <a href="metafields.html#badge-label">Metafields, Badge label</a>.</li>
+  <li>Fill it on the products that need a badge, for example <q>Limited edition</q> or <q>Vegan</q>. Leave it empty on the others.</li>
+  <li>That is all: the cards, quick view, Compare products and the product page read the metafield directly. There is no key to type and nothing to connect in the theme editor.</li>
 </ol>
+<h3 id="badges-product-page">Badges on the product page</h3>
+<ul>
+  <li><strong>Badges on media</strong>, in the Product section settings, shows the badges in the corner of the gallery: <strong>Off</strong> (the default) or <strong>Automatic</strong>, the same Sale, Sold out, New and Custom badges as the cards.</li>
+  <li>The <strong>Badge</strong> block, in the information column, draws the same badges in a row when its <strong>Badge type</strong> is <strong>Automatic (Sale, Sold out, New, Custom)</strong>, the default. Its other type, <strong>Image</strong>, places your own artwork in a corner of the product area.</li>
+  <li>The <strong>Spinning badge</strong> block turns the <code>custom.badge_label</code> text around a ring. A product without the metafield shows no ring.</li>
+</ul>
+<p>On the product page, Sale and Sold out follow the selected variant: choosing a variant without a compare-at price
+removes Sale, choosing a sold out one shows Sold out. When no badge applies, nothing is drawn and no space is left.</p>
 </section>
 
 <section class="entry" id="page-loader-entry">
@@ -152,7 +160,7 @@ Built in rows show the image, price, availability, vendor and rating. Your own r
   <li>Fill the values on each product.</li>
   <li>Add the section, pick the products, then add one <strong>Row</strong> block per fact: a <strong>Label</strong>, the <strong>Product metafield</strong> key, and a <strong>Value type</strong>: Text, Number with unit (with its <strong>Unit</strong>, such as mg) or Yes or no.</li>
 </ol>
-<p>Empty values show as n/a. <strong>Highlight differences</strong> marks the rows where products differ. On a phone the
+<p>Empty values show as n/a, and a row that no product has a value for is left out of the storefront. <strong>Highlight differences</strong> marks the rows where products differ. On a phone the
 label column stays in place while the product columns scroll.</p>
 </section>
 
@@ -208,10 +216,12 @@ Shopify Plus stores through Shopify's Combined Listings app. Balm supports them 
 
 <section class="entry" id="pre-order-entry">
 <h2 id="pre-order">Pre-order</h2>
-<p>A variant that keeps selling once its stock reaches 0 is a pre-order. In the product admin, track its quantity and
-check <strong>Continue selling when out of stock</strong>. At 0 stock, the add to cart button, the sticky add to cart bar
-and the quick add button then read <strong>Pre-order</strong>, or the <strong>Button label</strong> you set in
-<a href="theme-settings.html#ts-pre-order">Theme settings, Pre-order</a>. The Stock status block keeps its own text.</p>
+<p>Pre-order turns itself on: there is nothing to enable. A variant becomes a pre-order when its quantity is tracked,
+its stock is at 0 and <strong>Continue selling when out of stock</strong> is checked in the product admin. The add to
+cart button, the sticky add to cart bar and the quick add button then read <strong>Pre-order</strong>, or the
+<strong>Button label</strong> you set in <a href="theme-settings.html#ts-pre-order">Theme settings, Pre-order</a>. The
+variant can still be bought, so the accelerated checkout buttons (Buy it now) stay visible, unlike on a sold out variant.
+The Stock status block keeps its own text.</p>
 <p>The label does not change how checkout works: the order is paid at checkout like any other. To take a deposit or
 charge later, use a pre-order app that creates selling plans; its options then show in the Purchase options block.
 Tell buyers when the product will ship, for example in a Text block or a Collapsible row.</p>
