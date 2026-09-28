@@ -138,7 +138,8 @@ to its own color scheme together with the header, on scroll or when a menu or th
 ''', 'Two or three short messages that rotate: a free shipping threshold, a returns promise and a launch announcement that links to the new product.'),
 
     'header': ('''
-<p>The logo, the main menu, predictive search, the account and cart icons, and an optional Instagram link. The logo is
+<p>The logo, the main menu, predictive search, the account and cart icons, country and language selectors, and an
+optional Instagram link. The logo is
 an image, or a text wordmark set in the heading font. On phones the menu opens as a sheet under the header or as a
 full height drawer.</p>
 <p>The header can take three looks. <strong>Materialized surface</strong> is Solid or Glass. <strong>Transparent header
@@ -163,6 +164,27 @@ colors are the ones you choose.</p>
 </ol>
 <p>At the top of the page the logo, the menu and the icons are white over the image. On scroll the header materializes
 with your usual logo and colors, and the announcement bar returns to its own scheme at the same moment.</p>
+<h4 id="s-header-localization">Country and language selectors</h4>
+<p><strong>Country and language selectors</strong> adds them to the header: Both (the default), Country/region only,
+Language only, or Off. On desktop a globe sits just before the search, account and cart icons, at their size, stroke
+and colors, the transparent header colors included. <strong>Selector style</strong> shows the globe alone (Icon only) or
+followed by the current language and currency codes, such as EN · USD (Icon and code). A click opens a panel under the
+header, in the material of the mega menu: a Country/region list that gives each country's currency, with a search field
+once there are more than ten countries, and a Language list. The current country and language are checked. On phones
+and tablets the selectors sit at the bottom of the mobile menu, sheet or drawer, as a compact row of buttons that each
+open their own list. Choosing a country or a language reloads the same page with it.</p>
+<p>A selector shows only when there is a choice to make: the country selector needs at least two countries or regions,
+the language selector at least two languages. A store that sells in one country and one language shows neither,
+whatever the setting. The Localization block of the footer uses the same form, so both places always offer the same
+choices.</p>
+<ol class="steps">
+  <li>To sell in more countries, go to <strong>Settings &gt; Markets</strong> in your Shopify admin and add the countries
+  or regions to a market. Each country shows the currency of its market.</li>
+  <li>To offer more languages, go to <strong>Settings &gt; Languages</strong>, add a language, translate your store with
+  a translation app, then publish the language.</li>
+  <li>Check that each published language is active in the markets where you want to offer it: the selector only lists
+  the languages available to the visitor's market.</li>
+</ol>
 <p>Mega menus are built from blocks. Add a <strong>Mega menu</strong> block, type the exact title of a top level item
 of your main menu in <strong>Linked menu item</strong>, then fill the panel with Link column, Image, Products, Promo
 and Banner blocks. See <a href="#mega-menu-blocks">Mega menu blocks</a>.</p>

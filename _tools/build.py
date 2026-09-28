@@ -186,8 +186,13 @@ BG_IDS = {'bg_type', 'bg_fallback_color', 'bg_color', 'bg_gradient_from', 'bg_gr
           'bg_radial_position', 'bg_radial_size_d', 'bg_radial_size_m', 'bg_radial_spread'}
 
 
+# An info text may carry Markdown links to the merchant's admin ([text](/admin/...)), which
+# the theme editor renders as links. The docs have no admin to link to: the text is kept.
+ADMIN_LINK = re.compile(r'\[([^\]]+)\]\((/admin/[^)]*)\)')
+
+
 def setting_row(s, own, parent):
-    info = s.get('info') or ''
+    info = ADMIN_LINK.sub(r'\1', s.get('info') or '')
     cond = cond_text(s.get('visible_if'), own, parent)
     notes = e(info)
     if cond:
