@@ -72,7 +72,7 @@ are set once in <a href="theme-settings.html#ts-product-badges">Theme settings, 
 <tr><th scope="row">Sale</th><td>Automatically, when the variant shown has a compare-at price above its price. Never on a price without a compare-at price.</td><td><strong>Sale badge text</strong>: Sale, Percentage off or Amount saved.</td></tr>
 <tr><th scope="row">Sold out</th><td>Automatically, when the product can no longer be bought. It then replaces Sale and New.</td><td>Colors.</td></tr>
 <tr><th scope="row">New</th><td>Off by default. With <strong>New badge</strong> set to <strong>Product tag</strong>: the product carries the tag you name in <strong>Tag</strong> (<code>new</code> by default, upper and lower case ignored). Set to <strong>Created in the last X days</strong>: the product was created fewer days ago than <strong>Number of days (X)</strong>.</td><td>Colors. A tag is the safer choice: a store whose products were all imported recently would otherwise show New everywhere.</td></tr>
-<tr><th scope="row">Custom</th><td>The product has a value in its <code>custom.badge_label</code> metafield.</td><td>Colors. The text is the metafield value.</td></tr>
+<tr><th scope="row">Custom</th><td>The product has a value in its <code>custom.badge_label</code> metafield.</td><td>The text is the metafield value. Colors from Theme settings, or the product's own through the <code>custom.badge_color</code> and <code>custom.badge_text_color</code> metafields.</td></tr>
 </tbody></table></div>
 <h3 id="custom-badge">Set up the Custom badge</h3>
 <ol class="steps">
@@ -80,6 +80,19 @@ are set once in <a href="theme-settings.html#ts-product-badges">Theme settings, 
   <li>Fill it on the products that need a badge, for example <q>Limited edition</q> or <q>Vegan</q>. Leave it empty on the others.</li>
   <li>That is all: the cards, quick view, Compare products and the product page read the metafield directly. There is no key to type and nothing to connect in the theme editor.</li>
 </ol>
+<h3 id="custom-badge-colors">Give one product its own badge colors</h3>
+<p>The Custom badge wears the <strong>Custom background</strong> and <strong>Custom text</strong> colors of Theme
+settings. To color it differently on one product, for example green on a vegan product, create two optional product
+metafields of type <strong>Color</strong>: <code>custom.badge_color</code> for the background and
+<code>custom.badge_text_color</code> for the text (see <a href="metafields.html#badge-colors">Metafields, Badge
+colors</a>). They change the Custom badge of that product only, everywhere it shows. Sale, Sold out and New keep the
+colors of Theme settings.</p>
+<ul>
+  <li><strong>Both filled</strong>: the badge takes both colors as they are.</li>
+  <li><strong>Background only</strong>: the text is picked for you. It takes the text color or the background color of Scheme 1, your main color scheme, whichever contrasts more with the badge. If even that one stays below a contrast of 4.5:1, which happens on mid tones, the text turns pure black or pure white, one of which always reaches it.</li>
+  <li><strong>Text only</strong>: the text color sits on the Custom background of Theme settings. Check that the two contrast enough.</li>
+  <li><strong>Neither</strong>: the colors of Theme settings, as on every other product.</li>
+</ul>
 <h3 id="badges-product-page">Badges on the product page</h3>
 <ul>
   <li><strong>Badges on media</strong>, in the Product section settings, shows the badges in the corner of the gallery: <strong>Off</strong> (the default) or <strong>Automatic</strong>, the same Sale, Sold out, New and Custom badges as the cards.</li>
@@ -111,6 +124,9 @@ the <strong>Minimum display time</strong> and never after the <strong>Maximum di
 open a private window, or add <code>?preview_loader=1</code> to a page address while the preview is on. Visitors who ask
 for reduced motion see no animation, no transition on the bar and no gleam, and without JavaScript the loader never
 shows.</p>
+<p>The page loader is the theme's only loader. The hero has no loading indicator of its own: while its video loads, it
+shows its cover image, sharp or blurred, as set by <strong>While the video loads</strong> in the
+<a href="sections.html#s-hero">Hero</a> section.</p>
 </section>
 
 <section class="entry" id="age-verifier-entry">

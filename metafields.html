@@ -55,6 +55,8 @@ each product, in the <strong>Metafields</strong> card of the product page in you
 <tr><td><q>Background color</q></td><td><code>custom.background_color</code></td><td>Color</td><td>The background of a Products showcase spotlight (the start of its gradient) and of Featured set, for the product picked in them. On the product page the same metafield is connected instead: see <a href="#per-product-background">Per product background colors</a>.</td><td><strong>Settings, Custom data, Products</strong>, <strong>Add definition</strong>: name <q>Background color</q>, type <strong>Color</strong>. <a href="#showcase">Step by step</a>.</td></tr>
 <tr><td><q>Background color end</q></td><td><code>custom.background_color_end</code></td><td>Color</td><td>The end of a Products showcase spotlight's background gradient. Without it, the spotlight is one color. Featured set paints one color and does not read it.</td><td><strong>Settings, Custom data, Products</strong>, <strong>Add definition</strong>: name <q>Background color end</q>, type <strong>Color</strong>. <a href="#showcase">Step by step</a>.</td></tr>
 <tr><td><q>Badge label</q></td><td><code>custom.badge_label</code></td><td>Single line text</td><td>The Custom badge: on product cards, in quick view, in Compare products, and on the product page, on the gallery (<strong>Badges on media</strong> set to Automatic) and in the Badge block (Automatic). Also the text of the Spinning badge block.</td><td><strong>Settings, Custom data, Products</strong>, <strong>Add definition</strong>: name <q>Badge label</q>, type <strong>Single line text</strong>, one value. <a href="#badge-label">Step by step</a>.</td></tr>
+<tr><td><q>Badge color</q></td><td><code>custom.badge_color</code></td><td>Color</td><td>The background of that product's Custom badge, everywhere the badge shows (cards, quick view, Compare products, gallery, Badge block). Empty: the <strong>Custom background</strong> of Theme settings. Filled without a badge text color, the text turns dark or light by itself, at a contrast of at least 4.5:1. Optional.</td><td><strong>Settings, Custom data, Products</strong>, <strong>Add definition</strong>: name <q>Badge color</q>, type <strong>Color</strong>. <a href="#badge-colors">Step by step</a>.</td></tr>
+<tr><td><q>Badge text color</q></td><td><code>custom.badge_text_color</code></td><td>Color</td><td>The text of that product's Custom badge, in the same places. Empty: the <strong>Custom text</strong> of Theme settings, or the automatic text when <code>custom.badge_color</code> is filled. Optional.</td><td><strong>Settings, Custom data, Products</strong>, <strong>Add definition</strong>: name <q>Badge text color</q>, type <strong>Color</strong>. <a href="#badge-colors">Step by step</a>.</td></tr>
 <tr><td><em>Shopify standard</em></td><td><code>reviews.rating</code>, <code>reviews.rating_count</code></td><td>Rating, Integer</td><td>The Rating block, the ratings on cards, in quick view and in Compare products.</td><td>Nothing to create: a review app creates and fills them. See <a href="#reviews">Review metafields</a>.</td></tr>
 </tbody></table></div>
 <p>Compare products reads no fixed key: each of its rows reads the metafield you choose. See
@@ -70,7 +72,21 @@ each product, in the <strong>Metafields</strong> card of the product page in you
 </ol>
 <p>The badge now shows wherever that product appears as a card, in quick view and in Compare products. On the product
 page it shows when <strong>Badges on media</strong> is on Automatic or a Badge block is in the column. Its colors are in
-<a href="theme-settings.html#ts-product-badges">Theme settings, Product badges</a>. Clear the value and the badge goes.</p>
+<a href="theme-settings.html#ts-product-badges">Theme settings, Product badges</a>, unless the product has its own
+(below). Clear the value and the badge goes.</p>
+
+<h3 id="badge-colors">Badge colors, step by step</h3>
+<p>Optional: only for products whose Custom badge should not wear the colors of Theme settings.</p>
+<ol class="steps">
+  <li>In <strong>Settings, Custom data, Products</strong>, choose <strong>Add definition</strong>. Name: <q>Badge color</q>, namespace and key <code>custom.badge_color</code>, type <strong>Color</strong>. Save.</li>
+  <li>Choose <strong>Add definition</strong> again. Name: <q>Badge text color</q>, namespace and key <code>custom.badge_text_color</code>, type <strong>Color</strong>. Save.</li>
+  <li>Open a product that has a <strong>Badge label</strong>, and in its <strong>Metafields</strong> card pick a <strong>Badge color</strong>, for example a deep green. Pick a <strong>Badge text color</strong> too, or leave it empty.</li>
+</ol>
+<p>With only the badge color, the text is picked for you: the text color or the background color of Scheme 1,
+whichever contrasts more with the badge, or pure black or white when neither reaches 4.5:1. With only the text color,
+the text sits on the Custom background of Theme settings. Create both as <strong>Color</strong>: a value that is not a
+color, such as a word typed in a text metafield, is ignored. The two colors apply to the Custom badge only, never to
+Sale, Sold out or New, and not to the Spinning badge, which keeps the colors set in its block.</p>
 
 <h3 id="tagline">Tagline, step by step</h3>
 <ol class="steps">
@@ -193,7 +209,8 @@ color that comes back empty falls through, in this order:</p>
   <li>otherwise the background of the section's color scheme.</li>
 </ol>
 <p>In a Products showcase spotlight and in Featured set, the order is the override field, then the product's
-metafield, then the background of the section's color scheme.</p>
+metafield, then the background of the section's color scheme. For the Custom badge, an empty
+<code>custom.badge_color</code> or <code>custom.badge_text_color</code> leaves the Custom colors of Theme settings.</p>
 <p>Never connect the fallback color itself to a metafield: it is the safety net. If one end of a gradient is empty, the
 other end fills the whole wash; if a halo color is empty, the halo is not drawn and the base color stays. An empty
 text, rich text or image metafield shows nothing on the storefront: never an example text, never an empty box. The

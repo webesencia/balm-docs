@@ -56,14 +56,16 @@ the editor to preview both.</p>
 
 <h2 id="first-setup">First setup, step by step</h2>
 <ol class="steps">
-  <li><strong>Logo and menu.</strong> Open the <a href="sections.html#s-header">Header</a> section. Set <strong>Logo type</strong> and upload your <strong>Logo image</strong>, then pick your main menu under <strong>Menu</strong>. Menus themselves are edited in your admin, under Content, Menus (Online Store, Navigation on older admins).</li>
+  <li><strong>Logo and menu.</strong> Open the <a href="sections.html#s-header">Header</a> section. Set <strong>Logo type</strong> and upload your <strong>Logo image</strong>, then pick your main menu under <strong>Menu</strong>. Menus themselves are edited in your admin, under Content, Menus (Online Store, Navigation on older admins). Over a dark hero image, a transparent header with a white logo and white text reads best: see the <a href="sections.html#s-header-transparent-colors">white header example</a>.</li>
+  <li><strong>Countries and languages.</strong> The header shows a globe with the country and language selectors as soon as there is a choice to make: two countries or regions in <strong>Settings, Markets</strong>, or two published languages in <strong>Settings, Languages</strong>. Until then it shows nothing. <strong>Country and language selectors</strong> in the Header picks which ones appear (Both by default). See <a href="sections.html#s-header-localization">Country and language selectors</a>.</li>
   <li><strong>Colors.</strong> In <a href="theme-settings.html#ts-colors">Theme settings, Colors</a>, adjust the two color schemes of the Balm preset to your brand. Every section picks one of them.</li>
   <li><strong>Fonts and corners.</strong> Set the <strong>Heading font</strong> and <strong>Body font</strong> in <a href="theme-settings.html#ts-typography">Typography</a>, and the corner radii in <a href="theme-settings.html#ts-corner-style">Corner style</a>.</li>
-  <li><strong>Home page.</strong> The home page starts with a Hero, a Marquee, a Products showcase, Socials, Image with text, Rich text and the Newsletter popup. Replace their images and texts, remove what you do not need, and add sections with <strong>Add section</strong>.</li>
+  <li><strong>Home page.</strong> The home page starts with a Hero, a Marquee, a Products showcase, Socials, Image with text, Rich text and the Newsletter popup. Replace their images and texts, remove what you do not need, and add sections with <strong>Add section</strong>. In the Products showcase, pick one product per <strong>Spotlight</strong>: its name, link, image, tagline and colors follow on their own (see <a href="metafields.html#showcase">Metafields</a>).</li>
   <li><strong>Product page.</strong> Open a product in the editor and review the block stack. See <a href="product-page.html">Product page blocks</a>, and <a href="metafields.html">Metafields</a> if each product should carry its own color or texts.</li>
+  <li><strong>Badges.</strong> Sale and Sold out show on their own, from the prices and the stock. In <a href="theme-settings.html#ts-product-badges">Theme settings, Product badges</a>, turn on New if you want it and set the badge colors. For a badge of your own words, such as <q>Limited edition</q>, fill the <code>custom.badge_label</code> metafield: see <a href="features.html#product-badges">Product badges</a>.</li>
   <li><strong>Collections and search.</strong> Install Shopify's free Search &amp; Discovery app to choose the filters shown on collection and search pages, then set their layout in the <a href="sections.html#s-main-collection">Collection</a> section.</li>
   <li><strong>Cart.</strong> Open the <a href="sections.html#s-cart-drawer">Cart drawer</a> for the reward progress bar, suggestions and the order note. Turn on <a href="features.html#gift-wrapping">gift wrapping</a> if you offer it.</li>
-  <li><strong>Footer.</strong> Add your menus, newsletter, social links and, if you sell in several countries, the Localization block.</li>
+  <li><strong>Footer.</strong> Add your menus, newsletter and social links. The Localization block repeats the country and language selectors in the footer, with the same choices as the header.</li>
   <li><strong>Favicon and sharing.</strong> Upload a favicon and a fallback share image in Theme settings.</li>
   <li><strong>Pages.</strong> Create your About, Contact, FAQ and Where to buy pages in Online Store, Pages, and assign them the matching template under <strong>Theme template</strong>: <code>page.about</code>, <code>page.contact</code>, <code>page.faq</code>, <code>page.find-us</code>. The <code>page.products</code> template presents your range with a Featured set and a Products showcase.</li>
   <li><strong>Check and publish.</strong> Preview every page type on desktop and on a phone, place a test order, then publish.</li>
@@ -125,7 +127,7 @@ are set once in <a href="theme-settings.html#ts-product-badges">Theme settings, 
 <tr><th scope="row">Sale</th><td>Automatically, when the variant shown has a compare-at price above its price. Never on a price without a compare-at price.</td><td><strong>Sale badge text</strong>: Sale, Percentage off or Amount saved.</td></tr>
 <tr><th scope="row">Sold out</th><td>Automatically, when the product can no longer be bought. It then replaces Sale and New.</td><td>Colors.</td></tr>
 <tr><th scope="row">New</th><td>Off by default. With <strong>New badge</strong> set to <strong>Product tag</strong>: the product carries the tag you name in <strong>Tag</strong> (<code>new</code> by default, upper and lower case ignored). Set to <strong>Created in the last X days</strong>: the product was created fewer days ago than <strong>Number of days (X)</strong>.</td><td>Colors. A tag is the safer choice: a store whose products were all imported recently would otherwise show New everywhere.</td></tr>
-<tr><th scope="row">Custom</th><td>The product has a value in its <code>custom.badge_label</code> metafield.</td><td>Colors. The text is the metafield value.</td></tr>
+<tr><th scope="row">Custom</th><td>The product has a value in its <code>custom.badge_label</code> metafield.</td><td>The text is the metafield value. Colors from Theme settings, or the product's own through the <code>custom.badge_color</code> and <code>custom.badge_text_color</code> metafields.</td></tr>
 </tbody></table></div>
 <h3 id="custom-badge">Set up the Custom badge</h3>
 <ol class="steps">
@@ -133,6 +135,19 @@ are set once in <a href="theme-settings.html#ts-product-badges">Theme settings, 
   <li>Fill it on the products that need a badge, for example <q>Limited edition</q> or <q>Vegan</q>. Leave it empty on the others.</li>
   <li>That is all: the cards, quick view, Compare products and the product page read the metafield directly. There is no key to type and nothing to connect in the theme editor.</li>
 </ol>
+<h3 id="custom-badge-colors">Give one product its own badge colors</h3>
+<p>The Custom badge wears the <strong>Custom background</strong> and <strong>Custom text</strong> colors of Theme
+settings. To color it differently on one product, for example green on a vegan product, create two optional product
+metafields of type <strong>Color</strong>: <code>custom.badge_color</code> for the background and
+<code>custom.badge_text_color</code> for the text (see <a href="metafields.html#badge-colors">Metafields, Badge
+colors</a>). They change the Custom badge of that product only, everywhere it shows. Sale, Sold out and New keep the
+colors of Theme settings.</p>
+<ul>
+  <li><strong>Both filled</strong>: the badge takes both colors as they are.</li>
+  <li><strong>Background only</strong>: the text is picked for you. It takes the text color or the background color of Scheme 1, your main color scheme, whichever contrasts more with the badge. If even that one stays below a contrast of 4.5:1, which happens on mid tones, the text turns pure black or pure white, one of which always reaches it.</li>
+  <li><strong>Text only</strong>: the text color sits on the Custom background of Theme settings. Check that the two contrast enough.</li>
+  <li><strong>Neither</strong>: the colors of Theme settings, as on every other product.</li>
+</ul>
 <h3 id="badges-product-page">Badges on the product page</h3>
 <ul>
   <li><strong>Badges on media</strong>, in the Product section settings, shows the badges in the corner of the gallery: <strong>Off</strong> (the default) or <strong>Automatic</strong>, the same Sale, Sold out, New and Custom badges as the cards.</li>
@@ -164,6 +179,9 @@ the <strong>Minimum display time</strong> and never after the <strong>Maximum di
 open a private window, or add <code>?preview_loader=1</code> to a page address while the preview is on. Visitors who ask
 for reduced motion see no animation, no transition on the bar and no gleam, and without JavaScript the loader never
 shows.</p>
+<p>The page loader is the theme's only loader. The hero has no loading indicator of its own: while its video loads, it
+shows its cover image, sharp or blurred, as set by <strong>While the video loads</strong> in the
+<a href="sections.html#s-hero">Hero</a> section.</p>
 </section>
 
 <section class="entry" id="age-verifier-entry">
@@ -353,6 +371,8 @@ each product, in the <strong>Metafields</strong> card of the product page in you
 <tr><td><q>Background color</q></td><td><code>custom.background_color</code></td><td>Color</td><td>The background of a Products showcase spotlight (the start of its gradient) and of Featured set, for the product picked in them. On the product page the same metafield is connected instead: see <a href="#per-product-background">Per product background colors</a>.</td><td><strong>Settings, Custom data, Products</strong>, <strong>Add definition</strong>: name <q>Background color</q>, type <strong>Color</strong>. <a href="#showcase">Step by step</a>.</td></tr>
 <tr><td><q>Background color end</q></td><td><code>custom.background_color_end</code></td><td>Color</td><td>The end of a Products showcase spotlight's background gradient. Without it, the spotlight is one color. Featured set paints one color and does not read it.</td><td><strong>Settings, Custom data, Products</strong>, <strong>Add definition</strong>: name <q>Background color end</q>, type <strong>Color</strong>. <a href="#showcase">Step by step</a>.</td></tr>
 <tr><td><q>Badge label</q></td><td><code>custom.badge_label</code></td><td>Single line text</td><td>The Custom badge: on product cards, in quick view, in Compare products, and on the product page, on the gallery (<strong>Badges on media</strong> set to Automatic) and in the Badge block (Automatic). Also the text of the Spinning badge block.</td><td><strong>Settings, Custom data, Products</strong>, <strong>Add definition</strong>: name <q>Badge label</q>, type <strong>Single line text</strong>, one value. <a href="#badge-label">Step by step</a>.</td></tr>
+<tr><td><q>Badge color</q></td><td><code>custom.badge_color</code></td><td>Color</td><td>The background of that product's Custom badge, everywhere the badge shows (cards, quick view, Compare products, gallery, Badge block). Empty: the <strong>Custom background</strong> of Theme settings. Filled without a badge text color, the text turns dark or light by itself, at a contrast of at least 4.5:1. Optional.</td><td><strong>Settings, Custom data, Products</strong>, <strong>Add definition</strong>: name <q>Badge color</q>, type <strong>Color</strong>. <a href="#badge-colors">Step by step</a>.</td></tr>
+<tr><td><q>Badge text color</q></td><td><code>custom.badge_text_color</code></td><td>Color</td><td>The text of that product's Custom badge, in the same places. Empty: the <strong>Custom text</strong> of Theme settings, or the automatic text when <code>custom.badge_color</code> is filled. Optional.</td><td><strong>Settings, Custom data, Products</strong>, <strong>Add definition</strong>: name <q>Badge text color</q>, type <strong>Color</strong>. <a href="#badge-colors">Step by step</a>.</td></tr>
 <tr><td><em>Shopify standard</em></td><td><code>reviews.rating</code>, <code>reviews.rating_count</code></td><td>Rating, Integer</td><td>The Rating block, the ratings on cards, in quick view and in Compare products.</td><td>Nothing to create: a review app creates and fills them. See <a href="#reviews">Review metafields</a>.</td></tr>
 </tbody></table></div>
 <p>Compare products reads no fixed key: each of its rows reads the metafield you choose. See
@@ -368,7 +388,21 @@ each product, in the <strong>Metafields</strong> card of the product page in you
 </ol>
 <p>The badge now shows wherever that product appears as a card, in quick view and in Compare products. On the product
 page it shows when <strong>Badges on media</strong> is on Automatic or a Badge block is in the column. Its colors are in
-<a href="theme-settings.html#ts-product-badges">Theme settings, Product badges</a>. Clear the value and the badge goes.</p>
+<a href="theme-settings.html#ts-product-badges">Theme settings, Product badges</a>, unless the product has its own
+(below). Clear the value and the badge goes.</p>
+
+<h3 id="badge-colors">Badge colors, step by step</h3>
+<p>Optional: only for products whose Custom badge should not wear the colors of Theme settings.</p>
+<ol class="steps">
+  <li>In <strong>Settings, Custom data, Products</strong>, choose <strong>Add definition</strong>. Name: <q>Badge color</q>, namespace and key <code>custom.badge_color</code>, type <strong>Color</strong>. Save.</li>
+  <li>Choose <strong>Add definition</strong> again. Name: <q>Badge text color</q>, namespace and key <code>custom.badge_text_color</code>, type <strong>Color</strong>. Save.</li>
+  <li>Open a product that has a <strong>Badge label</strong>, and in its <strong>Metafields</strong> card pick a <strong>Badge color</strong>, for example a deep green. Pick a <strong>Badge text color</strong> too, or leave it empty.</li>
+</ol>
+<p>With only the badge color, the text is picked for you: the text color or the background color of Scheme 1,
+whichever contrasts more with the badge, or pure black or white when neither reaches 4.5:1. With only the text color,
+the text sits on the Custom background of Theme settings. Create both as <strong>Color</strong>: a value that is not a
+color, such as a word typed in a text metafield, is ignored. The two colors apply to the Custom badge only, never to
+Sale, Sold out or New, and not to the Spinning badge, which keeps the colors set in its block.</p>
 
 <h3 id="tagline">Tagline, step by step</h3>
 <ol class="steps">
@@ -491,7 +525,8 @@ color that comes back empty falls through, in this order:</p>
   <li>otherwise the background of the section's color scheme.</li>
 </ol>
 <p>In a Products showcase spotlight and in Featured set, the order is the override field, then the product's
-metafield, then the background of the section's color scheme.</p>
+metafield, then the background of the section's color scheme. For the Custom badge, an empty
+<code>custom.badge_color</code> or <code>custom.badge_text_color</code> leaves the Custom colors of Theme settings.</p>
 <p>Never connect the fallback color itself to a metafield: it is the safety net. If one end of a gradient is empty, the
 other end fills the whole wash; if a halo color is empty, the halo is not drawn and the base color stays. An empty
 text, rich text or image metafield shows nothing on the storefront: never an example text, never an empty box. The
@@ -554,12 +589,22 @@ keeps your theme editor settings and content. Preview it, then publish it. Chang
 carried over; see <a href="custom-code.html#updates-and-code">Custom code</a>.</p>'''),
     ('How do I make the header transparent over my hero?', '''
 <ol>
-  <li>In the Header section, check <strong>Transparent header over the first section</strong>, and pick a
-  <strong>Transparent header color scheme</strong> with light text if your hero is dark.</li>
   <li>Make sure the first section of the page is a Hero, Slideshow, Video, Products showcase or Brand story hero, with
   <strong>Allow transparent header</strong> checked.</li>
+  <li>In the Header section, check <strong>Transparent header over the first section</strong>.</li>
+  <li>If your hero is dark, upload a light version of your logo in <strong>Logo image (transparent header)</strong>,
+  check <strong>Use different colors while transparent</strong>, and pick a <strong>Transparent header color
+  scheme</strong> with light text.</li>
 </ol>
-<p>Upload a light version of your logo in <strong>Logo image (transparent header)</strong> if your normal logo is dark.</p>'''),
+<p>A floating announcement bar over the same image can follow those colors: check <strong>Use the transparent header
+colors on the announcement bar</strong> in the Announcement bar section. See the
+<a href="sections.html#s-header-transparent-colors">white header example</a>.</p>'''),
+    ('Why is there no country or language selector in my header?', '''
+<p>The selectors only show when there is a choice to make. The country selector needs at least two countries or
+regions in <strong>Settings, Markets</strong>; the language selector needs at least two published languages in
+<strong>Settings, Languages</strong>, active in the visitor's market. Then check that <strong>Country and language
+selectors</strong> in the Header section is not set to Off. See
+<a href="sections.html#s-header-localization">Country and language selectors</a>.</p>'''),
     ('Why are there no filters on my collection pages?', '''
 <p>Filters come from Shopify's free Search &amp; Discovery app. Install it, add the filters you want (availability,
 price, product type, color and so on), then check that <strong>Enable filters</strong> is on in the Collection and
@@ -595,6 +640,11 @@ Balm matches everything Shopify allows: height, corner radius, spacing and the l
 <strong>Reward threshold</strong>. The bar only displays progress: create the matching free shipping rate or automatic
 discount in your admin, and keep the two amounts the same, or buyers will be promised something checkout does not
 apply.</p>'''),
+    ('Why does the Buy it now button disappear on some variants?', '''
+<p>The accelerated checkout buttons (Buy it now, Shop Pay, PayPal and the other wallets) are hidden while the selected
+variant is sold out, since it cannot be bought, and come back when the shopper picks a variant in stock. A variant that
+sells as a pre-order can be bought, so it keeps them. See
+<a href="product-page.html#accelerated-checkout">The accelerated checkout buttons</a>.</p>'''),
     ('How do I offer pre-orders?', '''
 <p>Set the variant to continue selling when out of stock in the product admin. At 0 stock its buttons read Pre-order,
 or the label you set in Theme settings, Pre-order. To take a deposit or charge later, use a pre-order app. See

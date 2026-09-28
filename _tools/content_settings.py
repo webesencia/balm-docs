@@ -50,6 +50,11 @@ the product can no longer be bought. <strong>New</strong> is off by default: set
 <strong>Product tag</strong> and name the tag, or to <strong>Created in the last X days</strong> and set the number of
 days. <strong>Custom</strong> prints the product's <code>custom.badge_label</code> metafield, read directly. This group
 sets their position, shape and colors once for the whole store.</p>
+<p>A product can give its Custom badge its own colors through two optional Color metafields,
+<code>custom.badge_color</code> (background) and <code>custom.badge_text_color</code> (text). Left empty, the badge
+uses <strong>Custom background</strong> and <strong>Custom text</strong> from this group. With a background and no text
+color, the text turns dark or light by itself, at a contrast of at least 4.5:1. See
+<a href="features.html#custom-badge-colors">Give one product its own badge colors</a>.</p>
 <p>On the product page, turn on <strong>Badges on media</strong> in the Product section, or add a <strong>Badge</strong>
 block. See <a href="features.html#product-badges">Product badges</a> for the full walkthrough.</p>
 ''',
@@ -92,8 +97,16 @@ visitors who ask for reduced transparency always get the near opaque fill.</p>
 ''',
     'Loader': '''
 <p>The <strong>Page loader</strong>: an optional loading screen shown while pages open, with your logo, a progress bar
-(square or rounded ends, 1 to 6 px, with a None, Smooth or Shimmer animation) or a spinner, and an exit animation. It is the theme's only loader, and it covers everything on the page, the header
-and the announcement bar included. See <a href="features.html#page-loader">Page loader</a>.</p>
+or a spinner, and an exit animation. It is the theme's only loader, and it covers everything on the page, the header and the announcement bar included. See
+<a href="features.html#page-loader">Page loader</a>.</p>
+<p>The progress bar has three settings of its own, shown with the <strong>Logo and progress bar</strong> and
+<strong>Progress bar only</strong> layouts: <strong>Bar ends</strong> (Square, or Rounded, the default, which rounds
+the track and the fill), <strong>Bar thickness</strong> (1 to 6 px, 2 by default) and <strong>Bar animation</strong>
+(None, Smooth by default, or Shimmer).</p>
+<p>Preview versions of Balm had a second loader here: a loading indicator drawn on the hero while its video loaded,
+with seven settings (Style, Loader image, Animation, Size (desktop), Size (mobile), Color and Custom color). It has
+been removed with those settings. The hero now shows its cover image while its video loads, sharp or blurred, as set by
+<strong>While the video loads</strong> in the <a href="sections.html#s-hero">Hero</a> section.</p>
 ''',
     'Favicon': '''
 <p>The small icon shown in browser tabs and bookmarks. Upload a square image of at least 32 by 32 pixels; a PNG with a

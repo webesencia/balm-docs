@@ -180,9 +180,9 @@ the language selector at least two languages. A store that sells in one country 
 whatever the setting. The Localization block of the footer uses the same form, so both places always offer the same
 choices.</p>
 <ol class="steps">
-  <li>To sell in more countries, go to <strong>Settings &gt; Markets</strong> in your Shopify admin and add the countries
+  <li>To sell in more countries, go to <strong>Settings, Markets</strong> in your Shopify admin and add the countries
   or regions to a market. Each country shows the currency of its market.</li>
-  <li>To offer more languages, go to <strong>Settings &gt; Languages</strong>, add a language, translate your store with
+  <li>To offer more languages, go to <strong>Settings, Languages</strong>, add a language, translate your store with
   a translation app, then publish the language.</li>
   <li>Check that each published language is active in the markets where you want to offer it: the selector only lists
   the languages available to the visitor's market.</li>
@@ -205,9 +205,13 @@ ups are added to your Shopify customers, with the tag you choose.</p>
     'hero': ('''
 <p>A full screen image or Shopify hosted video with a title and a button. Desktop and mobile each get their own image
 and video, cropped on the focal point you set in the admin. Video playback covers autoplay per device, a sound button,
-what happens at the end (loop, stop, or show the cover again), the style and position of the controls, and whether the
-cover stays sharp or blurred while the video loads. The cover always paints first, the video fades in over it, and the
-controls appear with the video, never before it.</p>
+what happens at the end (loop, stop, or show the cover again), and the style and position of the controls. The cover
+always paints first, the video fades in over it, and the controls appear with the video, never before it.</p>
+<p><strong>While the video loads</strong> has two styles. <strong>Cover image, then fade</strong>, the default, shows
+the cover sharp until the video plays. <strong>Blurred cover, then fade</strong> keeps the cover blurred until then.
+The hero has no loader of its own: for a loading screen, turn on the <a href="features.html#page-loader">Page
+loader</a> in Theme settings, Loader. A hero set to a loader style in a preview version of Balm now shows Cover image,
+then fade.</p>
 <p>The text block is placed separately on desktop and mobile, with a fine vertical offset, over an optional darkening
 overlay. <strong>Height mode</strong> fits the screen, adapts to the content or takes a custom height.</p>
 ''', 'The first section of the home page: a short muted video of the product in use, a two line title, one Shop now button, and the header transparent over it.'),
@@ -223,8 +227,8 @@ Slides change on their own or on demand, with a slide or fade transition, arrows
 scroll pinned wipe reveals the next product as the visitor scrolls, progressively or with a snap and a pause; phones get
 the same animation with a layout of their own, or a simple vertical stack. When animations are off, or the visitor asks
 for reduced motion, spotlights stack. The animation library loads only when the section comes near the screen.</p>
-<p>Pick a <strong>Product</strong> and the spotlight fills itself: the product's title as the name, linked to its
-page, its <code>custom.tagline</code> metafield as the tagline, its <code>custom.background_color</code> and
+<p>One spotlight presents one product. Pick it in <strong>Product</strong> and the spotlight fills itself: the
+product's title as the name, linked to its page, its <code>custom.tagline</code> metafield as the tagline, its <code>custom.background_color</code> and
 <code>custom.background_color_end</code> metafields as the background gradient, and its main image.
 <strong>Show the price</strong> adds the price under the tagline. The button opens the product page; with
 <strong>Action</strong> set to Add to cart, a product with a single variant goes to the cart in one click and the cart
@@ -243,10 +247,12 @@ scheme and the image sizing across every spotlight, and can hide the header whil
 <p>One product, usually a bundle or a discovery set, presented as a full width banner: a heading, a tagline in two
 parts and an add to cart button. Pick the <strong>Product</strong> and the section fills itself: its title as the
 heading, its <code>custom.tagline</code> metafield as the tagline, its <code>custom.background_color</code> metafield as
-the background, and its image. Each field of the <strong>Override (optional)</strong> group replaces one of those
-values; a background that neither gives takes the color scheme's. Your own desktop and mobile background images
-replace the product image, darkened by an optional overlay. Until a product is picked, the section shows a placeholder
-in the editor and nothing on the storefront.</p>
+the background, and its image. The button adds that product to the cart. Each field of the <strong>Override
+(optional)</strong> group replaces one of those values: leave a field empty to use the product's value, and a
+background that neither gives takes the color scheme's. <strong>Tagline, second part</strong> has no product value: it
+shows only what you type. Your own desktop and mobile background images replace the product image, darkened by an
+optional overlay. Until a product is picked, the section shows a placeholder in the editor and nothing on the
+storefront. See <a href="metafields.html#showcase">Metafields</a>.</p>
 ''', 'Promoting a discovery set at the top of the Products page template (page.products), which opens with this section.'),
 
     'image-with-text': ('''
