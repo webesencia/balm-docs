@@ -156,8 +156,9 @@ ups are added to your Shopify customers, with the tag you choose.</p>
     'hero': ('''
 <p>A full screen image or Shopify hosted video with a title and a button. Desktop and mobile each get their own image
 and video, cropped on the focal point you set in the admin. Video playback covers autoplay per device, a sound button,
-what happens at the end (loop, stop, or show the cover again), the style and position of the controls, and what shows
-while the video loads, using the loader from Theme settings.</p>
+what happens at the end (loop, stop, or show the cover again), the style and position of the controls, and whether the
+cover stays sharp or blurred while the video loads. The cover always paints first, the video fades in over it, and the
+controls appear with the video, never before it.</p>
 <p>The text block is placed separately on desktop and mobile, with a fine vertical offset, over an optional darkening
 overlay. <strong>Height mode</strong> fits the screen, adapts to the content or takes a custom height.</p>
 ''', 'The first section of the home page: a short muted video of the product in use, a two line title, one Shop now button, and the header transparent over it.'),

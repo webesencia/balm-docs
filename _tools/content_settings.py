@@ -91,10 +91,9 @@ opaque swaps it for an almost solid fill that is lighter to scroll on older phon
 visitors who ask for reduced transparency always get the near opaque fill.</p>
 ''',
     'Loader': '''
-<p>Two things live here. The first is the small loading indicator used across the store while something loads, such
-as the hero video: pick its <strong>Style</strong>, size and color. The second, under <strong>Page loader</strong>, is
-an optional loading screen shown while pages open, with your logo, a progress bar or a spinner, and an exit animation.
-See <a href="features.html#page-loader">Page loader</a>.</p>
+<p>The <strong>Page loader</strong>: an optional loading screen shown while pages open, with your logo, a progress bar
+or a spinner, and an exit animation. It is the theme's only loader, and it covers everything on the page, the header
+and the announcement bar included. See <a href="features.html#page-loader">Page loader</a>.</p>
 ''',
     'Favicon': '''
 <p>The small icon shown in browser tabs and bookmarks. Upload a square image of at least 32 by 32 pixels; a PNG with a
