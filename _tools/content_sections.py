@@ -47,7 +47,9 @@ content.</p>
 <p>Hero, Slideshow, Video, Products showcase and Brand story hero carry an <strong>Allow transparent header</strong>
 setting. When the section is first on the page and the Header section has <strong>Transparent header over the first
 section</strong> turned on, the header floats over it, transparent, then materializes on scroll. The extra top padding
-settings keep your content clear of the header only while it is transparent.</p>
+settings keep your content clear of the header only while it is transparent. The colors the header wears while
+transparent are set in the Header section, see <a href="#s-header-transparent-colors">white logo and white text over a
+dark image</a>.</p>
 </section>
 
 <section class="entry" id="inner-panel-entry">
@@ -128,6 +130,11 @@ button</strong> on, visitors can dismiss the bar for the rest of their visit.</p
 <p><strong>Scroll behavior</strong> keeps the bar pinned, lets it scroll away with the page, or hides it on the way
 down and brings it back on the way up. <strong>Bar layout</strong> set to Floating turns it into a card that matches the
 floating header, and <strong>Bar style</strong> set to Glass uses the shared glass recipe.</p>
+<p>A floating bar sits over the first section when the header is transparent there. <strong>Use the transparent header
+colors on the announcement bar</strong>, off by default and offered with the Floating layout only, then gives it the
+header's transparent colors at the top of the page: its text and controls, and the background of a Solid bar. It returns
+to its own color scheme together with the header, on scroll or when a menu or the search opens. See the
+<a href="#s-header-transparent-colors">white header example</a>.</p>
 ''', 'Two or three short messages that rotate: a free shipping threshold, a returns promise and a launch announcement that links to the new product.'),
 
     'header': ('''
@@ -138,6 +145,24 @@ full height drawer.</p>
 over the first section</strong> lets it float, transparent, over a first section that allows it, then materialize on
 scroll; <strong>Logo image (transparent header)</strong> swaps in a light logo while it is transparent.
 <strong>Floating header (detached)</strong> pulls it away from the screen edges as a rounded card.</p>
+<p>While it is transparent, the header keeps the text color of its own color scheme. To give it other colors over the
+first section, tick <strong>Use different colors while transparent</strong>, right under the transparent logo, then pick
+a <strong>Transparent header color scheme</strong>. Its text color goes to the menu links and their arrows, underlines
+and hover states, the search, account and cart icons, the cart count, the mobile menu button, the text logo and the
+keyboard focus ring. The colors go back to the header color scheme exactly when the logo does: on scroll, or when a mega
+menu, the search or the mobile menu opens, in the same crossfade, or at once for visitors who ask for reduced motion.
+Open panels always keep the normal colors. Nothing switches on its own depending on the image under the header: the
+colors are the ones you choose.</p>
+<h4 id="s-header-transparent-colors">Example: white logo and white text over a dark image</h4>
+<ol class="steps">
+  <li>In the first section of the page, for example a Hero with a dark image, turn on <strong>Allow transparent header</strong>.</li>
+  <li>In the Header section, turn on <strong>Transparent header over the first section</strong>.</li>
+  <li>Upload the white version of your logo in <strong>Logo image (transparent header)</strong>. Your usual logo stays in <strong>Logo image</strong>.</li>
+  <li>Tick <strong>Use different colors while transparent</strong> and set <strong>Transparent header color scheme</strong> to a scheme with white text, such as Scheme 2 of the Balm preset (white on near black).</li>
+  <li>If a floating announcement bar sits over the same image, tick <strong>Use the transparent header colors on the announcement bar</strong> in the Announcement bar section, so its text turns white with the header.</li>
+</ol>
+<p>At the top of the page the logo, the menu and the icons are white over the image. On scroll the header materializes
+with your usual logo and colors, and the announcement bar returns to its own scheme at the same moment.</p>
 <p>Mega menus are built from blocks. Add a <strong>Mega menu</strong> block, type the exact title of a top level item
 of your main menu in <strong>Linked menu item</strong>, then fill the panel with Link column, Image, Products, Promo
 and Banner blocks. See <a href="#mega-menu-blocks">Mega menu blocks</a>.</p>
