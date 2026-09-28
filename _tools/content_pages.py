@@ -151,7 +151,10 @@ Turn it on in <a href="theme-settings.html#ts-loader">Theme settings, Loader</a>
   <li><strong>First visit only</strong> (recommended) shows it once per visit.</li>
   <li><strong>Every page</strong> shows it on each page view. It can lower speed scores, because the page stays covered while it loads.</li>
 </ul>
-<p><strong>Layout</strong> combines the logo with a progress bar or a spinner, or shows the bar alone. The logo is the
+<p><strong>Layout</strong> combines the logo with a progress bar or a spinner, or shows the bar alone. With a progress
+bar, <strong>Bar ends</strong> (Square or Rounded, which rounds the track and the fill), <strong>Bar thickness</strong>
+(1 to 6 px) and <strong>Bar animation</strong> set its look: None moves the fill in steps, Smooth fills it continuously,
+Shimmer adds a gleam in the background color that crosses the filled part in a loop. The logo is the
 <strong>Logo image</strong> you pick here, or else the header logo, then the brand logo from your Shopify settings, then
 the store name. <strong>Background</strong> is Solid or Glass, on the <strong>Color scheme</strong> you choose. The
 <strong>Exit animation</strong> (Fade, Slide up, Split, Zoom, Circle reveal) plays when the page is ready, never before
@@ -159,7 +162,8 @@ the <strong>Minimum display time</strong> and never after the <strong>Maximum di
 <strong>Page transitions</strong> plays the exit in reverse when a visitor follows a link to another page of the store.</p>
 <p>To adjust the look, check <strong>Preview in the theme editor</strong>. To test First visit only on the live store,
 open a private window, or add <code>?preview_loader=1</code> to a page address while the preview is on. Visitors who ask
-for reduced motion see no animation, and without JavaScript the loader never shows.</p>
+for reduced motion see no animation, no transition on the bar and no gleam, and without JavaScript the loader never
+shows.</p>
 </section>
 
 <section class="entry" id="age-verifier-entry">

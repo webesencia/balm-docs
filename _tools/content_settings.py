@@ -92,7 +92,7 @@ visitors who ask for reduced transparency always get the near opaque fill.</p>
 ''',
     'Loader': '''
 <p>The <strong>Page loader</strong>: an optional loading screen shown while pages open, with your logo, a progress bar
-or a spinner, and an exit animation. It is the theme's only loader, and it covers everything on the page, the header
+(square or rounded ends, 1 to 6 px, with a None, Smooth or Shimmer animation) or a spinner, and an exit animation. It is the theme's only loader, and it covers everything on the page, the header
 and the announcement bar included. See <a href="features.html#page-loader">Page loader</a>.</p>
 ''',
     'Favicon': '''
