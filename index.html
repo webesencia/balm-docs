@@ -63,7 +63,7 @@ in each version is listed in the <a href="changelog.html">Changelog</a>.</p>
 comes with one preset, also named Balm, and your store starts from it.</p>
 <ul>
   <li><strong>Look.</strong> Clean and neutral: a white scheme and a near black scheme, sentence case headings and buttons, a white frosted glass. A calm base that lets product photography lead.</li>
-  <li><strong>Fonts.</strong> Inter 600 for headings, Inter for body text.</li>
+  <li><strong>Fonts.</strong> Outfit 600 for headings, Inter for body text, on one fluid type scale.</li>
   <li><strong>Corners.</strong> Softly rounded: buttons 12 px, cards 20 px.</li>
 </ul>
 <p>Every value of the preset is a starting point. Change the colors, fonts, corners, glass and typography in
@@ -77,21 +77,24 @@ comes with one preset, also named Balm, and your store starts from it.</p>
   <li><strong>Theme settings</strong> (the gear icon): colors, fonts and storewide features. See <a href="theme-settings.html">Theme settings</a>.</li>
 </ul>
 <p>Most sizes and spacings have two settings, one ending in <strong>(desktop)</strong> and one ending in
-<strong>(mobile)</strong>, so you can tune phones without touching large screens. Use the device switch at the top of
-the editor to preview both.</p>
+<strong>(mobile)</strong>, so you can tune phones without touching large screens. Spacings switch from one value to the
+other at 768 px wide. Text sizes are fluid: the mobile value applies on a phone 390 px wide, the desktop value from
+1440 px, and the size moves smoothly in between (see <a href="theme-settings.html#ts-typography">Typography</a>). Use
+the device switch at the top of the editor to preview both.</p>
 
 <h2 id="first-setup">First setup, step by step</h2>
 <ol class="steps">
   <li><strong>Logo and menu.</strong> Open the <a href="sections.html#s-header">Header</a> section. Set <strong>Logo type</strong> and upload your <strong>Logo image</strong>, then pick your main menu under <strong>Menu</strong>. Menus themselves are edited in your admin, under Content, Menus (Online Store, Navigation on older admins). Over a dark hero image, a transparent header with a white logo and white text reads best: see the <a href="sections.html#s-header-transparent-colors">white header example</a>.</li>
   <li><strong>Countries and languages.</strong> The header shows a globe with the country and language selectors as soon as there is a choice to make: two countries or regions in <strong>Settings, Markets</strong>, or two published languages in <strong>Settings, Languages</strong>. Until then it shows nothing. <strong>Country and language selectors</strong> in the Header picks which ones appear (Both by default). See <a href="sections.html#s-header-localization">Country and language selectors</a>.</li>
   <li><strong>Colors.</strong> In <a href="theme-settings.html#ts-colors">Theme settings, Colors</a>, adjust the two color schemes of the Balm preset to your brand. Every section picks one of them.</li>
-  <li><strong>Fonts and corners.</strong> Set the <strong>Heading font</strong> and <strong>Body font</strong> in <a href="theme-settings.html#ts-typography">Typography</a>, and the corner radii in <a href="theme-settings.html#ts-corner-style">Corner style</a>.</li>
+  <li><strong>Fonts, sizes and corners.</strong> Set the <strong>Heading font</strong> and <strong>Body font</strong> in <a href="theme-settings.html#ts-typography">Typography</a>. To make every heading or every text of the store larger or smaller at once, move <strong>Heading scale</strong> or <strong>Body scale</strong> there rather than each section's sizes. Set the corner radii in <a href="theme-settings.html#ts-corner-style">Corner style</a>, and the title and price sizes of the product cards in <a href="theme-settings.html#ts-product-cards">Product cards</a>.</li>
+  <li><strong>Page width.</strong> In <a href="theme-settings.html#ts-layout">Theme settings, Layout</a>, keep <strong>Page width</strong> on Standard (1400 px), or widen the product, collection and search pages to Wide (1600 px) or Full width with margins.</li>
   <li><strong>Home page.</strong> The home page starts with a Hero, a Marquee, a Products showcase, Socials, Image with text, Rich text and the Newsletter popup. Replace their images and texts, remove what you do not need, and add sections with <strong>Add section</strong>. In the Products showcase, pick one product per <strong>Spotlight</strong>: its name, link, image, tagline and colors follow on their own (see <a href="metafields.html#showcase">Metafields</a>).</li>
-  <li><strong>Product page.</strong> Open a product in the editor and review the block stack. See <a href="product-page.html">Product page blocks</a>, and <a href="metafields.html">Metafields</a> if each product should carry its own color or texts.</li>
+  <li><strong>Product page.</strong> Open a product in the editor and review the block stack. See <a href="product-page.html">Product page blocks</a>, and <a href="metafields.html">Metafields</a> if each product should carry its own color or texts. For a background in each product's own colors, set <strong>Background mode</strong> of the Product section to <a href="product-page.html#bg-product-gradient">Product gradient (metafields)</a>; with cutout packshots (PNG or WebP), try the <a href="product-page.html#text-behind-cutouts">text behind cutouts</a>.</li>
   <li><strong>Badges.</strong> Sale and Sold out show on their own, from the prices and the stock. In <a href="theme-settings.html#ts-product-badges">Theme settings, Product badges</a>, turn on New if you want it and set the badge colors. For a badge of your own words, such as <q>Limited edition</q>, fill the <code>custom.badge_label</code> metafield: see <a href="features.html#product-badges">Product badges</a>.</li>
   <li><strong>Collections and search.</strong> Install Shopify's free Search &amp; Discovery app to choose the filters shown on collection and search pages, then set their layout in the <a href="sections.html#s-main-collection">Collection</a> section.</li>
   <li><strong>Cart.</strong> Open the <a href="sections.html#s-cart-drawer">Cart drawer</a> for the reward progress bar, suggestions and the order note. Turn on <a href="features.html#gift-wrapping">gift wrapping</a> if you offer it.</li>
-  <li><strong>Footer.</strong> Add your menus, newsletter and social links. The Localization block repeats the country and language selectors in the footer, with the same choices as the header.</li>
+  <li><strong>Footer.</strong> Add your menus, newsletter and social links. The footer opens with a <a href="sections.html#s-footer-large-logo">Large logo</a>, your store name set across the whole width: keep it, switch it to your own SVG, or remove it. The Localization block repeats the country and language selectors in the footer, with the same choices as the header.</li>
   <li><strong>Favicon and sharing.</strong> Upload a favicon and a fallback share image in Theme settings.</li>
   <li><strong>Pages.</strong> Create your About, Contact, FAQ and Where to buy pages in Online Store, Pages, and assign them the matching template under <strong>Theme template</strong>: <code>page.about</code>, <code>page.contact</code>, <code>page.faq</code>, <code>page.find-us</code>. The <code>page.products</code> template presents your range with a Featured set and a Products showcase.</li>
   <li><strong>Check and publish.</strong> Preview every page type on desktop and on a phone, place a test order, then publish.</li>

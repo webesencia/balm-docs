@@ -26,15 +26,54 @@ surfaces use exactly the colors you set.</p>
     'Typography': '''
 <p>Two fonts drive the whole theme: the <strong>Heading font</strong> for headings and titles, and the
 <strong>Body font</strong> for paragraphs, forms and everything else. Both come from the Shopify font library, so they
-are served by Shopify and free to use on your store.</p>
+are served by Shopify and free to use on your store. The Balm preset pairs Outfit 600 for headings with Inter for body
+text.</p>
+<p><strong>Type sizes.</strong> Balm sets its text on one fluid scale. Every size has a mobile value, reached on a
+screen 390 px wide, and a desktop value, reached at 1440 px. In between, the size grows in a straight line; outside
+that range, it holds at the nearer value. On the scale, the product title runs from 32 to 44 px, section headings from
+26 to 36 px, card titles from 15 to 17 px, body text from 15 to 16 px and small text from 12 to 13 px, each level with
+its own line height and letter spacing.</p>
+<p>The text size settings of sections and blocks follow the same rule: the value of a setting ending in
+<strong>(mobile)</strong> applies at 390 px, the one ending in <strong>(desktop)</strong> at 1440 px, and the size moves
+smoothly between them. Their defaults sit on the scale, so a section you add matches the rest of the page. The
+announcement bar and the mega menu are the exceptions: they switch from one value to the other at the menu breakpoint,
+1200 px, where the header changes menus. Decorative texts, such as the text behind cutouts of the product page or the
+two words across the Gallery banner, keep their own desktop and mobile sizes, off the scale.</p>
+<p><strong>Heading scale</strong> and <strong>Body scale</strong> (80 to 130%, 100% by default) multiply every size at
+once, the sizes set in sections and blocks included. Heading scale acts on headings, titles and product card titles;
+Body scale on body text, buttons, labels and prices. Set Heading scale to 110% and every heading of the store grows by
+a tenth, without opening a single section.</p>
 <p>Three shared recipes follow. <strong>Headings</strong> sets the case, the slant and the weight of every display
 heading. <strong>Button labels</strong> sets the case, weight, letter spacing and slant of every button.
 <strong>Labels and small text</strong> sets the case of eyebrows, badges, prices, filters, variant pills, the
 announcement bar, the footer links and the main menu. Because the recipes are global, a section title, a product card
 and a page title always speak with the same voice.</p>
 <p>Not every family offers every weight or an italic. When a family lacks the face you ask for, the browser uses the
-closest one it has, or slants an upright face. The help text of <strong>Heading style</strong> lists the weights
-available in italic for the default font.</p>
+closest one it has, or slants an upright face. Outfit, the heading font of the Balm preset, has no italic at all: with
+<strong>Heading style</strong> set to Italic, its letters are slanted by the browser. For true italic headings, pick a
+heading font whose family includes italics.</p>
+''',
+    'Layout': '''
+<p><strong>Page width</strong> sets how wide the content of the product, collection and search pages can grow, together
+with the Featured collection, Product recommendations and Recently viewed sections.</p>
+<ul>
+  <li><strong>Standard</strong>, the default: 1400 px at most, centered.</li>
+  <li><strong>Wide</strong>: 1600 px at most.</li>
+  <li><strong>Full width with margins</strong>: the whole screen, less a margin of 50 px on each side from 768 px wide
+  and 20 px on phones. That margin is the footer's and the one inside the header, so the page lines up with both. A
+  floating header is inset from the screen edges, so its logo sits a little further in.</li>
+</ul>
+<p>Product card images are served at the size the chosen width draws them, so cards stay sharp on a wider page. Other
+sections keep their own width.</p>
+''',
+    'Product cards': '''
+<p>The title and price sizes of the product cards, on desktop and on mobile, set once for the cards of the Collection,
+Search, Featured collection, Product recommendations and Recently viewed sections. Those sections have no card title
+size of their own. The defaults sit on the <a href="#ts-typography">type scale</a>: titles 17 px on desktop and 15 px
+on mobile, prices 16 and 14 px, with the compare-at price at 85% of the price. Heading scale applies to the titles,
+Body scale to the prices.</p>
+<p>The cards of the Lookbook and of the 404 page follow these sizes too. The Complementary products block of the
+product page keeps its own title size settings.</p>
 ''',
     'Corner style': '''
 <p>Four sliders set the maximum corner radius of the whole theme: <strong>Buttons and pills</strong>,

@@ -27,7 +27,7 @@
 </header>
 <div class="layout">
   <nav id="sidebar" class="sidebar" aria-label="Documentation">
-    <ul class="nav"><li><a href="index.html">Getting started</a></li><li><a href="theme-settings.html">Theme settings</a></li><li><a href="sections.html">Sections</a></li><li><a href="product-page.html">Product page blocks</a></li><li class="current"><a href="features.html" aria-current="page">Features</a><ul class="toc"><li><a href="#quick-view">Quick view</a></li><li><a href="#product-badges">Product badges</a></li><li><a href="#page-loader">Page loader</a></li><li><a href="#age-verifier">Age verifier</a></li><li><a href="#gift-wrapping">Gift wrapping</a></li><li><a href="#lookbook">Lookbook</a></li><li><a href="#compare-products">Compare products</a></li><li><a href="#recently-viewed">Recently viewed</a></li><li><a href="#pagination">Pagination</a></li><li><a href="#translations">Translations</a></li><li><a href="#combined-listings">Combined listings</a></li><li><a href="#pre-order">Pre-order</a></li></ul></li><li><a href="metafields.html">Metafields</a></li><li><a href="custom-code.html">Custom code</a></li><li><a href="faq.html">FAQ</a></li><li><a href="changelog.html">Changelog</a></li><li><a href="support.html">Support</a></li></ul>
+    <ul class="nav"><li><a href="index.html">Getting started</a></li><li><a href="theme-settings.html">Theme settings</a></li><li><a href="sections.html">Sections</a></li><li><a href="product-page.html">Product page blocks</a></li><li class="current"><a href="features.html" aria-current="page">Features</a><ul class="toc"><li><a href="#quick-view">Quick view</a></li><li><a href="#product-badges">Product badges</a></li><li><a href="#page-loader">Page loader</a></li><li><a href="#age-verifier">Age verifier</a></li><li><a href="#gift-wrapping">Gift wrapping</a></li><li><a href="#lookbook">Lookbook</a></li><li><a href="#compare-products">Compare products</a></li><li><a href="#recently-viewed">Recently viewed</a></li><li><a href="#pagination">Pagination</a></li><li><a href="#translations">Translations</a></li><li><a href="#combined-listings">Combined listings</a></li><li><a href="#pre-order">Pre-order</a></li><li><a href="#type-sizes">Type sizes</a></li><li><a href="#page-width">Page width</a></li></ul></li><li><a href="metafields.html">Metafields</a></li><li><a href="custom-code.html">Custom code</a></li><li><a href="faq.html">FAQ</a></li><li><a href="changelog.html">Changelog</a></li><li><a href="support.html">Support</a></li></ul>
   </nav>
   <main id="main" class="content" tabindex="-1">
     <article class="doc">
@@ -39,6 +39,7 @@
 <li><a href="#compare-products">Compare products</a></li><li><a href="#recently-viewed">Recently viewed</a></li>
 <li><a href="#pagination">Pagination</a></li><li><a href="#translations">Translations</a></li>
 <li><a href="#combined-listings">Combined listings</a></li><li><a href="#pre-order">Pre-order</a></li>
+<li><a href="#type-sizes">Type sizes</a></li><li><a href="#page-width">Page width</a></li>
 </ol></nav>
 
 <section class="entry" id="quick-view-entry">
@@ -97,7 +98,7 @@ colors of Theme settings.</p>
 <ul>
   <li><strong>Badges on media</strong>, in the Product section settings, shows the badges in the corner of the gallery: <strong>Off</strong> (the default) or <strong>Automatic</strong>, the same Sale, Sold out, New and Custom badges as the cards.</li>
   <li>The <strong>Badge</strong> block, in the information column, draws the same badges in a row when its <strong>Badge type</strong> is <strong>Automatic (Sale, Sold out, New, Custom)</strong>, the default. Its other type, <strong>Image</strong>, places your own artwork in a corner of the product area.</li>
-  <li>The <strong>Spinning badge</strong> block turns the <code>custom.badge_label</code> text around a ring. A product without the metafield shows no ring.</li>
+  <li>The <strong>Spinning badge</strong> block turns the <code>custom.badge_label</code> text around a ring, on a corner of the gallery or next to the title, with its own position and size on desktop and on mobile. It has no text field of its own: a product without the metafield shows no ring. See <a href="product-page.html#pb-product-spin-badge">Spinning badge</a>.</li>
 </ul>
 <p>On the product page, Sale and Sold out follow the selected variant: choosing a variant without a compare-at price
 removes Sale, choosing a sold out one shows Sold out. When no badge applies, nothing is drawn and no space is left.</p>
@@ -247,6 +248,33 @@ The Stock status block keeps its own text.</p>
 <p>The label does not change how checkout works: the order is paid at checkout like any other. To take a deposit or
 charge later, use a pre-order app that creates selling plans; its options then show in the Purchase options block.
 Tell buyers when the product will ship, for example in a Text block or a Collapsible row.</p>
+</section>
+
+<section class="entry" id="type-sizes-entry">
+<h2 id="type-sizes">Type sizes</h2>
+<p>Every text of Balm sits on one fluid type scale, from phones to large screens. A size is reached at 390 px wide for
+its mobile value and at 1440 px for its desktop value, and grows in a straight line in between, so a heading never jumps
+from one size to another as the window widens. The text size settings of the sections and blocks follow the same rule,
+and their defaults sit on the scale: a section you add matches its neighbors without any tuning.</p>
+<ul>
+  <li>To make the whole store read larger or smaller, move <strong>Heading scale</strong> or <strong>Body scale</strong> in <a href="theme-settings.html#ts-typography">Theme settings, Typography</a> (80 to 130%). They multiply every size, those set in sections included, so the proportions between levels stay.</li>
+  <li>To change one element, use its own size settings: they stay on the fluid rule and the scales still apply to them.</li>
+  <li>Product card titles and prices are set once for all the grids in <a href="theme-settings.html#ts-product-cards">Theme settings, Product cards</a>.</li>
+</ul>
+<p>The announcement bar and the mega menu switch their sizes at 1200 px, the menu breakpoint. Logos and decorative
+texts are sized on their own, off the scale: the Large logo of the footer fills its width, and the text behind cutouts
+of the product page or the two words across the Gallery banner keep a desktop and a mobile size.</p>
+</section>
+
+<section class="entry" id="page-width-entry">
+<h2 id="page-width">Page width</h2>
+<p>One setting, <strong>Page width</strong> in <a href="theme-settings.html#ts-layout">Theme settings, Layout</a>, sets
+how wide the shopping pages grow: the product page, the collection and search pages, and the Featured collection,
+Product recommendations and Recently viewed sections. <strong>Standard</strong> keeps them to 1400 px,
+<strong>Wide</strong> to 1600 px, and <strong>Full width with margins</strong> fills the screen with the footer's
+margins, 50 px from 768 px wide and 20 px on phones. On a large screen, Wide shows bigger product cards and a bigger
+gallery; the card images are served at the new size, so they stay sharp. Content sections such as Rich text or Image
+with text keep their own widths.</p>
 </section>
 
     </article>

@@ -32,7 +32,9 @@ five choices, and the settings of the mode you pick appear right below it:</p>
 at once. The <strong>Fallback background color</strong> is used when a connected metafield is empty; leave it on None
 to fall back to the color scheme, and never connect it to a metafield itself. The keys to create are listed on
 <a href="metafields.html#shop-metafields">Metafields</a>. On the product page the same settings connect to
-<strong>product</strong> metafields instead, so every product can carry its own background.</p>
+<strong>product</strong> metafields instead, so every product can carry its own background. The Product section also
+has a sixth mode, <strong>Product gradient (metafields)</strong>, which reads each product's colors with nothing to
+connect: see <a href="product-page.html#bg-product-gradient">Product gradient</a>.</p>
 </section>
 
 <section class="entry" id="spacing-entry">
@@ -40,6 +42,11 @@ to fall back to the color scheme, and never connect it to a metafield itself. Th
 <p>Sizes and spacings come in pairs: a label ending in <strong>(desktop)</strong> applies from 768 px wide, one ending
 in <strong>(mobile)</strong> applies below. Top and bottom padding set the space inside the section, above and below its
 content.</p>
+<p>Text sizes are the exception: they are fluid. The (mobile) value applies on a screen 390 px wide, the (desktop)
+value from 1440 px, and the size moves smoothly in between, then Heading scale or Body scale multiplies it. See
+<a href="theme-settings.html#ts-typography">Theme settings, Typography</a>. The announcement bar and the mega menu
+switch their text sizes at 1200 px instead, and decorative texts, such as the text behind cutouts of the Product
+section, keep a desktop and a mobile size off the scale.</p>
 </section>
 
 <section class="entry" id="transparent-header-entry">
@@ -50,6 +57,9 @@ section</strong> turned on, the header floats over it, transparent, then materia
 settings keep your content clear of the header only while it is transparent. The colors the header wears while
 transparent are set in the Header section, see <a href="#s-header-transparent-colors">white logo and white text over a
 dark image</a>.</p>
+<p>The Product section has no Allow transparent header setting. In its Product gradient background mode,
+<strong>Extend the background under the header</strong> plays that part when the section is first on the page: see
+<a href="product-page.html#bg-under-header">Extend the gradient under the header</a>.</p>
 </section>
 
 <section class="entry" id="inner-panel-entry">
@@ -91,7 +101,7 @@ CATEGORIES = [
     ('hero-and-storytelling', 'Hero and storytelling',
      '<p>Large visual sections, usually at the top of the home page or of a landing page.</p>',
      ['hero', 'slideshow', 'products-showcase', 'featured-set', 'image-with-text', 'rich-text', 'video', 'marquee',
-      'before-after', 'product-lifestyle']),
+      'before-after']),
     ('products-and-collections', 'Products and collections',
      '<p>Sections that show products or collections and let shoppers buy from them.</p>',
      ['featured-collection', 'collection-list', 'lookbook', 'compare-products', 'recently-viewed']),
@@ -120,6 +130,8 @@ INTERNAL_NOTE = '''
 Predictive search and Pickup availability. They have no settings; the theme loads them on demand to fill the quick view
 modal, the search suggestions and the pickup details. Quick view is configured in
 <a href="theme-settings.html#ts-quick-view">Theme settings, Quick view</a>, predictive search in the Header section.</p>
+<p class="page-note">Preview versions of Balm also offered a Lifestyle strip section, two photos side by side in one
+rounded card. It has been removed.</p>
 '''
 
 TEXT = {
@@ -146,6 +158,10 @@ full height drawer.</p>
 over the first section</strong> lets it float, transparent, over a first section that allows it, then materialize on
 scroll; <strong>Logo image (transparent header)</strong> swaps in a light logo while it is transparent.
 <strong>Floating header (detached)</strong> pulls it away from the screen edges as a rounded card.</p>
+<p>Mega menu panels follow the header. With <strong>Mega menu surface</strong> on Match header, the default, they turn
+glass over a glass header, and the header card and the open panel form one surface at the opacity you set, so nothing
+of the page reads through. Under a solid header the panels stay opaque, even with the transparent header option on.
+Set Mega menu surface to Solid to keep opaque panels under a glass header too.</p>
 <p>While it is transparent, the header keeps the text color of its own color scheme. To give it other colors over the
 first section, tick <strong>Use different colors while transparent</strong>, right under the transparent logo, then pick
 a <strong>Transparent header color scheme</strong>. Its text color goes to the menu links and their arrows, underlines
@@ -193,14 +209,18 @@ and Banner blocks. See <a href="#mega-menu-blocks">Mega menu blocks</a>.</p>
 ''', 'A header that floats transparent over the home page hero and turns to glass on scroll, with a mega menu under the Shop item: two link columns and four best sellers.'),
 
     'footer': ('''
-<p>The footer is a row of blocks: <strong>Brand / logo</strong>, <strong>Link column</strong> (one of your menus),
-<strong>Newsletter</strong>, <strong>Social</strong> (Instagram and the Follow on Shop button), <strong>Text</strong>
-and <strong>Localization</strong> (country or currency, and language selectors, shown only when there is more than one
-choice). Each block sets its own width and margins for desktop and mobile.</p>
+<p>The footer is a row of blocks: <strong>Large logo</strong>, <strong>Brand / logo</strong>, <strong>Link
+column</strong> (one of your menus), <strong>Newsletter</strong>, <strong>Social</strong> (Instagram and the Follow on
+Shop button), <strong>Text</strong> and <strong>Localization</strong> (country or currency, and language selectors,
+shown only when there is more than one choice). Each block sets its own width and margins for desktop and mobile. The
+Large logo always takes a row of its own, wherever it sits among the blocks.</p>
+<p>Under <strong>Typography</strong>, <strong>Column title size</strong> and <strong>Link size</strong> each have a
+desktop and a mobile value (14 and 13 px by default). They are fluid like every text size of the theme: the desktop
+value applies from 1440 px wide and moves toward the mobile value on narrower screens.</p>
 <p>An optional <strong>Top decorative band</strong> draws a curve, a wave, a diagonal or your own image where the footer
 meets the section above. The <strong>Copyright bar</strong> at the bottom can take its own color scheme. Newsletter sign
 ups are added to your Shopify customers, with the tag you choose.</p>
-''', 'Logo and tagline on the left, Shop and Help link columns, a newsletter block, and a localization block for a store that sells in several countries.'),
+''', 'The store name as a large wordmark across the footer, then the logo and tagline, Shop and Help link columns, a newsletter block, and a localization block for a store that sells in several countries.'),
 
     'hero': ('''
 <p>A full screen image or Shopify hosted video with a title and a button. Desktop and mobile each get their own image
@@ -284,11 +304,6 @@ and keep the pause button on: accessibility guidelines ask for one on any animat
 Add labels, a starting position, a round handle or a plain line, a heading and text. The handle also works from the
 keyboard, through a slider.</p>
 ''', 'Showing the result of a product: a surface before and after cleaning, skin before and after four weeks, a room before and after.'),
-
-    'product-lifestyle': ('''
-<p>Two photos side by side that form one rounded card, stacked on phones. Set the gap, the corner radius and the photo
-ratio for desktop and mobile, and describe each photo with its own alt text.</p>
-''', 'Lifestyle photography between product sections: the product on a breakfast table next to a close up of its texture.'),
 
     'featured-collection': ('''
 <p>A grid of products from one collection, with the full product card: second image on hover, quick add, quick view,
@@ -413,9 +428,10 @@ app can draw edge to edge.</p>
 ''', 'Reviews carousel or Instagram feed from an app, placed between two sections of the home page.'),
 
     'main-product': ('''
-<p>The product page: media gallery on one side, a column of blocks on the other. Two versions can be added from the
-section picker: <strong>Product</strong>, the standard page, and <strong>Balm spotlight</strong>, a dark page with a
-stacked gallery, a radial halo background and a spinning badge.</p>
+<p>The product page: media gallery on one side, a column of blocks on the other. It is the main section of the product
+template, so it is not offered in <strong>Add section</strong>. Preview versions of Balm also offered a second version
+of it there, Balm spotlight; it has been removed. Its product gradient background and its spinning badge are now a
+background mode of the Product section and the positions of the Spinning badge block.</p>
 ''', ''),
 
     'product-recommendations': ('''
@@ -428,6 +444,8 @@ app.</p>
 <p>A bar with the product thumbnail, title, selected variant, price and add to cart button that stays at the top or
 bottom of the screen, on desktop and mobile separately. By default it appears once the main buy button scrolls out of
 view. A variant that sells as a pre-order says Pre-order here too.</p>
+<p>The bar exists only as this section, which the product template places below the Product section. Preview versions
+of Balm also offered it as a Sticky add to cart block inside the Product section; that block has been removed.</p>
 ''', 'At the bottom of the screen on phones, where the main buy button quickly scrolls away.'),
 
     'main-collection': ('''
@@ -435,7 +453,8 @@ view. A variant that sells as a pre-order says Pre-order here too.</p>
 and sorting, and the product grid. Filters come from the Search &amp; Discovery app and can sit in a column, a drawer
 or a horizontal bar. Pagination is page numbers, a Load more button or infinite scroll. Visitors can change the column
 count or switch to a list view when you allow it, and <strong>Promo tile</strong> blocks take the place of a card on
-the first page.</p>
+the first page. It is the main section of the collection template, so it is not offered in <strong>Add
+section</strong>.</p>
 ''', 'Filters in a column on desktop and a drawer on mobile, 24 products per page with a Load more button, color swatches on the cards.'),
 
     'main-search': ('''
@@ -494,6 +513,18 @@ the code, print the page and go to the store.</p>
 
 BLOCK_TEXT = {
     'announcement-bar/message': '<p>One message, with an optional link that makes the whole message clickable.</p>',
+    'footer/large_logo': '''<p>A large logo across the whole footer, on a row of its own. It comes first in the footer the
+theme ships with, and one footer holds one Large logo.</p>
+<ul>
+  <li><strong>Text</strong>, the default, sets the store name, or the <strong>Text</strong> you type, in the heading font, with the case, weight and style of Theme settings, Typography. The size is worked out so the letters fill the width on one line, and follows the width as the screen changes.</li>
+  <li><strong>Image</strong> takes your own artwork. Use an SVG, served as it is, or a transparent PNG at least 3000 px wide, so the logo stays sharp across a large screen; a PNG or JPG is served up to 3840 px wide. <strong>Recolor SVG</strong> draws a single color SVG in the color you choose; other images keep their own colors. Fill <strong>Alt text</strong> only when the header logo does not already give the store name: left empty, screen readers skip the image.</li>
+</ul>
+<p><strong>Width</strong> lines the logo up with the footer columns (Content width) or runs it from one edge of the
+screen to the other (Full width). <strong>Alignment</strong> only has an effect when the logo is narrower than the row, which a
+fitted text or an image at full width never is. <strong>Crop bottom</strong> hides up to half of the logo's height, so
+it looks cut off by the edge of the footer. <strong>Color</strong> takes the text color of the color scheme or a custom
+color, <strong>Opacity</strong> softens it, and <strong>Show on mobile</strong> hides it on phones, where a hidden image
+is not loaded. Without an image, Image mode shows nothing on the storefront.</p>''',
     'footer/brand': '<p>Your logo, or the store name when no logo is set, with an optional tagline.</p>',
     'footer/link_column': '<p>A heading and one of your menus.</p>',
     'footer/newsletter': '<p>An email sign up field. Subscribers are added to your customers with the tag you set, which email apps such as Klaviyo or Mailchimp can read.</p>',

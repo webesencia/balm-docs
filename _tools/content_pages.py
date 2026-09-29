@@ -37,7 +37,7 @@ in each version is listed in the <a href="changelog.html">Changelog</a>.</p>
 comes with one preset, also named Balm, and your store starts from it.</p>
 <ul>
   <li><strong>Look.</strong> Clean and neutral: a white scheme and a near black scheme, sentence case headings and buttons, a white frosted glass. A calm base that lets product photography lead.</li>
-  <li><strong>Fonts.</strong> Inter 600 for headings, Inter for body text.</li>
+  <li><strong>Fonts.</strong> Outfit 600 for headings, Inter for body text, on one fluid type scale.</li>
   <li><strong>Corners.</strong> Softly rounded: buttons 12 px, cards 20 px.</li>
 </ul>
 <p>Every value of the preset is a starting point. Change the colors, fonts, corners, glass and typography in
@@ -51,21 +51,24 @@ comes with one preset, also named Balm, and your store starts from it.</p>
   <li><strong>Theme settings</strong> (the gear icon): colors, fonts and storewide features. See <a href="theme-settings.html">Theme settings</a>.</li>
 </ul>
 <p>Most sizes and spacings have two settings, one ending in <strong>(desktop)</strong> and one ending in
-<strong>(mobile)</strong>, so you can tune phones without touching large screens. Use the device switch at the top of
-the editor to preview both.</p>
+<strong>(mobile)</strong>, so you can tune phones without touching large screens. Spacings switch from one value to the
+other at 768 px wide. Text sizes are fluid: the mobile value applies on a phone 390 px wide, the desktop value from
+1440 px, and the size moves smoothly in between (see <a href="theme-settings.html#ts-typography">Typography</a>). Use
+the device switch at the top of the editor to preview both.</p>
 
 <h2 id="first-setup">First setup, step by step</h2>
 <ol class="steps">
   <li><strong>Logo and menu.</strong> Open the <a href="sections.html#s-header">Header</a> section. Set <strong>Logo type</strong> and upload your <strong>Logo image</strong>, then pick your main menu under <strong>Menu</strong>. Menus themselves are edited in your admin, under Content, Menus (Online Store, Navigation on older admins). Over a dark hero image, a transparent header with a white logo and white text reads best: see the <a href="sections.html#s-header-transparent-colors">white header example</a>.</li>
   <li><strong>Countries and languages.</strong> The header shows a globe with the country and language selectors as soon as there is a choice to make: two countries or regions in <strong>Settings, Markets</strong>, or two published languages in <strong>Settings, Languages</strong>. Until then it shows nothing. <strong>Country and language selectors</strong> in the Header picks which ones appear (Both by default). See <a href="sections.html#s-header-localization">Country and language selectors</a>.</li>
   <li><strong>Colors.</strong> In <a href="theme-settings.html#ts-colors">Theme settings, Colors</a>, adjust the two color schemes of the Balm preset to your brand. Every section picks one of them.</li>
-  <li><strong>Fonts and corners.</strong> Set the <strong>Heading font</strong> and <strong>Body font</strong> in <a href="theme-settings.html#ts-typography">Typography</a>, and the corner radii in <a href="theme-settings.html#ts-corner-style">Corner style</a>.</li>
+  <li><strong>Fonts, sizes and corners.</strong> Set the <strong>Heading font</strong> and <strong>Body font</strong> in <a href="theme-settings.html#ts-typography">Typography</a>. To make every heading or every text of the store larger or smaller at once, move <strong>Heading scale</strong> or <strong>Body scale</strong> there rather than each section's sizes. Set the corner radii in <a href="theme-settings.html#ts-corner-style">Corner style</a>, and the title and price sizes of the product cards in <a href="theme-settings.html#ts-product-cards">Product cards</a>.</li>
+  <li><strong>Page width.</strong> In <a href="theme-settings.html#ts-layout">Theme settings, Layout</a>, keep <strong>Page width</strong> on Standard (1400 px), or widen the product, collection and search pages to Wide (1600 px) or Full width with margins.</li>
   <li><strong>Home page.</strong> The home page starts with a Hero, a Marquee, a Products showcase, Socials, Image with text, Rich text and the Newsletter popup. Replace their images and texts, remove what you do not need, and add sections with <strong>Add section</strong>. In the Products showcase, pick one product per <strong>Spotlight</strong>: its name, link, image, tagline and colors follow on their own (see <a href="metafields.html#showcase">Metafields</a>).</li>
-  <li><strong>Product page.</strong> Open a product in the editor and review the block stack. See <a href="product-page.html">Product page blocks</a>, and <a href="metafields.html">Metafields</a> if each product should carry its own color or texts.</li>
+  <li><strong>Product page.</strong> Open a product in the editor and review the block stack. See <a href="product-page.html">Product page blocks</a>, and <a href="metafields.html">Metafields</a> if each product should carry its own color or texts. For a background in each product's own colors, set <strong>Background mode</strong> of the Product section to <a href="product-page.html#bg-product-gradient">Product gradient (metafields)</a>; with cutout packshots (PNG or WebP), try the <a href="product-page.html#text-behind-cutouts">text behind cutouts</a>.</li>
   <li><strong>Badges.</strong> Sale and Sold out show on their own, from the prices and the stock. In <a href="theme-settings.html#ts-product-badges">Theme settings, Product badges</a>, turn on New if you want it and set the badge colors. For a badge of your own words, such as <q>Limited edition</q>, fill the <code>custom.badge_label</code> metafield: see <a href="features.html#product-badges">Product badges</a>.</li>
   <li><strong>Collections and search.</strong> Install Shopify's free Search &amp; Discovery app to choose the filters shown on collection and search pages, then set their layout in the <a href="sections.html#s-main-collection">Collection</a> section.</li>
   <li><strong>Cart.</strong> Open the <a href="sections.html#s-cart-drawer">Cart drawer</a> for the reward progress bar, suggestions and the order note. Turn on <a href="features.html#gift-wrapping">gift wrapping</a> if you offer it.</li>
-  <li><strong>Footer.</strong> Add your menus, newsletter and social links. The Localization block repeats the country and language selectors in the footer, with the same choices as the header.</li>
+  <li><strong>Footer.</strong> Add your menus, newsletter and social links. The footer opens with a <a href="sections.html#s-footer-large-logo">Large logo</a>, your store name set across the whole width: keep it, switch it to your own SVG, or remove it. The Localization block repeats the country and language selectors in the footer, with the same choices as the header.</li>
   <li><strong>Favicon and sharing.</strong> Upload a favicon and a fallback share image in Theme settings.</li>
   <li><strong>Pages.</strong> Create your About, Contact, FAQ and Where to buy pages in Online Store, Pages, and assign them the matching template under <strong>Theme template</strong>: <code>page.about</code>, <code>page.contact</code>, <code>page.faq</code>, <code>page.find-us</code>. The <code>page.products</code> template presents your range with a Featured set and a Products showcase.</li>
   <li><strong>Check and publish.</strong> Preview every page type on desktop and on a phone, place a test order, then publish.</li>
@@ -94,6 +97,7 @@ FEATURES = '''
 <li><a href="#compare-products">Compare products</a></li><li><a href="#recently-viewed">Recently viewed</a></li>
 <li><a href="#pagination">Pagination</a></li><li><a href="#translations">Translations</a></li>
 <li><a href="#combined-listings">Combined listings</a></li><li><a href="#pre-order">Pre-order</a></li>
+<li><a href="#type-sizes">Type sizes</a></li><li><a href="#page-width">Page width</a></li>
 </ol></nav>
 
 <section class="entry" id="quick-view-entry">
@@ -152,7 +156,7 @@ colors of Theme settings.</p>
 <ul>
   <li><strong>Badges on media</strong>, in the Product section settings, shows the badges in the corner of the gallery: <strong>Off</strong> (the default) or <strong>Automatic</strong>, the same Sale, Sold out, New and Custom badges as the cards.</li>
   <li>The <strong>Badge</strong> block, in the information column, draws the same badges in a row when its <strong>Badge type</strong> is <strong>Automatic (Sale, Sold out, New, Custom)</strong>, the default. Its other type, <strong>Image</strong>, places your own artwork in a corner of the product area.</li>
-  <li>The <strong>Spinning badge</strong> block turns the <code>custom.badge_label</code> text around a ring. A product without the metafield shows no ring.</li>
+  <li>The <strong>Spinning badge</strong> block turns the <code>custom.badge_label</code> text around a ring, on a corner of the gallery or next to the title, with its own position and size on desktop and on mobile. It has no text field of its own: a product without the metafield shows no ring. See <a href="product-page.html#pb-product-spin-badge">Spinning badge</a>.</li>
 </ul>
 <p>On the product page, Sale and Sold out follow the selected variant: choosing a variant without a compare-at price
 removes Sale, choosing a sold out one shows Sold out. When no badge applies, nothing is drawn and no space is left.</p>
@@ -303,6 +307,33 @@ The Stock status block keeps its own text.</p>
 charge later, use a pre-order app that creates selling plans; its options then show in the Purchase options block.
 Tell buyers when the product will ship, for example in a Text block or a Collapsible row.</p>
 </section>
+
+<section class="entry" id="type-sizes-entry">
+<h2 id="type-sizes">Type sizes</h2>
+<p>Every text of Balm sits on one fluid type scale, from phones to large screens. A size is reached at 390 px wide for
+its mobile value and at 1440 px for its desktop value, and grows in a straight line in between, so a heading never jumps
+from one size to another as the window widens. The text size settings of the sections and blocks follow the same rule,
+and their defaults sit on the scale: a section you add matches its neighbors without any tuning.</p>
+<ul>
+  <li>To make the whole store read larger or smaller, move <strong>Heading scale</strong> or <strong>Body scale</strong> in <a href="theme-settings.html#ts-typography">Theme settings, Typography</a> (80 to 130%). They multiply every size, those set in sections included, so the proportions between levels stay.</li>
+  <li>To change one element, use its own size settings: they stay on the fluid rule and the scales still apply to them.</li>
+  <li>Product card titles and prices are set once for all the grids in <a href="theme-settings.html#ts-product-cards">Theme settings, Product cards</a>.</li>
+</ul>
+<p>The announcement bar and the mega menu switch their sizes at 1200 px, the menu breakpoint. Logos and decorative
+texts are sized on their own, off the scale: the Large logo of the footer fills its width, and the text behind cutouts
+of the product page or the two words across the Gallery banner keep a desktop and a mobile size.</p>
+</section>
+
+<section class="entry" id="page-width-entry">
+<h2 id="page-width">Page width</h2>
+<p>One setting, <strong>Page width</strong> in <a href="theme-settings.html#ts-layout">Theme settings, Layout</a>, sets
+how wide the shopping pages grow: the product page, the collection and search pages, and the Featured collection,
+Product recommendations and Recently viewed sections. <strong>Standard</strong> keeps them to 1400 px,
+<strong>Wide</strong> to 1600 px, and <strong>Full width with margins</strong> fills the screen with the footer's
+margins, 50 px from 768 px wide and 20 px on phones. On a large screen, Wide shows bigger product cards and a bigger
+gallery; the card images are served at the new size, so they stay sharp. Content sections such as Rich text or Image
+with text keep their own widths.</p>
+</section>
 '''
 
 # ------------------------------------------------------------------ Metafields
@@ -367,10 +398,10 @@ each product, in the <strong>Metafields</strong> card of the product page in you
 <div class="table-wrap"><table class="plain">
 <thead><tr><th scope="col">Name</th><th scope="col">Namespace and key</th><th scope="col">Type</th><th scope="col">Where it shows</th><th scope="col">How to create it</th></tr></thead>
 <tbody>
-<tr><td><q>Tagline</q></td><td><code>custom.tagline</code></td><td>Single line text</td><td>On the product page, the Text block with <strong>Source</strong> set to <strong>Tagline</strong>, under the title in the default template. Under the name of a Products showcase spotlight and under the heading of Featured set, for the product picked in them. Under each product of a mega menu Products block, when <strong>Show product tagline</strong> is on in the Header.</td><td><strong>Settings, Custom data, Products</strong>, <strong>Add definition</strong>: name <q>Tagline</q>, type <strong>Single line text</strong>, one value. <a href="#tagline">Step by step</a>.</td></tr>
-<tr><td><q>Background color</q></td><td><code>custom.background_color</code></td><td>Color</td><td>The background of a Products showcase spotlight (the start of its gradient) and of Featured set, for the product picked in them. On the product page the same metafield is connected instead: see <a href="#per-product-background">Per product background colors</a>.</td><td><strong>Settings, Custom data, Products</strong>, <strong>Add definition</strong>: name <q>Background color</q>, type <strong>Color</strong>. <a href="#showcase">Step by step</a>.</td></tr>
-<tr><td><q>Background color end</q></td><td><code>custom.background_color_end</code></td><td>Color</td><td>The end of a Products showcase spotlight's background gradient. Without it, the spotlight is one color. Featured set paints one color and does not read it.</td><td><strong>Settings, Custom data, Products</strong>, <strong>Add definition</strong>: name <q>Background color end</q>, type <strong>Color</strong>. <a href="#showcase">Step by step</a>.</td></tr>
-<tr><td><q>Badge label</q></td><td><code>custom.badge_label</code></td><td>Single line text</td><td>The Custom badge: on product cards, in quick view, in Compare products, and on the product page, on the gallery (<strong>Badges on media</strong> set to Automatic) and in the Badge block (Automatic). Also the text of the Spinning badge block.</td><td><strong>Settings, Custom data, Products</strong>, <strong>Add definition</strong>: name <q>Badge label</q>, type <strong>Single line text</strong>, one value. <a href="#badge-label">Step by step</a>.</td></tr>
+<tr><td><q>Tagline</q></td><td><code>custom.tagline</code></td><td>Single line text</td><td>On the product page, the Text block with <strong>Source</strong> set to <strong>Tagline</strong>, under the title in the default template. Under the name of a Products showcase spotlight and under the heading of Featured set, for the product picked in them. Under each product of a mega menu Products block, when <strong>Show product tagline</strong> is on in the Header. Behind the cutout images of the product gallery, when <strong>Text behind cutouts</strong> of the Product section has <strong>Text</strong> set to <strong>Product tagline (custom.tagline)</strong>.</td><td><strong>Settings, Custom data, Products</strong>, <strong>Add definition</strong>: name <q>Tagline</q>, type <strong>Single line text</strong>, one value. <a href="#tagline">Step by step</a>.</td></tr>
+<tr><td><q>Background color</q></td><td><code>custom.background_color</code></td><td>Color</td><td>The start of the product page gradient, when <strong>Background mode</strong> of the Product section is <strong>Product gradient (metafields)</strong>. The background of a Products showcase spotlight (the start of its gradient) and of Featured set, for the product picked in them. In the other background modes of the product page, connect it instead: see <a href="#per-product-background">Per product background colors</a>.</td><td><strong>Settings, Custom data, Products</strong>, <strong>Add definition</strong>: name <q>Background color</q>, type <strong>Color</strong>. <a href="#showcase">Step by step</a>.</td></tr>
+<tr><td><q>Background color end</q></td><td><code>custom.background_color_end</code></td><td>Color</td><td>The end of the product page gradient in the <strong>Product gradient (metafields)</strong> mode, and the end of a Products showcase spotlight's gradient. Without it, both are one color. Also the color of the text behind cutouts when its <strong>Text color</strong> is <strong>Gradient end color (custom.background_color_end)</strong>; without it, that text takes the scheme text color. Featured set paints one color and does not read it.</td><td><strong>Settings, Custom data, Products</strong>, <strong>Add definition</strong>: name <q>Background color end</q>, type <strong>Color</strong>. <a href="#showcase">Step by step</a>.</td></tr>
+<tr><td><q>Badge label</q></td><td><code>custom.badge_label</code></td><td>Single line text</td><td>The Custom badge: on product cards, in quick view, in Compare products, and on the product page, on the gallery (<strong>Badges on media</strong> set to Automatic) and in the Badge block (Automatic). Also the only text of the Spinning badge block, which shows no ring on a product without it.</td><td><strong>Settings, Custom data, Products</strong>, <strong>Add definition</strong>: name <q>Badge label</q>, type <strong>Single line text</strong>, one value. <a href="#badge-label">Step by step</a>.</td></tr>
 <tr><td><q>Badge color</q></td><td><code>custom.badge_color</code></td><td>Color</td><td>The background of that product's Custom badge, everywhere the badge shows (cards, quick view, Compare products, gallery, Badge block). Empty: the <strong>Custom background</strong> of Theme settings. Filled without a badge text color, the text turns dark or light by itself, at a contrast of at least 4.5:1. Optional.</td><td><strong>Settings, Custom data, Products</strong>, <strong>Add definition</strong>: name <q>Badge color</q>, type <strong>Color</strong>. <a href="#badge-colors">Step by step</a>.</td></tr>
 <tr><td><q>Badge text color</q></td><td><code>custom.badge_text_color</code></td><td>Color</td><td>The text of that product's Custom badge, in the same places. Empty: the <strong>Custom text</strong> of Theme settings, or the automatic text when <code>custom.badge_color</code> is filled. Optional.</td><td><strong>Settings, Custom data, Products</strong>, <strong>Add definition</strong>: name <q>Badge text color</q>, type <strong>Color</strong>. <a href="#badge-colors">Step by step</a>.</td></tr>
 <tr><td><em>Shopify standard</em></td><td><code>reviews.rating</code>, <code>reviews.rating_count</code></td><td>Rating, Integer</td><td>The Rating block, the ratings on cards, in quick view and in Compare products.</td><td>Nothing to create: a review app creates and fills them. See <a href="#reviews">Review metafields</a>.</td></tr>
@@ -424,9 +455,18 @@ example stands in so you can place and size the block.</p>
 <p>A product without these values falls back cleanly: no tagline line, and the background of the section's color
 scheme. A spotlight with a background color and no end color is one color. In the theme editor a dimmed example stands
 in for a missing tagline.</p>
+<p>The product page reads the same definitions. In the Product section, set <strong>Background mode</strong> to
+<strong>Product gradient (metafields)</strong>: each product then paints its page with its own two colors, again with
+nothing to connect. The tagline and the end color can also feed the text behind cutout images. See
+<a href="product-page.html#bg-product-gradient">Product gradient</a> and
+<a href="product-page.html#text-behind-cutouts">Text behind cutout images</a>.</p>
 
 <h2 id="per-product-background">Per product background colors, step by step</h2>
 <p>The most common use: one product template, a different background shade on every product.</p>
+<p>For a gradient, the quickest way needs no connection: create <code>custom.background_color</code> and
+<code>custom.background_color_end</code>, fill them, and set <strong>Background mode</strong> to <strong>Product gradient
+(metafields)</strong> (see <a href="product-page.html#bg-product-gradient">Product gradient</a>). The steps below
+connect a metafield to the other modes: Solid color, Gradient (two colors) or Radial halo.</p>
 <h3 id="step-1">Step 1. Create the definition (once)</h3>
 <ol class="steps">
   <li>In your admin, open <strong>Settings, Custom data, Products</strong> and choose <strong>Add definition</strong>.</li>
@@ -525,8 +565,11 @@ color that comes back empty falls through, in this order:</p>
   <li>otherwise the background of the section's color scheme.</li>
 </ol>
 <p>In a Products showcase spotlight and in Featured set, the order is the override field, then the product's
-metafield, then the background of the section's color scheme. For the Custom badge, an empty
-<code>custom.badge_color</code> or <code>custom.badge_text_color</code> leaves the Custom colors of Theme settings.</p>
+metafield, then the background of the section's color scheme. In the Product gradient mode of the product page, one
+color alone paints a flat background and no color leaves the color scheme; the fallback color is not used there. For
+the Custom badge, an empty <code>custom.badge_color</code> or <code>custom.badge_text_color</code> leaves the Custom
+colors of Theme settings. Behind cutout images, an empty tagline shows no text, and an empty
+<code>custom.background_color_end</code> gives the text the scheme text color.</p>
 <p>Never connect the fallback color itself to a metafield: it is the safety net. If one end of a gradient is empty, the
 other end fills the whole wash; if a halo color is empty, the halo is not drawn and the base color stays. An empty
 text, rich text or image metafield shows nothing on the storefront: never an example text, never an empty box. The
@@ -598,7 +641,16 @@ carried over; see <a href="custom-code.html#updates-and-code">Custom code</a>.</
 </ol>
 <p>A floating announcement bar over the same image can follow those colors: check <strong>Use the transparent header
 colors on the announcement bar</strong> in the Announcement bar section. See the
-<a href="sections.html#s-header-transparent-colors">white header example</a>.</p>'''),
+<a href="sections.html#s-header-transparent-colors">white header example</a>.</p>
+<p>On the product page, the Product section can run its Product gradient under the transparent header: see
+<a href="product-page.html#bg-under-header">Extend the gradient under the header</a>.</p>'''),
+    ('Why does the product gradient not reach under the header?', '''
+<p>Four conditions, all needed: <strong>Background mode</strong> of the Product section is <strong>Product gradient
+(metafields)</strong>, <strong>Extend the background under the header</strong> is checked, the Header section has
+<strong>Transparent header over the first section</strong> turned on, and the Product section is the first section of
+the product template. A Solid announcement bar in full width stays above the gradient; a Floating or Glass bar lets it
+run underneath. If the header text is hard to read over a dark gradient, set <strong>Header colors at rest</strong> to
+Transparent header colors. See <a href="product-page.html#bg-under-header">Extend the gradient under the header</a>.</p>'''),
     ('Why is there no country or language selector in my header?', '''
 <p>The selectors only show when there is a choice to make. The country selector needs at least two countries or
 regions in <strong>Settings, Markets</strong>; the language selector needs at least two published languages in
@@ -615,9 +667,34 @@ type the exact title of a top level menu item in <strong>Linked menu item</stron
 column, Image, Products, Promo or Banner blocks inside it. The panel opens when a shopper hovers that item. See
 <a href="sections.html#mega-menu-blocks">Mega menu blocks</a>.</p>'''),
     ('How do I give each product its own background color?', '''
-<p>Create a product metafield definition named <q>Background color</q> of type Color, connect it to the Background
-color setting of the Product section, then fill it on each product. The full walkthrough is on
-<a href="metafields.html#per-product-background">Metafields</a>.</p>'''),
+<p>Create two product metafield definitions of type Color, <q>Background color</q> (<code>custom.background_color</code>)
+and <q>Background color end</q> (<code>custom.background_color_end</code>), and fill them on each product. Then set
+<strong>Background mode</strong> of the Product section to <strong>Product gradient (metafields)</strong>: there is
+nothing to connect, and one color alone gives a flat background. For a solid color or a radial halo, connect the
+metafield to the setting instead. Both ways are on <a href="metafields.html#per-product-background">Metafields</a>.</p>'''),
+    ('How do I make all headings, or all text, larger?', '''
+<p>Use <strong>Heading scale</strong> and <strong>Body scale</strong> in Theme settings, Typography. They multiply every
+size of the theme, the ones set in sections and blocks included, from 80 to 130%. Changing each section's sizes one by
+one is only worth it for a single element. See <a href="features.html#type-sizes">Type sizes</a>.</p>'''),
+    ('Why is there no text behind my product image?', '''
+<p>The text of <strong>Text behind cutouts</strong> only shows behind PNG and WebP images; JPG images, videos and 3D
+models never get it. Check that <strong>Show on desktop</strong> or <strong>Show on mobile</strong> is on for the device
+you are looking at, and that the first media of the gallery is a PNG or WebP image when <strong>Apply to</strong> is
+First image only. With <strong>Text</strong> on Product tagline, a product whose <code>custom.tagline</code> is empty
+shows no text. See <a href="product-page.html#text-behind-cutouts">Text behind cutout images</a>.</p>'''),
+    ('Why does the spinning badge not show on some products?', '''
+<p>The ring prints the product's <code>custom.badge_label</code> metafield and has no text of its own: a product with
+no value shows no ring. Fill the metafield on that product (see <a href="metafields.html#badge-label">Badge label, step
+by step</a>). With <strong>Next to the title</strong>, the page also needs a Title block.</p>'''),
+    ('Where are Balm spotlight, Lifestyle strip and the Sticky add to cart block?', '''
+<p>They belonged to preview versions of Balm and were removed before release, together with the free text of the
+spinning badge.</p>
+<ul>
+  <li><strong>Balm spotlight</strong>, the second version of the Product section: its gradient and its spinning badge are now the <a href="product-page.html#bg-product-gradient">Product gradient</a> background mode and the positions of the <a href="product-page.html#pb-product-spin-badge">Spinning badge</a> block, on the one Product section.</li>
+  <li><strong>Lifestyle strip</strong>, two photos side by side: the section has been removed.</li>
+  <li><strong>Sticky add to cart block</strong>: the bar is the <a href="sections.html#s-sticky-atc">Sticky add to cart</a> section, placed below the Product section in the product template.</li>
+  <li><strong>Spinning badge text</strong>: the ring reads the product's <code>custom.badge_label</code> metafield only.</li>
+</ul>'''),
     ('Why can I not connect a setting to my metafield?', '''
 <p>Three usual causes. The definition does not exist yet: create it in Settings, Custom data first. The type does not
 match: a color setting only accepts a Color metafield, an image setting a File metafield. Or the definition was created
