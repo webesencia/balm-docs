@@ -173,8 +173,8 @@ Cart drawer section has none of its own.</p>
   <li><strong>Cart content</strong>: the order note, the discount code field (off by default; codes are checked by
   Shopify as soon as they are applied, then listed and removable), a You save line, the taxes and shipping note, a
   shipping notice and a promotion note on each line.</li>
-  <li><strong>Checkout</strong>: the accelerated checkout buttons in the drawer (off by default) and on the cart page
-  (on), and the payment icons of your store.</li>
+  <li><strong>Checkout</strong>: the accelerated checkout buttons in the drawer and on the cart page, both on
+  by default, and the payment icons of your store.</li>
   <li><strong>Empty cart</strong>: a message, a button to the collection you choose and an optional selection of
   products.</li>
 </ul>
