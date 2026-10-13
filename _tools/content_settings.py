@@ -26,7 +26,7 @@ surfaces use exactly the colors you set.</p>
     'Typography': '''
 <p>Two fonts drive the whole theme: the <strong>Heading font</strong> for headings and titles, and the
 <strong>Body font</strong> for paragraphs, forms and everything else. Both come from the Shopify font library, so they
-are served by Shopify and free to use on your store. The Balm preset pairs Outfit 600 for headings with Inter for body
+are served by Shopify and free to use on your store. The Balm preset pairs Outfit 400 for headings with Inter for body
 text.</p>
 <p><strong>Type sizes.</strong> Balm sets its text on one fluid scale. Every size has a mobile value, reached on a
 screen 390 px wide, and a desktop value, reached at 1440 px. In between, the size grows in a straight line; outside

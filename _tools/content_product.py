@@ -25,16 +25,20 @@ that offers a block (reviews, subscriptions, bundles) drops straight into the co
 <tr><td>11</td><td>Pickup availability</td><td>Local pickup for the selected variant, shown only when a location offers it.</td></tr>
 <tr><td>12</td><td>Payment icons</td><td>A secure checkout line with your store's payment icons.</td></tr>
 <tr><td>13</td><td>Product upsell</td><td>Frequently bought together, picked automatically.</td></tr>
-<tr><td>14</td><td>Icon list</td><td>Three short reassurance claims with icons, each shown once it has a heading or a text.</td></tr>
-<tr><td>15</td><td>Description</td><td>The product description from the product admin page.</td></tr>
-<tr><td>16</td><td>Collapsible row</td><td>Details, a closed accordion row, shown once it has content.</td></tr>
-<tr><td>17</td><td>Collapsible row</td><td>Shipping and returns, a closed accordion row, shown once it has content.</td></tr>
-<tr><td>18</td><td>Product navigation</td><td>Previous and next links to the neighboring products.</td></tr>
+<tr><td>14</td><td>Description</td><td>The product description from the product admin page.</td></tr>
+<tr><td>15</td><td>Collapsible row</td><td>Details, a closed accordion row, shown once it has content.</td></tr>
+<tr><td>16</td><td>Collapsible row</td><td>Shipping and returns, a closed accordion row, shown once it has content.</td></tr>
+<tr><td>17</td><td>Product navigation</td><td>Previous and next links to the neighboring products.</td></tr>
 </tbody></table></div>
 <p>Blocks marked <em>shown only when</em> render nothing on products that do not need them, so the page stays short even
 though the stack is long. The template carries no example text: a block whose text is empty shows nothing on the
-storefront, not even its spacing, and a dimmed example in the theme editor. Below the section, the template also places <a href="sections.html#s-product-recommendations">Product
-recommendations</a> and a <a href="sections.html#s-sticky-atc">Sticky add to cart</a> bar.</p>
+storefront, not even its spacing, and a dimmed example in the theme editor. Below the section, the template places, as on the demo store, a
+<a href="sections.html#s-slideshow">Slideshow</a>, the <a href="sections.html#s-sticky-atc">Sticky add to cart</a>
+bar, <a href="sections.html#s-key-ingredients">Key ingredients</a>, a <a href="sections.html#s-routine">Routine</a>,
+<a href="sections.html#s-before-after">Before and after</a>, <a href="sections.html#s-compare-products">Compare
+products</a>, an <a href="sections.html#s-faq">FAQ</a>, <a href="sections.html#s-testimonials">Testimonials</a> and
+<a href="sections.html#s-product-recommendations">Product recommendations</a>. Fill them, or remove the ones you do
+not need. Add an <a href="#pb-product-icon-list">Icon list</a> block for reassurance claims under the buy buttons.</p>
 <p>The Product section is the main section of the product template, so it is not offered in <strong>Add
 section</strong>. Preview versions of Balm offered a second version there, Balm spotlight; it has been removed. What set
 it apart is now available on the standard page: a <a href="#bg-product-gradient">Product gradient</a> background and

@@ -36,8 +36,9 @@ in each version is listed in the <a href="changelog.html">Changelog</a>.</p>
 <p>A preset is a starting style: color schemes, font pairing, corner radii, glass recipe and typography recipes. Balm
 comes with one preset, also named Balm, and your store starts from it.</p>
 <ul>
-  <li><strong>Look.</strong> Clean and neutral: a white scheme and a near black scheme, sentence case headings and buttons, a white frosted glass. A calm base that lets product photography lead.</li>
-  <li><strong>Fonts.</strong> Outfit 600 for headings, Inter for body text, on one fluid type scale.</li>
+  <li><strong>Look.</strong> Clean and neutral: a white scheme, a near black scheme and two violet schemes (a pale lavender and a deep violet), sentence case headings and buttons, a white frosted glass. A calm base that lets product photography lead.</li>
+  <li><strong>Fonts.</strong> Outfit 400 for headings, Inter for body text, on one fluid type scale.</li>
+  <li><strong>Layout.</strong> Pages in Full width with margins, lined up with the header, and small buttons.</li>
   <li><strong>Corners.</strong> Softly rounded: buttons 12 px, cards 20 px.</li>
 </ul>
 <p>Every value of the preset is a starting point. Change the colors, fonts, corners, glass and typography in
@@ -60,10 +61,10 @@ the device switch at the top of the editor to preview both.</p>
 <ol class="steps">
   <li><strong>Logo and menu.</strong> Open the <a href="sections.html#s-header">Header</a> section. Set <strong>Logo type</strong> and upload your <strong>Logo image</strong>, then pick your main menu under <strong>Menu</strong>. Menus themselves are edited in your admin, under Content, Menus (Online Store, Navigation on older admins). The header is transparent over the first section by default and picks its colors from what lies under it: upload a white logo in <strong>Logo for dark backgrounds</strong> so it reads over dark images (see <a href="sections.html#s-header-tone">Automatic header colors</a>).</li>
   <li><strong>Countries and languages.</strong> The header shows a globe with the country and language selectors as soon as there is a choice to make: two countries or regions in <strong>Settings, Markets</strong>, or two published languages in <strong>Settings, Languages</strong>. Until then it shows nothing. <strong>Country and language selectors</strong> in the Header picks which ones appear (Both by default). See <a href="sections.html#s-header-localization">Country and language selectors</a>.</li>
-  <li><strong>Colors.</strong> In <a href="theme-settings.html#ts-colors">Theme settings, Colors</a>, adjust the two color schemes of the Balm preset to your brand. Every section picks one of them.</li>
+  <li><strong>Colors.</strong> In <a href="theme-settings.html#ts-colors">Theme settings, Colors</a>, adjust the four color schemes of the Balm preset to your brand. Every section picks one of them.</li>
   <li><strong>Fonts, sizes and corners.</strong> Set the <strong>Heading font</strong> and <strong>Body font</strong> in <a href="theme-settings.html#ts-typography">Typography</a>. To make every heading or every text of the store larger or smaller at once, move <strong>Heading scale</strong> or <strong>Body scale</strong> there rather than each section's sizes. Set the corner radii in <a href="theme-settings.html#ts-corner-style">Corner style</a>, and the title and price sizes of the product cards in <a href="theme-settings.html#ts-product-cards">Product cards</a>.</li>
-  <li><strong>Page width.</strong> In <a href="theme-settings.html#ts-layout">Theme settings, Layout</a>, keep <strong>Page width</strong> on Standard (1400 px), or widen the product, collection and search pages to Wide (1600 px) or Full width with margins.</li>
-  <li><strong>Home page.</strong> The home page starts with a Hero, a Marquee, a Products showcase, Socials, Image with text, Rich text and the Newsletter popup. Replace their images and texts, remove what you do not need, and add sections with <strong>Add section</strong>. In the Products showcase, pick one product per <strong>Spotlight</strong>: its name, link, image, tagline and colors follow on their own (see <a href="metafields.html#showcase">Metafields</a>).</li>
+  <li><strong>Page width.</strong> In <a href="theme-settings.html#ts-layout">Theme settings, Layout</a>, the Balm preset sets <strong>Page width</strong> to Full width with margins, in line with the header; choose Standard (1400 px) or Wide (1600 px) for a narrower product, collection and search page.</li>
+  <li><strong>Home page.</strong> The home page starts with a Hero, a Marquee, a Products showcase, a Bento, Rich text, Image with text, a Featured collection, a Lookbook, Social media links and the Newsletter popup, as on the demo store. Replace their images and texts, remove what you do not need, and add sections with <strong>Add section</strong>. In the Products showcase, pick one product per <strong>Spotlight</strong>: its name, link, image, tagline and colors follow on their own (see <a href="metafields.html#showcase">Metafields</a>).</li>
   <li><strong>Product page.</strong> Open a product in the editor and review the block stack. See <a href="product-page.html">Product page blocks</a>, and <a href="metafields.html">Metafields</a> if each product should carry its own color or texts. For a background in each product's own colors, set <strong>Background mode</strong> of the Product section to <a href="product-page.html#bg-product-gradient">Product gradient (metafields)</a>; with cutout packshots (PNG or WebP), try the <a href="product-page.html#text-behind-cutouts">text behind cutouts</a>.</li>
   <li><strong>Badges.</strong> Sale and Sold out show on their own, from the prices and the stock. In <a href="theme-settings.html#ts-product-badges">Theme settings, Product badges</a>, turn on New if you want it and set the badge colors. For a badge of your own words, such as <q>Limited edition</q>, fill the <code>custom.badge_label</code> metafield: see <a href="features.html#product-badges">Product badges</a>.</li>
   <li><strong>Collections and search.</strong> Install Shopify's free Search &amp; Discovery app to choose the filters shown on collection and search pages, then set their layout in the <a href="sections.html#s-main-collection">Collection</a> section.</li>
@@ -78,7 +79,9 @@ the device switch at the top of the editor to preview both.</p>
 <h2 id="templates">Templates included</h2>
 <p>Home page, product, collection, list of collections, search, cart, blog, blog post, page, 404, password and gift card,
 a second product template, <code>product.immersive</code> (each product's own gradient under the header, see
-<a href="product-page.html#bg-under-header">Extend the gradient under the header</a>), plus five page templates: <code>page.about</code> (About), <code>page.contact</code> (Contact), <code>page.faq</code> (FAQ),
+<a href="product-page.html#bg-under-header">Extend the gradient under the header</a>), a second collection template,
+<code>collection.colorful</code> (an Aurora gradient that runs under the header, with the column selector on), plus
+five page templates: <code>page.about</code> (About), <code>page.contact</code> (Contact), <code>page.faq</code> (FAQ),
 <code>page.find-us</code> (Store locator) and <code>page.products</code> (Products). All of them are built from sections,
 so you can reshape any of them in the editor.</p>
 
@@ -480,9 +483,6 @@ META_ROWS_PRODUCT = [
     ('Specifications', 'custom.specifications', 'Rich text', 'Popup: Content'),
     ('Row heading', 'custom.row_heading', 'Single line text', 'Collapsible row: Heading'),
     ('Ingredients', 'custom.ingredients', 'Rich text', 'Collapsible row: Content'),
-    ('Claim title', 'custom.claim_title', 'Single line text', 'Icon item: Heading'),
-    ('Claim body', 'custom.claim_body', 'Single line text', 'Icon item: Text'),
-    ('Claim icon', 'custom.claim_icon', 'File', 'Icon item: Icon image'),
     ('Icon image 1', 'custom.icon_image_1', 'File', 'Icon item 1: Icon image (2 and 3 for the next items)'),
     ('Icon text 1', 'custom.icon_text_1', 'Single line or Multi-line text', 'Icon item 1: Heading or Text (2 and 3 for the next items), or Spotlight: Claim 1 text'),
     ('Product image', 'custom.product_image', 'File', 'Image block: Image'),
@@ -662,8 +662,7 @@ to the setting. The names and keys are suggestions; only the type matters.</p>
 
 <h3 id="icon-metafields">Icon metafields, step by step</h3>
 <p>The Icon list of the product page holds up to three claims, each an <strong>Icon item</strong> block, and each
-claim can come from the product: an icon picture and a line of text per item. The demo store names them by item
-number. Create the ones you need:</p>
+claim can come from the product: an icon picture and a line of text per item, numbered by item. Create the ones you need:</p>
 <div class="table-wrap"><table class="plain">
 <thead><tr><th scope="col">Name</th><th scope="col">Namespace and key</th><th scope="col">Type</th><th scope="col">Where it shows</th></tr></thead>
 <tbody>
