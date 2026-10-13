@@ -608,7 +608,11 @@ def build_sections():
     for k in ['heading', 'text', 'button', 'image', 'spacer', 'liquid']:
         parts.append(block_entry(k, heading='h4', prose=CS.THEME_BLOCK_TEXT[k]))
     parts.append(f'<h3 id="mega-menu-blocks">Mega menu blocks</h3>{CS.MEGA_INTRO}')
-    for k in ['_mega-menu', '_mega-column', '_mega-image', '_mega-products', '_mega-promo', '_mega-banner']:
+    mega = ['_mega-menu', '_mega-column', '_mega-image', '_mega-cards', '_mega-card', '_mega-products', '_mega-promo', '_mega-banner']
+    missing = sorted({k for k in D['blocks'] if k.startswith('_mega-')} - set(mega))
+    if missing:
+        raise SystemExit('mega menu blocks without a place: ' + ', '.join(missing))
+    for k in mega:
         parts.append(block_entry(k, heading='h4', prose=CS.MEGA_TEXT[k], id_prefix='mm-'))
     write_page('sections.html', 'Sections', PAGES[2][2], '\n'.join(parts))
 

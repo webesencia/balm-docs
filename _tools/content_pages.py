@@ -58,7 +58,7 @@ the device switch at the top of the editor to preview both.</p>
 
 <h2 id="first-setup">First setup, step by step</h2>
 <ol class="steps">
-  <li><strong>Logo and menu.</strong> Open the <a href="sections.html#s-header">Header</a> section. Set <strong>Logo type</strong> and upload your <strong>Logo image</strong>, then pick your main menu under <strong>Menu</strong>. Menus themselves are edited in your admin, under Content, Menus (Online Store, Navigation on older admins). Over a dark hero image, a transparent header with a white logo and white text reads best: see the <a href="sections.html#s-header-transparent-colors">white header example</a>.</li>
+  <li><strong>Logo and menu.</strong> Open the <a href="sections.html#s-header">Header</a> section. Set <strong>Logo type</strong> and upload your <strong>Logo image</strong>, then pick your main menu under <strong>Menu</strong>. Menus themselves are edited in your admin, under Content, Menus (Online Store, Navigation on older admins). The header is transparent over the first section by default and picks its colors from what lies under it: upload a white logo in <strong>Logo for dark backgrounds</strong> so it reads over dark images (see <a href="sections.html#s-header-tone">Automatic header colors</a>).</li>
   <li><strong>Countries and languages.</strong> The header shows a globe with the country and language selectors as soon as there is a choice to make: two countries or regions in <strong>Settings, Markets</strong>, or two published languages in <strong>Settings, Languages</strong>. Until then it shows nothing. <strong>Country and language selectors</strong> in the Header picks which ones appear (Both by default). See <a href="sections.html#s-header-localization">Country and language selectors</a>.</li>
   <li><strong>Colors.</strong> In <a href="theme-settings.html#ts-colors">Theme settings, Colors</a>, adjust the two color schemes of the Balm preset to your brand. Every section picks one of them.</li>
   <li><strong>Fonts, sizes and corners.</strong> Set the <strong>Heading font</strong> and <strong>Body font</strong> in <a href="theme-settings.html#ts-typography">Typography</a>. To make every heading or every text of the store larger or smaller at once, move <strong>Heading scale</strong> or <strong>Body scale</strong> there rather than each section's sizes. Set the corner radii in <a href="theme-settings.html#ts-corner-style">Corner style</a>, and the title and price sizes of the product cards in <a href="theme-settings.html#ts-product-cards">Product cards</a>.</li>
@@ -67,8 +67,9 @@ the device switch at the top of the editor to preview both.</p>
   <li><strong>Product page.</strong> Open a product in the editor and review the block stack. See <a href="product-page.html">Product page blocks</a>, and <a href="metafields.html">Metafields</a> if each product should carry its own color or texts. For a background in each product's own colors, set <strong>Background mode</strong> of the Product section to <a href="product-page.html#bg-product-gradient">Product gradient (metafields)</a>; with cutout packshots (PNG or WebP), try the <a href="product-page.html#text-behind-cutouts">text behind cutouts</a>.</li>
   <li><strong>Badges.</strong> Sale and Sold out show on their own, from the prices and the stock. In <a href="theme-settings.html#ts-product-badges">Theme settings, Product badges</a>, turn on New if you want it and set the badge colors. For a badge of your own words, such as <q>Limited edition</q>, fill the <code>custom.badge_label</code> metafield: see <a href="features.html#product-badges">Product badges</a>.</li>
   <li><strong>Collections and search.</strong> Install Shopify's free Search &amp; Discovery app to choose the filters shown on collection and search pages, then set their layout in the <a href="sections.html#s-main-collection">Collection</a> section.</li>
-  <li><strong>Cart.</strong> Open the <a href="sections.html#s-cart-drawer">Cart drawer</a> for the reward progress bar, suggestions and the order note. Turn on <a href="features.html#gift-wrapping">gift wrapping</a> if you offer it.</li>
-  <li><strong>Footer.</strong> Add your menus, newsletter and social links. The footer opens with a <a href="sections.html#s-footer-large-logo">Large logo</a>, your store name set across the whole width: keep it, switch it to your own SVG, or remove it. The Localization block repeats the country and language selectors in the footer, with the same choices as the header.</li>
+  <li><strong>Cart.</strong> In <a href="theme-settings.html#ts-cart">Theme settings, Cart</a>, choose a drawer, the cart page or a notification, then set the free shipping bar, the recommendations, the order note and the discount code field. Turn on <a href="features.html#gift-wrapping">gift wrapping</a> if you offer it.</li>
+  <li><strong>Social media.</strong> Type the address of each of your profiles in <a href="theme-settings.html#ts-social-media">Theme settings, Social media</a>. The icons then show in the footer, in the Social media links section and, if you want, in the header (see <a href="features.html#social-media">Social media</a>).</li>
+  <li><strong>Footer.</strong> Add your menus, newsletter and social media links. The footer opens with a <a href="sections.html#s-footer-large-logo">Large logo</a>, your store name set across the whole width: keep it, switch it to your own SVG, or remove it. The Localization block repeats the country and language selectors in the footer, with the same choices as the header.</li>
   <li><strong>Favicon and sharing.</strong> Upload a favicon and a fallback share image in Theme settings.</li>
   <li><strong>Pages.</strong> Create your About, Contact, FAQ and Where to buy pages in Online Store, Pages, and assign them the matching template under <strong>Theme template</strong>: <code>page.about</code>, <code>page.contact</code>, <code>page.faq</code>, <code>page.find-us</code>. The <code>page.products</code> template presents your range with a Featured set and a Products showcase.</li>
   <li><strong>Check and publish.</strong> Preview every page type on desktop and on a phone, place a test order, then publish.</li>
@@ -76,7 +77,8 @@ the device switch at the top of the editor to preview both.</p>
 
 <h2 id="templates">Templates included</h2>
 <p>Home page, product, collection, list of collections, search, cart, blog, blog post, page, 404, password and gift card,
-plus five page templates: <code>page.about</code> (About), <code>page.contact</code> (Contact), <code>page.faq</code> (FAQ),
+a second product template, <code>product.immersive</code> (each product's own gradient under the header, see
+<a href="product-page.html#bg-under-header">Extend the gradient under the header</a>), plus five page templates: <code>page.about</code> (About), <code>page.contact</code> (Contact), <code>page.faq</code> (FAQ),
 <code>page.find-us</code> (Store locator) and <code>page.products</code> (Products). All of them are built from sections,
 so you can reshape any of them in the editor.</p>
 
@@ -98,6 +100,10 @@ FEATURES = '''
 <li><a href="#pagination">Pagination</a></li><li><a href="#translations">Translations</a></li>
 <li><a href="#combined-listings">Combined listings</a></li><li><a href="#pre-order">Pre-order</a></li>
 <li><a href="#type-sizes">Type sizes</a></li><li><a href="#page-width">Page width</a></li>
+<li><a href="#header-colors">Automatic header colors</a></li><li><a href="#section-width">Section width</a></li>
+<li><a href="#glass">Glass</a></li><li><a href="#social-media">Social media</a></li>
+<li><a href="#sticky-add-to-cart">Sticky add to cart</a></li><li><a href="#spotlight-spinning-badge">Spinning badge of a spotlight</a></li>
+<li><a href="#collection-columns">Column selector</a></li>
 </ol></nav>
 
 <section class="entry" id="quick-view-entry">
@@ -109,7 +115,7 @@ availability, a short description and a link to the full product page. Adding to
 <h3 id="quick-view-on">Turn it on</h3>
 <ol class="steps">
   <li>Open a section that shows product cards: Collection, Featured collection, Search, Recently viewed or Lookbook.</li>
-  <li>Set <strong>Quick view</strong> to <strong>Button on hover</strong> or <strong>Icon</strong>. On touch screens the button is always visible.</li>
+  <li>Set <strong>Quick view</strong> to <strong>Show on hover</strong> or <strong>Always show</strong>. On touch screens the button is always visible.</li>
   <li>In <a href="theme-settings.html#ts-quick-view">Theme settings, Quick view</a>, choose what the modal shows and its card style: Solid, Tinted glass or Glass.</li>
 </ol>
 <p><strong>Short description metafield</strong> takes the namespace and key of a product metafield, for example
@@ -160,6 +166,18 @@ colors of Theme settings.</p>
 </ul>
 <p>On the product page, Sale and Sold out follow the selected variant: choosing a variant without a compare-at price
 removes Sale, choosing a sold out one shows Sold out. When no badge applies, nothing is drawn and no space is left.</p>
+<h3 id="badges-per-section">Choose the badges of each section</h3>
+<p>Every section that shows product cards has its own <strong>Badges</strong> setting: Collection, Search, Featured
+collection, Product recommendations, Recently viewed, Lookbook, the 404 page, Compare products, the Product tile of
+Bento and the Complementary products block of the product page.</p>
+<ul>
+  <li><strong>All</strong>, the default: every badge that applies.</li>
+  <li><strong>Automatic only</strong>: Sale, Sold out and New, as set in Theme settings, Product badges.</li>
+  <li><strong>Custom only</strong>: only the product's <code>custom.badge_label</code> metafield.</li>
+  <li><strong>None</strong>: no badge in that section.</li>
+</ul>
+<p>For example, keep All on the collection pages and choose Custom only in Featured collection on the home page, so it
+shows your Limited edition badges without the Sale ones.</p>
 </section>
 
 <section class="entry" id="page-loader-entry">
@@ -233,16 +251,19 @@ the product card, with its quick add. On a phone a tap opens the same content as
 <section class="entry" id="compare-products-entry">
 <h2 id="compare-products">Compare products</h2>
 <p>The <a href="sections.html#s-compare-products">Compare products</a> section sets up to five products side by side.
-Built in rows show the image, price, availability, vendor and rating. Each row you add reads the product metafield of
-your choice, by its key.</p>
+Built in rows show the image, the badges, the price, the availability, the vendor and the rating. Each row you add
+reads one fact on every compared product: a metafield of your choice, or the vendor, product type, tags, SKU, barcode,
+weight or unit price.</p>
 <ol class="steps">
-  <li>Create one product metafield definition per fact you want to compare, in Settings, Custom data, Products. For example <code>custom.texture</code> and <code>custom.skin_type</code> (Single line text), <code>custom.fragrance_free</code> (True or false).</li>
+  <li>Create one product metafield definition per fact you want to compare, in Settings, Custom data, Products. For example <q>Texture</q> and <q>Skin type</q> (Single line text), <q>Fragrance free</q> (True or false).</li>
   <li>Fill the values on each product.</li>
-  <li>Add the section, pick the products, then add one <strong>Row</strong> block per fact: a <strong>Label</strong>, the <strong>Product metafield</strong> key, and a <strong>Value type</strong>: Text, Number with unit (with its <strong>Unit</strong>, such as ml) or Yes or no.</li>
+  <li>Add the section, pick the products, then add one <strong>Row</strong> block per fact. Keep <strong>Source</strong> on Metafield and type the metafield's name in <strong>Metafield</strong>, for example <q>Skin type</q>, or its key, <code>custom.skin_type</code>. Type a <strong>Label</strong> for the left column, or leave it empty to use the name of the source.</li>
 </ol>
-<p>A product without a value shows a dash, and a row that no product has a value for is left out of the storefront.
-<strong>Highlight differences</strong> marks the rows where products differ. On a phone the label column stays in place
-while the product columns scroll. The full example is in <a href="metafields.html#compare">Metafields, Compare products rows</a>.</p>
+<p>Each value is drawn by its type: a check mark or a cross for true or false, a number followed by the row's
+<strong>Unit</strong>, a list as a sentence, a color with its swatch. A product without a value shows a hyphen.
+<strong>Highlight differences</strong> marks the rows where products differ. <strong>Mobile layout</strong> shows one
+card per product on a phone, or the table with the labels in place while the products scroll. The full example is in
+<a href="metafields.html#compare">Metafields, Compare products rows</a>.</p>
 </section>
 
 <section class="entry" id="recently-viewed-entry">
@@ -329,10 +350,116 @@ of the product page or the two words across the Gallery banner keep a desktop an
 <p>One setting, <strong>Page width</strong> in <a href="theme-settings.html#ts-layout">Theme settings, Layout</a>, sets
 how wide the shopping pages grow: the product page, the collection and search pages, and the Featured collection,
 Product recommendations and Recently viewed sections. <strong>Standard</strong> keeps them to 1400 px,
-<strong>Wide</strong> to 1600 px, and <strong>Full width with margins</strong> fills the screen with the footer's
-margins, 50 px from 768 px wide and 20 px on phones. On a large screen, Wide shows bigger product cards and a bigger
-gallery; the card images are served at the new size, so they stay sharp. Content sections such as Rich text or Image
-with text keep their own widths.</p>
+<strong>Wide</strong> to 1600 px, and <strong>Full width with margins</strong> fills the screen less the side
+margins of the header, so the page, the breadcrumbs and the footer line up with the header's logo and icons. On a large
+screen, Wide shows bigger product cards and a bigger gallery; the card images are served at the new size, so they stay
+sharp. The other sections set their width with <a href="#section-width">Section width</a>.</p>
+</section>
+
+<section class="entry" id="header-colors-entry">
+<h2 id="header-colors">Automatic header colors</h2>
+<p>The header can lie over the top of the page, transparent, and wear the colors that read on what is under it, with
+nothing to set in each section. It does so with <strong>Header behavior</strong> on <strong>Transparent at top</strong>
+(the default: over the first section, then the card on scroll) or <strong>Adaptive</strong> (at every scroll position,
+on every page).</p>
+<ol class="steps">
+  <li>In the <a href="sections.html#s-header">Header</a> section, set <strong>Colors over dark backgrounds</strong> to a color scheme with light text. Scheme 2 of the Balm preset, white on near black, is the default.</li>
+  <li>Upload a light version of your logo in <strong>Logo for dark backgrounds</strong>. It shares the size and the place of the main logo, so nothing moves when they swap.</li>
+  <li>Let the first section of the page reach under the header: <strong>Allow transparent header</strong> on a Hero, Slideshow, Video, Products showcase or Brand story hero, or <strong>Header over this section</strong> on the other sections that offer it (see <a href="sections.html#transparent-header">The header over a section</a>).</li>
+</ol>
+<p>The header then reads the backgrounds painted under its middle line: colors, gradients, each product's gradient,
+and, over a picture or a video, a small thumbnail of the part it covers, overlay included. Over a dark background it
+takes the colors over dark backgrounds and the logo for dark backgrounds; over a light one, its own color scheme and
+main logo. It reads again as the page scrolls, as a slideshow changes slide and as a Products showcase moves to the next
+spotlight. An open menu, search panel or mobile menu always keeps the standard colors. A floating announcement bar can
+follow it with <strong>Use the header's colors over dark backgrounds</strong>.</p>
+<p>Preview versions of Balm asked for the tone in some sections (<strong>Tone under the header</strong>, <strong>Header
+colors at rest</strong>) and offered <strong>Transparent header over the first section</strong>; these settings have
+been removed. A store that used the transparent header keeps it, Transparent at top being the default.</p>
+</section>
+
+<section class="entry" id="section-width-entry">
+<h2 id="section-width">Section width</h2>
+<p>Almost every section has a <strong>Section width</strong> setting, right after its color scheme, with three options:</p>
+<ul>
+  <li><strong>Full width</strong>: the background, the picture or the video runs from one edge of the screen to the other. Text keeps a readable width inside.</li>
+  <li><strong>Full width with margins</strong>: the section stops at the side margins of the header. Its edges line up with the header's at every screen width, and, with <strong>Floating header (detached)</strong> on, with the edges of the floating header card.</li>
+  <li><strong>Page width</strong>: the section stops at the <a href="#page-width">Page width</a> of Theme settings, Layout, with its side margin, in line with the product, collection and search pages.</li>
+</ul>
+<p>Mixing the options on one page builds a rhythm: a Full width hero, products and texts at Page width, then a picture
+in Full width with margins whose rounded corners line up with a floating header. See
+<a href="sections.html#section-width">Sections, Section width</a>.</p>
+</section>
+
+<section class="entry" id="glass-entry">
+<h2 id="glass">Glass</h2>
+<p>Glass is the frosted look of Balm: a tinted, translucent fill with a fine border, which blurs what passes behind it.
+Two recipes in <a href="theme-settings.html#ts-glass-effect">Theme settings, Glass effect</a> drive every glass surface
+of the store, so one change restyles them all.</p>
+<ul>
+  <li><strong>Glass effect</strong> (Tint, Fill opacity, Blur, Border opacity) covers the large surfaces: the header card and its mega menu panels, the announcement bar in Glass style, the cart drawer, the filter drawer, quick view, the popups and the glass buttons.</li>
+  <li><strong>Glass elements</strong> (Element fill opacity, Element blur, Element border opacity) covers the small pieces inside sections: cards, FAQ questions, form fields, and the controls that sit over a picture, such as the carousel arrows, the Lookbook hotspots (<strong>Hotspot colors</strong> set to Glass), the media controls of the product gallery and the Hero video controls.</li>
+</ul>
+<p>Pick Glass in the style setting of each element: Card style, Question style, Arrow style, Button style and so on.
+Glass labels measure their contrast and turn black or white when the text color would not read on the frost.
+<strong>Glass on phones</strong> can swap the blur for a near opaque fill on screens under 768 px, and visitors who ask
+for reduced transparency, or whose browser cannot blur, always get the near opaque fill.</p>
+</section>
+
+<section class="entry" id="social-media-entry">
+<h2 id="social-media">Social media</h2>
+<p>Your social media profiles are typed once, in <a href="theme-settings.html#ts-social-media">Theme settings, Social
+media</a>, and every icon of the store reads them.</p>
+<ol class="steps">
+  <li>In Theme settings, Social media, paste the full address of each profile you have, for example <code>https://www.tiktok.com/@yourbrand</code>. Facebook, Instagram, TikTok, X, YouTube, Pinterest, Snapchat, Threads, Tumblr, Vimeo and LinkedIn are offered.</li>
+  <li>Choose where the icons appear: the <strong>Social media links</strong> block of the footer, the <a href="sections.html#s-socials">Social media links</a> section, and the header on desktop with <strong>Show social media icons</strong> in the Header section.</li>
+</ol>
+<p>Only the networks with an address show, each with its icon, in a new tab. Screen readers name each link after your
+store, such as <q>Balm on Instagram</q>. The footer block can also show Shopify's Follow on Shop button. How your pages
+look when someone shares them is set separately, in <a href="theme-settings.html#ts-social-media-sharing">Social media
+sharing</a>.</p>
+</section>
+
+<section class="entry" id="sticky-add-to-cart-entry">
+<h2 id="sticky-add-to-cart">Sticky add to cart</h2>
+<p>A bar that keeps the product and its add to cart button within reach while the shopper scrolls a long product page.
+It is the <a href="sections.html#s-sticky-atc">Sticky add to cart</a> section, which the product template places below
+the Product section.</p>
+<ul>
+  <li><strong>Enable the bar</strong> turns it on. <strong>Position (desktop)</strong> and <strong>Position (mobile)</strong> put it at the top or at the bottom of the screen; the bottom suits phones, where the main button quickly scrolls away.</li>
+  <li>It shows the <strong>Product thumbnail</strong> (desktop and mobile apart), the <strong>Product title</strong>, the <strong>Selected variant</strong> (left out on a product without variants) and the <strong>Price</strong>, each one optional.</li>
+  <li>By default it appears once the main buy button scrolls out of view; <strong>Always visible</strong> keeps it on screen.</li>
+  <li>The button follows the variant chosen on the page and says Pre-order on a pre-order variant. Its colors are <strong>Button background</strong> and <strong>Button text</strong>; with the Product gradient background, the product's end color becomes its accent when it stays readable.</li>
+</ul>
+<p>The back to top button lifts above the bar. In the theme editor, the bar steps aside while another section is
+selected.</p>
+</section>
+
+<section class="entry" id="spotlight-spinning-badge-entry">
+<h2 id="spotlight-spinning-badge">Spinning badge of a spotlight</h2>
+<p>Each <strong>Spotlight</strong> of the <a href="sections.html#s-products-showcase">Products showcase</a> can turn a
+round badge on its slide, set in the <strong>Spinning badge</strong> group of the spotlight. Unlike the Spinning badge
+block of the product page, which reads the product's <code>custom.badge_label</code> metafield, the spotlight's badge
+carries its own image or text.</p>
+<ul>
+  <li><strong>Type</strong>: None, Image (your own artwork) or Text. An Image spotlight with no picture shows the <strong>Spinning badge</strong> image of the section, shared by every spotlight.</li>
+  <li><strong>Text</strong>: written around a <strong>Shape</strong>, a circle or a rounded square. With <strong>Repeat text</strong> on, the text and its <strong>Separator</strong> repeat to fill the ring; off, the text is written once, centered on the <strong>Start angle</strong> (0 at the top, 90 on the right). Text size, weight, case and letter spacing per device, and a <strong>Center content</strong>: an image or an icon in the middle of the ring.</li>
+  <li><strong>Place</strong>: size and horizontal and vertical position on desktop and on mobile, in percent of the slide, <strong>Place behind the product</strong>, opacity, a link, and <strong>Show on mobile</strong>.</li>
+  <li><strong>Motion</strong>: <strong>Rotate</strong>, the time of <strong>One full turn</strong> and the <strong>Direction</strong>. The rotation stops for visitors who ask for reduced motion.</li>
+</ul>
+</section>
+
+<section class="entry" id="collection-columns-entry">
+<h2 id="collection-columns">Column selector</h2>
+<p>The <a href="sections.html#s-main-collection">Collection</a> section can let shoppers choose how many products they
+see per row. <strong>Columns (desktop)</strong> and <strong>Columns (mobile)</strong> set the starting layout; then:</p>
+<ul>
+  <li><strong>Let visitors change the column count (desktop)</strong> adds 2, 3 and 4 buttons beside the sort.</li>
+  <li><strong>Let visitors change the column count (mobile)</strong> adds 1 and 2 buttons beside the filters on phones.</li>
+</ul>
+<p>On desktop the buttons sit on one row with the filters, the product count and the sort; on a phone, on one row with
+the Filter and sort button and the count. Each device keeps its own choice for the rest of the visit, after a filter or
+a page reload too. Both are off by default.</p>
 </section>
 '''
 
@@ -356,6 +483,8 @@ META_ROWS_PRODUCT = [
     ('Claim title', 'custom.claim_title', 'Single line text', 'Icon item: Heading'),
     ('Claim body', 'custom.claim_body', 'Single line text', 'Icon item: Text'),
     ('Claim icon', 'custom.claim_icon', 'File', 'Icon item: Icon image'),
+    ('Icon image 1', 'custom.icon_image_1', 'File', 'Icon item 1: Icon image (2 and 3 for the next items)'),
+    ('Icon text 1', 'custom.icon_text_1', 'Single line or Multi-line text', 'Icon item 1: Heading or Text (2 and 3 for the next items), or Spotlight: Claim 1 text'),
     ('Product image', 'custom.product_image', 'File', 'Image block: Image'),
     ('Image caption', 'custom.image_caption', 'Single line text', 'Image block: Caption'),
     ('Spec label', 'custom.spec_label', 'Single line text', 'Specification: Label'),
@@ -384,7 +513,7 @@ METAFIELDS = '''
 a setting can only be connected to a definition that already exists, with the right type. So the definition always comes
 first, the connection second, the values third.</p>
 <ul>
-  <li>Definitions are created in <strong>Settings, Custom data</strong>, under <strong>Products</strong> or <strong>Shop</strong>.</li>
+  <li>Definitions are created in <strong>Settings, Custom data</strong>, under <strong>Products</strong>, <strong>Collections</strong>, <strong>Pages</strong> or <strong>Shop</strong>, depending on what carries the value.</li>
   <li>Type the <strong>Name</strong> exactly as listed below. The admin derives the key from the name, in lowercase with underscores, so the key matches on its own. If you rename a definition, check its key before saving: the connection works by key.</li>
   <li>Names are shown in quotation marks here and in the theme editor so you can see where they start and end. The quotation marks are not part of the name.</li>
   <li>The namespace and key are suggestions; the <strong>type</strong> is not. A setting refuses a definition of the wrong type.</li>
@@ -404,9 +533,12 @@ each product, in the <strong>Metafields</strong> card of the product page in you
 <tr><td><q>Badge label</q></td><td><code>custom.badge_label</code></td><td>Single line text</td><td>The Custom badge: on product cards, in quick view, in Compare products, and on the product page, on the gallery (<strong>Badges on media</strong> set to Automatic) and in the Badge block (Automatic). Also the only text of the Spinning badge block, which shows no ring on a product without it.</td><td><strong>Settings, Custom data, Products</strong>, <strong>Add definition</strong>: name <q>Badge label</q>, type <strong>Single line text</strong>, one value. <a href="#badge-label">Step by step</a>.</td></tr>
 <tr><td><q>Badge color</q></td><td><code>custom.badge_color</code></td><td>Color</td><td>The background of that product's Custom badge, everywhere the badge shows (cards, quick view, Compare products, gallery, Badge block). Empty: the <strong>Custom background</strong> of Theme settings. Filled without a badge text color, the text turns dark or light by itself, at a contrast of at least 4.5:1. Optional.</td><td><strong>Settings, Custom data, Products</strong>, <strong>Add definition</strong>: name <q>Badge color</q>, type <strong>Color</strong>. <a href="#badge-colors">Step by step</a>.</td></tr>
 <tr><td><q>Badge text color</q></td><td><code>custom.badge_text_color</code></td><td>Color</td><td>The text of that product's Custom badge, in the same places. Empty: the <strong>Custom text</strong> of Theme settings, or the automatic text when <code>custom.badge_color</code> is filled. Optional.</td><td><strong>Settings, Custom data, Products</strong>, <strong>Add definition</strong>: name <q>Badge text color</q>, type <strong>Color</strong>. <a href="#badge-colors">Step by step</a>.</td></tr>
+<tr><td><q>Primary collection</q></td><td><code>custom.primary_collection</code></td><td>Collection (one value)</td><td>On a product page, the collection shown in the breadcrumb trail and in its structured data when the visitor did not come through a collection, with <strong>Show the collection</strong> on in Theme settings, Breadcrumbs. Without it, the product's first collection. Optional.</td><td><strong>Settings, Custom data, Products</strong>, <strong>Add definition</strong>: name <q>Primary collection</q>, type <strong>Collection</strong>, one value. <a href="#primary-collection">Step by step</a>.</td></tr>
+<tr><td><q>Banner image</q></td><td><code>custom.banner_image</code></td><td>File (image)</td><td>A <strong>collection</strong> metafield: the picture of the collection banner, before the Banner image of the Collection section and the collection's own image, framed at the focal point set in Files. Optional.</td><td><strong>Settings, Custom data, Collections</strong>, <strong>Add definition</strong>: name <q>Banner image</q>, type <strong>File</strong>, images only. <a href="#banner-image">Step by step</a>.</td></tr>
+<tr><td><q>Image</q></td><td><code>custom.image</code></td><td>File (image)</td><td>A <strong>page</strong> metafield: the picture of a page in the dropdowns of the main menu and in a mega menu Image cards block set to Automatic. Collections, products and blog posts use their own image. Optional.</td><td><strong>Settings, Custom data, Pages</strong>, <strong>Add definition</strong>: name <q>Image</q>, type <strong>File</strong>, images only. <a href="#page-image">Step by step</a>.</td></tr>
 <tr><td><em>Shopify standard</em></td><td><code>reviews.rating</code>, <code>reviews.rating_count</code></td><td>Rating, Integer</td><td>The Rating block, the ratings on cards, in quick view and in Compare products.</td><td>Nothing to create: a review app creates and fills them. See <a href="#reviews">Review metafields</a>.</td></tr>
 </tbody></table></div>
-<p>Compare products reads no fixed key: each of its rows reads the metafield you choose. See
+<p>Compare products reads no fixed key: each of its rows reads the metafield you name. See
 <a href="#compare">Compare products rows</a>.</p>
 
 <h3 id="badge-label">Badge label, step by step</h3>
@@ -434,6 +566,35 @@ whichever contrasts more with the badge, or pure black or white when neither rea
 the text sits on the Custom background of Theme settings. Create both as <strong>Color</strong>: a value that is not a
 color, such as a word typed in a text metafield, is ignored. The two colors apply to the Custom badge only, never to
 Sale, Sold out or New, and not to the Spinning badge, which keeps the colors set in its block.</p>
+
+<h3 id="primary-collection">Primary collection, step by step</h3>
+<p>Optional: for products that sit in several collections, to choose the one the breadcrumb trail shows.</p>
+<ol class="steps">
+  <li>In <strong>Settings, Custom data, Products</strong>, choose <strong>Add definition</strong>. Name: <q>Primary collection</q>, namespace and key <code>custom.primary_collection</code>, type <strong>Collection</strong> (under References), one value. Save.</li>
+  <li>Open a product, and in its <strong>Metafields</strong> card pick the collection in <strong>Primary collection</strong>.</li>
+  <li>Check that <strong>Show breadcrumbs</strong> and <strong>Show the collection</strong> are on in <a href="theme-settings.html#ts-breadcrumbs">Theme settings, Breadcrumbs</a>.</li>
+</ol>
+<p>A visitor who arrives from a collection grid still sees that collection in the trail; the metafield decides for the
+others, such as a visitor coming from a search engine. Search engines read the same trail.</p>
+
+<h3 id="banner-image">Banner image, step by step</h3>
+<p>Optional: for collections whose banner needs another picture than the collection image, or a precise framing.</p>
+<ol class="steps">
+  <li>In <strong>Settings, Custom data, Collections</strong>, choose <strong>Add definition</strong>. Name: <q>Banner image</q>, namespace and key <code>custom.banner_image</code>, type <strong>File</strong>, with images accepted. Save.</li>
+  <li>Open a collection in <strong>Products, Collections</strong>, and in its <strong>Metafields</strong> card pick the picture.</li>
+  <li>To control the framing, set the focal point of the picture in <strong>Content, Files</strong>.</li>
+</ol>
+<p>The banner takes, in this order, this metafield, the <strong>Banner image</strong> of the Collection section, then
+the collection's own image. Shopify keeps no focal point on a collection's own image, which is why the metafield and
+the section setting exist.</p>
+
+<h3 id="page-image">Page image, step by step</h3>
+<p>Optional: for pages linked from the main menu, so their link shows a picture in the dropdowns and in Image cards.</p>
+<ol class="steps">
+  <li>In <strong>Settings, Custom data, Pages</strong>, choose <strong>Add definition</strong>. Name: <q>Image</q>, namespace and key <code>custom.image</code>, type <strong>File</strong>, with images accepted. Save.</li>
+  <li>Open a page in <strong>Online Store, Pages</strong>, and pick its picture in the <strong>Metafields</strong> card.</li>
+</ol>
+<p>A page without it shows its link without a picture, and an Image cards block set to Automatic leaves it out.</p>
 
 <h3 id="tagline">Tagline, step by step</h3>
 <ol class="steps">
@@ -499,6 +660,25 @@ to the setting. The names and keys are suggestions; only the type matters.</p>
 <thead><tr><th scope="col">Name</th><th scope="col">Namespace and key</th><th scope="col">Type</th><th scope="col">Connect it to</th></tr></thead>
 <tbody>''' + _rows(META_ROWS_PRODUCT) + '''</tbody></table></div>
 
+<h3 id="icon-metafields">Icon metafields, step by step</h3>
+<p>The Icon list of the product page holds up to three claims, each an <strong>Icon item</strong> block, and each
+claim can come from the product: an icon picture and a line of text per item. The demo store names them by item
+number. Create the ones you need:</p>
+<div class="table-wrap"><table class="plain">
+<thead><tr><th scope="col">Name</th><th scope="col">Namespace and key</th><th scope="col">Type</th><th scope="col">Where it shows</th></tr></thead>
+<tbody>
+<tr><td><q>Icon image 1</q>, <q>Icon image 2</q>, <q>Icon image 3</q></td><td><code>custom.icon_image_1</code> to <code>custom.icon_image_3</code></td><td>File (image)</td><td>The <strong>Icon image</strong> of the first, second and third Icon item. A picture keeps its proportions and sits on the bottom of its box.</td></tr>
+<tr><td><q>Icon text 1</q>, <q>Icon text 2</q>, <q>Icon text 3</q></td><td><code>custom.icon_text_1</code> to <code>custom.icon_text_3</code></td><td>Single line text, or Multi-line text</td><td>The <strong>Heading</strong> (or the <strong>Text</strong>) of the first, second and third Icon item. Each line of a Multi-line text shows on its own line. The same metafields can feed <strong>Claim 1 text</strong> to <strong>Claim 4 text</strong> of a Products showcase spotlight, read on the spotlight's product.</td></tr>
+</tbody></table></div>
+<ol class="steps">
+  <li>In <strong>Settings, Custom data, Products</strong>, add the definitions: for example <q>Icon image 1</q>, type <strong>File</strong>, and <q>Icon text 1</q>, type <strong>Multi-line text</strong> (or Single line text for one line).</li>
+  <li>Fill them on each product, for example a leaf picture and <q>Vegan formula</q>.</li>
+  <li>In the theme editor, open a product, select the first <strong>Icon item</strong> of the Icon list, then next to <strong>Icon image</strong> select the dynamic source icon and pick <q>Icon image 1</q>. Do the same next to <strong>Heading</strong> with <q>Icon text 1</q>. Repeat for the second and third items.</li>
+</ol>
+<p>These names and keys are suggestions: any key works, as long as the type matches, since you connect them yourself.
+An item whose heading and text both come back empty stays hidden on the storefront and leaves no gap; in the theme
+editor it keeps a small badge that says why.</p>
+
 <h2 id="typed-keys">Metafields you type by key</h2>
 <p>A few settings are plain text fields where you type the <code>namespace.key</code> yourself instead of using the
 dynamic source icon.</p>
@@ -507,7 +687,7 @@ dynamic source icon.</p>
 <tbody>
 <tr><td>Product section, Packshot captions: <strong>Caption source</strong> set to Product metafield (list), then <strong>Metafield</strong></td><td><code>custom.media_captions</code></td><td>List of single line text on products. Entry 1 captions media 1, and so on; media without an entry use their alt text.</td></tr>
 <tr><td>Theme settings, Quick view: <strong>Short description metafield</strong></td><td>For example <code>custom.short_description</code></td><td>Single line or multi-line text on products. Without it, quick view shows the first paragraph of the description.</td></tr>
-<tr><td>Compare products, Row block: <strong>Product metafield</strong></td><td>For example <code>custom.texture</code></td><td>Any type that fits the row's <strong>Value type</strong>. See <a href="#compare">Compare products rows</a>.</td></tr>
+<tr><td>Compare products, Row block: <strong>Metafield</strong>, with <strong>Source</strong> on Metafield</td><td>The name, for example <q>Texture</q>, or the key, for example <code>custom.texture</code></td><td>Any type: each one is drawn as such. See <a href="#compare">Compare products rows</a>.</td></tr>
 </tbody></table></div>
 
 <h2 id="product-lists">Product list metafields</h2>
@@ -532,30 +712,36 @@ metafields, <code>reviews.rating</code> (Rating) and <code>reviews.rating_count<
 you have nothing to create. Until they are filled, the ratings stay hidden.</p>
 
 <h2 id="compare">Compare products rows</h2>
-<p><a href="features.html#compare-products">Compare products</a> has no metafield of its own. Each Row block reads the
-product metafield of your choice: you type its <code>namespace.key</code> in the row's <strong>Product metafield</strong>
-setting, so you decide which facts the table compares, and each row can read a different metafield. For example, to
-compare three creams of a range:</p>
+<p><a href="features.html#compare-products">Compare products</a> has no metafield of its own. Each Row block with
+<strong>Source</strong> set to Metafield reads the product metafield you name in its <strong>Metafield</strong> setting,
+on every compared product, so you decide which facts the table compares. Type the metafield's name, exactly as it
+shows in <strong>Settings, Custom data, Products</strong> (<q>Skin type</q>), or its key (<code>custom.skin_type</code>).
+A name is turned into the key the admin gives it by default: namespace <code>custom</code>, the name in lowercase with
+underscores. If you changed the key of a definition, type the key.</p>
+<p>The field takes no dynamic source on purpose: a connected metafield would give the value of the page's product in
+every column. To name the row after the metafield, connect it to the row's <strong>Label</strong> instead, or leave
+Label empty to show the name you typed. For example, to compare three creams of a range:</p>
 <div class="table-wrap"><table class="plain">
 <thead><tr><th scope="col">Name</th><th scope="col">Namespace and key</th><th scope="col">Type</th><th scope="col">Where it shows</th><th scope="col">How to create it</th></tr></thead>
 <tbody>
-<tr><td><q>Texture</q></td><td><code>custom.texture</code></td><td>Single line text</td><td>A Row block with <strong>Product metafield</strong> <code>custom.texture</code> and <strong>Value type</strong> Text. Each product shows its value, for example <q>Rich balm</q> or <q>Light gel</q>.</td><td><strong>Settings, Custom data, Products</strong>, <strong>Add definition</strong>: name <q>Texture</q>, type <strong>Single line text</strong>, one value.</td></tr>
-<tr><td><q>Skin type</q></td><td><code>custom.skin_type</code></td><td>Single line text</td><td>A Row block with <strong>Product metafield</strong> <code>custom.skin_type</code> and <strong>Value type</strong> Text, for example <q>Dry to very dry</q>.</td><td><strong>Settings, Custom data, Products</strong>, <strong>Add definition</strong>: name <q>Skin type</q>, type <strong>Single line text</strong>, one value.</td></tr>
-<tr><td><q>Fragrance free</q></td><td><code>custom.fragrance_free</code></td><td>True or false</td><td>A Row block with <strong>Product metafield</strong> <code>custom.fragrance_free</code> and <strong>Value type</strong> Yes or no: a check mark for true, a cross for false.</td><td><strong>Settings, Custom data, Products</strong>, <strong>Add definition</strong>: name <q>Fragrance free</q>, type <strong>True or false</strong>.</td></tr>
+<tr><td><q>Texture</q></td><td><code>custom.texture</code></td><td>Single line text</td><td>A Row block with <strong>Metafield</strong> <q>Texture</q>. Each product shows its value, for example <q>Rich balm</q> or <q>Light gel</q>.</td><td><strong>Settings, Custom data, Products</strong>, <strong>Add definition</strong>: name <q>Texture</q>, type <strong>Single line text</strong>, one value.</td></tr>
+<tr><td><q>Skin type</q></td><td><code>custom.skin_type</code></td><td>Single line text, or a list</td><td>A Row block with <strong>Metafield</strong> <q>Skin type</q>, for example <q>Dry to very dry</q>. A list of values reads as a sentence.</td><td><strong>Settings, Custom data, Products</strong>, <strong>Add definition</strong>: name <q>Skin type</q>, type <strong>Single line text</strong>.</td></tr>
+<tr><td><q>Fragrance free</q></td><td><code>custom.fragrance_free</code></td><td>True or false</td><td>A Row block with <strong>Metafield</strong> <q>Fragrance free</q>: a check mark for true, a cross for false.</td><td><strong>Settings, Custom data, Products</strong>, <strong>Add definition</strong>: name <q>Fragrance free</q>, type <strong>True or false</strong>.</td></tr>
+<tr><td><q>Volume</q></td><td><code>custom.volume</code></td><td>Volume, or Integer</td><td>A Row block with <strong>Metafield</strong> <q>Volume</q>. A volume, weight or dimension carries its unit; for a plain number, type the <strong>Unit</strong> of the row, such as ml or %.</td><td><strong>Settings, Custom data, Products</strong>, <strong>Add definition</strong>: name <q>Volume</q>, type <strong>Volume</strong>.</td></tr>
 </tbody></table></div>
 <ol class="steps">
-  <li>Create one definition per fact, as in the table. These names and keys are examples: any namespace and key work, as long as the row reads the same key.</li>
+  <li>Create one definition per fact, as in the table. These names and keys are examples: any name works, as long as the row names the same metafield.</li>
   <li>Fill the values on each product you compare, in the <strong>Metafields</strong> card of the product.</li>
-  <li>In the theme editor, open the Compare products section and add one <strong>Row</strong> block per fact. Type the <strong>Label</strong> shown in the first column, for example <q>Texture</q>, and the <strong>Product metafield</strong> key, for example <code>custom.texture</code>, without spaces. Then choose the <strong>Value type</strong>.</li>
+  <li>In the theme editor, open the Compare products section and add one <strong>Row</strong> block per fact. Keep <strong>Source</strong> on Metafield, type the name or the key in <strong>Metafield</strong>, and a <strong>Label</strong> if the left column should read differently.</li>
 </ol>
-<p>Match the <strong>Value type</strong> to the metafield type:</p>
-<ul>
-  <li><strong>Text</strong>: single line text, multi-line text, or any value you want printed as it is.</li>
-  <li><strong>Number with unit</strong>: an integer or decimal, followed by the <strong>Unit</strong> you type (ml, g, %). Leave the unit empty for weight, volume and dimension metafields, which carry their own.</li>
-  <li><strong>Yes or no</strong>: a True or false metafield, drawn as a check mark or a cross.</li>
-</ul>
-<p>A product without a value shows a dash in that row. A row that no product has a value for is left out of the
-storefront; the theme editor keeps it so you can fix the key. A row without a label shows its key instead.</p>
+<p>Every metafield type is drawn as such: true or false as icons, a list as a sentence, a number with the row's unit,
+rich text and multi-line text with their lines, a money amount, a rating out of its scale, a color with its swatch, an
+image, and a reference (a product, a collection, a page) by its title. A product without a value shows a hyphen, read
+as n/a by screen readers. In the theme editor, a row whose metafield none of the compared products has says so, so you
+can fix the name.</p>
+<p>The other sources need no metafield: <strong>Vendor</strong>, <strong>Product type</strong>, <strong>Tags</strong>,
+<strong>SKU</strong>, <strong>Barcode</strong>, <strong>Weight</strong> and <strong>Unit price</strong> read the
+product's own fields. The rating row reads the review metafields (see <a href="#reviews">Review metafields</a>).</p>
 
 <h2 id="empty-values">What happens on a product with no value</h2>
 <p>Nothing breaks and nothing goes blank, which is what lets you fill only the products you care about. A background
@@ -632,25 +818,28 @@ keeps your theme editor settings and content. Preview it, then publish it. Chang
 carried over; see <a href="custom-code.html#updates-and-code">Custom code</a>.</p>'''),
     ('How do I make the header transparent over my hero?', '''
 <ol>
-  <li>Make sure the first section of the page is a Hero, Slideshow, Video, Products showcase or Brand story hero, with
-  <strong>Allow transparent header</strong> checked.</li>
-  <li>In the Header section, check <strong>Transparent header over the first section</strong>.</li>
-  <li>If your hero is dark, upload a light version of your logo in <strong>Logo image (transparent header)</strong>,
-  check <strong>Use different colors while transparent</strong>, and pick a <strong>Transparent header color
-  scheme</strong> with light text.</li>
+  <li>In the Header section, keep <strong>Header behavior</strong> on <strong>Transparent at top</strong>, the default,
+  or choose <strong>Adaptive</strong>.</li>
+  <li>Make sure the first section of the page is a Hero, Slideshow, Video, Products showcase or Brand story hero with
+  <strong>Allow transparent header</strong> checked, or another section with <strong>Header over this section</strong>
+  checked.</li>
+  <li>If your hero is dark, upload a light version of your logo in <strong>Logo for dark backgrounds</strong>, and check
+  that <strong>Colors over dark backgrounds</strong> is a scheme with light text. The header picks them on its own over
+  a dark image.</li>
 </ol>
-<p>A floating announcement bar over the same image can follow those colors: check <strong>Use the transparent header
-colors on the announcement bar</strong> in the Announcement bar section. See the
+<p>A floating announcement bar over the same image can follow those colors: check <strong>Use the header's colors over
+dark backgrounds</strong> in the Announcement bar section. See the
 <a href="sections.html#s-header-transparent-colors">white header example</a>.</p>
 <p>On the product page, the Product section can run its Product gradient under the transparent header: see
 <a href="product-page.html#bg-under-header">Extend the gradient under the header</a>.</p>'''),
     ('Why does the product gradient not reach under the header?', '''
 <p>Four conditions, all needed: <strong>Background mode</strong> of the Product section is <strong>Product gradient
 (metafields)</strong>, <strong>Extend the background under the header</strong> is checked, the Header section has
-<strong>Transparent header over the first section</strong> turned on, and the Product section is the first section of
+<strong>Header behavior</strong> on Transparent at top or Adaptive, and the Product section is the first section of
 the product template. A Solid announcement bar in full width stays above the gradient; a Floating or Glass bar lets it
-run underneath. If the header text is hard to read over a dark gradient, set <strong>Header colors at rest</strong> to
-Transparent header colors. See <a href="product-page.html#bg-under-header">Extend the gradient under the header</a>.</p>'''),
+run underneath. The header picks light or dark colors for each product on its own: if its text is hard to read over a
+dark gradient, check that <strong>Colors over dark backgrounds</strong> in the Header is a scheme with light text.
+See <a href="product-page.html#bg-under-header">Extend the gradient under the header</a>.</p>'''),
     ('Why is there no country or language selector in my header?', '''
 <p>The selectors only show when there is a choice to make. The country selector needs at least two countries or
 regions in <strong>Settings, Markets</strong>; the language selector needs at least two published languages in
@@ -663,8 +852,10 @@ price, product type, color and so on), then check that <strong>Enable filters</s
 Search sections. A filter only shows when the products of the page have values for it.</p>'''),
     ('How do I set up a mega menu?', '''
 <p>Create your main menu in your admin first. Then, in the Header section, add a <strong>Mega menu</strong> block and
-type the exact title of a top level menu item in <strong>Linked menu item</strong>, for example <q>Shop</q>. Add Link
-column, Image, Products, Promo or Banner blocks inside it. The panel opens when a shopper hovers that item. See
+type the exact title of a top level menu item in <strong>Linked menu item</strong>, for example <q>Shop</q>. Pick a
+<strong>Layout</strong>: Links and images builds the panel from that item's sub-links on its own; Custom blocks uses the
+Link column, Image, Image cards, Products, Promo or Banner blocks you add inside it. The panel opens when a shopper
+hovers that item. See
 <a href="sections.html#mega-menu-blocks">Mega menu blocks</a>.</p>'''),
     ('How do I give each product its own background color?', '''
 <p>Create two product metafield definitions of type Color, <q>Background color</q> (<code>custom.background_color</code>)
@@ -686,14 +877,15 @@ shows no text. See <a href="product-page.html#text-behind-cutouts">Text behind c
 <p>The ring prints the product's <code>custom.badge_label</code> metafield and has no text of its own: a product with
 no value shows no ring. Fill the metafield on that product (see <a href="metafields.html#badge-label">Badge label, step
 by step</a>). With <strong>Next to the title</strong>, the page also needs a Title block.</p>'''),
-    ('Where are Balm spotlight, Lifestyle strip and the Sticky add to cart block?', '''
+    ('Where are Balm spotlight, Lifestyle strip, the Sticky add to cart and Quantity blocks?', '''
 <p>They belonged to preview versions of Balm and were removed before release, together with the free text of the
 spinning badge.</p>
 <ul>
   <li><strong>Balm spotlight</strong>, the second version of the Product section: its gradient and its spinning badge are now the <a href="product-page.html#bg-product-gradient">Product gradient</a> background mode and the positions of the <a href="product-page.html#pb-product-spin-badge">Spinning badge</a> block, on the one Product section.</li>
   <li><strong>Lifestyle strip</strong>, two photos side by side: the section has been removed.</li>
   <li><strong>Sticky add to cart block</strong>: the bar is the <a href="sections.html#s-sticky-atc">Sticky add to cart</a> section, placed below the Product section in the product template.</li>
-  <li><strong>Spinning badge text</strong>: the ring reads the product's <code>custom.badge_label</code> metafield only.</li>
+  <li><strong>Spinning badge text</strong>: the ring of the product page reads the product's <code>custom.badge_label</code> metafield only. The spotlights of the Products showcase keep a text of their own: see <a href="features.html#spotlight-spinning-badge">Spinning badge of a spotlight</a>.</li>
+  <li><strong>Quantity block</strong>: the quantity selector is part of the <a href="product-page.html#pb-product-buy-buttons">Buy buttons</a> block, set by <strong>Quantity selector (desktop)</strong> and <strong>Quantity selector (mobile)</strong>.</li>
 </ul>'''),
     ('Why can I not connect a setting to my metafield?', '''
 <p>Three usual causes. The definition does not exist yet: create it in Settings, Custom data first. The type does not
@@ -713,8 +905,8 @@ page</strong>. For content that differs per product, connect the block's Content
 Balm matches everything Shopify allows: height, corner radius, spacing and the loading placeholder. See
 <a href="product-page.html#accelerated-checkout">The accelerated checkout buttons</a>.</p>'''),
     ('How do I show a free shipping progress bar?', '''
-<p>Open the Cart drawer section, check <strong>Show the reward progress bar</strong> and type the amount in
-<strong>Reward threshold</strong>. The bar only displays progress: create the matching free shipping rate or automatic
+<p>In <a href="theme-settings.html#ts-cart">Theme settings, Cart</a>, keep <strong>Show the free shipping bar</strong>
+checked and type the amount in <strong>Free shipping threshold</strong>. The bar only displays progress: create the matching free shipping rate or automatic
 discount in your admin, and keep the two amounts the same, or buyers will be promised something checkout does not
 apply.</p>'''),
     ('Why does the Buy it now button disappear on some variants?', '''
@@ -736,6 +928,32 @@ Italian and Spanish. Translate what you typed in the editor with the Translate &
   <li>You closed it earlier: it stays hidden for the number of days in <strong>Reappear after</strong>. Test in a private window.</li>
   <li>The <strong>Open delay</strong> has not passed yet.</li>
 </ul>'''),
+    ('Why does my header change color as I scroll?', '''
+<p>With <strong>Header behavior</strong> on Transparent at top or Adaptive, the header reads what lies under it and
+wears the colors that read best there: its own color scheme and logo over a light background, <strong>Colors over dark
+backgrounds</strong> and <strong>Logo for dark backgrounds</strong> over a dark one. With Adaptive it does so at every
+scroll position, so it changes as dark and light sections pass under it. To keep one look everywhere, set Header
+behavior to <strong>Standard</strong>. See <a href="features.html#header-colors">Automatic header colors</a>.</p>'''),
+    ('How do I line up a section with the header or make it edge to edge?', '''
+<p>Use the section's <strong>Section width</strong> setting. <strong>Full width</strong> runs the background or the
+picture from one edge of the screen to the other, <strong>Full width with margins</strong> stops at the side margins of
+the header, so the section lines up with a floating header card, and <strong>Page width</strong> lines it up with the
+product and collection pages. See <a href="features.html#section-width">Section width</a>.</p>'''),
+    ('Where do I add my Instagram, TikTok and other social media links?', '''
+<p>In <a href="theme-settings.html#ts-social-media">Theme settings, Social media</a>: paste the full address of each
+profile. The icons then show in the footer's Social media links block and in the Social media links section, and in the
+header on desktop when <strong>Show social media icons</strong> is checked. Networks without an address stay hidden.
+See <a href="features.html#social-media">Social media</a>.</p>'''),
+    ('How do I hide the Sale badges in one section only?', '''
+<p>Set that section's <strong>Badges</strong> setting to <strong>Custom only</strong> (only your
+<code>custom.badge_label</code> badges) or <strong>None</strong>. The other sections keep their own choice. Every
+section with product cards has it, as do the Bento Product tile and the Complementary products block. See
+<a href="features.html#badges-per-section">Choose the badges of each section</a>.</p>'''),
+    ('How do I let shoppers choose the number of columns on collection pages?', '''
+<p>In the Collection section, check <strong>Let visitors change the column count (desktop)</strong>, which adds 2, 3
+and 4 buttons beside the sort, and <strong>Let visitors change the column count (mobile)</strong>, which adds 1 and 2
+buttons beside the filters on phones. Each device keeps the shopper's choice for the rest of the visit. See
+<a href="features.html#collection-columns">Column selector</a>.</p>'''),
     ('My speed score dropped after I turned on the page loader. Why?', '''
 <p>A loader covers the page while it loads, which speed tools measure as a slower page. Set <strong>Page loader</strong>
 to <strong>First visit only</strong>, the recommended setting, or turn it off. <strong>Every page</strong> shows it on

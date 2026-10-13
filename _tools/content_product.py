@@ -17,20 +17,19 @@ that offers a block (reviews, subscriptions, bundles) drops straight into the co
 <tr><td>3</td><td>Popup</td><td>A small Specifications link that opens a dialog, for ingredients, sizing or nutrition, shown once it has content.</td></tr>
 <tr><td>4</td><td>Price</td><td>Price, compare-at price and unit price.</td></tr>
 <tr><td>5</td><td>Variant picker</td><td>The options the customer chooses from.</td></tr>
-<tr><td>6</td><td>Quantity</td><td>Quantity selector, with any per order limits you have set.</td></tr>
-<tr><td>7</td><td>Volume pricing</td><td>Quantity break pricing, shown only when the variant has price breaks.</td></tr>
-<tr><td>8</td><td>Purchase options</td><td>Subscription or delivery options, shown only when the product has selling plans.</td></tr>
-<tr><td>9</td><td>Gift card recipient</td><td>Recipient name, email and message, shown only on gift card products.</td></tr>
-<tr><td>10</td><td>Buy buttons</td><td>Add to cart and the accelerated checkout buttons, hidden while the selected variant is sold out. A variant that keeps selling at 0 stock says Pre-order instead and keeps both.</td></tr>
-<tr><td>11</td><td>Back in stock</td><td>A Notify me when available form, shown only when the selected variant is sold out.</td></tr>
-<tr><td>12</td><td>Pickup availability</td><td>Local pickup for the selected variant, shown only when a location offers it.</td></tr>
-<tr><td>13</td><td>Payment icons</td><td>A secure checkout line with your store's payment icons.</td></tr>
-<tr><td>14</td><td>Product upsell</td><td>Frequently bought together, picked automatically.</td></tr>
-<tr><td>15</td><td>Icon list</td><td>Three short reassurance claims with icons, each shown once it has a heading or a text.</td></tr>
-<tr><td>16</td><td>Description</td><td>The product description from the product admin page.</td></tr>
-<tr><td>17</td><td>Collapsible row</td><td>Details, a closed accordion row, shown once it has content.</td></tr>
-<tr><td>18</td><td>Collapsible row</td><td>Shipping and returns, a closed accordion row, shown once it has content.</td></tr>
-<tr><td>19</td><td>Product navigation</td><td>Previous and next links to the neighboring products.</td></tr>
+<tr><td>6</td><td>Volume pricing</td><td>Quantity break pricing, shown only when the variant has price breaks.</td></tr>
+<tr><td>7</td><td>Purchase options</td><td>Subscription or delivery options, shown only when the product has selling plans.</td></tr>
+<tr><td>8</td><td>Gift card recipient</td><td>Recipient name, email and message, shown only on gift card products.</td></tr>
+<tr><td>9</td><td>Buy buttons</td><td>The quantity selector, Add to cart and the accelerated checkout buttons, hidden while the selected variant is sold out. A variant that keeps selling at 0 stock says Pre-order instead and keeps both.</td></tr>
+<tr><td>10</td><td>Back in stock</td><td>A Notify me when available form, shown only when the selected variant is sold out.</td></tr>
+<tr><td>11</td><td>Pickup availability</td><td>Local pickup for the selected variant, shown only when a location offers it.</td></tr>
+<tr><td>12</td><td>Payment icons</td><td>A secure checkout line with your store's payment icons.</td></tr>
+<tr><td>13</td><td>Product upsell</td><td>Frequently bought together, picked automatically.</td></tr>
+<tr><td>14</td><td>Icon list</td><td>Three short reassurance claims with icons, each shown once it has a heading or a text.</td></tr>
+<tr><td>15</td><td>Description</td><td>The product description from the product admin page.</td></tr>
+<tr><td>16</td><td>Collapsible row</td><td>Details, a closed accordion row, shown once it has content.</td></tr>
+<tr><td>17</td><td>Collapsible row</td><td>Shipping and returns, a closed accordion row, shown once it has content.</td></tr>
+<tr><td>18</td><td>Product navigation</td><td>Previous and next links to the neighboring products.</td></tr>
 </tbody></table></div>
 <p>Blocks marked <em>shown only when</em> render nothing on products that do not need them, so the page stays short even
 though the stack is long. The template carries no example text: a block whose text is empty shows nothing on the
@@ -146,19 +145,20 @@ page to its own page.</p>
 its gradient. The setting is <strong>Extend the background under the header</strong>, shown in the Product gradient
 mode, off by default. It needs two conditions:</p>
 <ul>
-  <li>the Header section has <strong>Transparent header over the first section</strong> turned on;</li>
-  <li>the Product section is the first section of the product template, as it is in the template Balm ships.</li>
+  <li>the Header section has <strong>Header behavior</strong> on <strong>Transparent at top</strong> or
+  <strong>Adaptive</strong>;</li>
+  <li>the Product section is the first section of the product template, as it is in the templates Balm ships.</li>
 </ul>
 <p>The gradient then starts at the top of the screen, under the header and under a Floating or Glass announcement bar. A
-Solid announcement bar in full width keeps its place above it. The header is transparent at rest and materializes on
+Solid announcement bar in full width keeps its place above it. The header is transparent at rest and takes its card on
 scroll, as it does over a hero. The product content and the breadcrumbs stay clear of it: the section adds the height
 of the header to its top padding. Without either condition, the setting has no effect.</p>
-<p><strong>Header colors at rest</strong> picks the colors of the transparent header over the gradient:</p>
-<ul>
-  <li><strong>Standard colors</strong>, the default: the header color scheme and the main logo. The right choice for a light gradient.</li>
-  <li><strong>Transparent header colors</strong>: the colors the header wears over a transparent hero, with the <strong>Logo image (transparent header)</strong> when you have uploaded one, for a dark gradient. The text takes the <strong>Transparent header color scheme</strong> when <strong>Use different colors while transparent</strong> is ticked in the Header. See the <a href="sections.html#s-header-transparent-colors">white header example</a>.</li>
-</ul>
-<p>A floating announcement bar set to follow the transparent header colors follows them here too.</p>
+<p>There is nothing to choose for the header's colors: it reads each product's gradient where it lies under the
+header. Over a dark gradient it takes its <strong>Colors over dark backgrounds</strong> and its <strong>Logo for dark
+backgrounds</strong>, over a light one it keeps its own color scheme and logo, product by product. See
+<a href="sections.html#s-header-tone">Automatic header colors</a>. The Immersive product template
+(<code>product.immersive</code>), shipped next to the default one, has this setting on, with the product title behind
+the cutouts.</p>
 
 <h2 id="sticky-columns">Sticky columns</h2>
 <p><strong>Sticky columns (desktop)</strong>, in the Layout group of the Product section, is on by default. From 768 px
@@ -221,7 +221,7 @@ BLOCKS_INTRO = ('<p>Every block of the product information column, with the name
 
 BLOCK_ORDER = [
     '_product-title', '_product-vendor', '_product-price', '_product-sku', '_product-rating', '_product-text',
-    '_product-variant-picker', '_product-quantity', '_product-volume-pricing', '_product-selling-plans',
+    '_product-variant-picker', '_product-volume-pricing', '_product-selling-plans',
     '_product-gift-card-recipient', '_product-buy-buttons', '_product-inventory', '_product-notify-me',
     '_product-pickup', '_product-payment-icons', '_product-upsell', '_product-complementary', '_product-description',
     '_product-collapsible-row', '_product-popup', '_product-specs', '_product-spec-row', '_product-icon-list',
@@ -237,11 +237,10 @@ BLOCK_TEXT = {
     '_product-rating': '<p>Stars, the numeric value and the review count, read from the standard <code>reviews.rating</code> and <code>reviews.rating_count</code> metafields that review apps fill. It renders nothing until an app fills them.</p>',
     '_product-text': '<p>A free rich text paragraph, the same on every product, or with <strong>Source</strong> set to <strong>Tagline</strong>, the product\'s own <code>custom.tagline</code> metafield, read directly. Empty, it shows nothing on the storefront.</p>',
     '_product-variant-picker': '<p>The options the customer chooses from, in one of six styles (see <a href="#variant-picker-styles">Variant picker styles</a>). It handles products with many variants, combined listings and unavailable combinations.</p>',
-    '_product-quantity': '<p>The quantity selector. It respects the minimum, maximum and increment of quantity rules set in B2B catalogs.</p>',
     '_product-volume-pricing': '<p>Quantity price breaks, as a table or a list. It renders nothing when the variant has none.</p>',
     '_product-selling-plans': '<p>One-time purchase and subscription options from your subscription app, with the plan names, descriptions and savings. It renders nothing unless the product has a selling plan.</p>',
     '_product-gift-card-recipient': '<p>Lets the buyer send a gift card to someone else, with a name, an email, a message and a send date. It only renders on gift card products.</p>',
-    '_product-buy-buttons': '<p>Add to cart, the accelerated checkout buttons and the Shop Pay Installments banner. The accelerated checkout buttons (Buy it now and the wallets) are hidden while the selected variant is sold out and come back with a variant in stock; a pre-order variant can be bought, so it keeps them, and its button reads Pre-order. See <a href="#buy-button-styles">Buy button styles</a>, <a href="#accelerated-checkout">accelerated checkout</a> and <a href="features.html#pre-order">Pre-order</a>.</p>',
+    '_product-buy-buttons': '<p>The quantity selector, Add to cart, the accelerated checkout buttons and the Shop Pay Installments banner. The quantity selector is the only one of the product page: <strong>Quantity selector (desktop)</strong> and <strong>Quantity selector (mobile)</strong> place it Above the buttons (the default), Inline with Add to cart, or Hidden, with its style, size and label; it follows the quantity rules of each variant and volume pricing. Preview versions of Balm had a separate Quantity block; it has been removed.</p><p> The accelerated checkout buttons (Buy it now and the wallets) are hidden while the selected variant is sold out and come back with a variant in stock; a pre-order variant can be bought, so it keeps them, and its button reads Pre-order. See <a href="#buy-button-styles">Buy button styles</a>, <a href="#accelerated-checkout">accelerated checkout</a> and <a href="features.html#pre-order">Pre-order</a>.</p>',
     '_product-inventory': '<p>In stock, low stock or out of stock for the selected variant, with a colored dot and an optional exact quantity. Low stock only applies when inventory is tracked and the variant stops selling at zero.</p>',
     '_product-notify-me': '<p>A back in stock form, shown only while the selected variant is sold out. Requests arrive as contact form messages, at the store address set in Settings, Notifications, and name the exact variant; no app is needed.</p>',
     '_product-pickup': '<p>Local pickup availability for the selected variant, and a button that opens the list of locations. It renders nothing unless a location has pickup enabled.</p>',
@@ -251,13 +250,13 @@ BLOCK_TEXT = {
     '_product-complementary': '<p>A small grid of product cards: complementary products from Shopify recommendations, curated in the Search &amp; Discovery app, or your own selection, which can be connected to a product list metafield.</p>',
     '_product-description': '<p>The product description from the product admin page.</p>',
     '_product-collapsible-row': '''<p>An accordion row whose content is rich text, which can be connected to a metafield, or a page, to share one policy page across every product. A row without heading or content shows nothing on the storefront.</p>
-<p><strong>Style</strong> is <strong>Lines</strong> (the default: heading on the left, icon on the right, thin rules and no frame), <strong>Boxed</strong> (a framed row) or <strong>Filled</strong> (the secondary background of the color scheme). <strong>Open and close icon</strong> is a Chevron that turns over, or a Plus that becomes a minus. The heading has its alignment, its size on desktop and on mobile, and its weight; <strong>Inner padding</strong> and <strong>Space between rows</strong> are set per device too. Space between rows only shows with Boxed and Filled: stacked Lines rows share one rule between them. Set the style on each row, and give the rows of one stack the same values.</p>
+<p><strong>Style</strong> is <strong>Lines</strong> (the default: heading on the left, icon on the right, thin rules and no frame), <strong>Boxed</strong> (a framed row) or <strong>Filled</strong> (the secondary background of the color scheme). <strong>Open and close icon</strong> is a Chevron that turns over, or a Plus that becomes a minus. The heading has its alignment, its size on desktop and on mobile, and its weight; <strong>Inner padding</strong> and <strong>Space between rows (desktop)</strong> and <strong>(mobile)</strong> are set per device too. Space between rows only shows with Boxed and Filled: stacked Lines rows share one rule between them. Set the style on each row, and give the rows of one stack the same values.</p>
 <p><strong>Open by default</strong> opens the row when the page loads: check it on the first row to show its content at once. To let only one row stay open, turn on <strong>One collapsible row open at a time</strong> in the Product section. Rows open with a short animation where the browser supports it, and at once for visitors who ask for reduced motion.</p>''',
     '_product-popup': '<p>A link or button that opens a dialog with rich text or a page. The Under-title link style sits right below the product title. Without content, it shows nothing on the storefront.</p>',
     '_product-specs': '<p>A label and value table built from Specification blocks, with lines, dots or zebra stripes between rows.</p>',
     '_product-spec-row': '<p>One row of the Specifications block. Both the label and the value can be connected to product metafields.</p>',
-    '_product-icon-list': '<p>Reassurance claims built from Icon item blocks, stacked, side by side, or on one row with a button. <strong>Icon stroke</strong> (Light, Regular, Medium or Bold) sets the line weight of the built in icons; your own images keep theirs. <strong>Title weight</strong> and <strong>Body text weight</strong> set the weight of the two lines of text, and <strong>Alignment (desktop)</strong> and <strong>Alignment (mobile)</strong> place each claim, icon and text together, on the left, in the center or on the right of its column. Icon sizes, text sizes and gaps have a desktop and a mobile value.</p>',
-    '_product-icon-item': '<p>One claim of the Icon list: a built in glyph or your own image, a heading and a text.</p>',
+    '_product-icon-list': '<p>Reassurance claims built from Icon item blocks, stacked, side by side, or on one row with a button. <strong>Icon stroke</strong> (Light, Regular, Medium or Bold) sets the line weight of the built in icons; your own images keep theirs. <strong>Heading weight</strong> and <strong>Body text weight</strong> set the weight of the two lines of text, and <strong>Alignment (desktop)</strong> and <strong>Alignment (mobile)</strong> place each claim, icon and text together, on the left, in the center or on the right of its column. Icon sizes, text sizes and gaps have a desktop and a mobile value. <strong>Icon and text gap (desktop)</strong> and <strong>(mobile)</strong> set the space the eye sees between each icon and its text, from the bottom of the icon to the top of the capitals: at 0 the letters touch the icon.</p>',
+    '_product-icon-item': '<p>One claim of the Icon list: a built in glyph or your own image, a <strong>Heading</strong> and a <strong>Text</strong>. Heading and Text are rich text fields: press Enter for a new line, or connect a product metafield of type Single line text or Multi-line text with the dynamic source icon, each line of a Multi-line text on its own line. The <strong>Icon image</strong> connects to a File metafield the same way, so each product shows its own claims. See <a href="metafields.html#icon-metafields">Icon metafields</a>. An item with neither heading nor text stays hidden on the storefront.</p>',
     '_product-image': '<p>An image inside the information column, with an optional caption. Connect it to a metafield to show a different image per product.</p>',
     '_product-badge': '<p><strong>Automatic (Sale, Sold out, New, Custom)</strong>, the default, shows the same badges as the product cards, styled in Theme settings, Product badges, and nothing when none applies. Sale and Sold out follow the selected variant, and the Custom badge wears the product\'s own colors when its <code>custom.badge_color</code> or <code>custom.badge_text_color</code> metafield is filled (see <a href="features.html#custom-badge-colors">badge colors</a>). <strong>Image</strong> places your own artwork in a corner of the product area.</p>',
     '_product-spin-badge': '''<p>The product's <code>custom.badge_label</code> text turning around a ring. The ring has no text field of its own: each product says its own words through the metafield, and a product without it shows no ring. In the theme editor, an example stands in.</p>
