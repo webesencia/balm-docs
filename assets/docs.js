@@ -6,6 +6,22 @@
      resolve against it, so they work from the 404 page, which is served at any depth. */
   var siteRoot = document.currentScript ? new URL('../', document.currentScript.src).href : '';
 
+  /* ---------------------------------------------------------------- light and dark theme */
+  /* The head script already set data-theme from localStorage (light when nothing is stored), before the first paint. */
+  var themeToggle = document.querySelector('.theme-toggle');
+  function syncTheme() {
+    if (themeToggle) themeToggle.setAttribute('aria-pressed', document.documentElement.getAttribute('data-theme') === 'dark' ? 'true' : 'false');
+  }
+  if (themeToggle) {
+    syncTheme();
+    themeToggle.addEventListener('click', function () {
+      var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('balm-docs:theme', next); } catch (err) {}
+      syncTheme();
+    });
+  }
+
   /* ---------------------------------------------------------------- mobile menu */
   var toggle = document.querySelector('.nav-toggle');
   var sidebar = document.getElementById('sidebar');
