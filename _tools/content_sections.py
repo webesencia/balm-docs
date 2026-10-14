@@ -179,6 +179,12 @@ TEXT = {
 <p>A thin bar above the header, made of <strong>Message</strong> blocks. With two messages or more they rotate on
 their own, with optional previous and next arrows, and each message can link somewhere. With <strong>Show close
 button</strong> on, visitors can dismiss the bar for the rest of their visit.</p>
+<p><strong>Display</strong> set to <strong>Scroll continuously</strong> runs the messages across the bar in a loop,
+like the Marquee section: <strong>Scrolling speed</strong> in pixels per second, <strong>Direction</strong>, a
+<strong>Separator</strong> between the messages (Dot, Dash or Custom text), <strong>Pause on hover</strong> and a pause
+button for visitors. Keyboard focus on a link stops the band and brings the link into view. Visitors who ask for
+reduced motion see the messages standing still, centred, on as many lines as they need. It works in every layout and
+style of the bar, Floating, Glass and Content color Auto included.</p>
 <p><strong>Scroll behavior</strong> keeps the bar pinned, lets it scroll away with the page, or hides it on the way
 down and brings it back on the way up. <strong>Bar layout</strong> set to Floating turns it into a card that matches the
 floating header, and <strong>Bar style</strong> set to Glass uses the shared glass recipe.</p>
@@ -310,7 +316,8 @@ for reduced motion, spotlights stack. The animation library loads only when the 
 <p>One spotlight presents one product. Pick it in <strong>Product</strong> and the spotlight fills itself: the
 product's title as the name, linked to its page, its <code>custom.tagline</code> metafield as the tagline, its <code>custom.background_color</code> and
 <code>custom.background_color_end</code> metafields as the background gradient, and its main image.
-<strong>Show the price</strong> adds the price under the tagline. The button opens the product page; with
+<strong>Show the price</strong> adds the price under the tagline. On phones the product picture never covers the
+name, the tagline or the price: on a short screen it gets smaller to fit between them and the button. The button opens the product page; with
 <strong>Action</strong> set to Add to cart, a product with a single variant goes to the cart in one click and the cart
 drawer opens, while a product with options, or sold out, keeps the link to its page. The metafields are read directly:
 there is nothing to connect. See <a href="metafields.html#showcase">Metafields</a>.</p>
