@@ -38,7 +38,7 @@ comes with one preset, also named Balm Studio, and your store starts from it.</p
 <ul>
   <li><strong>Look.</strong> Clean and neutral: a white scheme, a near black scheme and two violet schemes (a pale lavender and a deep violet), sentence case headings and buttons, a white frosted glass. A calm base that lets product photography lead.</li>
   <li><strong>Fonts.</strong> Outfit 400 for headings, Inter for body text, on one fluid type scale.</li>
-  <li><strong>Layout.</strong> Pages in Full width with margins, lined up with the header, and small buttons.</li>
+  <li><strong>Layout.</strong> Pages and sections in Full width with margins (side margins of 60 px on desktop and 20 px on mobile), and small buttons.</li>
   <li><strong>Corners.</strong> Softly rounded: buttons 12 px, cards 20 px.</li>
 </ul>
 <p>Every value of the preset is a starting point. Change the colors, fonts, corners, glass and typography in
@@ -63,7 +63,7 @@ the device switch at the top of the editor to preview both.</p>
   <li><strong>Countries and languages.</strong> The header shows a globe with the country and language selectors as soon as there is a choice to make: two countries or regions in <strong>Settings, Markets</strong>, or two published languages in <strong>Settings, Languages</strong>. Until then it shows nothing. <strong>Country and language selectors</strong> in the Header picks which ones appear (Both by default). See <a href="sections.html#s-header-localization">Country and language selectors</a>.</li>
   <li><strong>Colors.</strong> In <a href="theme-settings.html#ts-colors">Theme settings, Colors</a>, adjust the four color schemes of the Balm Studio preset to your brand. Every section picks one of them.</li>
   <li><strong>Fonts, sizes and corners.</strong> Set the <strong>Heading font</strong> and <strong>Body font</strong> in <a href="theme-settings.html#ts-typography">Typography</a>. To make every heading or every text of the store larger or smaller at once, move <strong>Heading scale</strong> or <strong>Body scale</strong> there rather than each section's sizes. Set the corner radii in <a href="theme-settings.html#ts-corner-style">Corner style</a>, and the title and price sizes of the product cards in <a href="theme-settings.html#ts-product-cards">Product cards</a>.</li>
-  <li><strong>Page width.</strong> In <a href="theme-settings.html#ts-layout">Theme settings, Layout</a>, the Balm Studio preset sets <strong>Page width</strong> to Full width with margins, in line with the header; choose Standard (1400 px) or Wide (1600 px) for a narrower product, collection and search page.</li>
+  <li><strong>Page width and section width.</strong> In <a href="theme-settings.html#ts-layout">Theme settings, Layout</a>, the Balm Studio preset sets <strong>Page width</strong> to Full width with margins, in line with the header; choose Standard (1400 px) or Wide (1600 px) for a narrower product, collection and search page. <strong>Default section width</strong> (Full width with margins) and <strong>Section side margins</strong> (60 px on desktop, 20 px on mobile) set every section left on Theme default.</li>
   <li><strong>Home page.</strong> The home page starts with a Hero, a Marquee, a Products showcase, a Bento, Rich text, Image with text, a Featured collection, a Lookbook, Social media links and the Newsletter popup, as on the demo store. Replace their images and texts, remove what you do not need, and add sections with <strong>Add section</strong>. In the Products showcase, pick one product per <strong>Spotlight</strong>: its name, link, image, tagline and colors follow on their own (see <a href="metafields.html#showcase">Metafields</a>).</li>
   <li><strong>Product page.</strong> Open a product in the editor and review the block stack. See <a href="product-page.html">Product page blocks</a>, and <a href="metafields.html">Metafields</a> if each product should carry its own color or texts. For a background in each product's own colors, set <strong>Background mode</strong> of the Product section to <a href="product-page.html#bg-product-gradient">Product gradient (metafields)</a>; with cutout packshots (PNG or WebP), try the <a href="product-page.html#text-behind-cutouts">text behind cutouts</a>.</li>
   <li><strong>Badges.</strong> Sale and Sold out show on their own, from the prices and the stock. In <a href="theme-settings.html#ts-product-badges">Theme settings, Product badges</a>, turn on New if you want it and set the badge colors. For a badge of your own words, such as <q>Limited edition</q>, fill the <code>custom.badge_label</code> metafield: see <a href="features.html#product-badges">Product badges</a>.</li>
@@ -356,7 +356,8 @@ Product recommendations and Recently viewed sections. <strong>Standard</strong> 
 <strong>Wide</strong> to 1600 px, and <strong>Full width with margins</strong> fills the screen less the side
 margins of the header, so the page, the breadcrumbs and the footer line up with the header's logo and icons. On a large
 screen, Wide shows bigger product cards and a bigger gallery; the card images are served at the new size, so they stay
-sharp. The other sections set their width with <a href="#section-width">Section width</a>.</p>
+sharp. The other sections set their width with <a href="#section-width">Section width</a>, whose default, Theme
+default, follows <strong>Default section width</strong> in the same Layout group.</p>
 </section>
 
 <section class="entry" id="header-colors-entry">
@@ -383,14 +384,17 @@ been removed. A store that used the transparent header keeps it, Transparent at 
 
 <section class="entry" id="section-width-entry">
 <h2 id="section-width">Section width</h2>
-<p>Almost every section has a <strong>Section width</strong> setting, right after its color scheme, with three options:</p>
+<p>Almost every section has a <strong>Section width</strong> setting, right after its color scheme, with four options:</p>
 <ul>
-  <li><strong>Full width</strong>: the background, the picture or the video runs from one edge of the screen to the other. Text keeps a readable width inside.</li>
-  <li><strong>Full width with margins</strong>: the section stops at the side margins of the header. Its edges line up with the header's at every screen width, and, with <strong>Floating header (detached)</strong> on, with the edges of the floating header card.</li>
+  <li><strong>Theme default</strong>, the default: the <strong>Default section width</strong> of <a href="theme-settings.html#ts-layout">Theme settings, Layout</a> (Full width with margins unless you change it), so every section left on it changes width at once.</li>
+  <li><strong>Full width</strong>: the background, the picture or the video runs from one edge of the screen to the other, with square corners. Text keeps a readable width inside.</li>
+  <li><strong>Full width with margins</strong>: the section stops at the <strong>Section side margins</strong> of Theme settings, Layout, one value on desktop and one on mobile.</li>
   <li><strong>Page width</strong>: the section stops at the <a href="#page-width">Page width</a> of Theme settings, Layout, with its side margin, in line with the product, collection and search pages.</li>
 </ul>
 <p>Mixing the options on one page builds a rhythm: a Full width hero, products and texts at Page width, then a picture
-in Full width with margins whose rounded corners line up with a floating header. See
+in Full width with margins with rounded corners. Inset, Before and after and the Slideshow take a <strong>Corner
+radius</strong> of their own, the media radius of the theme by default. Product, Contact and Collection keep their
+background edge to edge in every width, for a transparent header, and move only their content. See
 <a href="sections.html#section-width">Sections, Section width</a>.</p>
 </section>
 
@@ -447,7 +451,7 @@ carries its own image or text.</p>
 <ul>
   <li><strong>Type</strong>: None, Image (your own artwork) or Text. An Image spotlight with no picture shows the <strong>Spinning badge</strong> image of the section, shared by every spotlight.</li>
   <li><strong>Text</strong>: written around a <strong>Shape</strong>, a circle or a rounded square. With <strong>Repeat text</strong> on, the text and its <strong>Separator</strong> repeat to fill the ring; off, the text is written once, centered on the <strong>Start angle</strong> (0 at the top, 90 on the right). Text size, weight, case and letter spacing per device, and a <strong>Center content</strong>: an image or an icon in the middle of the ring.</li>
-  <li><strong>Place</strong>: size and horizontal and vertical position on desktop and on mobile, in percent of the slide, <strong>Place behind the product</strong>, opacity, a link, and <strong>Show on mobile</strong>.</li>
+  <li><strong>Place</strong>: size and horizontal and vertical position on desktop and on mobile, in percent of the slide, <strong>Place behind the product</strong>, opacity, a link, and <strong>Show on mobile</strong>. On desktop, a badge placed over the product picture stays on the picture: the positions put it where it sits on a 1600 x 900 screen, and on a wider, taller or smaller screen it keeps that place on the picture, such as over the top right corner of a tube. A badge placed beside the text, the button or the claims keeps its place in the slide.</li>
   <li><strong>Motion</strong>: <strong>Rotate</strong>, the time of <strong>One full turn</strong> and the <strong>Direction</strong>. The rotation stops for visitors who ask for reduced motion.</li>
 </ul>
 </section>
@@ -935,9 +939,11 @@ scroll position, so it changes as dark and light sections pass under it. To keep
 behavior to <strong>Standard</strong>. See <a href="features.html#header-colors">Automatic header colors</a>.</p>'''),
     ('How do I line up a section with the header or make it edge to edge?', '''
 <p>Use the section's <strong>Section width</strong> setting. <strong>Full width</strong> runs the background or the
-picture from one edge of the screen to the other, <strong>Full width with margins</strong> stops at the side margins of
-the header, so the section lines up with a floating header card, and <strong>Page width</strong> lines it up with the
-product and collection pages. See <a href="features.html#section-width">Section width</a>.</p>'''),
+picture from one edge of the screen to the other, <strong>Full width with margins</strong> stops at the
+<strong>Section side margins</strong> of Theme settings, Layout, and <strong>Page width</strong> lines it up with the
+product and collection pages. <strong>Theme default</strong>, the default, follows <strong>Default section width</strong>
+in Theme settings, Layout: change it there to move every section left on it at once. See
+<a href="features.html#section-width">Section width</a>.</p>'''),
     ('Where do I add my Instagram, TikTok and other social media links?', '''
 <p>In <a href="theme-settings.html#ts-social-media">Theme settings, Social media</a>: paste the full address of each
 profile. The icons then show in the footer's Social media links block and in the Social media links section, and in the

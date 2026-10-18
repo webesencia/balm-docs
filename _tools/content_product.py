@@ -156,7 +156,9 @@ mode, off by default. It needs two conditions:</p>
 <p>The gradient then starts at the top of the screen, under the header and under a Floating or Glass announcement bar. A
 Solid announcement bar in full width keeps its place above it. The header is transparent at rest and takes its card on
 scroll, as it does over a hero. The product content and the breadcrumbs stay clear of it: the section adds the height
-of the header to its top padding. Without either condition, the setting has no effect.</p>
+of the header to its top padding. Without either condition, the setting has no effect. Whatever its
+<a href="sections.html#section-width">Section width</a>, the Product section keeps its background edge to edge; Section
+width moves the product content only.</p>
 <p>There is nothing to choose for the header's colors: it reads each product's gradient where it lies under the
 header. Over a dark gradient it takes its <strong>Colors over dark backgrounds</strong> and its <strong>Logo for dark
 backgrounds</strong>, over a light one it keeps its own color scheme and logo, product by product. See

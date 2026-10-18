@@ -294,7 +294,8 @@ Product recommendations and Recently viewed sections. <strong>Standard</strong> 
 <strong>Wide</strong> to 1600 px, and <strong>Full width with margins</strong> fills the screen less the side
 margins of the header, so the page, the breadcrumbs and the footer line up with the header's logo and icons. On a large
 screen, Wide shows bigger product cards and a bigger gallery; the card images are served at the new size, so they stay
-sharp. The other sections set their width with <a href="#section-width">Section width</a>.</p>
+sharp. The other sections set their width with <a href="#section-width">Section width</a>, whose default, Theme
+default, follows <strong>Default section width</strong> in the same Layout group.</p>
 </section>
 
 <section class="entry" id="header-colors-entry">
@@ -321,14 +322,17 @@ been removed. A store that used the transparent header keeps it, Transparent at 
 
 <section class="entry" id="section-width-entry">
 <h2 id="section-width">Section width</h2>
-<p>Almost every section has a <strong>Section width</strong> setting, right after its color scheme, with three options:</p>
+<p>Almost every section has a <strong>Section width</strong> setting, right after its color scheme, with four options:</p>
 <ul>
-  <li><strong>Full width</strong>: the background, the picture or the video runs from one edge of the screen to the other. Text keeps a readable width inside.</li>
-  <li><strong>Full width with margins</strong>: the section stops at the side margins of the header. Its edges line up with the header's at every screen width, and, with <strong>Floating header (detached)</strong> on, with the edges of the floating header card.</li>
+  <li><strong>Theme default</strong>, the default: the <strong>Default section width</strong> of <a href="theme-settings.html#ts-layout">Theme settings, Layout</a> (Full width with margins unless you change it), so every section left on it changes width at once.</li>
+  <li><strong>Full width</strong>: the background, the picture or the video runs from one edge of the screen to the other, with square corners. Text keeps a readable width inside.</li>
+  <li><strong>Full width with margins</strong>: the section stops at the <strong>Section side margins</strong> of Theme settings, Layout, one value on desktop and one on mobile.</li>
   <li><strong>Page width</strong>: the section stops at the <a href="#page-width">Page width</a> of Theme settings, Layout, with its side margin, in line with the product, collection and search pages.</li>
 </ul>
 <p>Mixing the options on one page builds a rhythm: a Full width hero, products and texts at Page width, then a picture
-in Full width with margins whose rounded corners line up with a floating header. See
+in Full width with margins with rounded corners. Inset, Before and after and the Slideshow take a <strong>Corner
+radius</strong> of their own, the media radius of the theme by default. Product, Contact and Collection keep their
+background edge to edge in every width, for a transparent header, and move only their content. See
 <a href="sections.html#section-width">Sections, Section width</a>.</p>
 </section>
 
@@ -385,7 +389,7 @@ carries its own image or text.</p>
 <ul>
   <li><strong>Type</strong>: None, Image (your own artwork) or Text. An Image spotlight with no picture shows the <strong>Spinning badge</strong> image of the section, shared by every spotlight.</li>
   <li><strong>Text</strong>: written around a <strong>Shape</strong>, a circle or a rounded square. With <strong>Repeat text</strong> on, the text and its <strong>Separator</strong> repeat to fill the ring; off, the text is written once, centered on the <strong>Start angle</strong> (0 at the top, 90 on the right). Text size, weight, case and letter spacing per device, and a <strong>Center content</strong>: an image or an icon in the middle of the ring.</li>
-  <li><strong>Place</strong>: size and horizontal and vertical position on desktop and on mobile, in percent of the slide, <strong>Place behind the product</strong>, opacity, a link, and <strong>Show on mobile</strong>.</li>
+  <li><strong>Place</strong>: size and horizontal and vertical position on desktop and on mobile, in percent of the slide, <strong>Place behind the product</strong>, opacity, a link, and <strong>Show on mobile</strong>. On desktop, a badge placed over the product picture stays on the picture: the positions put it where it sits on a 1600 x 900 screen, and on a wider, taller or smaller screen it keeps that place on the picture, such as over the top right corner of a tube. A badge placed beside the text, the button or the claims keeps its place in the slide.</li>
   <li><strong>Motion</strong>: <strong>Rotate</strong>, the time of <strong>One full turn</strong> and the <strong>Direction</strong>. The rotation stops for visitors who ask for reduced motion.</li>
 </ul>
 </section>

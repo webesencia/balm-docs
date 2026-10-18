@@ -63,9 +63,15 @@ with the Featured collection, Product recommendations and Recently viewed sectio
   content, the breadcrumbs and the footer then line up with the logo and the icons of the header, a floating header
   included.</li>
 </ul>
-<p>Product card images are served at the size the chosen width draws them, so cards stay sharp on a wider page. The
-other sections set their own width with their <strong>Section width</strong> setting, whose Page width option stops at
-the width chosen here: see <a href="sections.html#section-width">Section width</a>.</p>
+<p>Product card images are served at the size the chosen width draws them, so cards stay sharp on a wider page.</p>
+<p><strong>Default section width</strong> is the width of every section whose <strong>Section width</strong> is
+<strong>Theme default</strong>, the first option of that setting and the default of each section: <strong>Page
+width</strong>, <strong>Full width with margins</strong> (the default) or <strong>Full width</strong>. Change it here and
+every section left on Theme default follows; a section set to one of the three widths keeps its own. A section's Page
+width option stops at the Page width chosen above. See <a href="sections.html#section-width">Section width</a>.</p>
+<p><strong>Section side margins (desktop)</strong>, 0 to 160 px (40 px by default), and <strong>Section side margins
+(mobile)</strong>, 0 to 48 px (16 px by default, under 768 px wide), set the space on each side of a section in Full
+width with margins, for every section. The Balm Studio preset sets them to 60 px and 20 px.</p>
 ''',
     'Buttons': '''
 <p>One recipe for every button of the theme, primary and secondary. <strong>Size</strong> (Small, Medium by default,

@@ -59,14 +59,27 @@ section, keep a desktop and a mobile size off the scale.</p>
 <p>Almost every section has a <strong>Section width</strong> setting, right after its color scheme. It sets how far the
 section's background, image or card reaches:</p>
 <ul>
+  <li><strong>Theme default</strong>, the first option and the default: the <strong>Default section width</strong> of
+  <a href="theme-settings.html#ts-layout">Theme settings, Layout</a>, Full width with margins unless you change it there.
+  Sections left on Theme default all change width at once from there.</li>
   <li><strong>Full width</strong>: from one edge of the screen to the other. Pictures and videos (Image, Image with text,
-  Before and after, Video, Slideshow) run edge to edge; text sections keep their text to a readable width inside.</li>
-  <li><strong>Full width with margins</strong>: the whole screen less the side margins of the header. The section's
-  edges line up with the header's at every width, and with the floating header card when the header floats.</li>
-  <li><strong>Page width</strong>: stops at the <strong>Page width</strong> of
-  <a href="theme-settings.html#ts-layout">Theme settings, Layout</a>, with its side margin, so the section lines up with
-  the product, collection and search pages.</li>
+  Before and after, Video, Slideshow) run edge to edge with square corners; text sections keep their text to a readable
+  width inside, and a grid, a table or a carousel keeps the side margin of a floating header, never more than the
+  Section side margins.</li>
+  <li><strong>Full width with margins</strong>: the whole screen less the <strong>Section side margins</strong> of
+  Theme settings, Layout, one value on desktop and one on mobile.</li>
+  <li><strong>Page width</strong>: stops at the <strong>Page width</strong> of Theme settings, Layout, with its side
+  margin, so the section lines up with the product, collection and search pages.</li>
 </ul>
+<p>Inset in Full width with margins or Page width, the frame of <strong>Before and after</strong> and the slides of the
+<strong>Slideshow</strong> take <strong>Corner radius</strong>: <strong>Theme setting (media)</strong>, the media radius
+of <a href="theme-settings.html#ts-corner-style">Theme settings, Corner style</a>, by default, or <strong>Custom</strong>,
+0 to 40 px (square at 0), one value on Before and after and one per device on the Slideshow. In Full width they stay
+square, edge to edge.</p>
+<p>The sections that can run under a transparent header, <strong>Product</strong>, <strong>Contact</strong> and
+<strong>Collection</strong>, keep their background (color, gradient or image) edge to edge in every width, never a card:
+Section width moves their content only, to the page width, to the Section side margins, or to the inside margin of Full
+width. The card of Contact stays inside that width.</p>
 <p>The setting replaces the width settings that some sections used to have on their own (Before and after, Image,
 Image with text, Lookbook, Custom Liquid, Slideshow, Video and Apps).</p>
 </section>
@@ -89,6 +102,8 @@ the colors that suit what is under it. See <a href="#s-header-tone">Automatic he
   header</strong> plays that part: see <a href="product-page.html#bg-under-header">Extend the gradient under the
   header</a>.</li>
 </ul>
+<p>Whatever their <a href="#section-width">Section width</a>, Contact, Collection and the Product section keep their
+background edge to edge, so it can run under the header; only their content moves in.</p>
 <p>With Header behavior on Standard, these settings have no effect: the header keeps its card above the page.</p>
 </section>
 
@@ -306,6 +321,10 @@ overlay. <strong>Height mode (desktop)</strong> and <strong>Height mode (mobile)
 <p>A carousel of <strong>Slide</strong> blocks. Each slide has its own desktop and mobile image, color scheme and
 overlay, a heading and subtext placed in one of nine positions, and up to two buttons in Solid, Outline or Glass style.
 Slides change on their own or on demand, with a slide or fade transition, arrows and dots.</p>
+<p>In Full width the slides run edge to edge with square corners. In Full width with margins or Page width they are
+inset and take <strong>Corner radius</strong>: <strong>Theme setting (media)</strong> by default, or
+<strong>Custom</strong> with <strong>Custom corner radius (desktop)</strong> and <strong>(mobile)</strong>, 0 to 40 px,
+square at 0. The radius cuts the image, the overlay and every layer of the slide.</p>
 ''', 'Two to four campaigns at the top of the home page: a new product, a seasonal collection and a bundle offer.'),
 
     'products-showcase': ('''
@@ -375,6 +394,9 @@ and keep the pause button on: accessibility guidelines ask for one on any animat
 <p>Two images stacked on top of each other with a handle the visitor drags to compare them, horizontally or vertically.
 Add labels, a starting position, a round handle or a plain line, a heading and text. The handle also works from the
 keyboard, through a slider.</p>
+<p>In Full width the frame runs edge to edge with square corners. In Full width with margins or Page width it is inset
+and takes <strong>Corner radius</strong>: <strong>Theme setting (media)</strong> by default, or <strong>Custom</strong>
+with <strong>Custom corner radius</strong>, 0 to 40 px. See <a href="#section-width">Section width</a>.</p>
 ''', 'Showing the result of a product: a surface before and after cleaning, skin before and after four weeks, a room before and after.'),
 
     'featured-collection': ('''
