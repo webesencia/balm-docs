@@ -1,4 +1,4 @@
-"""Builds the Balm documentation site from the theme's schemas.
+"""Builds the Balm Studio documentation site from the theme's schemas.
 
 Usage, from the repository root: python3 _tools/build.py /path/to/balm-theme
 
@@ -341,16 +341,16 @@ def markdown(md, id_prefix='v'):
 
 # ---------------------------------------------------------------- pages
 PAGES = [
-    ('index.html', 'Getting started', 'Install Balm and set up your store, step by step.'),
-    ('theme-settings.html', 'Theme settings', 'Every group of Balm theme settings, explained in the order of the theme editor.'),
-    ('sections.html', 'Sections', 'Every Balm section, its settings and a typical use.'),
-    ('product-page.html', 'Product page blocks', 'The Balm product page, its blocks, buy button styles and backgrounds.'),
-    ('features.html', 'Features', 'Quick view, badges, page loader, age verifier, gift wrapping and the other Balm features.'),
-    ('metafields.html', 'Metafields', 'The product and shop metafields Balm reads, with their keys and types.'),
-    ('custom-code.html', 'Custom code', 'What to know before editing the Balm theme code.'),
-    ('faq.html', 'FAQ', 'Answers to the questions merchants ask most about Balm.'),
-    ('changelog.html', 'Changelog', 'What changed in each version of Balm.'),
-    ('support.html', 'Support', 'What Balm support covers and how to reach it.'),
+    ('index.html', 'Getting started', 'Install Balm Studio and set up your store, step by step.'),
+    ('theme-settings.html', 'Theme settings', 'Every group of Balm Studio theme settings, explained in the order of the theme editor.'),
+    ('sections.html', 'Sections', 'Every Balm Studio section, its settings and a typical use.'),
+    ('product-page.html', 'Product page blocks', 'The Balm Studio product page, its blocks, buy button styles and backgrounds.'),
+    ('features.html', 'Features', 'Quick view, badges, page loader, age verifier, gift wrapping and the other Balm Studio features.'),
+    ('metafields.html', 'Metafields', 'The product and shop metafields Balm Studio reads, with their keys and types.'),
+    ('custom-code.html', 'Custom code', 'What to know before editing the Balm Studio theme code.'),
+    ('faq.html', 'FAQ', 'Answers to the questions merchants ask most about Balm Studio.'),
+    ('changelog.html', 'Changelog', 'What changed in each version of Balm Studio.'),
+    ('support.html', 'Support', 'What Balm Studio support covers and how to reach it.'),
 ]
 
 
@@ -425,7 +425,7 @@ def layout(fname, title, desc, body, toc, root=''):
         pager += (f'<a class="prev" href="{root}{prev_p[0]}"><span>Previous</span>{e(prev_p[1])}</a>' if prev_p else '<span></span>')
         pager += (f'<a class="next" href="{root}{next_p[0]}"><span>Next</span>{e(next_p[1])}</a>' if next_p else '<span></span>')
         pager += '</nav>'
-    page_title = f'{title} | Balm theme documentation' if fname != 'index.html' else 'Balm theme documentation'
+    page_title = f'{title} | Balm Studio theme documentation' if fname != 'index.html' else 'Balm Studio theme documentation'
     return f'''<!doctype html>
 <html lang="en" class="no-js">
 <head>
@@ -444,7 +444,7 @@ def layout(fname, title, desc, body, toc, root=''):
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="topbar">
   <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="sidebar"><span class="nav-toggle__bars" aria-hidden="true"></span><span class="nav-toggle__label">Menu</span></button>
-  <a class="brand" href="{root}index.html"><span class="brand__mark" aria-hidden="true">B</span><span class="brand__name">Balm</span><span class="brand__sub">Documentation</span></a>
+  <a class="brand" href="{root}index.html"><span class="brand__mark" aria-hidden="true">B</span><span class="brand__name">Balm Studio</span><span class="brand__sub">Documentation</span></a>
   <div class="search" role="search">
     <label class="visually-hidden" for="search-input">Search the documentation</label>
     <input id="search-input" type="search" placeholder="Search the docs" autocomplete="off" spellcheck="false" aria-describedby="search-hint" aria-controls="search-results">
@@ -463,7 +463,7 @@ def layout(fname, title, desc, body, toc, root=''):
 {body}
     </article>
     {pager}
-    <footer class="site-footer"><p>Balm theme documentation, version 1.0.0. Questions? See <a href="{root}support.html">Support</a>.</p></footer>
+    <footer class="site-footer"><p>Balm Studio theme documentation, version 1.0.0. Questions? See <a href="{root}support.html">Support</a>.</p></footer>
   </main>
 </div>
 </body>
@@ -642,7 +642,7 @@ def build_product():
 
 def build_changelog():
     md = open(f'{THEME}/CHANGELOG.md', encoding='utf-8').read()
-    body = page_head('Changelog', 'What changed in each version of Balm. The version installed in your store is shown in your theme library, under the theme name.')
+    body = page_head('Changelog', 'What changed in each version of Balm Studio. The version installed in your store is shown in your theme library, under the theme name.')
     body += markdown(md)
     write_page('changelog.html', 'Changelog', PAGES[8][2], body)
 

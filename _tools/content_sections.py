@@ -1,4 +1,4 @@
-INTRO = ('Every section Balm offers, with where it can be used, what it does, a typical use and its full list of '
+INTRO = ('Every section Balm Studio offers, with where it can be used, what it does, a typical use and its full list of '
          'settings. Add a section from the theme editor with <strong>Add section</strong>; drag it to reorder it. '
          'Settings tables are folded: open one to see every label, its values and its default.')
 
@@ -126,7 +126,7 @@ your text with the Translate &amp; Adapt app. See <a href="features.html#transla
 
 <section class="entry" id="spam-notice-entry">
 <h3 id="spam-notice">Spam protection notice</h3>
-<p>Shopify protects the contact and newsletter forms with hCaptcha, which must be disclosed. Balm prints the required
+<p>Shopify protects the contact and newsletter forms with hCaptcha, which must be disclosed. Balm Studio prints the required
 sentence, with its two links, under each form, which removes the hCaptcha badge from the corner of the page. The
 <strong>Spam protection notice</strong> settings only change its size, color and alignment.</p>
 </section>
@@ -170,7 +170,7 @@ INTERNAL_NOTE = '''
 Predictive search and Pickup availability. They have no settings; the theme loads them on demand to fill the quick view
 modal, the search suggestions and the pickup details. Quick view is configured in
 <a href="theme-settings.html#ts-quick-view">Theme settings, Quick view</a>, predictive search in the Header section.</p>
-<p class="page-note">Preview versions of Balm also offered a Lifestyle strip section, two photos side by side in one
+<p class="page-note">Preview versions of Balm Studio also offered a Lifestyle strip section, two photos side by side in one
 rounded card. It has been removed.</p>
 '''
 
@@ -234,7 +234,7 @@ follow the header with <strong>Use the header's colors over dark backgrounds</st
   <li>In the first section of the page, for example a Hero with a dark image, turn on <strong>Allow transparent header</strong>.</li>
   <li>In the Header section, keep <strong>Header behavior</strong> on <strong>Transparent at top</strong>.</li>
   <li>Upload the white version of your logo in <strong>Logo for dark backgrounds</strong>. Your usual logo stays in <strong>Logo image</strong>.</li>
-  <li>Set <strong>Colors over dark backgrounds</strong> to a scheme with white text, such as Scheme 2 of the Balm preset (white on near black).</li>
+  <li>Set <strong>Colors over dark backgrounds</strong> to a scheme with white text, such as Scheme 2 of the Balm Studio preset (white on near black).</li>
   <li>If a floating announcement bar sits over the same image, tick <strong>Use the header's colors over dark backgrounds</strong> in the Announcement bar section, so its text turns white with the header.</li>
 </ol>
 <p>At the top of the page the logo, the menu and the icons are white over the dark image. On scroll the header takes its
@@ -296,7 +296,7 @@ always paints first, the video fades in over it, and the controls appear with th
 <p><strong>While the video loads</strong> has two styles. <strong>Cover image, then fade</strong>, the default, shows
 the cover sharp until the video plays. <strong>Blurred cover, then fade</strong> keeps the cover blurred until then.
 The hero has no loader of its own: for a loading screen, turn on the <a href="features.html#page-loader">Page
-loader</a> in Theme settings, Loader. A hero set to a loader style in a preview version of Balm now shows Cover image,
+loader</a> in Theme settings, Loader. A hero set to a loader style in a preview version of Balm Studio now shows Cover image,
 then fade.</p>
 <p>The text block is placed separately on desktop and mobile, with a fine vertical offset, over an optional darkening
 overlay. <strong>Height mode (desktop)</strong> and <strong>Height mode (mobile)</strong> fit the screen, adapt to the content or take a custom height.</p>
@@ -451,7 +451,7 @@ when you want it there too.</p>
     'socials': ('''
 <p>A heading, the icons of your social media profiles and an optional button. The icons are the links typed once in
 <a href="theme-settings.html#ts-social-media">Theme settings, Social media</a>: only the networks with a URL show. The
-button, outlined or in glass, appears only when <strong>Button link</strong> is filled. Previous versions of Balm named
+button, outlined or in glass, appears only when <strong>Button link</strong> is filled. Previous versions of Balm Studio named
 this section Socials.</p>
 ''', 'An @yourbrand band with the Instagram, TikTok and Pinterest icons and a Follow us button, above the footer.'),
 
@@ -581,7 +581,7 @@ app can draw edge to edge.</p>
 
     'main-product': ('''
 <p>The product page: media gallery on one side, a column of blocks on the other. It is the main section of the product
-template, so it is not offered in <strong>Add section</strong>. Preview versions of Balm also offered a second version
+template, so it is not offered in <strong>Add section</strong>. Preview versions of Balm Studio also offered a second version
 of it there, Balm spotlight; it has been removed. Its product gradient background and its spinning badge are now a
 background mode of the Product section and the positions of the Spinning badge block.</p>
 ''', ''),
@@ -603,7 +603,7 @@ badges they show.</p>
 bottom of the screen, on desktop and mobile separately. By default it appears once the main buy button scrolls out of
 view. A variant that sells as a pre-order says Pre-order here too.</p>
 <p>The bar exists only as this section, which the product template places below the Product section. Preview versions
-of Balm also offered it as a Sticky add to cart block inside the Product section; that block has been removed.</p>
+of Balm Studio also offered it as a Sticky add to cart block inside the Product section; that block has been removed.</p>
 ''', 'At the bottom of the screen on phones, where the main buy button quickly scrolls away.'),
 
     'main-collection': ('''

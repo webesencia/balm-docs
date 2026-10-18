@@ -1,6 +1,6 @@
-# Balm theme documentation
+# Balm Studio theme documentation
 
-Public documentation of the Balm Shopify theme, published with GitHub Pages at
+Public documentation of the Balm Studio Shopify theme, published with GitHub Pages at
 https://balm.webesencia.com/
 
 The site is plain HTML and CSS with one small script for the search and the mobile menu.

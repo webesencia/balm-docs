@@ -1,4 +1,4 @@
-INTRO = ('Balm ships one product page, and every product uses it. You shape it from the theme editor, and you can '
+INTRO = ('Balm Studio ships one product page, and every product uses it. You shape it from the theme editor, and you can '
          'let each product carry its own colors and texts through metafields, so you never need a second template.')
 
 BODY_BEFORE = '''
@@ -40,7 +40,7 @@ products</a>, an <a href="sections.html#s-faq">FAQ</a>, <a href="sections.html#s
 <a href="sections.html#s-product-recommendations">Product recommendations</a>. Fill them, or remove the ones you do
 not need. Add an <a href="#pb-product-icon-list">Icon list</a> block for reassurance claims under the buy buttons.</p>
 <p>The Product section is the main section of the product template, so it is not offered in <strong>Add
-section</strong>. Preview versions of Balm offered a second version there, Balm spotlight; it has been removed. What set
+section</strong>. Preview versions of Balm Studio offered a second version there, Balm spotlight; it has been removed. What set
 it apart is now available on the standard page: a <a href="#bg-product-gradient">Product gradient</a> background and
 the <a href="#pb-product-spin-badge">Spinning badge</a> block, placed on the gallery or next to the title.</p>
 
@@ -65,7 +65,7 @@ in the Variant picker block and <strong>Weld to the packs menu</strong> in the B
 <p>Glass takes its recipe from <a href="theme-settings.html#ts-glass-effect">Theme settings, Glass effect</a>: one tint,
 one opacity, one blur and one border opacity, shared by every glass surface. Change it once and the buy button, the
 upsell buttons, the popup trigger, the newsletter card and the cart panel move together.</p>
-<p>The label keeps the text color of the section's color scheme. Balm measures the contrast between that color and the
+<p>The label keeps the text color of the section's color scheme. Balm Studio measures the contrast between that color and the
 frosted surface, and only when it falls below 3:1 (the WCAG floor for large text) does it switch the label to black or
 white, whichever reads better. Over a background image or a gradient the backdrop changes from pixel to pixel, so the
 theme leaves your scheme color alone there: check the contrast yourself.</p>
@@ -151,7 +151,7 @@ mode, off by default. It needs two conditions:</p>
 <ul>
   <li>the Header section has <strong>Header behavior</strong> on <strong>Transparent at top</strong> or
   <strong>Adaptive</strong>;</li>
-  <li>the Product section is the first section of the product template, as it is in the templates Balm ships.</li>
+  <li>the Product section is the first section of the product template, as it is in the templates Balm Studio ships.</li>
 </ul>
 <p>The gradient then starts at the top of the screen, under the header and under a Floating or Glass announcement bar. A
 Solid announcement bar in full width keeps its place above it. The header is transparent at rest and takes its card on
@@ -196,7 +196,7 @@ so the row differs from one shopper to the next.</p>
 soon as a variant that can be bought is chosen. A pre-order variant can be bought, so it keeps the row. Quick view and
 the sticky add to cart bar have no accelerated checkout buttons.</p>
 <p>These buttons are drawn by Shopify, inside an element no theme and no app can style directly. Shopify exposes a short
-list of settings instead, and Balm sets all of them from your Add to cart button:</p>
+list of settings instead, and Balm Studio sets all of them from your Add to cart button:</p>
 <div class="table-wrap"><table class="plain"><thead><tr><th scope="col">What</th><th scope="col">Follows</th></tr></thead><tbody>
 <tr><td>Height</td><td>Your <strong>Button height</strong> setting, within Shopify's range of 25 to 55 px</td></tr>
 <tr><td>Corner radius</td><td>Your <strong>Corner radius</strong> setting, the same value as Add to cart</td></tr>
@@ -244,7 +244,7 @@ BLOCK_TEXT = {
     '_product-volume-pricing': '<p>Quantity price breaks, as a table or a list. It renders nothing when the variant has none.</p>',
     '_product-selling-plans': '<p>One-time purchase and subscription options from your subscription app, with the plan names, descriptions and savings. It renders nothing unless the product has a selling plan.</p>',
     '_product-gift-card-recipient': '<p>Lets the buyer send a gift card to someone else, with a name, an email, a message and a send date. It only renders on gift card products.</p>',
-    '_product-buy-buttons': '<p>The quantity selector, Add to cart, the accelerated checkout buttons and the Shop Pay Installments banner. The quantity selector is the only one of the product page: <strong>Quantity selector (desktop)</strong> and <strong>Quantity selector (mobile)</strong> place it Above the buttons (the default), Inline with Add to cart, or Hidden, with its style, size and label; it follows the quantity rules of each variant and volume pricing. Preview versions of Balm had a separate Quantity block; it has been removed.</p><p> The accelerated checkout buttons (Buy it now and the wallets) are hidden while the selected variant is sold out and come back with a variant in stock; a pre-order variant can be bought, so it keeps them, and its button reads Pre-order. See <a href="#buy-button-styles">Buy button styles</a>, <a href="#accelerated-checkout">accelerated checkout</a> and <a href="features.html#pre-order">Pre-order</a>.</p>',
+    '_product-buy-buttons': '<p>The quantity selector, Add to cart, the accelerated checkout buttons and the Shop Pay Installments banner. The quantity selector is the only one of the product page: <strong>Quantity selector (desktop)</strong> and <strong>Quantity selector (mobile)</strong> place it Above the buttons (the default), Inline with Add to cart, or Hidden, with its style, size and label; it follows the quantity rules of each variant and volume pricing. Preview versions of Balm Studio had a separate Quantity block; it has been removed.</p><p> The accelerated checkout buttons (Buy it now and the wallets) are hidden while the selected variant is sold out and come back with a variant in stock; a pre-order variant can be bought, so it keeps them, and its button reads Pre-order. See <a href="#buy-button-styles">Buy button styles</a>, <a href="#accelerated-checkout">accelerated checkout</a> and <a href="features.html#pre-order">Pre-order</a>.</p>',
     '_product-inventory': '<p>In stock, low stock or out of stock for the selected variant, with a colored dot and an optional exact quantity. Low stock only applies when inventory is tracked and the variant stops selling at zero.</p>',
     '_product-notify-me': '<p>A back in stock form, shown only while the selected variant is sold out. Requests arrive as contact form messages, at the store address set in Settings, Notifications, and name the exact variant; no app is needed.</p>',
     '_product-pickup': '<p>Local pickup availability for the selected variant, and a button that opens the list of locations. It renders nothing unless a location has pickup enabled.</p>',
@@ -279,7 +279,7 @@ for one of those, create a second template: in the theme editor, open <strong>Pr
 page, under <strong>Theme template</strong>.</p>
 
 <h2 id="older-templates">Products that used an older template</h2>
-<p>Early versions of Balm shipped extra product templates. They have been folded into the default one. A product still
+<p>Early versions of Balm Studio shipped extra product templates. They have been folded into the default one. A product still
 assigned to one of them falls back to the default product template and renders normally. To clear the setting, open the
 product in the admin and choose <strong>Default product</strong> under <strong>Theme template</strong>.</p>
 '''

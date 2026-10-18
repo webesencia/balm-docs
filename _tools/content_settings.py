@@ -1,22 +1,22 @@
 INTRO = ('Theme settings apply to the whole store. Open them in the theme editor with the '
          '<strong>Theme settings</strong> icon (the gear) in the left bar. The groups below follow the order of the '
          'editor, and every label is written exactly as the editor shows it. The Default column gives the theme\'s '
-         'built in value; the <a href="index.html#preset">Balm preset</a>, which your store starts from, replaces the '
+         'built in value; the <a href="index.html#preset">Balm Studio preset</a>, which your store starts from, replaces the '
          'colors, fonts, corners, glass and typography values with its own.')
 
 GROUPS = {
     'Colors': '''
-<p>Balm organizes its colors in <strong>color schemes</strong>. A scheme is a set of seven colors designed to work
+<p>Balm Studio organizes its colors in <strong>color schemes</strong>. A scheme is a set of seven colors designed to work
 together, and every section, popup and drawer picks one scheme with its own <strong>Color scheme</strong> setting.
 Edit a scheme here and every place that uses it follows.</p>
-<p>The Balm preset ships two schemes. Scheme 1 is the main one, white; Scheme 2 is its contrasting partner, near
+<p>The Balm Studio preset ships two schemes. Scheme 1 is the main one, white; Scheme 2 is its contrasting partner, near
 black. Add as many schemes as you need with <strong>Add scheme</strong>.</p>
 <ul>
   <li><strong>Background</strong>: the section background. <strong>Background gradient</strong> is optional and replaces it where set.</li>
   <li><strong>Text</strong>: body text, headings and icons.</li>
   <li><strong>Button / accent</strong> and <strong>Button label</strong>: the fill and the text of primary buttons.</li>
   <li><strong>Secondary background</strong>: the second surface of the scheme, used by cards, drawers, panels, inputs
-  and secondary buttons. Balm derives a raised tone and a hairline from it, so dark schemes keep visible layers.</li>
+  and secondary buttons. Balm Studio derives a raised tone and a hairline from it, so dark schemes keep visible layers.</li>
   <li><strong>Accent (links / highlights)</strong>: links and highlighted details.</li>
 </ul>
 <p>Keep the text and button colors readable on their background: aim for a contrast ratio of at least 4.5:1 for
@@ -26,9 +26,9 @@ surfaces use exactly the colors you set.</p>
     'Typography': '''
 <p>Two fonts drive the whole theme: the <strong>Heading font</strong> for headings and titles, and the
 <strong>Body font</strong> for paragraphs, forms and everything else. Both come from the Shopify font library, so they
-are served by Shopify and free to use on your store. The Balm preset pairs Outfit 400 for headings with Inter for body
+are served by Shopify and free to use on your store. The Balm Studio preset pairs Outfit 400 for headings with Inter for body
 text.</p>
-<p><strong>Type sizes.</strong> Balm sets its text on one fluid scale. Every size has a mobile value, reached on a
+<p><strong>Type sizes.</strong> Balm Studio sets its text on one fluid scale. Every size has a mobile value, reached on a
 screen 390 px wide, and a desktop value, reached at 1440 px. In between, the size grows in a straight line; outside
 that range, it holds at the nearer value. On the scale, the product title runs from 32 to 44 px, section headings from
 26 to 36 px, card titles from 15 to 17 px, body text from 15 to 16 px and small text from 12 to 13 px, each level with
@@ -49,7 +49,7 @@ heading. <strong>Button labels</strong> sets the case, weight, letter spacing an
 announcement bar, the footer links and the main menu. Because the recipes are global, a section title, a product card
 and a page title always speak with the same voice.</p>
 <p>Not every family offers every weight or an italic. When a family lacks the face you ask for, the browser uses the
-closest one it has, or slants an upright face. Outfit, the heading font of the Balm preset, has no italic at all: with
+closest one it has, or slants an upright face. Outfit, the heading font of the Balm Studio preset, has no italic at all: with
 <strong>Heading style</strong> set to Italic, its letters are slanted by the browser. For true italic headings, pick a
 heading font whose family includes italics.</p>
 ''',
@@ -115,7 +115,7 @@ images</a>.</p>
 <strong>Cards and panels</strong>, <strong>Form fields</strong> and <strong>Images and media</strong>. Each value is a
 ceiling: elements designed with smaller corners keep them, and 0 gives square corners everywhere. Section settings that
 carry their own radius, such as the floating header or the cart drawer, are capped by these values too.</p>
-<p>The Balm preset sets buttons and form fields to 12 px, cards and media to 20 px.</p>
+<p>The Balm Studio preset sets buttons and form fields to 12 px, cards and media to 20 px.</p>
 ''',
     'Product badges': '''
 <p>Four badges can sit on the product cards, in quick view, in Compare products and on the product page.
@@ -242,7 +242,7 @@ or a spinner, and an exit animation. It is the theme's only loader, and it cover
 <strong>Progress bar only</strong> layouts: <strong>Bar ends</strong> (Square, or Rounded, the default, which rounds
 the track and the fill), <strong>Bar thickness</strong> (1 to 6 px, 2 by default) and <strong>Bar animation</strong>
 (None, Smooth by default, or Shimmer).</p>
-<p>Preview versions of Balm had a second loader here: a loading indicator drawn on the hero while its video loaded,
+<p>Preview versions of Balm Studio had a second loader here: a loading indicator drawn on the hero while its video loaded,
 with seven settings (Style, Loader image, Animation, Size (desktop), Size (mobile), Color and Custom color). It has
 been removed with those settings. The hero now shows its cover image while its video loads, sharp or blurred, as set by
 <strong>While the video loads</strong> in the <a href="sections.html#s-hero">Hero</a> section.</p>

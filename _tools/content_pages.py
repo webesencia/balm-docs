@@ -1,7 +1,7 @@
 SUPPORT_FORM = 'https://form.jotform.com/262695466571066'
 
 # ------------------------------------------------------------------ Getting started
-GS_LEAD = ('Balm is an Online Store 2.0 theme for Shopify: every page is built from sections and blocks that you add, '
+GS_LEAD = ('Balm Studio is an Online Store 2.0 theme for Shopify: every page is built from sections and blocks that you add, '
            'remove and reorder in the theme editor, without code. This guide takes you from installation to a store '
            'ready to publish.')
 
@@ -15,26 +15,26 @@ GETTING_STARTED = '''
   <li><a href="faq.html"><strong>FAQ</strong><span>Answers to the questions merchants ask most.</span></a></li>
 </ul>
 
-<h2 id="install">Install Balm from the Theme Store</h2>
+<h2 id="install">Install Balm Studio from the Theme Store</h2>
 <ol class="steps">
-  <li>Open the Balm page on the <a href="https://themes.shopify.com/">Shopify Theme Store</a> while logged in to your store.</li>
-  <li>Select <strong>View demo store</strong> to browse Balm with its content before you install it.</li>
+  <li>Open the Balm Studio page on the <a href="https://themes.shopify.com/">Shopify Theme Store</a> while logged in to your store.</li>
+  <li>Select <strong>View demo store</strong> to browse Balm Studio with its content before you install it.</li>
   <li>Select <strong>Try theme</strong> to add a trial copy to your theme library, or buy the theme straight away. A trial lets you customize everything; you pay when you publish.</li>
-  <li>In your admin, go to <strong>Online Store, Themes</strong>. Balm is in your theme library. Select <strong>Customize</strong> to open the theme editor.</li>
+  <li>In your admin, go to <strong>Online Store, Themes</strong>. Balm Studio is in your theme library. Select <strong>Customize</strong> to open the theme editor.</li>
   <li>When the store is ready, open the theme's <strong>...</strong> menu in the theme library and choose <strong>Publish</strong>.</li>
 </ol>
-<p>Balm needs no app to work. Apps that offer app blocks, such as reviews, subscriptions or bundles, plug into the
+<p>Balm Studio needs no app to work. Apps that offer app blocks, such as reviews, subscriptions or bundles, plug into the
 product page and into most sections.</p>
 
-<h3 id="updates">Updating Balm</h3>
+<h3 id="updates">Updating Balm Studio</h3>
 <p>When a new version is released, your theme library shows an update notice. Shopify adds the new version to your
 library as a separate copy that keeps your theme editor settings and content, so you can review it before publishing.
 Changes made directly in the theme code are not carried over: see <a href="custom-code.html">Custom code</a>. What changed
 in each version is listed in the <a href="changelog.html">Changelog</a>.</p>
 
-<h2 id="preset">The Balm preset</h2>
-<p>A preset is a starting style: color schemes, font pairing, corner radii, glass recipe and typography recipes. Balm
-comes with one preset, also named Balm, and your store starts from it.</p>
+<h2 id="preset">The Balm Studio preset</h2>
+<p>A preset is a starting style: color schemes, font pairing, corner radii, glass recipe and typography recipes. Balm Studio
+comes with one preset, also named Balm Studio, and your store starts from it.</p>
 <ul>
   <li><strong>Look.</strong> Clean and neutral: a white scheme, a near black scheme and two violet schemes (a pale lavender and a deep violet), sentence case headings and buttons, a white frosted glass. A calm base that lets product photography lead.</li>
   <li><strong>Fonts.</strong> Outfit 400 for headings, Inter for body text, on one fluid type scale.</li>
@@ -61,9 +61,9 @@ the device switch at the top of the editor to preview both.</p>
 <ol class="steps">
   <li><strong>Logo and menu.</strong> Open the <a href="sections.html#s-header">Header</a> section. Set <strong>Logo type</strong> and upload your <strong>Logo image</strong>, then pick your main menu under <strong>Menu</strong>. Menus themselves are edited in your admin, under Content, Menus (Online Store, Navigation on older admins). The header is transparent over the first section by default and picks its colors from what lies under it: upload a white logo in <strong>Logo for dark backgrounds</strong> so it reads over dark images (see <a href="sections.html#s-header-tone">Automatic header colors</a>).</li>
   <li><strong>Countries and languages.</strong> The header shows a globe with the country and language selectors as soon as there is a choice to make: two countries or regions in <strong>Settings, Markets</strong>, or two published languages in <strong>Settings, Languages</strong>. Until then it shows nothing. <strong>Country and language selectors</strong> in the Header picks which ones appear (Both by default). See <a href="sections.html#s-header-localization">Country and language selectors</a>.</li>
-  <li><strong>Colors.</strong> In <a href="theme-settings.html#ts-colors">Theme settings, Colors</a>, adjust the four color schemes of the Balm preset to your brand. Every section picks one of them.</li>
+  <li><strong>Colors.</strong> In <a href="theme-settings.html#ts-colors">Theme settings, Colors</a>, adjust the four color schemes of the Balm Studio preset to your brand. Every section picks one of them.</li>
   <li><strong>Fonts, sizes and corners.</strong> Set the <strong>Heading font</strong> and <strong>Body font</strong> in <a href="theme-settings.html#ts-typography">Typography</a>. To make every heading or every text of the store larger or smaller at once, move <strong>Heading scale</strong> or <strong>Body scale</strong> there rather than each section's sizes. Set the corner radii in <a href="theme-settings.html#ts-corner-style">Corner style</a>, and the title and price sizes of the product cards in <a href="theme-settings.html#ts-product-cards">Product cards</a>.</li>
-  <li><strong>Page width.</strong> In <a href="theme-settings.html#ts-layout">Theme settings, Layout</a>, the Balm preset sets <strong>Page width</strong> to Full width with margins, in line with the header; choose Standard (1400 px) or Wide (1600 px) for a narrower product, collection and search page.</li>
+  <li><strong>Page width.</strong> In <a href="theme-settings.html#ts-layout">Theme settings, Layout</a>, the Balm Studio preset sets <strong>Page width</strong> to Full width with margins, in line with the header; choose Standard (1400 px) or Wide (1600 px) for a narrower product, collection and search page.</li>
   <li><strong>Home page.</strong> The home page starts with a Hero, a Marquee, a Products showcase, a Bento, Rich text, Image with text, a Featured collection, a Lookbook, Social media links and the Newsletter popup, as on the demo store. Replace their images and texts, remove what you do not need, and add sections with <strong>Add section</strong>. In the Products showcase, pick one product per <strong>Spotlight</strong>: its name, link, image, tagline and colors follow on their own (see <a href="metafields.html#showcase">Metafields</a>).</li>
   <li><strong>Product page.</strong> Open a product in the editor and review the block stack. See <a href="product-page.html">Product page blocks</a>, and <a href="metafields.html">Metafields</a> if each product should carry its own color or texts. For a background in each product's own colors, set <strong>Background mode</strong> of the Product section to <a href="product-page.html#bg-product-gradient">Product gradient (metafields)</a>; with cutout packshots (PNG or WebP), try the <a href="product-page.html#text-behind-cutouts">text behind cutouts</a>.</li>
   <li><strong>Badges.</strong> Sale and Sold out show on their own, from the prices and the stock. In <a href="theme-settings.html#ts-product-badges">Theme settings, Product badges</a>, turn on New if you want it and set the badge colors. For a badge of your own words, such as <q>Limited edition</q>, fill the <code>custom.badge_label</code> metafield: see <a href="features.html#product-badges">Product badges</a>.</li>
@@ -87,7 +87,7 @@ so you can reshape any of them in the editor.</p>
 
 <h2 id="help">Need help?</h2>
 <p>Search this documentation with the box at the top of the page, read the <a href="faq.html">FAQ</a>, or contact
-<a href="support.html">Balm support</a>.</p>
+<a href="support.html">Balm Studio support</a>.</p>
 '''
 
 # ------------------------------------------------------------------ Features
@@ -295,7 +295,7 @@ page only.</p>
 
 <section class="entry" id="translations-entry">
 <h2 id="translations">Translations</h2>
-<p>Balm ships in five languages: English, French, German, Italian and Spanish. That covers every storefront text of the
+<p>Balm Studio ships in five languages: English, French, German, Italian and Spanish. That covers every storefront text of the
 theme (buttons, cart, forms, filters, accessibility labels) and the theme editor itself, which follows the language of
 your admin.</p>
 <ol class="steps">
@@ -304,13 +304,13 @@ your admin.</p>
   <li>Leave the text settings marked <em>Leave empty to use the translated default</em> empty on a multilingual store: they then show the built in text in each language.</li>
 </ol>
 <p>To change the wording of a theme text, use <strong>Edit default theme content</strong> in the theme's <strong>...</strong>
-menu in your theme library. For a language Balm does not ship, Translate &amp; Adapt can translate the theme texts too.</p>
+menu in your theme library. For a language Balm Studio does not ship, Translate &amp; Adapt can translate the theme texts too.</p>
 </section>
 
 <section class="entry" id="combined-listings-entry">
 <h2 id="combined-listings">Combined listings</h2>
 <p>Combined listings group separate products into one listing, for example one product per color, and are available to
-Shopify Plus stores through Shopify's Combined Listings app. Balm supports them with nothing to configure:</p>
+Shopify Plus stores through Shopify's Combined Listings app. Balm Studio supports them with nothing to configure:</p>
 <ul>
   <li>On the product page, picking a value that belongs to another product of the listing switches the page to that product without a reload, keeping the values already chosen and updating the address.</li>
   <li>Swatches on product cards link to the matching product.</li>
@@ -334,7 +334,7 @@ Tell buyers when the product will ship, for example in a Text block or a Collaps
 
 <section class="entry" id="type-sizes-entry">
 <h2 id="type-sizes">Type sizes</h2>
-<p>Every text of Balm sits on one fluid type scale, from phones to large screens. A size is reached at 390 px wide for
+<p>Every text of Balm Studio sits on one fluid type scale, from phones to large screens. A size is reached at 390 px wide for
 its mobile value and at 1440 px for its desktop value, and grows in a straight line in between, so a heading never jumps
 from one size to another as the window widens. The text size settings of the sections and blocks follow the same rule,
 and their defaults sit on the scale: a section you add matches its neighbors without any tuning.</p>
@@ -366,7 +366,7 @@ nothing to set in each section. It does so with <strong>Header behavior</strong>
 (the default: over the first section, then the card on scroll) or <strong>Adaptive</strong> (at every scroll position,
 on every page).</p>
 <ol class="steps">
-  <li>In the <a href="sections.html#s-header">Header</a> section, set <strong>Colors over dark backgrounds</strong> to a color scheme with light text. Scheme 2 of the Balm preset, white on near black, is the default.</li>
+  <li>In the <a href="sections.html#s-header">Header</a> section, set <strong>Colors over dark backgrounds</strong> to a color scheme with light text. Scheme 2 of the Balm Studio preset, white on near black, is the default.</li>
   <li>Upload a light version of your logo in <strong>Logo for dark backgrounds</strong>. It shares the size and the place of the main logo, so nothing moves when they swap.</li>
   <li>Let the first section of the page reach under the header: <strong>Allow transparent header</strong> on a Hero, Slideshow, Video, Products showcase or Brand story hero, or <strong>Header over this section</strong> on the other sections that offer it (see <a href="sections.html#transparent-header">The header over a section</a>).</li>
 </ol>
@@ -376,7 +376,7 @@ takes the colors over dark backgrounds and the logo for dark backgrounds; over a
 main logo. It reads again as the page scrolls, as a slideshow changes slide and as a Products showcase moves to the next
 spotlight. An open menu, search panel or mobile menu always keeps the standard colors. A floating announcement bar can
 follow it with <strong>Use the header's colors over dark backgrounds</strong>.</p>
-<p>Preview versions of Balm asked for the tone in some sections (<strong>Tone under the header</strong>, <strong>Header
+<p>Preview versions of Balm Studio asked for the tone in some sections (<strong>Tone under the header</strong>, <strong>Header
 colors at rest</strong>) and offered <strong>Transparent header over the first section</strong>; these settings have
 been removed. A store that used the transparent header keeps it, Transparent at top being the default.</p>
 </section>
@@ -396,7 +396,7 @@ in Full width with margins whose rounded corners line up with a floating header.
 
 <section class="entry" id="glass-entry">
 <h2 id="glass">Glass</h2>
-<p>Glass is the frosted look of Balm: a tinted, translucent fill with a fine border, which blurs what passes behind it.
+<p>Glass is the frosted look of Balm Studio: a tinted, translucent fill with a fine border, which blurs what passes behind it.
 Two recipes in <a href="theme-settings.html#ts-glass-effect">Theme settings, Glass effect</a> drive every glass surface
 of the store, so one change restyles them all.</p>
 <ul>
@@ -468,7 +468,7 @@ a page reload too. Both are off by default.</p>
 
 # ------------------------------------------------------------------ Metafields
 META_LEAD = ('Metafields let one template give every product its own colors, texts and images. This page lists the '
-             'metafields Balm reads, with the exact name, key and type to create.')
+             'metafields Balm Studio reads, with the exact name, key and type to create.')
 
 META_ROWS_PRODUCT = [
     ('Background color', 'custom.background_color', 'Color', 'Product: Background color, Gradient start, Base color'),
@@ -769,19 +769,19 @@ product needs a different value for one of those, give it a
 '''
 
 # ------------------------------------------------------------------ Custom code
-CODE_LEAD = ('Balm is built to be shaped from the theme editor, without code. If you or a developer do edit the theme '
+CODE_LEAD = ('Balm Studio is built to be shaped from the theme editor, without code. If you or a developer do edit the theme '
              'code, read this page first.')
 
 CUSTOM_CODE = '''
 <div class="callout callout--warn" role="note">
   <p class="callout__title">Duplicate the theme before any code change</p>
   <p>Before you edit a single file, make a copy of the theme: in your admin, go to <strong>Online Store, Themes</strong>,
-  open the <strong>...</strong> menu of Balm and choose <strong>Duplicate</strong>. Make your changes on the copy, preview
+  open the <strong>...</strong> menu of Balm Studio and choose <strong>Duplicate</strong>. Make your changes on the copy, preview
   it, and publish it only once it works. Your live theme stays untouched, and you can go back to it at any moment.</p>
 </div>
 
 <h2 id="hire-a-partner">Get help from a Shopify Partner</h2>
-<p>Code customizations are outside the scope of Balm support. For custom features, design changes or integrations, we
+<p>Code customizations are outside the scope of Balm Studio support. For custom features, design changes or integrations, we
 recommend working with a Shopify Partner: developers and agencies vetted by Shopify, listed in the
 <a href="https://www.shopify.com/partners/directory">Shopify Partner Directory</a>.</p>
 
@@ -795,23 +795,23 @@ recommend working with a Shopify Partner: developers and agencies vetted by Shop
 <p>Code added this way is kept when you update the theme.</p>
 
 <h2 id="updates-and-code">Theme updates and your code</h2>
-<p>When you update Balm, Shopify installs the new version as a separate copy and carries over your theme editor settings
+<p>When you update Balm Studio, Shopify installs the new version as a separate copy and carries over your theme editor settings
 and content, but not the changes you made in the theme files. Keep a list of every file you changed and why, so the
 changes can be applied again to the new version.</p>
 
 <h2 id="support-scope">What support covers</h2>
-<p>Balm support covers the theme as shipped. When a problem shows up on a theme whose code was modified, we may ask you
-to reproduce it on an unmodified copy of Balm first. See <a href="support.html">Support</a>.</p>
+<p>Balm Studio support covers the theme as shipped. When a problem shows up on a theme whose code was modified, we may ask you
+to reproduce it on an unmodified copy of Balm Studio first. See <a href="support.html">Support</a>.</p>
 '''
 
 # ------------------------------------------------------------------ FAQ
-FAQ_LEAD = 'Answers to the questions merchants ask most about Balm.'
+FAQ_LEAD = 'Answers to the questions merchants ask most about Balm Studio.'
 
 FAQ = [
-    ('Can I use Balm on more than one store?', '''
-<p>A theme bought from the Shopify Theme Store is licensed for one store. To use Balm on another store, buy it again
+    ('Can I use Balm Studio on more than one store?', '''
+<p>A theme bought from the Shopify Theme Store is licensed for one store. To use Balm Studio on another store, buy it again
 from that store. Trying the theme is free on any store.</p>'''),
-    ('How do I update Balm without losing my settings?', '''
+    ('How do I update Balm Studio without losing my settings?', '''
 <p>When an update is available, your theme library shows a notice. Shopify adds the new version as a separate copy that
 keeps your theme editor settings and content. Preview it, then publish it. Changes you made in the theme code are not
 carried over; see <a href="custom-code.html#updates-and-code">Custom code</a>.</p>'''),
@@ -877,7 +877,7 @@ shows no text. See <a href="product-page.html#text-behind-cutouts">Text behind c
 no value shows no ring. Fill the metafield on that product (see <a href="metafields.html#badge-label">Badge label, step
 by step</a>). With <strong>Next to the title</strong>, the page also needs a Title block.</p>'''),
     ('Where are Balm spotlight, Lifestyle strip, the Sticky add to cart and Quantity blocks?', '''
-<p>They belonged to preview versions of Balm and were removed before release, together with the free text of the
+<p>They belonged to preview versions of Balm Studio and were removed before release, together with the free text of the
 spinning badge.</p>
 <ul>
   <li><strong>Balm spotlight</strong>, the second version of the Product section: its gradient and its spinning badge are now the <a href="product-page.html#bg-product-gradient">Product gradient</a> background mode and the positions of the <a href="product-page.html#pb-product-spin-badge">Spinning badge</a> block, on the one Product section.</li>
@@ -892,7 +892,7 @@ match: a color setting only accepts a Color metafield, an image setting a File m
 for the wrong resource: product page settings need a <strong>Products</strong> definition, other sections a
 <strong>Shop</strong> definition. The help text of each connectable setting names the exact definition it expects.</p>'''),
     ('How do I add product reviews and star ratings?', '''
-<p>Install a reviews app that writes Shopify's standard review metafields (most do). Balm's Rating block, the ratings on
+<p>Install a reviews app that writes Shopify's standard review metafields (most do). Balm Studio's Rating block, the ratings on
 product cards and quick view read them automatically once reviews come in. If the app offers an app block for its review
 list, add it to the product page from the block picker.</p>'''),
     ('How do I add a size guide or ingredients list to product pages?', '''
@@ -901,7 +901,7 @@ that opens a dialog) or a <strong>Collapsible row</strong>, and set <strong>Cont
 page</strong>. For content that differs per product, connect the block's Content to a rich text metafield instead.</p>'''),
     ('Can I change the color of the Shop Pay or PayPal buttons?', '''
 <p>No theme can. The accelerated checkout buttons are drawn by Shopify with the brand colors of each payment provider.
-Balm matches everything Shopify allows: height, corner radius, spacing and the loading placeholder. See
+Balm Studio matches everything Shopify allows: height, corner radius, spacing and the loading placeholder. See
 <a href="product-page.html#accelerated-checkout">The accelerated checkout buttons</a>.</p>'''),
     ('How do I show a free shipping progress bar?', '''
 <p>In <a href="theme-settings.html#ts-cart">Theme settings, Cart</a>, keep <strong>Show the free shipping bar</strong>
@@ -918,7 +918,7 @@ sells as a pre-order can be bought, so it keeps them. See
 or the label you set in Theme settings, Pre-order. To take a deposit or charge later, use a pre-order app. See
 <a href="features.html#pre-order">Pre-order</a>.</p>'''),
     ('How do I translate my store?', '''
-<p>Add and publish your languages in Settings, Languages. Balm's own texts are already translated into French, German,
+<p>Add and publish your languages in Settings, Languages. Balm Studio's own texts are already translated into French, German,
 Italian and Spanish. Translate what you typed in the editor with the Translate &amp; Adapt app. See
 <a href="features.html#translations">Translations</a>.</p>'''),
     ('The newsletter popup does not appear. What should I check?', '''
@@ -960,10 +960,10 @@ each page view and has the largest effect.</p>'''),
 ]
 
 # ------------------------------------------------------------------ Support
-SUPPORT_LEAD = 'Balm support answers questions about the theme and fixes its bugs. Here is what it covers and how to reach it.'
+SUPPORT_LEAD = 'Balm Studio support answers questions about the theme and fixes its bugs. Here is what it covers and how to reach it.'
 
 SUPPORT = f'''
-<p class="cta"><a class="button" href="{SUPPORT_FORM}" rel="noopener">Contact Balm support</a></p>
+<p class="cta"><a class="button" href="{SUPPORT_FORM}" rel="noopener">Contact Balm Studio support</a></p>
 
 <h2 id="covered">What support covers</h2>
 <ul>
@@ -974,7 +974,7 @@ SUPPORT = f'''
 <h2 id="not-covered">What support does not cover</h2>
 <ul>
   <li><strong>Customizations</strong>: changes to the theme code, new features, custom designs, or code added in Custom Liquid sections, Liquid blocks or Custom CSS. For this work we recommend a <a href="https://www.shopify.com/partners/directory">Shopify Partner</a>.</li>
-  <li>Problems caused by edits to the theme files. We may ask you to reproduce the problem on an unmodified copy of Balm.</li>
+  <li>Problems caused by edits to the theme files. We may ask you to reproduce the problem on an unmodified copy of Balm Studio.</li>
   <li>Third party apps and services, and Shopify features outside the theme (checkout, payments, shipping rules, domains). For those, contact the app developer or Shopify Support.</li>
 </ul>
 
