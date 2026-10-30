@@ -243,7 +243,7 @@ one card at a time, follow a mouse drag and the keyboard, and stay still for vis
     'Loader': '''
 <p>The <strong>Page loader</strong>: an optional loading screen shown while pages open, with your logo, a progress bar
 or a spinner, and an exit animation. It is the theme's only loader, and it covers everything on the page, the header and the announcement bar included. See
-<a href="features.html#page-loader">Page loader</a>.</p>
+<a href="features.html">Page loader</a>.</p>
 <p>The progress bar has three settings of its own, shown with the <strong>Logo and progress bar</strong> and
 <strong>Progress bar only</strong> layouts: <strong>Bar ends</strong> (Square, or Rounded, the default, which rounds
 the track and the fill), <strong>Bar thickness</strong> (1 to 6 px, 2 by default) and <strong>Bar animation</strong>
@@ -301,3 +301,58 @@ Internal search results pages are not covered by default, and they rarely deserv
 adds a noindex instruction to them, and optionally to filtered collections too.</p>
 ''',
 }
+
+
+# ---------------------------------------------------------------- groups of the tone redesign
+for _gone in ('Product cards', 'Corner style', 'Glass effect', 'Backgrounds', 'Carousels', 'Loader', 'Filters'):
+    GROUPS.pop(_gone, None)
+INTRO = INTRO.replace('colors, fonts, corners, glass and typography values', 'colors, fonts and typography values')
+
+GROUPS['Tone'] = '''
+<p>Every product carries its own color: two colors, a dark one and a light one, read from its metafields (see
+<a href="metafields.html#product-color">Metafields, Product color</a>). From that pair the theme works out, on the
+server, the six colors of a page: the light ground (Field), the dark ground (Deep), an almost white ground (Paper), the
+text and the two tints in between, and it checks that every text keeps a contrast of at least 4.5:1 before printing
+them. The page is therefore readable without JavaScript; the browser only glides from one color to the next while a
+section moves.</p>
+<p>Pages without a product color (the cart, a plain page, search, the 404, a product without its metafields) use the
+<strong>House dark color</strong> and <strong>House light color</strong> set here.</p>
+'''
+
+GROUPS['Tiles'] = '''
+<p>Tiles are the product cards of every product grid: collection, search, Featured collection, recommendations,
+recently viewed, lookbook and complementary products. Each tile sits in the Field of its product, with the cutout
+standing, the name and the price at the bottom and, with <strong>Show name watermark</strong>, the first line of the
+name set large behind the product. <strong>Product image on hover</strong> picks what the picture does when the pointer
+rests on the tile. Sizes are set per device.</p>
+'''
+
+GROUPS['Back to top'] = '''
+<p>A <strong>Back to top</strong> link before the footer. It is a plain link to the top of the page, so it works without
+JavaScript; with JavaScript the page scrolls smoothly, and at once for visitors who ask for reduced motion.</p>
+'''
+
+GROUPS['Buttons'] = '''
+<p>One look for every button of the theme, primary and secondary: square corners, a <strong>Size</strong> (Medium is
+the 60 pixel button of the Balm Studio design), a <strong>Border width</strong> and a <strong>Font weight</strong>.
+Every button keeps a target of at least 44 pixels. The colors come from the color of the page, or from the color scheme
+of a section set to Color scheme.</p>
+'''
+
+GROUPS['Cart'] = '''
+<p>One set of settings for the cart drawer and the cart page. <strong>Cart type</strong> opens a drawer, shows a short
+notification or goes to the cart page. The drawer is a sheet against the edge of the screen, in the color of the last
+product added, with its <strong>Panel width</strong>, paddings and sizes set per device.</p>
+<ul>
+  <li><strong>Free shipping bar</strong>: a bar split by line with its sentence, toward the amount you type. It only
+  shows progress: set the real rule in your admin (Settings, Shipping and delivery, or Discounts) and keep the two
+  amounts the same.</li>
+  <li><strong>Recommendations</strong>: <q>Complete your routine</q>, products from Shopify's recommendations or from a
+  list you pick, never a product already in the cart.</li>
+  <li><strong>Cart content</strong>: the order note, the discount code, the savings, the taxes and shipping note and a
+  promotion note on each line.</li>
+  <li><strong>Checkout</strong>: accelerated checkout buttons in the drawer and on the cart page, in the colors Shopify
+  gives them, and payment icons.</li>
+  <li><strong>Empty cart</strong>: a sentence, a button and, optionally, products from a collection.</li>
+</ul>
+'''

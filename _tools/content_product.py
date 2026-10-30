@@ -42,7 +42,7 @@ not need. Add an <a href="#pb-product-icon-list">Icon list</a> block for reassur
 <p>The Product section is the main section of the product template, so it is not offered in <strong>Add
 section</strong>. Preview versions of Balm Studio offered a second version there, Balm spotlight; it has been removed. What set
 it apart is now available on the standard page: a <a href="#bg-product-gradient">Product gradient</a> background and
-the <a href="#pb-product-spin-badge">Spinning badge</a> block, placed on the gallery or next to the title.</p>
+the <a href="#pb-product-badge">Spinning badge</a> block, placed on the gallery or next to the title.</p>
 
 <h2 id="buy-button-styles">Buy button styles</h2>
 <p>The <strong>Style</strong> setting of the Buy buttons block offers five looks. Each keeps its own
@@ -62,7 +62,7 @@ the Signature pill style, because the seam depends on its square corner. Turn on
 in the Variant picker block and <strong>Weld to the packs menu</strong> in the Buy buttons block.</p>
 
 <h3 id="glass-style">About the Glass style</h3>
-<p>Glass takes its recipe from <a href="theme-settings.html#ts-glass-effect">Theme settings, Glass effect</a>: one tint,
+<p>Glass takes its recipe from <a href="theme-settings.html">Theme settings, Glass effect</a>: one tint,
 one opacity, one blur and one border opacity, shared by every glass surface. Change it once and the buy button, the
 upsell buttons, the popup trigger, the newsletter card and the cart panel move together.</p>
 <p>The label keeps the text color of the section's color scheme. Balm Studio measures the contrast between that color and the
@@ -125,12 +125,12 @@ out on a transparent background.</p>
 <tr><td>Show bottom curve</td><td>On, Curve color <code>#ffffff</code></td></tr>
 </tbody></table></div>
 <p>To give every product its own background color, connect these colors to product metafields: the step by step guide is
-on <a href="metafields.html#per-product-background">Metafields</a>. For a gradient, the Product gradient mode below
+on <a href="metafields.html#product-color">Metafields</a>. For a gradient, the Product gradient mode below
 does it without any connection.</p>
 <h3 id="bg-product-gradient">D. Product gradient</h3>
 <p>Each product paints its own gradient from two Color metafields, read directly: <code>custom.background_color</code>
 for the start and <code>custom.background_color_end</code> for the end. There is nothing to connect in the theme editor:
-create the two definitions once (see <a href="metafields.html#showcase">Metafields</a>), fill them on each product, and
+create the two definitions once (see <a href="metafields.html#product-color">Metafields</a>), fill them on each product, and
 choose the mode.</p>
 <div class="table-wrap"><table class="plain"><thead><tr><th scope="col">Setting</th><th scope="col">Value</th></tr></thead><tbody>
 <tr><td>Background mode</td><td>Product gradient (metafields)</td></tr>
@@ -226,12 +226,12 @@ BLOCKS_INTRO = ('<p>Every block of the product information column, with the name
                 'full list is on <a href="metafields.html">Metafields</a>.</p>')
 
 BLOCK_ORDER = [
-    '_product-title', '_product-vendor', '_product-price', '_product-sku', '_product-rating', '_product-text',
+    '_product-crumb', '_product-title', '_product-vendor', '_product-price', '_product-sku', '_product-rating', '_product-reviews', '_product-text',
     '_product-variant-picker', '_product-volume-pricing', '_product-selling-plans',
     '_product-gift-card-recipient', '_product-buy-buttons', '_product-inventory', '_product-notify-me',
     '_product-pickup', '_product-payment-icons', '_product-upsell', '_product-complementary', '_product-description',
     '_product-collapsible-row', '_product-popup', '_product-specs', '_product-spec-row', '_product-icon-list',
-    '_product-icon-item', '_product-image', '_product-badge', '_product-spin-badge', '_product-share', '_product-nav',
+    '_product-icon-item', '_product-image', '_product-badge', '_product-share', '_product-nav',
     '_product-liquid',
 ]
 
@@ -252,7 +252,7 @@ BLOCK_TEXT = {
     '_product-pickup': '<p>Local pickup availability for the selected variant, and a button that opens the list of locations. It renders nothing unless a location has pickup enabled.</p>',
     '_product-payment-icons': '<p>A reassurance line and the icons of the payment methods enabled in your store (Settings, Payments). A theme cannot add or reorder these icons; to show another badge, upload it as the block image.</p>',
     '_product-upsell': '''<p>Frequently bought together: products to buy alongside this one, from Shopify recommendations or your own selection. <strong>Bundle (tick boxes, one total)</strong> adds every ticked product in one action; <strong>Simple list (add one by one)</strong> gives each product its own button.</p>
-<p>The block takes the look of the product cards. <strong>Card style</strong> is <strong>Card</strong> (filled with the secondary background of the color scheme), <strong>Bordered</strong> (a fine outline, the default) or <strong>Plain</strong> (no box), with the corner radius of the cards set in <a href="theme-settings.html#ts-corner-style">Theme settings, Corner style</a>. Thumbnails are square and never cropped, with their own size on desktop (72 px) and on mobile (64 px). In the bundle list, each row shows a checkbox, the thumbnail, the title and the price, with a quiet variant menu underneath for products with options, and a thin rule between rows; a Total line and a full width button close the block. <strong>Button style</strong> is Solid or Glass, separate from the card style.</p>''',
+<p>The block takes the look of the product cards. <strong>Card style</strong> is <strong>Card</strong> (filled with the secondary background of the color scheme), <strong>Bordered</strong> (a fine outline, the default) or <strong>Plain</strong> (no box), with the corner radius of the cards set in <a href="theme-settings.html">Theme settings, Corner style</a>. Thumbnails are square and never cropped, with their own size on desktop (72 px) and on mobile (64 px). In the bundle list, each row shows a checkbox, the thumbnail, the title and the price, with a quiet variant menu underneath for products with options, and a thin rule between rows; a Total line and a full width button close the block. <strong>Button style</strong> is Solid or Glass, separate from the card style.</p>''',
     '_product-complementary': '<p>A small grid of product cards: complementary products from Shopify recommendations, curated in the Search &amp; Discovery app, or your own selection, which can be connected to a product list metafield.</p>',
     '_product-description': '<p>The product description from the product admin page.</p>',
     '_product-collapsible-row': '''<p>An accordion row whose content is rich text, which can be connected to a metafield, or a page, to share one policy page across every product. A row without heading or content shows nothing on the storefront.</p>
@@ -285,3 +285,12 @@ page, under <strong>Theme template</strong>.</p>
 assigned to one of them falls back to the default product template and renders normally. To clear the setting, open the
 product in the admin and choose <strong>Default product</strong> under <strong>Theme template</strong>.</p>
 '''
+
+
+BLOCK_TEXT.pop('_product-spin-badge', None)
+BLOCK_TEXT['_product-crumb'] = (
+    '<p>A short breadcrumb above the title, for example <q>Shop / Night cream</q>: your <strong>Label</strong> with its '
+    '<strong>Link</strong>, then the product type. It replaces the full breadcrumb trail on the product page of the demo.</p>')
+BLOCK_TEXT['_product-reviews'] = (
+    '<p>Two short reviews under the product details, each a quote and the name of the customer. Type only real reviews; '
+    'a review without its quote is not shown on your store. For reviews collected by an app, use its app block instead.</p>')

@@ -73,7 +73,7 @@ section's background, image or card reaches:</p>
 </ul>
 <p>Inset in Full width with margins or Page width, the frame of <strong>Before and after</strong> and the slides of the
 <strong>Slideshow</strong> take <strong>Corner radius</strong>: <strong>Theme setting (media)</strong>, the media radius
-of <a href="theme-settings.html#ts-corner-style">Theme settings, Corner style</a>, by default, or <strong>Custom</strong>,
+of <a href="theme-settings.html">Theme settings, Corner style</a>, by default, or <strong>Custom</strong>,
 0 to 40 px (square at 0), one value on Before and after and one per device on the Slideshow. In Full width they stay
 square, edge to edge.</p>
 <p>The sections that can run under a transparent header, <strong>Product</strong>, <strong>Contact</strong> and
@@ -310,7 +310,7 @@ what happens at the end (loop, stop, or show the cover again), and the style and
 always paints first, the video fades in over it, and the controls appear with the video, never before it.</p>
 <p><strong>While the video loads</strong> has two styles. <strong>Cover image, then fade</strong>, the default, shows
 the cover sharp until the video plays. <strong>Blurred cover, then fade</strong> keeps the cover blurred until then.
-The hero has no loader of its own: for a loading screen, turn on the <a href="features.html#page-loader">Page
+The hero has no loader of its own: for a loading screen, turn on the <a href="features.html">Page
 loader</a> in Theme settings, Loader. A hero set to a loader style in a preview version of Balm Studio now shows Cover image,
 then fade.</p>
 <p>The text block is placed separately on desktop and mobile, with a fine vertical offset, over an optional darkening
@@ -339,7 +339,7 @@ product's title as the name, linked to its page, its <code>custom.tagline</code>
 name, the tagline or the price: on a short screen it gets smaller to fit between them and the button. The button opens the product page; with
 <strong>Action</strong> set to Add to cart, a product with a single variant goes to the cart in one click and the cart
 drawer opens, while a product with options, or sold out, keeps the link to its page. The metafields are read directly:
-there is nothing to connect. See <a href="metafields.html#showcase">Metafields</a>.</p>
+there is nothing to connect. See <a href="metafields.html#product-color">Metafields</a>.</p>
 <p>Each field of the <strong>Override (optional)</strong> group replaces one of those values: name, tagline, background
 color, background color end, image and link. Leave a field empty to use the product's value. Without a product, the
 override fields are the spotlight's content. A background that neither the override nor the product colors takes the
@@ -351,7 +351,7 @@ line (see <a href="metafields.html#icon-metafields">Icon metafields</a>). Sectio
 size subtitle, the gradient style, the color scheme and the image sizing across every spotlight, and can hide the
 header while the section holds the screen.</p>
 <p>Each spotlight can turn a <strong>Spinning badge</strong> on its slide: an image, or a text set around a circle or a
-rounded square. See <a href="features.html#spotlight-spinning-badge">Spinning badge of a spotlight</a>.</p>
+rounded square. See <a href="product-page.html#pb-product-badge">Spinning badge of a spotlight</a>.</p>
 ''', 'Presenting a small range, three to five products, one by one on the home page or on the Products page template: pick each product once, and its metafields keep the spotlight in step with the catalog.'),
 
     'featured-set': ('''
@@ -363,7 +363,7 @@ the background, and its image. The button adds that product to the cart. Each fi
 background that neither gives takes the color scheme's. <strong>Tagline, second part</strong> has no product value: it
 shows only what you type. Your own desktop and mobile background images replace the product image, darkened by an
 optional overlay. Until a product is picked, the section shows a placeholder in the editor and nothing on the
-storefront. See <a href="metafields.html#showcase">Metafields</a>.</p>
+storefront. See <a href="metafields.html#product-color">Metafields</a>.</p>
 ''', 'Promoting a discovery set at the top of the Products page template (page.products), which opens with this section.'),
 
     'image-with-text': ('''
@@ -550,7 +550,7 @@ tile, such as a product card, needs more room.</p>
 price, variant picker, Buy buttons with the quantity and Buy it now, description, collapsible rows and the others, plus
 the <a href="#theme-blocks">theme blocks</a> and app blocks. Its media show in a gallery: images, Shopify hosted
 videos, YouTube and Vimeo videos and 3D models with the AR button, with the gallery arrows of
-<a href="theme-settings.html#ts-carousels">Theme settings, Carousels</a>.</p>
+<a href="theme-settings.html">Theme settings, Carousels</a>.</p>
 <p>Choosing a variant updates the price and shows the variant's image, without changing the page address. Add to cart
 opens the cart as <a href="theme-settings.html#ts-cart">Theme settings, Cart</a> says. Without a product, the theme
 editor shows a placeholder and nothing shows on the storefront.</p>
@@ -570,7 +570,7 @@ crossfades to the step's <strong>Image on hover</strong>, or to the product's se
 <p>The ingredients that make a product work, one <strong>Ingredient</strong> block each: a picture, a name, the benefit
 it brings and a detail. <strong>Layout (desktop)</strong> and <strong>Layout (mobile)</strong> show them as a grid, a
 carousel, or Auto, a carousel only when the cards outnumber the columns. The carousel uses the arrows of
-<a href="theme-settings.html#ts-carousels">Theme settings, Carousels</a>.</p>
+<a href="theme-settings.html">Theme settings, Carousels</a>.</p>
 <p><strong>Detail</strong> set to Over the picture shows the detail on the picture on hover or focus with a mouse, and
 through each ingredient's More about button on every device; set to Always under the benefit, it is always visible.
 Turn off <strong>Show button</strong> in an ingredient to remove its button. <strong>Image ratio</strong> takes a
@@ -616,7 +616,7 @@ of the <strong>Collection</strong> you pick, in a new order on every visit. <str
 completes Shopify's recommendations from that collection when they are fewer than the maximum. Neither ever shows a
 product twice, nor the product of the page.</p>
 <p>The cards sit in a grid or a carousel per device, with the arrows of
-<a href="theme-settings.html#ts-carousels">Theme settings, Carousels</a>, and <strong>Badges</strong> picks which
+<a href="theme-settings.html">Theme settings, Carousels</a>, and <strong>Badges</strong> picks which
 badges they show.</p>
 ''', 'Four related products under every product page, with the custom badge showing on new formulas.'),
 
@@ -631,7 +631,7 @@ of Balm Studio also offered it as a Sticky add to cart block inside the Product 
     'main-collection': ('''
 <p>The collection page: a banner with the title, description and image, an optional row of collection links, filters
 and sorting, and the product grid. Filters come from the Search &amp; Discovery app and can sit in a column, a drawer
-or a horizontal bar, whose drawer style is set in <a href="theme-settings.html#ts-filters">Theme settings,
+or a horizontal bar, whose drawer style is set in <a href="theme-settings.html">Theme settings,
 Filters</a>. Pagination is page numbers, a Load more button or infinite scroll. Visitors can change the column count
 when you allow it (see <a href="features.html#collection-columns">Column selector</a>), and <strong>Promo
 tile</strong> blocks take the place of a card on the first page. <strong>Badges</strong> picks the badges of the cards,
@@ -802,3 +802,224 @@ glow) only where the text is, so it reads on any photo.</p>''',
     '_mega-promo': '<p>An image tile with a heading, a short text and a link.</p>',
     '_mega-banner': '<p>A wide banner with a background image, a heading, a short text and a button or link.</p>',
 }
+
+
+# ---------------------------------------------------------------- Balm Studio sections (the demo store)
+def shot(key, alt, caption, mobile=True):
+    """A capture of the section on the demo store, desktop at 1512 px and phone at 390 px."""
+    m = (f'<img class="shot__m" src="assets/shots/{key}-mobile.jpg" width="390" height="844" '
+         f'alt="{alt}, on a phone" loading="lazy" decoding="async">') if mobile else ''
+    return (f'<figure class="shot{"" if mobile else " shot--wide"}"><img class="shot__d" src="assets/shots/{key}-desktop.jpg" '
+            f'width="1200" height="682" alt="{alt}, on a desktop screen" loading="lazy" decoding="async">{m}'
+            f'<figcaption>{caption}</figcaption></figure>')
+
+
+TONE_INTRO = '''
+<p>The sections of the Balm Studio demo store. Each one wears the color of the product it shows: the theme reads the
+two colors of the product (see <a href="metafields.html#product-color">Metafields, Product color</a>) and works out the
+ground, the text and the deep panels from them, with the contrast checked on the server. While a section moves from one
+product to the next, the whole page glides from one color to the other. Every section reads correctly without
+JavaScript, and visitors who ask for reduced motion see each step at once, without the glide.</p>
+<p>The captures come from the demo store, on a desktop screen and on a phone.</p>
+'''
+
+TONE_KEYS = ['hero-sequence', 'campaign', 'color-library', 'day-in-color', 'routine-builder', 'reviews', 'atelier',
+             'lineup', 'hue-finder', 'texture', 'ingredient-atlas', 'chapters', 'numbers', 'main-contact',
+             'main-journal', 'main-journal-article', 'tone-footer']
+
+CATEGORIES.insert(0, ('balm-studio-sections', 'Balm Studio sections', TONE_INTRO, TONE_KEYS))
+CATEGORIES[:] = [(a, b, c, [k for k in keys if k != 'products-showcase']) for a, b, c, keys in CATEGORIES]
+TEXT.pop('products-showcase', None)
+
+TEXT.update({
+    'hero-sequence': ('''
+<p>The products of the home page, one after the other, as you scroll. Each <strong>Product</strong> block is one step:
+the product name sits large behind the cutout, its last line in front of it, and a bar at the bottom shows the name,
+the type and format, the first sentence of the tagline, the price, <strong>View formula</strong> and <strong>Add to
+bag</strong>. Scrolling lifts and turns each product away while the next one rises, and the color of the page follows,
+with a short pause on each product. <strong>Scroll length per step</strong> sets how long each product stays, on desktop
+and on phones; <strong>Object height</strong> sets the size of the cutout; <strong>Bar surface</strong> paints the bar.
+Without JavaScript each product is a still screen in its own color.</p>
+''' + shot('hero-sequence', 'Hero sequence with a lavender night cream', 'Hero sequence: the first product, its name in layers around the cutout.'),
+        'Three to five products at the top of the home page, each with its two colors and its cutout.'),
+
+    'campaign': ('''
+<p>A photo on one side and, on a flat panel, a short heading, a text, a link and a photo credit. <strong>Image position</strong>
+puts the photo left or right on desktop, above or below on phones, and <strong>Surface</strong> paints the panel in the
+light Paper of the page color, its Field or its Deep. The section has no animation.</p>
+''' + shot('campaign', 'Campaign with a photo and a short heading', 'Campaign: the photo on the left, the text on Paper.'),
+        'The story of a season or of a launch, between the hero and the products.'),
+
+    'color-library': ('''
+<p>One tall band per product, each in its own color with its name written upright. Opening a band, on hover, on click
+or with the keyboard, widens it and shows the product upright, its name, type, tagline, price and actions, and the
+section takes its color. On phones the bands stack as an accordion. Pick the products one by one in
+<strong>Products</strong> or a whole <strong>Collection</strong> (12 products at most); <strong>Band open at start</strong>
+chooses the first open band. Without JavaScript every band is a native disclosure and the first one is open.</p>
+''' + shot('color-library', 'Color library with one band open', 'Color library: the third band open, the others in their colors.'),
+        'The whole range at a glance on the home page, each product in its color.'),
+
+    'day-in-color': ('''
+<p>A day told in steps. Each <strong>Step</strong> block has a large <strong>Time</strong>, a <strong>Label</strong>, a
+<strong>Product</strong> and a line on <strong>How to use</strong> it, and its <strong>Ground</strong> picks the light or
+deep color of that product: light in the morning, deep at night. As you scroll, the clock, the product and the color
+change from step to step. Without JavaScript the steps are a list, each in its own color.</p>
+''' + shot('day-in-color', 'A day in color at seven in the morning', 'A day in color: the morning step on the light ground of its product.'),
+        'Morning, noon and night routines, each step with the product that fits it.'),
+
+    'routine-builder': ('''
+<p>A large paragraph with up to three products set inline as small cutouts, then one column per <strong>Step</strong>
+block. Each step offers two or three products written as words; choosing one paints the column in that product's color
+and brings its cutout in. The summary adds up the real prices of the chosen products and <strong>Add the routine</strong>
+puts them all in the cart at once. <strong>Offer text</strong> is a line you write, for example the discount you set up
+in your admin; the theme computes no discount. Without JavaScript each step is a group of radio buttons in an add to
+cart form.</p>
+''' + shot('routine-builder', 'Routine builder with three steps', 'Routine builder: the paragraph with its inline products.'),
+        'Cleanse, treat and protect: shoppers build their routine and add it in one click.'),
+
+    'reviews': ('''
+<p>A summary line you write, a link to all your reviews and up to three quotes set large, each with its stars, its
+author and a square in the color of the reviewed product, linked to it. <strong>Columns</strong> is set per device.
+Nothing is filled in for you: a Review block without a quote stays hidden on your store.</p>
+''' + shot('reviews', 'Reviews with three quotes', 'Reviews: three quotes, each with the color of its product.'),
+        'Three short reviews from real customers, under the products they mention.'),
+
+    'atelier': ('''
+<p>A wide photo, then on a Deep panel a heading and columns of text with their links, for example the address and the
+opening hours of your studio and how to book a visit. <strong>Photo height</strong> is set per device.</p>
+''' + shot('atelier', 'Atelier with a wide photo and two columns', 'Atelier: the photo, then the address and the appointments on Deep.'),
+        'Where your workshop or shop is, when it is open, and how to visit.'),
+
+    'lineup': ('''
+<p>Your products standing side by side on a ruler, each at its real height on the same scale. Each <strong>Product</strong>
+block has a <strong>Height</strong>, in millimeters, that you type. Hovering or focusing a product spreads its color
+behind the whole section and shows its name and height. On phones the line-up scrolls sideways and the product in the
+middle becomes active. <strong>Show the height range</strong> prints the shortest and tallest heights in the caption.</p>
+''' + shot('lineup', 'Line-up with one product focused', 'Line-up: one tube focused, its color behind the section.'),
+        'How big each product really is, for a range with several sizes.'),
+
+    'hue-finder': ('''
+<p>Three questions, one at a time, answered with words. Each <strong>Question</strong> block has up to four answers,
+each pointing to the products it suits. The first question counts three times, the second twice, the third once, and
+the section slides toward the color of the leading product at each answer. The last screen shows the product, its
+reason, <strong>View formula</strong> and <strong>Add to bag</strong>. <strong>Remember the result for 30 days</strong>,
+off by default, keeps the result on the visitor's device and adds a link to forget it; off, nothing is saved.</p>
+''' + shot('hue-finder', 'Hue finder on its second question', 'Hue finder: the second question, the color of the leading product behind it.'),
+        'A short quiz that leads a hesitant shopper to one product.'),
+
+    'texture': ('''
+<p>A trail of cream drawn across the screen as you scroll, in the color of the product, beside its <strong>Texture</strong>,
+its <strong>Skin feel</strong> and <strong>How to use</strong>. It belongs to the product template and reads the product
+of the page. Connect each text to a metafield to give every product its own (see
+<a href="metafields.html#product-texts">Metafields, Product texts</a>); an empty text is not printed.</p>
+''' + shot('texture', 'Texture with the cream trail fully drawn', 'Texture: the trail fully drawn, the texture and the skin feel beside it.'),
+        'Under the product details, to show what the formula feels like.'),
+
+    'ingredient-atlas': ('''
+<p>A wall of ingredient names. Each <strong>Ingredient</strong> block has a <strong>Name</strong>, a <strong>Note</strong>
+and the <strong>Products</strong> that contain it; hovering or focusing a name shows its note and the products, in
+their colors. The atlas reads its blocks only: there is no metaobject to create.</p>
+''' + shot('ingredient-atlas', 'Ingredient atlas with one ingredient open', 'Ingredient atlas: one ingredient focused, with the products that contain it.'),
+        'The key ingredients of the range, each linked to the products that use it.'),
+
+    'chapters': ('''
+<p>A brand story in chapters. Each <strong>Chapter</strong> block has a <strong>Numeral</strong>, a <strong>Heading</strong>,
+a <strong>Text</strong> and can show a <strong>Product</strong> and a link; each chapter is painted in the color of its
+product. <strong>Tint the page with the first chapter</strong> gives the whole page that color from the
+start. It is the section of the About page of the demo.</p>
+''' + shot('chapters', 'Chapters on its first chapter', 'Chapters: the first chapter, in the color of its product.'),
+        'The About page: three chapters of your story, each with the product it led to.'),
+
+    'numbers': ('''
+<p>Large figures with a line of text under each, on Deep by default. Each <strong>Number</strong> block is one figure.
+Type only figures that are true for your brand.</p>
+''' + shot('numbers', 'Numbers with three figures', 'Numbers: three figures on Deep, above the footer.'),
+        'Three facts about how you make your products.'),
+
+    'main-contact': ('''
+<p>The contact page of the demo: a heading and a text, the contact form with underlined fields and a choice of
+<strong>Subjects</strong> you type one per line, and <strong>Detail</strong> blocks beside it (a label, a value and an
+optional link). A detail without a value is not printed. The form works without JavaScript.</p>
+''' + shot('main-contact', 'Contact with its form', 'Contact: the form and the details, in the house color.'),
+        'Your support hours, your studio address and the form, on the Contact page.'),
+
+    'main-journal': ('''
+<p>The blog page as a journal: the newest article featured large, in the color of its product, then the other articles
+as rows. An article takes the color of the product picked in its <code>custom.product</code> metafield (see
+<a href="metafields.html#article-product">Metafields, Article product</a>).</p>
+''' + shot('main-journal', 'Journal with its featured article', 'Journal: the newest article featured in the color of its product.'),
+        'A blog with routines and ingredient notes, each article linked to one product.'),
+
+    'main-journal-article': ('''
+<p>The article page of the journal: a reading bar, the article in a comfortable measure, the product of the article
+(<code>custom.product</code>) and a link to the next article. Each part can be turned off.</p>
+''' + shot('main-journal-article', 'Journal article at its top', 'Journal article: the title in the color of its product.'),
+        'Long reads that end on the product they talk about.'),
+
+    'tone-footer': ('''
+<p>The footer of the demo: a <strong>Newsletter</strong> block with an underlined field, <strong>Links</strong> blocks
+that each show a menu, <strong>Text</strong> blocks, then your store name set very large, the copyright and a second
+legal line. It is painted on Deep by default and follows the color of the page.</p>
+''' + shot('tone-footer', 'Footer with the newsletter and two menus', 'Footer: the newsletter, two menus and the store name.'),
+        'Newsletter signup, the shop and help menus, and the legal lines.'),
+})
+
+_bg_a = SHARED.index('<section class="entry" id="section-background-entry">')
+_bg_b = SHARED.index('</section>', _bg_a) + len('</section>\n')
+SHARED = SHARED.replace(SHARED[_bg_a:_bg_b], '''<section class="entry" id="section-background-entry">
+<h3 id="section-background">Surface</h3>
+<p>Most sections have a <strong>Surface</strong> setting that paints their background. Field, Deep and Paper follow the
+color of the page, so a section changes with the product it sits under:</p>
+<ul>
+  <li><strong>Field</strong>: the light ground of the product color.</li>
+  <li><strong>Deep</strong>: the dark version of the same color, with light text.</li>
+  <li><strong>Paper</strong>: an almost white ground tinted with the color.</li>
+  <li><strong>Color scheme</strong>: the section's <a href="#color-scheme">color scheme</a> instead of the product color.</li>
+  <li><strong>Image</strong>: a picture behind the section, with the color scheme for the text.</li>
+</ul>
+<p>Pages without a product color (the cart, a plain page, the 404) use the house pair of
+<a href="theme-settings.html#ts-tone">Theme settings, Tone</a>.</p>
+</section>
+
+''')
+
+
+# Template sections of the demo: a capture in front of their text, and the header without the features removed.
+TEXT['header'] = ('''
+<p>The logo (an image, or your store name as a wordmark), the main menu, search, the account and the bag. The header
+takes the color of the section under it: Field, Deep, Paper or the product color, with the text checked at a 4.5:1
+contrast, and it hides on the way down and comes back on the way up. A mega menu opens as an index on Deep: the
+categories set large with their product count, the products of the hovered category and a preview of the product, the
+panel following its color. On phones the menu opens as a full screen sheet on Deep. Search opens full screen, with your
+popular products and suggestions in words. Mega menus are built with the <a href="#mega-menu-blocks">Mega menu blocks</a>.</p>
+<h4 id="s-header-tone">Header colors</h4>
+<p>Over a first section that allows it (see <a href="#transparent-header">The header over a section</a>), the header
+is transparent at the top of the page. As the page scrolls it takes the surface of the section under it, Field, Deep,
+Paper, a color scheme or an image, with its text and the announcement bar kept readable at a 4.5:1 contrast. There is
+nothing to set per section.</p>
+<h4 id="s-header-localization">Country and language selectors</h4>
+<p><strong>Country and language selectors</strong> shows the current country and currency in the header, for example
+<q>France (EUR)</q>; it opens a small window with the two lists and an <strong>Update</strong> button. It uses the
+localization form of Shopify and works without JavaScript. Add countries and languages in your admin, under
+<strong>Settings, Markets</strong> and <strong>Settings, Languages</strong>.</p>
+''' + shot('header', 'The header with the Shop mega menu open', 'Header: the Shop mega menu, an index of categories on Deep.', mobile=False)
+    + ('<figure class="shot shot--phone"><img class="shot__m" src="assets/shots/header-sheet-mobile.jpg" width="390" height="844" '
+       'alt="The mobile menu sheet, on a phone" loading="lazy" decoding="async"><figcaption>Header on a phone: the menu sheet on Deep.</figcaption></figure>'),
+    'Your logo as a wordmark, the Shop menu as an index of categories, search and the bag.')
+
+TEXT['main-product'] = ('''
+<p>The product page: on one side a stage with the product name in layers around the cutout and <strong>Next
+formula</strong>, the name of the next product, which opens it; on the other a column of blocks (breadcrumb, title,
+rating, price, tagline, options, buy button, the product passport, collapsible rows, reviews and products that pair
+well). The whole page wears the product color, and choosing a variant that has its own colors recolors it. It is the
+main section of the product template, so it is not offered in <strong>Add section</strong>.</p>
+''' + shot('main-product', 'The product page of a lavender night cream', 'Product: the stage and the column, in the color of the product.')
+    + shot('main-product-passport', 'The product passport', 'Product: the passport, six rows on two columns.'),
+    '')
+
+TEXT['main-collection'] = (TEXT['main-collection'][0] + shot('main-collection', 'The collection as a grid of tiles', 'Collection: tiles in the color of each product.')
+                           + shot('main-collection-index', 'The collection as an index', 'Collection: the Index view, rows that preview each product.'),
+                           TEXT['main-collection'][1])
+
+TEXT['cart-drawer'] = (TEXT['cart-drawer'][0] + shot('cart-drawer', 'The cart drawer', 'Cart drawer: a sheet in the color of the last product added.', mobile=False),
+                       TEXT['cart-drawer'][1])
