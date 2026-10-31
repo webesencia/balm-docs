@@ -188,10 +188,13 @@ title, the current one underlined: the demo uses a menu named <code>shop-filters
 Protect). <strong>Default view on desktop</strong> and <strong>Default view on mobile</strong> choose Grid, tiles in the color of each
 product, or Index, rows that preview each product as you point at it; <strong>Let visitors switch between Grid and
 Index</strong> adds the two words to the tools. The products follow the sort order of the collection set in your admin.
-Filters come from Shopify's Search and Discovery app.</p>''',
+Filters come from Shopify's Search and Discovery app.</p>
+<p><strong>Show the product rating</strong> prints the rating of each product above its name, with the number of
+reviews (see <a href="index.html#ratings">Product ratings</a>). <strong>Show color swatches</strong> draws the values of
+its color option as swatches, each a link to its variant. Both are off on the demo.</p>''',
      'tips': ['Give each collection its two colors (<code>custom.background_color</code> and <code>custom.background_color_end</code>) to tint its head.',
               'Set the order of the products in your admin (Products, Collections, Sort): the page keeps it.'],
-     'names': ['Menu', 'Default view on desktop', 'Default view on mobile', 'Let visitors switch between Grid and Index', 'Enable filters'],
+     'names': ['Menu', 'Default view on desktop', 'Default view on mobile', 'Let visitors switch between Grid and Index', 'Enable filters', 'Show the product rating', 'Show color swatches'],
      'shots': [('main-collection', 'The collection as tiles', 'Collection: tiles in the color of each product.'),
                ('main-collection-index', 'The collection as an index', 'Collection: the Index view, rows that preview each product.')]},
 
@@ -510,7 +513,8 @@ dynamic source icon of the theme editor.</p>
 <p>The product page Rating block, the quick view and Compare products show a rating when the product has one: first the
 standard <code>reviews.rating</code> and <code>reviews.rating_count</code> metafields that review apps write, else
 <code>custom.rating</code> (a rating, or a number out of 5) and <code>custom.rating_count</code> (an integer) that you fill
-yourself. Without either, nothing is shown. Product tiles show no rating.</p>
+yourself. Without either, nothing is shown. The collection tiles show it too when <strong>Show the product rating</strong>
+is on in the <a href="section-main-collection.html">Collection</a> section.</p>
 
 <h2 id="complementary">Products that go well together</h2>
 <p>The <strong>Complementary products</strong> block of the product page (Works well with on the demo) and the
@@ -625,7 +629,8 @@ image of the product is used, which looks best when it is also a cutout.</p>
 
 META_RATINGS = '''
 <h2 id="ratings">Ratings</h2>
-<p>The Rating block of the product page, the quick view and Compare products read the standard
+<p>The Rating block of the product page, the quick view, Compare products and the collection tiles (with Show the
+product rating on) read the standard
 <code>reviews.rating</code> and <code>reviews.rating_count</code> metafields first: review apps write them for you. Without
 them they read <code>custom.rating</code> and <code>custom.rating_count</code>, which you fill yourself. Without either,
 no rating is shown.</p>
@@ -685,7 +690,9 @@ carried over; see <a href="custom-code.html">Custom code</a>.</p>'''),
 <code>custom.cutout</code> metafield. See <a href="metafields.html#cutout">Metafields, The cutout</a>.</p>'''),
     ('How do I show star ratings?', '''
 <p>Install a reviews app that writes Shopify's standard rating metafields, or fill <code>custom.rating</code> and
-<code>custom.rating_count</code> on each product yourself. See <a href="index.html#ratings">Product ratings</a>.</p>'''),
+<code>custom.rating_count</code> on each product yourself. To show them on the collection tiles too, turn on
+<strong>Show the product rating</strong> in the Collection section. See <a href="index.html#ratings">Product
+ratings</a>.</p>'''),
     ('How do I set up the Shop mega menu?', '''
 <p>In your <code>main-menu</code>, put your category collections under Shop. In the <a href="section-header.html">Header</a>,
 add a <strong>Mega menu</strong> block, type <code>Shop</code> in <strong>Linked menu item</strong> and choose the Index
@@ -733,18 +740,6 @@ store in <a href="theme-settings.html#ts-breadcrumbs">Theme settings, Breadcrumb
 German, Italian and Spanish. Translate what you typed in the editor with Shopify's Translate and Adapt app.</p>'''),
 ]
 
-# ------------------------------------------------------------------ Changelog
-CHANGELOG_NEXT = '''
-<h2 id="v-tone-redesign">Tone on tone redesign (version number to come)</h2>
-<p>A new direction for the whole theme: every product dresses the store in its own two colors.</p>
-<ul>
-  <li>Each product, variant and collection carries a dark and a light color in its metafields; the theme works out six colors from them on the server, with the contrast of every text checked, and the page glides from one product color to the next.</li>
-  <li>New sections for the demo store: Hero sequence, Campaign, Color library, Line-up, A day in color, Routine builder, Reviews, Hue finder, Atelier, Texture, Chapters, Ingredient atlas, Numbers, Contact, Journal, Journal article and Footer.</li>
-  <li>Headings in Gloock and text in Instrument Sans, square corners, no glass and no shadow; Previous and Next in words with a counter instead of arrows and dots.</li>
-  <li>New Theme settings groups Tone and Tiles; the Surface setting (Field, Deep, Paper, Color scheme, Image) in most sections.</li>
-  <li>The sections of the first version stay available, restyled: see <a href="more-sections.html">More sections</a>.</li>
-</ul>
-'''
 
 
 # ------------------------------------------------------------------ blocks
@@ -840,6 +835,17 @@ product. Their position and the text of the Sale badge are set in
 </ul>
 <p>Sections that show tiles have a <strong>Badges</strong> setting (All, Automatic only, Custom only or None). On the
 product page, the Badge block and <strong>Badges on media</strong> of the Product section show them.</p>
+</section>
+
+<section class="entry" id="tile-rating-swatches-entry">
+<h2 id="tile-rating-swatches">Ratings and swatches on tiles</h2>
+<p>In the <a href="section-main-collection.html">Collection</a> section, <strong>Show the product rating</strong> prints the
+rating of each product above its name, with the number of reviews, read as on the product page (see
+<a href="index.html#ratings">Product ratings</a>). <strong>Show color swatches</strong> draws the values of the first
+option named in <strong>Swatch option name</strong> (Color, Colour or Couleur by default) with the swatch saved on each
+value in your admin, or as a word when a value has none. Each swatch is a link to its variant, up to <strong>Maximum
+swatches before "+N"</strong>, in the <strong>Swatch size</strong> and <strong>Swatch shape</strong> you choose. Both
+settings are off by default.</p>
 </section>
 
 <section class="entry" id="grid-and-index-entry">

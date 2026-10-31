@@ -813,7 +813,7 @@ def build_getting_started():
 def build_changelog():
     md = open(f'{THEME}/CHANGELOG.md', encoding='utf-8').read()
     body = page_head('Changelog', 'What changed in each version of Balm Studio. The version installed in your store is shown in your theme library, under the theme name.')
-    body += CSTU.CHANGELOG_NEXT + markdown(md)
+    body += markdown(md)
     write_page('changelog.html', 'Changelog', desc_of('changelog.html'), body)
 
 
