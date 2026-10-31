@@ -756,6 +756,7 @@ def build_more_sections():
 def build_product():
     parts = [page_head('Product page blocks', CPR.INTRO)]
     parts.append(CSTU.shot('main-product', 'The product page of a lavender night cream', 'Product: the stage and the column, in the color of the product.')
+                 + CSTU.shot('main-product-gallery', 'The scene on its second media', 'Product: the scene is the gallery, here on its second media, 02 / 02.')
                  + CSTU.shot('main-product-passport', 'The product passport', 'Product: the passport and the rows under it.'))
     parts.append(CPR.BODY_BEFORE)
     sc = D['sections']['main-product']

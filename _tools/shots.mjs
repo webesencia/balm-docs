@@ -18,7 +18,7 @@ const ONLY = (process.env.ONLY || '').split(',').filter(Boolean);
 const wait = (ms) => new Promise((r) => setTimeout(r, ms));
 
 // name: [path, how], how: sel (scrolled to the top of the screen, less offset screens),
-// y (screens from the top), hover or click (a selector), cart (a product added first),
+// y (screens from the top), hover or click (a selector), hover2 (a second hover, in an open panel), slide (the product gallery on that slide), cart (a product added first),
 // d / m (desktop only, phone only).
 const SHOTS = {
   'hero-sequence': ['/', { y: 0, settle: 2200 }],
@@ -31,13 +31,19 @@ const SHOTS = {
   'hue-finder': ['/', { sel: '.hf', settle: 1600 }],
   atelier: ['/', { sel: '.atelier' }],
   'tone-footer': ['/', { sel: '.tft' }],
-  header: ['/', { y: 0, hover: '.header__nav-item.has-mega', d: true, settle: 1500 }],
+  header: ['/', { y: 0, hover: '.header__nav-item.has-mega', hover2: '[data-mmi-cat="all"]', d: true, settle: 1500 }],
   'header-sheet': ['/', { y: 0, click: '.header__burger', m: true, settle: 1500 }],
   'main-product': ['/products/lavender-night-renewal', { y: 0, settle: 1500 }],
+  'main-product-gallery': ['/products/lavender-night-renewal', { y: 0, slide: 1, settle: 1500 }],
   'main-product-passport': ['/products/lavender-night-renewal', { sel: '.mp-sp__list', screens: -0.2 }],
   texture: ['/products/lavender-night-renewal', { sel: '.txr', settle: 2200 }],
+  'texture-gel': ['/products/rosewater-calm-gel', { sel: '.txr', settle: 2200 }],
+  'texture-cream': ['/products/oat-comfort-cleanser', { sel: '.txr', settle: 2200 }],
+  'texture-fluid': ['/products/blossom-day-fluid-spf-30', { sel: '.txr', settle: 2200 }],
+  'texture-serum': ['/products/sage-balance-serum', { sel: '.txr', settle: 2200 }],
   'sticky-atc': ['/products/lavender-night-renewal', { y: 1.6, m: true, settle: 1500 }],
   'main-collection': ['/collections/all', { y: 0 }],
+  'main-collection-all': ['/collections/sun-care', { sel: '.mc2__main' }],
   'main-collection-index': ['/collections/all', { y: 0, click: '[data-mc2-view="index"]', settle: 1500 }],
   chapters: ['/pages/about', { y: 0 }],
   'ingredient-atlas': ['/pages/about', { sel: '.atl' }],
@@ -86,6 +92,8 @@ for (const [w, h, suffix] of [[1440, 900, 'desktop'], [390, 844, 'mobile']]) {
         await page.evaluate(async (t) => { const from = scrollY, n = 12; for (let i = 1; i <= n; i++) { scrollTo(0, from + (t - from) * i / n); await new Promise((r) => setTimeout(r, 30)); } }, Math.max(0, top));
       }
       if (o.hover) { const el = await page.$(o.hover); if (el) await el.hover(); else console.log('no hover target', name, suffix); }
+      if (o.slide != null) await page.evaluate((i) => document.querySelector('main-product').setActiveIndex(i), o.slide);
+      if (o.hover2) { await wait(700); const el = await page.$(o.hover2); if (el) await el.hover(); else console.log('no hover target', name, suffix); }
       if (o.click) { const el = await page.$(o.click); if (el) await el.click(); else console.log('no click target', name, suffix); }
       await wait(o.settle || 1300);
       const file = path.join(OUT, `${name}-${suffix}.jpg`);

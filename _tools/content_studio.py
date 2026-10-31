@@ -109,9 +109,11 @@ its own color.</p>''',
 <strong>Inline product 1</strong> to <strong>3</strong>. Each <strong>Step</strong> block has a <strong>Label</strong>
 and two or three <strong>Products</strong>, written as words; choosing one paints the column in that product's color
 and brings its cutout in. The summary lists the chosen products, then your <strong>Offer text</strong>, then the real
-total of their prices: the theme computes no discount. The button adds the chosen products together and opens the cart.
+total of their prices. With a <strong>Discount in percent</strong>, the total is struck through and followed by the
+reduced total, rounded as your money format prints prices (to the unit when it has no decimals). The button adds the
+chosen products together and opens the cart.
 Without JavaScript each step is a group of radio buttons in a real add to cart form.</p>''',
-     'tips': ['To offer a discount on the routine, create it in your admin (Discounts) and describe it in <strong>Offer text</strong>. See <a href="index.html#routine-discount">The routine discount</a>.',
+     'tips': ['To offer a discount on the routine, create it in your admin (Discounts), describe it in <strong>Offer text</strong> and type its percent in <strong>Discount in percent</strong>. See <a href="index.html#routine-discount">The routine discount</a>.',
               'Pick products that are in stock: a step starts on its first available product.'],
      'names': ['Paragraph', 'Inline product 1', 'Offer text', 'Button label', 'Label', 'Products', 'Surface'],
      'shots': [('routine-builder', 'Routine builder with three steps', 'Routine builder: the paragraph with its inline products, then the steps.')]},
@@ -156,18 +158,29 @@ store.</p>''',
      'shots': [('atelier', 'Atelier with a wide photo and two columns', 'Atelier: the photo, then the address and the appointments on Deep.')]},
 
     {'key': 'texture', 'group': 'product',
-     'lead': 'A trail of cream drawn across the screen in the product color, with its texture, its skin feel and how to use it.',
+     'lead': 'The matter of the product drawn across the screen in its color, with its texture, its skin feel and how to use it.',
      'use': '<p>Under the product details, show what the formula feels like. The section belongs to the product template and reads the product of the page.</p>',
-     'how': '''<p>The trail draws itself as the section comes into view; without JavaScript or with reduced motion it is
-drawn at once. Beside it: <strong>Subheading</strong> and the <strong>Texture</strong> line set large,
+     'how': '''<p><strong>Material</strong> picks one of five renderings, each clearly its own: Gel (a translucent dome
+with a sharp highlight and micro-bubbles), Cream (an opaque satin swirl with thick edges and soft peaks), Balm (a dense,
+waxy swatch with a light sheen), Fluid (a thin, wide spread with a liquid edge) and Serum (a drop running ahead of a
+glossy trail). On Automatic, the default, the section reads the texture metafield of the product
+(<code>custom.texture</code>), then the <strong>Texture</strong> line, and looks for the words gel, cream, balm, fluid or
+serum, in any of the theme's languages; without one it draws Cream. The color always comes from the product. The
+matter comes in as the section comes into view; without JavaScript or with reduced motion it is drawn at once. Beside
+it: <strong>Subheading</strong> and the <strong>Texture</strong> line set large,
 <strong>Skin feel label</strong> and <strong>Skin feel</strong>; under it, <strong>How to use</strong>, the price and
 <strong>Add to bag</strong>. Connect the three texts to product metafields so each product shows its own: empty,
 <strong>Texture</strong> reads <code>custom.texture</code> and <strong>Skin feel</strong> reads
 <code>custom.skin_feel</code>. An empty text is not printed.</p>''',
      'tips': ['Connect How to use to <code>custom.how_to_use</code>, a multi-line text metafield (see <a href="metafields.html">Metafields</a>).',
-              'Choosing a variant with its own colors recolors the trail too.'],
-     'names': ['Subheading', 'Texture', 'Skin feel label', 'Skin feel', 'How to use'],
-     'shots': [('texture', 'Texture with the cream trail drawn', 'Texture: the trail drawn, the texture and the skin feel beside it.')]},
+              'Write the texture of each product with one of the five words, for example Soft balm or Bouncy gel, and keep <strong>Material</strong> on Automatic: one template then serves the whole range.',
+              'Choosing a variant with its own colors recolors the matter too.'],
+     'names': ['Material', 'Subheading', 'Texture', 'Skin feel label', 'Skin feel', 'How to use'],
+     'shots': [('texture', 'Texture of a balm', 'Texture: Balm, a dense waxy swatch, beside the texture and the skin feel.'),
+               ('texture-gel', 'Texture of a gel', 'Texture: Gel, a translucent dome with micro-bubbles.'),
+               ('texture-cream', 'Texture of a cream', 'Texture: Cream, an opaque swirl with soft peaks.'),
+               ('texture-fluid', 'Texture of a fluid', 'Texture: Fluid, a thin wide spread.'),
+               ('texture-serum', 'Texture of a serum', 'Texture: Serum, a drop and its glossy trail.')]},
 
     {'key': 'sticky-atc', 'group': 'product',
      'lead': 'A bar at the bottom of the product page, with the product and its button, once the page button has scrolled away.',
@@ -191,12 +204,18 @@ Index</strong> adds the two words to the tools. The products follow the sort ord
 Filters come from Shopify's Search and Discovery app.</p>
 <p><strong>Show the product rating</strong> prints the rating of each product above its name, with the number of
 reviews (see <a href="index.html#ratings">Product ratings</a>). <strong>Show color swatches</strong> draws the values of
-its color option as swatches, each a link to its variant. Both are off on the demo.</p>''',
+its color option as swatches, each a link to its variant. Both are off on the demo.</p>
+<p><strong>Show an All tile</strong> closes the grid with a tile on the background of the page, its first word set large
+like the names of the tiles, that links to all products: <strong>All tile collection</strong> (empty:
+<code>/collections/all</code>) and <strong>All tile label</strong> (All formulas on the demo). It fills the empty cells
+of the last row, for the column count of each device and the one a visitor picks, and hides when the row is full; it
+never shows on its own collection.</p>''',
      'tips': ['Give each collection its two colors (<code>custom.background_color</code> and <code>custom.background_color_end</code>) to tint its head.',
               'Set the order of the products in your admin (Products, Collections, Sort): the page keeps it.'],
-     'names': ['Menu', 'Default view on desktop', 'Default view on mobile', 'Let visitors switch between Grid and Index', 'Enable filters', 'Show the product rating', 'Show color swatches'],
+     'names': ['Menu', 'Default view on desktop', 'Default view on mobile', 'Let visitors switch between Grid and Index', 'Enable filters', 'Show the product rating', 'Show color swatches', 'Show an All tile', 'All tile collection', 'All tile label'],
      'shots': [('main-collection', 'The collection as tiles', 'Collection: tiles in the color of each product.'),
-               ('main-collection-index', 'The collection as an index', 'Collection: the Index view, rows that preview each product.')]},
+               ('main-collection-index', 'The collection as an index', 'Collection: the Index view, rows that preview each product.'),
+               ('main-collection-all', 'A collection closed by the All tile', 'Collection: one product, then the All tile in the empty cells of the row.')]},
 
     {'key': 'chapters', 'group': 'about',
      'lead': 'Your story in chapters, each on the color of the product it led to.',
@@ -274,6 +293,10 @@ is the desktop navigation; a top item opens a mega menu when a Mega menu block n
 item</strong>. Its <strong>Layout</strong> can be an Index (the categories set large with their product count, the
 products of the category in view and a preview in the product color), Chapters, Links and images, Images only, Links
 only or Custom blocks.</p>
+<p>In the Index, <strong>Show an All entry</strong> adds All after the categories, with the number of products of
+<strong>All entry collection</strong> (empty: all products, <code>/collections/all</code>). Pointing at it lists those
+products in the middle column, then a link set by <strong>All entry link label</strong> (View all formulas on the
+demo); <strong>All entry label</strong> names the entry.</p>
 <p>On phones the menu opens as a sheet: its large links are the <strong>Main links</strong> menu, each with the number
 of products of its collection (the demo uses the <code>shop</code> menu), followed by <strong>Secondary links</strong>
 (the demo uses <code>more</code>). Search opens full screen, with your <strong>Popular products</strong> and your
@@ -283,9 +306,9 @@ As the page scrolls, it takes the surface of the section under it, with its text
 and comes back on the way up.</p>''',
      'tips': ['Create the menus <code>main-menu</code>, <code>shop</code> and <code>more</code> in your admin (see <a href="index.html#menus">Menus</a>).',
               'Upload a white logo in <strong>Logo for dark backgrounds</strong> if your logo is dark.'],
-     'names': ['Logo type', 'Menu', 'Main links', 'Secondary links', 'Popular products', 'Search suggestions', 'Header behavior', 'Logo for dark backgrounds'],
+     'names': ['Logo type', 'Menu', 'Main links', 'Secondary links', 'Popular products', 'Search suggestions', 'Header behavior', 'Logo for dark backgrounds', 'Show an All entry', 'All entry collection', 'All entry label', 'All entry link label'],
      'extra_sections': ['announcement-bar'],
-     'shots': [('header', 'The header with the Shop mega menu open', 'Header: the Shop mega menu, an index of categories on Deep.', False),
+     'shots': [('header', 'The header with the Shop mega menu open on All', 'Header: the Shop mega menu, an index of categories on Deep, All listing every formula.', False),
                ('header-sheet', 'The menu sheet', 'Header on a phone: the menu sheet on Deep.', True, False)]},
 
     {'key': 'tone-footer', 'group': 'everywhere',
@@ -293,7 +316,8 @@ and comes back on the way up.</p>''',
      'use': '<p>The footer of every page, in the footer group.</p>',
      'how': '''<p>The blocks sit in columns, the first one twice as wide: a <strong>Newsletter</strong> block with an
 underlined field, <strong>Links</strong> blocks that each show a menu, and <strong>Text</strong> blocks. Under them,
-<strong>Show the store name mark</strong> sets your store name (or <strong>Mark</strong>) across the whole width, then
+<strong>Show the store name mark</strong> sets your store name (or <strong>Mark</strong>) on one line from one gutter to
+the other, whatever the width of the screen and the length of the name, then
 <strong>Copyright</strong>, <strong>Second legal line</strong> and, with <strong>Show policy links</strong>, the links to
 your policies. <strong>Surface</strong> paints it Deep or Field, in the color of the page. A block with nothing to show
 is left out of the store.</p>''',
@@ -533,10 +557,12 @@ products, or nothing.</p>
 </tbody></table></div>
 
 <h2 id="routine-discount">The routine discount</h2>
-<p>The <a href="section-routine-builder.html">Routine builder</a> adds the products a shopper chose and shows the real total
-of their prices: the theme computes no discount. To reward a full routine, create the discount in your admin, under
-<strong>Discounts</strong>, for example an automatic discount on the products of the routine, and describe it in the
-section's <strong>Offer text</strong>. Checkout applies the discount; keep the text and the discount in step.</p>
+<p>The <a href="section-routine-builder.html">Routine builder</a> adds the products a shopper chose and shows the total
+of their prices. To reward a full routine, create the discount in your admin, under <strong>Discounts</strong>, for
+example an automatic discount on the products of the routine, describe it in the section's <strong>Offer text</strong>
+and type its percent in <strong>Discount in percent</strong>: the total is then struck through and followed by the
+reduced total, for example 114 € and 103 € for ten percent. The setting changes what the page shows; checkout applies
+the discount of your admin, so keep the two in step.</p>
 
 <h2 id="first-setup">First setup, step by step</h2>
 <ol class="steps">
@@ -776,7 +802,6 @@ source icon.</p>
 <div class="table-wrap"><table class="plain">
 <thead><tr><th scope="col">Where</th><th scope="col">What to type</th><th scope="col">Metafield type</th></tr></thead>
 <tbody>
-<tr><td>Product section, Packshot captions: <strong>Caption source</strong> on Product metafield (list), then <strong>Metafield</strong></td><td>For example <code>custom.media_captions</code></td><td>List of single line text on products. Entry 1 captions media 1, and so on; media without an entry use their alt text.</td></tr>
 <tr><td>Theme settings, Quick view: <strong>Short description metafield</strong></td><td>For example <code>custom.short_description</code></td><td>Single line or multi-line text on products. Without it, quick view shows the first paragraph of the description.</td></tr>
 <tr><td>Compare products, Row block: <strong>Metafield</strong>, with <strong>Source</strong> on Metafield</td><td>The name, for example <q>Texture</q>, or the key, for example <code>custom.texture</code></td><td>Any type: each one is drawn as such. See <a href="#compare">Compare products rows</a>.</td></tr>
 </tbody></table></div>

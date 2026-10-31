@@ -5,7 +5,11 @@ BODY_BEFORE = '''
 <h2 id="how-it-is-built">How the page is built</h2>
 <p>The <strong>Product</strong> section has two sides. The scene shows the product name set large in layers around the
 cutout of the product, with <strong>Next product</strong> at the bottom: the name of the next product, which opens it.
-The column holds the blocks you add, remove and reorder in the theme editor (open <strong>Products</strong> in the page
+The scene is also the gallery: the product's other media follow the cutout, over the same name, and shoppers move
+through them with a swipe, a mouse drag, a trackpad or the arrow keys once the scene has the focus. A counter (01 / 02)
+and the zoom button sit at the bottom right; a product with one media shows no counter. Choosing a variant brings its
+image: in the scene when the variant has its own cutout or no cutout is set, else on the variant's slide.</p>
+<p>The column holds the blocks you add, remove and reorder in the theme editor (open <strong>Products</strong> in the page
 menu at the top of the editor). The section also accepts app blocks and the general
 <a href="more-sections.html#theme-blocks">theme blocks</a>.</p>
 <p>The whole page wears the colors of the product (see <a href="index.html#tone-on-tone">Tone on tone</a>), and choosing
@@ -85,7 +89,7 @@ buy button taller than the wallet row.</p>
 '''
 
 SECTION_SETTINGS_INTRO = ('<p>Settings of the Product section itself: surface and background illustration, the scene, '
-                          'one collapsible row open at a time, the media gallery and its captions, video and 3D, spacing '
+                          'one collapsible row open at a time, the zoom, the badges on media, video and 3D, spacing '
                           'and breadcrumbs. Select the section in the editor, above its blocks, to see them.</p>')
 
 BLOCKS_INTRO = ('<p>Every block of the product information column, with the name the block picker shows. Settings that '
@@ -165,4 +169,6 @@ BLOCK_TEXT['_product-reviews'] = (
     'app, use its app block instead.</p>')
 BLOCK_TEXT['_product-review'] = (
     '<p>One review inside the Reviews block: a <strong>Quote</strong>, the <strong>Customer name</strong> and the '
-    '<strong>Product</strong> it is about. On that product\'s page it shows first.</p>')
+    '<strong>Product</strong> it is about. On that product\'s page it shows first, followed by its '
+    '<strong>Detail</strong> (verified buyer on the demo); on the page of another product, the name of its product '
+    'takes the place of the Detail, as a link: Inès M., Bordeaux, on Blue Clarity Gel Wash.</p>')
