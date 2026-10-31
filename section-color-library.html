@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Color library | Balm Studio theme documentation</title>
+<meta name="description" content="Color library: the Balm Studio section, its settings and content tips.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<script>(function () { var d = document.documentElement, t = 'light'; d.classList.replace('no-js', 'js'); try { if (localStorage.getItem('balm-docs:theme') === 'dark') t = 'dark'; } catch (err) {} d.setAttribute('data-theme', t); })();</script>
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/search-index.js" defer></script>
+<script src="assets/docs.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="topbar">
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="sidebar"><span class="nav-toggle__bars" aria-hidden="true"></span><span class="nav-toggle__label">Menu</span></button>
+  <a class="brand" href="index.html"><span class="brand__mark" aria-hidden="true">B</span><span class="brand__name">Balm Studio</span><span class="brand__sub">Documentation</span></a>
+  <div class="search" role="search">
+    <label class="visually-hidden" for="search-input">Search the documentation</label>
+    <input id="search-input" type="search" placeholder="Search the docs" autocomplete="off" spellcheck="false" aria-describedby="search-hint" aria-controls="search-results">
+    <kbd class="search__key" aria-hidden="true">/</kbd>
+    <p id="search-hint" class="visually-hidden">Results appear below as you type. Use the arrow keys to move through them.</p>
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button class="theme-toggle" type="button" aria-label="Dark theme" aria-pressed="false"><svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg><svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+</header>
+<div class="layout">
+  <nav id="sidebar" class="sidebar" aria-label="Documentation">
+    <ul class="nav"><li><a href="index.html">Getting started</a></li><li><a href="theme-settings.html">Theme settings</a></li><li><a href="sections.html">Sections</a><ul class="toc toc--pages"><li><a href="section-hero-sequence.html">Hero sequence</a></li><li><a href="section-campaign.html">Campaign</a></li><li class="current"><a href="section-color-library.html" aria-current="page">Color library</a><ul class="toc"><li><a href="#use">What it is for</a></li><li><a href="#how">How it works</a></li><li><a href="#tips">Content tips</a></li><li><a href="#settings">Settings</a></li></ul></li><li><a href="section-lineup.html">Line-up</a></li><li><a href="section-day-in-color.html">A day in color</a></li><li><a href="section-routine-builder.html">Routine builder</a></li><li><a href="section-reviews.html">Reviews</a></li><li><a href="section-hue-finder.html">Hue finder</a></li><li><a href="section-atelier.html">Atelier</a></li><li><a href="section-texture.html">Texture</a></li><li><a href="section-sticky-atc.html">Sticky add to cart</a></li><li><a href="section-main-collection.html">Collection</a></li><li><a href="section-chapters.html">Chapters</a></li><li><a href="section-ingredient-atlas.html">Ingredient atlas</a></li><li><a href="section-numbers.html">Numbers</a></li><li><a href="section-main-contact.html">Contact</a></li><li><a href="section-main-journal.html">Journal</a></li><li><a href="section-main-journal-article.html">Journal article</a></li><li><a href="section-header.html">Header</a></li><li><a href="section-tone-footer.html">Footer</a></li><li><a href="section-cart-drawer.html">Cart drawer</a></li><li><a href="more-sections.html">More sections</a></li></ul></li><li><a href="product-page.html">Product page blocks</a></li><li><a href="features.html">Features</a></li><li><a href="metafields.html">Metafields</a></li><li><a href="custom-code.html">Custom code</a></li><li><a href="faq.html">FAQ</a></li><li><a href="changelog.html">Changelog</a></li><li><a href="support.html">Support</a></li></ul>
+  </nav>
+  <main id="main" class="content" tabindex="-1">
+    <article class="doc">
+<header class="doc-head"><h1>Color library</h1><p class="lead">The whole range at a glance: one tall band per product, each in its color.</p></header>
+<p class="where"><span>Where</span>Any template. Not available in the header or footer group.</p>
+<figure class="shot"><img class="shot__d" src="assets/shots/color-library-desktop.jpg" width="1440" height="900" alt="Color library with one band open, on a desktop screen" loading="lazy" decoding="async"><img class="shot__m" src="assets/shots/color-library-mobile.jpg" width="390" height="844" alt="Color library with one band open, on a phone" loading="lazy" decoding="async"><figcaption>Color library: one band open, the others in their colors.</figcaption></figure>
+<h2 id="use">What it is for</h2><p>Let visitors browse by color. Each band carries a product name written upright; opening it shows the product, its text and the buttons to buy it.</p>
+<h2 id="how">How it works</h2><p>Pick up to 12 products in <strong>Products</strong>, or a <strong>Collection</strong>, whose first 12
+products are used when no product is picked. Opening a band, on hover, on click or with the keyboard, widens it, shows
+the product upright with its name, type, tagline, price, <strong>View formula</strong> and <strong>Add to bag</strong>,
+and gives the section and the page that product's color. <strong>Band open at start</strong> chooses the band open
+first. On phones the bands stack as an accordion. Without JavaScript each band opens and closes on its own.</p>
+<h2 id="tips">Content tips</h2><ul><li>Every product needs its two colors, or its band falls back to the house pair.</li><li>Order the products from light to dark, or by family: the row of colors is the first thing seen.</li></ul>
+<h2 id="settings">Settings</h2><details class="settings-details" open><summary>Section settings <span class="count">(12)</span></summary><div class="table-wrap"><table class="settings"><thead><tr><th scope="col">Setting</th><th scope="col">Values</th><th scope="col">Default</th><th scope="col">Notes</th></tr></thead><tbody><tr><th scope="row" data-label="Setting">Heading</th><td data-label="Values">Text</td><td data-label="Default"><q>Explore by color</q></td><td data-label="Notes"></td></tr><tr><th scope="row" data-label="Setting">Text</th><td data-label="Values">Text</td><td data-label="Default"><q>Describe the collection in one line.</q></td><td data-label="Notes"></td></tr><tr><th scope="row" data-label="Setting">Products</th><td data-label="Values">Product list</td><td data-label="Default">Empty</td><td data-label="Notes">Up to 12. Each band takes its product&#x27;s colors: custom.background_color and custom.background_color_end.</td></tr><tr><th scope="row" data-label="Setting">Collection</th><td data-label="Values">Collection</td><td data-label="Default">Empty</td><td data-label="Notes">Used when no product is chosen above: its first 12 products.</td></tr><tr><th scope="row" data-label="Setting">Band open at start</th><td data-label="Values">1 to 12</td><td data-label="Default">1</td><td data-label="Notes"></td></tr><tr><th scope="row" data-label="Setting">Show price</th><td data-label="Values">Checkbox</td><td data-label="Default">On</td><td data-label="Notes"></td></tr><tr><th scope="row" data-label="Setting">Show add to cart button</th><td data-label="Values">Checkbox</td><td data-label="Default">On</td><td data-label="Notes"></td></tr><tr><th scope="row" data-label="Setting">Anchor</th><td data-label="Values">Text</td><td data-label="Default">Empty</td><td data-label="Notes">Lowercase words joined by hyphens. Link to this section with #anchor, for example from a menu.</td></tr><tr><th scope="row" data-label="Setting">Band height (desktop)</th><td data-label="Values">40 to 100 svh, step 2</td><td data-label="Default">74 svh</td><td data-label="Notes"></td></tr><tr><th scope="row" data-label="Setting">Open band height (mobile)</th><td data-label="Values">40 to 100 svh, step 2</td><td data-label="Default">86 svh</td><td data-label="Notes"></td></tr><tr><th scope="row" data-label="Setting">Top padding (desktop)</th><td data-label="Values">0 to 200 px, step 4</td><td data-label="Default">120 px</td><td data-label="Notes"></td></tr><tr><th scope="row" data-label="Setting">Top padding (mobile)</th><td data-label="Values">0 to 200 px, step 4</td><td data-label="Default">80 px</td><td data-label="Notes"></td></tr></tbody></table></div></details>
+    </article>
+    <nav class="pager" aria-label="Previous and next page"><a class="prev" href="section-campaign.html"><span>Previous</span>Campaign</a><a class="next" href="section-lineup.html"><span>Next</span>Line-up</a></nav>
+    <footer class="site-footer"><p>Balm Studio theme documentation, version 1.0.0. Questions? See <a href="support.html">Support</a>.</p></footer>
+  </main>
+</div>
+</body>
+</html>

@@ -28,8 +28,6 @@ LOC = json.load(open(f'{THEME}/locales/en.default.schema.json', encoding='utf-8'
 
 import content_pages as CP  # noqa: E402
 import content_product as CPR  # noqa: E402
-import content_sections as CS  # noqa: E402
-import content_settings as CST  # noqa: E402
 
 
 def e(s):
@@ -340,18 +338,30 @@ def markdown(md, id_prefix='v'):
 
 
 # ---------------------------------------------------------------- pages
+import content_studio as CSTU  # noqa: E402
+
+SECTION_PAGES = [(f'section-{d["key"]}.html', D['sections'][d['key']]['name'],
+                  f'{D["sections"][d["key"]]["name"]}: the Balm Studio section, its settings and content tips.', 'sections.html')
+                 for d in CSTU.DEMO]
 PAGES = [
-    ('index.html', 'Getting started', 'Install Balm Studio and set up your store, step by step.'),
-    ('theme-settings.html', 'Theme settings', 'Every group of Balm Studio theme settings, explained in the order of the theme editor.'),
-    ('sections.html', 'Sections', 'Every Balm Studio section, its settings and a typical use.'),
-    ('product-page.html', 'Product page blocks', 'The Balm Studio product page, its blocks, buy button styles and backgrounds.'),
-    ('features.html', 'Features', 'Quick view, badges, page loader, age verifier, gift wrapping and the other Balm Studio features.'),
-    ('metafields.html', 'Metafields', 'The product and shop metafields Balm Studio reads, with their keys and types.'),
-    ('custom-code.html', 'Custom code', 'What to know before editing the Balm Studio theme code.'),
-    ('faq.html', 'FAQ', 'Answers to the questions merchants ask most about Balm Studio.'),
-    ('changelog.html', 'Changelog', 'What changed in each version of Balm Studio.'),
-    ('support.html', 'Support', 'What Balm Studio support covers and how to reach it.'),
+    ('index.html', 'Getting started', 'Install Balm Studio and set up your store, step by step.', None),
+    ('theme-settings.html', 'Theme settings', 'Every group of Balm Studio theme settings, explained in the order of the theme editor.', None),
+    ('sections.html', 'Sections', 'The sections of the Balm Studio demo store, one page each, and the settings they share.', None),
+] + SECTION_PAGES + [
+    ('more-sections.html', 'More sections', 'The sections of the first version of Balm Studio, and the blocks they accept.', 'sections.html'),
+    ('product-page.html', 'Product page blocks', 'The Balm Studio product page and its blocks.', None),
+    ('features.html', 'Features', 'Quick view, badges, age verifier, gift wrapping and the other Balm Studio features.', None),
+    ('metafields.html', 'Metafields', 'The product, variant, collection, article and page metafields Balm Studio reads, with their keys and types.', None),
+    ('custom-code.html', 'Custom code', 'What to know before editing the Balm Studio theme code.', None),
+    ('faq.html', 'FAQ', 'Answers to the questions merchants ask most about Balm Studio.', None),
+    ('changelog.html', 'Changelog', 'What changed in each version of Balm Studio.', None),
+    ('support.html', 'Support', 'What Balm Studio support covers and how to reach it.', None),
 ]
+PAGE_BY = {p[0]: p for p in PAGES}
+
+
+def desc_of(fname):
+    return PAGE_BY[fname][2]
 
 
 class Outline(HTMLParser):
@@ -365,7 +375,6 @@ class Outline(HTMLParser):
         self.skip = 0
         self.in_table_td = False
         self.in_label = False
-        self.stack = []
 
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
@@ -406,17 +415,32 @@ def layout(fname, title, desc, body, toc, root=''):
     # root prefixes every page and asset URL. Pages sit at the domain root and link
     # relatively (root ''); the 404 is served for any missing path, however deep, so
     # it links from the domain root (root '/').
+    cur_parent = PAGE_BY[fname][3] if fname in PAGE_BY else None
     nav = []
-    for f, label, _ in PAGES:
+    for f, label, _, parent in PAGES:
+        if parent:
+            continue
         cur = f == fname
         cls = ' class="current"' if cur else ''
         aria = ' aria-current="page"' if cur else ''
         item = f'<li{cls}><a href="{root}{f}"{aria}>{e(label)}</a>'
         if cur and toc:
             item += '<ul class="toc">' + ''.join(f'<li><a href="#{i}">{e(tt)}</a></li>' for i, tt in toc) + '</ul>'
+        kids = [p for p in PAGES if p[3] == f]
+        if kids and (cur or cur_parent == f):
+            sub = []
+            for kf, kl, _, _ in kids:
+                kc = kf == fname
+                kcls = ' class="current"' if kc else ''
+                karia = ' aria-current="page"' if kc else ''
+                sub.append(f'<li{kcls}><a href="{root}{kf}"{karia}>{e(kl)}</a>'
+                           + ('<ul class="toc">' + ''.join(f'<li><a href="#{i}">{e(tt)}</a></li>' for i, tt in toc) + '</ul>' if kc and toc else '')
+                           + '</li>')
+            item += '<ul class="toc toc--pages">' + ''.join(sub) + '</ul>'
         item += '</li>'
         nav.append(item)
-    idx = [p[0] for p in PAGES].index(fname) if fname in [p[0] for p in PAGES] else None
+    names = [p[0] for p in PAGES]
+    idx = names.index(fname) if fname in names else None
     pager = ''
     if idx is not None:
         prev_p = PAGES[idx - 1] if idx > 0 else None
@@ -426,6 +450,7 @@ def layout(fname, title, desc, body, toc, root=''):
         pager += (f'<a class="next" href="{root}{next_p[0]}"><span>Next</span>{e(next_p[1])}</a>' if next_p else '<span></span>')
         pager += '</nav>'
     page_title = f'{title} | Balm Studio theme documentation' if fname != 'index.html' else 'Balm Studio theme documentation'
+    version = next(g for g in RAW_SETTINGS if g.get('name') == 'theme_info')['theme_version']
     return f'''<!doctype html>
 <html lang="en" class="no-js">
 <head>
@@ -463,7 +488,7 @@ def layout(fname, title, desc, body, toc, root=''):
 {body}
     </article>
     {pager}
-    <footer class="site-footer"><p>Balm Studio theme documentation, version 1.0.0. Questions? See <a href="{root}support.html">Support</a>.</p></footer>
+    <footer class="site-footer"><p>Balm Studio theme documentation, version {e(version)}. Questions? See <a href="{root}support.html">Support</a>.</p></footer>
   </main>
 </div>
 </body>
@@ -478,16 +503,16 @@ def write_page(fname, title, desc, body):
     parser = Outline()
     parser.feed(body)
     toc = [(x['id'], re.sub(r'\s+', ' ', x['title']).strip()) for x in parser.entries if x['level'] == 2]
-    page_label = next(p[1] for p in PAGES if p[0] == fname) if fname in [p[0] for p in PAGES] else title
+    page_label = PAGE_BY[fname][1] if fname in PAGE_BY else title
     lead = re.search(r'<p class="lead">(.*?)</p>', body, re.S)
     SEARCH.append({'t': title, 'p': page_label, 'u': fname, 'x': strip_tags(lead.group(1)) if lead else desc})
     parents = {}
     for x in parser.entries:
         ttl = re.sub(r'\s+', ' ', x['title']).strip()
         parents[x['level']] = ttl
-        ctx = ' / '.join(parents[l] for l in range(2, x['level']) if l in parents)
+        ctx = ' / '.join(parents[lv] for lv in range(2, x['level']) if lv in parents)
         txt = re.sub(r'\s+', ' ', ' '.join(x['text'])).strip()
-        labels = sorted({re.sub(r'\s+', ' ', l).strip() for l in x['labels'] if l.strip()})
+        labels = sorted({re.sub(r'\s+', ' ', lb).strip() for lb in x['labels'] if lb.strip()})
         if fname == 'changelog.html' and x['level'] == 3:
             ttl = f'{ttl} ({parents.get(2, "")})'
         entry = {'t': ttl, 'p': page_label + (' / ' + ctx if ctx else ''), 'u': f'{fname}#{x["id"]}', 'x': txt[:1200]}
@@ -503,66 +528,138 @@ def page_head(title, lead):
     return f'<header class="doc-head"><h1>{e(title)}</h1><p class="lead">{lead}</p></header>'
 
 
+# Words of the storefront or of the admin that the prose sets in bold and that are not
+# labels of the section's schema.
+UI_WORDS = {'View formula', 'Add to bag', 'Start again', 'Add section', 'Discounts', 'Search and Discovery', 'Settings, Custom data',
+            'Content, Menus', 'Online Store, Themes', 'Customize', 'Publish', 'Try theme', 'View demo store', '...',
+            'Complementary products', 'Mega menu', 'Show social media icons', 'Breadcrumbs on this page', 'Heading scale',
+            'Body scale', 'Header behavior', 'Header over this section', 'Allow transparent header', 'Theme default',
+            'Default section width', 'Section width', 'Surface', 'Anchor', 'Field', 'Deep', 'Paper', 'Color scheme', 'Image',
+            'Page width', 'Section side margins', 'Cart type', 'Free shipping threshold', 'Show the free shipping bar',
+            'Offer gift wrapping', 'Wrapping product', 'Enable filters', 'Linked menu item', 'Layout', 'Image source',
+            'Parent link', 'Heading level (semantic)', 'Product', 'Tilt', 'Menu', 'Inline product 1', '3', '(mobile)'}
+UI_WORDS |= {f'{w}.' for w in ('Fonts', 'House colors', 'Color schemes', 'Layout', 'Details', 'Colors of each product', 'House colors and fonts',
+                                'Header', 'Home page', 'Product page', 'Collections', 'Cart', 'Journal', 'Pages', 'Check and publish')}
+NAME_ERRORS = []
+
+
+def labels_of(key):
+    sc = D['sections'][key]
+    out = {s.get('label') for s in sc['settings'] if s.get('label')}
+    for b in sc['blocks']:
+        if b.get('name'):
+            out.add(b['name'])
+        out |= {s.get('label') for s in b['settings'] if s.get('label')}
+        if not b['settings'] and b['type'] in D['blocks']:
+            out.add(D['blocks'][b['type']]['name'])
+            out |= {s.get('label') for s in D['blocks'][b['type']]['settings'] if s.get('label')}
+            for k in D['blocks'][b['type']]['blocks']:
+                if k['type'] in D['blocks']:
+                    out.add(D['blocks'][k['type']]['name'])
+                    out |= {s.get('label') for s in D['blocks'][k['type']]['settings'] if s.get('label')}
+    return out
+
+
+def check_names(where, html_text, labels):
+    """Every bold name of a section page must be a label of its schema, or a storefront or admin word."""
+    for n in re.findall(r'<strong>(.*?)</strong>', html_text):
+        n = html.unescape(strip_tags(n))
+        pair = f'{n} (desktop)' in labels or f'{n} (mobile)' in labels
+        if n not in labels and n not in UI_WORDS and not pair:
+            NAME_ERRORS.append(f'{where}: "{n}"')
+
+
 def build_theme_settings():
-    parts = [page_head('Theme settings', CST.INTRO)]
-    toc = []
-    for g in D['settings']:
-        gid = 'ts-' + slug(g['name'])
-        toc.append((gid, g['name']))
+    parts = [page_head('Theme settings', CSTU.SETTINGS_INTRO)]
+    toc = [('ts-' + slug(g['name']), g['name']) for g in D['settings']]
     parts.append('<nav class="contents" aria-label="Setting groups"><h2 class="contents__title" id="groups">Setting groups</h2><ol class="contents__list contents__list--cols">'
                  + ''.join(f'<li><a href="#{i}">{e(n)}</a></li>' for i, n in toc) + '</ol></nav>')
     scheme_def = RAW_SETTINGS[1]['settings'][0]['definition']
+    labels = {s.get('label') for g in D['settings'] for s in g['settings'] if s.get('label')}
     for g in D['settings']:
         gid = 'ts-' + slug(g['name'])
-        prose = CST.GROUPS.get(g['name'])
+        prose = CSTU.SETTINGS_GROUPS.get(g['name'])
         if prose is None:
             raise SystemExit('missing theme settings prose for ' + g['name'])
+        check_names(f'theme settings {g["name"]}', prose, labels)
         table, count = settings_table(g['settings'], scheme_definition=scheme_def)
         parts.append(f'<section class="entry" id="{gid}-entry"><h2 id="{gid}">{e(g["name"])}</h2>{prose}'
                      + details('Settings', table, count, open_=True) + '</section>')
-    write_page('theme-settings.html', 'Theme settings', PAGES[1][2], '\n'.join(parts))
+    extra = set(CSTU.SETTINGS_GROUPS) - {g['name'] for g in D['settings']}
+    if extra:
+        raise SystemExit('theme settings prose for groups the theme no longer has: ' + ', '.join(sorted(extra)))
+    write_page('theme-settings.html', 'Theme settings', desc_of('theme-settings.html'), '\n'.join(parts))
 
 
-def section_entry(key, heading_level=3):
+def settings_block(key, heading='h3', id_prefix=''):
+    """The settings of a section and of each of its blocks, as tables."""
     sc = D['sections'][key]
-    txt = CS.TEXT.get(key)
-    if txt is None:
-        raise SystemExit('missing section prose for ' + key)
-    desc, use = txt
-    sid = 's-' + key
-    h = f'h{heading_level}'
-    out = [f'<section class="entry" id="{sid}-entry"><{h} id="{sid}">{e(sc["name"])}</{h}>']
-    out.append(f'<p class="where"><span>Where</span>{e(availability(key, sc))}</p>')
-    out.append(desc)
-    if use:
-        out.append(f'<p class="use"><strong>Typical use.</strong> {use}</p>')
-    if key == 'main-product':
-        out.append('<p>Its settings and every block are documented on <a href="product-page.html">Product page blocks</a>.</p>')
-        out.append('</section>')
-        return ''.join(out)
+    out = []
     if sc['settings']:
-        table, count = settings_table(sc['settings'], collapse_bg=True)
-        out.append(details('Section settings', table, count))
+        table, count = settings_table(sc['settings'], collapse_bg=False)
+        out.append(details('Section settings', table, count, open_=True))
     for b in sc['blocks']:
-        if b['type'] in ('@app', '@theme') or not b['name']:
+        if b['type'] in ('@app', '@theme'):
             continue
-        bt = CS.BLOCK_TEXT.get(f'{key}/{b["type"]}', '')
-        out.append(f'<h4 id="{sid}-{slug(b["type"])}">Block: {e(b["name"])}</h4>{bt}')
-        if b['settings']:
-            table, count = settings_table(b['settings'], parent=sc['settings'])
-            out.append(details(f'{b["name"]} block settings', table, count))
+        settings, name = b['settings'], b['name']
+        if not settings and b['type'] in D['blocks']:
+            settings, name = D['blocks'][b['type']]['settings'], D['blocks'][b['type']]['name']
+        if not name:
+            continue
+        out.append(f'<{heading} id="{id_prefix}b-{slug(b["type"].lstrip("_"))}">Block: {e(name)}</{heading}>')
+        if settings:
+            table, count = settings_table(settings, parent=sc['settings'])
+            out.append(details(f'{name} block settings', table, count))
     extras = [b['type'] for b in sc['blocks'] if b['type'] in ('@app', '@theme')]
     notes = []
     if '@theme' in extras:
-        notes.append('accepts the <a href="#theme-blocks">theme blocks</a> (Heading, Text, Button, Image, Spacer, Liquid)')
+        notes.append('accepts the <a href="more-sections.html#theme-blocks">theme blocks</a>')
     if '@app' in extras:
         notes.append('accepts app blocks')
-    if key == 'header':
-        notes.append('holds <a href="#mega-menu-blocks">Mega menu blocks</a>')
     if notes:
         out.append('<p class="accepts">This section ' + ' and '.join(notes) + '.</p>')
-    out.append('</section>')
     return ''.join(out)
+
+
+def build_section_page(spec):
+    key = spec['key']
+    sc = D['sections'][key]
+    fname = f'section-{key}.html'
+    labels = labels_of(key)
+    for extra in spec.get('extra_sections', []):
+        labels |= labels_of(extra)
+    for n in spec.get('names', []):
+        if n not in labels:
+            NAME_ERRORS.append(f'{key}: name "{n}" not in its schema')
+    tips = ''.join(f'<li>{t}</li>' for t in spec['tips'])
+    check_names(key, spec['use'] + spec['how'] + tips, labels)
+    figs = ''.join(CSTU.shot(*s) for s in spec['shots'])
+    body = [page_head(sc['name'], e(spec['lead'])),
+            f'<p class="where"><span>Where</span>{e(availability(key, sc))}</p>', figs,
+            f'<h2 id="use">What it is for</h2>{spec["use"]}',
+            f'<h2 id="how">How it works</h2>{spec["how"]}',
+            f'<h2 id="tips">Content tips</h2><ul>{tips}</ul>']
+    if sc['settings'] or sc['blocks']:
+        body.append(f'<h2 id="settings">Settings</h2>{settings_block(key)}')
+    elif key == 'cart-drawer':
+        body.append('<h2 id="settings">Settings</h2><p>The cart drawer has no settings of its own: see <a href="theme-settings.html#ts-cart">Theme settings, Cart</a>.</p>')
+    for extra in spec.get('extra_sections', []):
+        esc_ = D['sections'][extra]
+        body.append(f'<h2 id="s-{extra}">{e(esc_["name"])}</h2><p class="where"><span>Where</span>{e(availability(extra, esc_))}</p>'
+                    + settings_block(extra, id_prefix=extra + '-'))
+    if key == 'header':
+        body.append(f'<h2 id="mega-menu-blocks">Mega menu blocks</h2>{CSTU.MEGA_INTRO}')
+        mega = ['_mega-menu', '_mega-column', '_mega-image', '_mega-cards', '_mega-card', '_mega-products', '_mega-promo', '_mega-banner']
+        missing = sorted({k for k in D['blocks'] if k.startswith('_mega-')} - set(mega))
+        if missing:
+            raise SystemExit('mega menu blocks without a place: ' + ', '.join(missing))
+        mega_labels = set()
+        for k in mega:
+            mega_labels |= {s.get('label') for s in D['blocks'][k]['settings'] if s.get('label')} | {D['blocks'][k]['name']}
+        for k in mega:
+            check_names(f'mega {k}', CSTU.MEGA_TEXT[k], mega_labels | labels)
+            body.append(block_entry(k, heading='h3', prose=CSTU.MEGA_TEXT[k], id_prefix='mm-'))
+    write_page(fname, sc['name'], desc_of(fname), '\n'.join(body))
 
 
 def block_entry(key, title_prefix='', heading='h3', prose=None, id_prefix='tb-'):
@@ -583,43 +680,84 @@ def block_entry(key, title_prefix='', heading='h3', prose=None, id_prefix='tb-')
 
 
 def build_sections():
-    parts = [page_head('Sections', CS.INTRO)]
-    cats = CS.CATEGORIES
-    listed = [k for _, _, _, keys in cats for k in keys]
-    missing = [k for k, v in D['sections'].items() if v and k not in listed and k not in CS.INTERNAL]
+    demo_keys = [d['key'] for d in CSTU.DEMO]
+    parts = [page_head('Sections', CSTU.SECTIONS_LEAD)]
+    for gid, gtitle, gintro in CSTU.DEMO_GROUPS:
+        items = [d for d in CSTU.DEMO if d['group'] == gid]
+        parts.append(f'<h2 id="g-{gid}">{e(gtitle)}</h2><p>{gintro}</p><ul class="cards">'
+                     + ''.join(f'<li><a href="section-{d["key"]}.html"><strong>{e(D["sections"][d["key"]]["name"])}</strong><span>{e(d["lead"])}</span></a></li>' for d in items)
+                     + '</ul>')
+    parts.append('<h2 id="more">More sections</h2><p>The sections of the first version of the theme, and the template sections the demo does not use, are on <a href="more-sections.html">More sections</a>.</p>')
+    parts.append(CSTU.SECTIONS_SHARED)
+    write_page('sections.html', 'Sections', desc_of('sections.html'), '\n'.join(parts))
+    for spec in CSTU.DEMO:
+        build_section_page(spec)
+    placed = set(demo_keys) | {'main-product', 'announcement-bar'} | {k for _, _, ks in CSTU.MORE_GROUPS for k in ks}
+    internal = {'quick-view', 'predictive-search', 'pickup-availability'}
+    missing = sorted(k for k, v in D['sections'].items() if v and k not in placed and k not in internal)
     if missing:
-        raise SystemExit('sections not placed in a category: ' + ', '.join(missing))
-    # contents
-    cont = ['<nav class="contents" aria-label="All sections"><h2 class="contents__title" id="all-sections">All sections</h2><div class="contents__groups">']
-    for cid, ctitle, _, keys in cats:
-        cont.append(f'<div><h3 class="contents__group"><a href="#{cid}">{e(ctitle)}</a></h3><ul class="contents__list">'
-                    + ''.join(f'<li><a href="#s-{k}">{e(D["sections"][k]["name"])}</a></li>' for k in keys) + '</ul></div>')
-    cont.append('<div><h3 class="contents__group"><a href="#blocks">Blocks used inside sections</a></h3><ul class="contents__list">'
-                '<li><a href="#theme-blocks">Theme blocks</a></li><li><a href="#mega-menu-blocks">Mega menu blocks</a></li></ul></div>')
-    cont.append('</div></nav>')
-    parts.append(''.join(cont))
-    parts.append(CS.SHARED)
-    for cid, ctitle, cintro, keys in cats:
-        parts.append(f'<h2 id="{cid}">{e(ctitle)}</h2>{cintro}')
+        raise SystemExit('sections without a page: ' + ', '.join(missing))
+    gone = sorted(k for k in placed if k not in D['sections'])
+    if gone:
+        raise SystemExit('documented sections the theme no longer has: ' + ', '.join(gone))
+
+
+def more_entry(key):
+    sc = D['sections'][key]
+    txt = CSTU.MORE_TEXT.get(key)
+    if txt is None:
+        raise SystemExit('missing More sections prose for ' + key)
+    sid = 's-' + key
+    out = [f'<section class="entry" id="{sid}-entry"><h3 id="{sid}">{e(sc["name"])}</h3>',
+           f'<p class="where"><span>Where</span>{e(availability(key, sc))}</p><p>{e(txt)}</p>']
+    if sc['settings']:
+        table, count = settings_table(sc['settings'], collapse_bg=False)
+        out.append(details('Section settings', table, count))
+    for b in sc['blocks']:
+        if b['type'] in ('@app', '@theme') or not b['name']:
+            continue
+        if b['settings']:
+            table, count = settings_table(b['settings'], parent=sc['settings'])
+            out.append(details(f'{b["name"]} block settings', table, count))
+    extras = [b['type'] for b in sc['blocks'] if b['type'] in ('@app', '@theme')]
+    notes = []
+    if '@theme' in extras:
+        notes.append('accepts the <a href="#theme-blocks">theme blocks</a>')
+    if '@app' in extras:
+        notes.append('accepts app blocks')
+    if notes:
+        out.append('<p class="accepts">This section ' + ' and '.join(notes) + '.</p>')
+    out.append('</section>')
+    return ''.join(out)
+
+
+def build_more_sections():
+    parts = [page_head('More sections', 'The sections of the first version of Balm Studio, restyled with the rest of the theme, and the template sections the demo store does not use.')]
+    parts.append(CSTU.MORE_INTRO)
+    parts.append('<nav class="contents" aria-label="All sections"><div class="contents__groups">'
+                 + ''.join(f'<div><h3 class="contents__group"><a href="#{gid}">{e(gt)}</a></h3><ul class="contents__list">'
+                           + ''.join(f'<li><a href="#s-{k}">{e(D["sections"][k]["name"])}</a></li>' for k in keys) + '</ul></div>'
+                           for gid, gt, keys in CSTU.MORE_GROUPS)
+                 + '</div></nav>')
+    for gid, gt, keys in CSTU.MORE_GROUPS:
+        parts.append(f'<h2 id="{gid}">{e(gt)}</h2>')
         for k in keys:
-            parts.append(section_entry(k))
-    parts.append(CS.INTERNAL_NOTE)
-    parts.append(f'<h2 id="blocks">Blocks used inside sections</h2>{CS.BLOCKS_INTRO}')
-    parts.append(f'<h3 id="theme-blocks">Theme blocks</h3>{CS.THEME_BLOCKS_INTRO}')
-    for k in ['heading', 'text', 'button', 'image', 'spacer', 'liquid']:
-        parts.append(block_entry(k, heading='h4', prose=CS.THEME_BLOCK_TEXT[k]))
-    parts.append(f'<h3 id="mega-menu-blocks">Mega menu blocks</h3>{CS.MEGA_INTRO}')
-    mega = ['_mega-menu', '_mega-column', '_mega-image', '_mega-cards', '_mega-card', '_mega-products', '_mega-promo', '_mega-banner']
-    missing = sorted({k for k in D['blocks'] if k.startswith('_mega-')} - set(mega))
-    if missing:
-        raise SystemExit('mega menu blocks without a place: ' + ', '.join(missing))
-    for k in mega:
-        parts.append(block_entry(k, heading='h4', prose=CS.MEGA_TEXT[k], id_prefix='mm-'))
-    write_page('sections.html', 'Sections', PAGES[2][2], '\n'.join(parts))
+            parts.append(more_entry(k))
+    parts.append(f'<h2 id="theme-blocks">Theme blocks</h2>{CSTU.THEME_BLOCKS_INTRO}')
+    tb_labels = set()
+    for k in CSTU.THEME_BLOCK_TEXT:
+        tb_labels |= {s.get('label') for s in D['blocks'][k]['settings'] if s.get('label')} | {D['blocks'][k]['name']}
+    for k, prose in CSTU.THEME_BLOCK_TEXT.items():
+        check_names(f'theme block {k}', prose, tb_labels)
+        parts.append(block_entry(k, heading='h3', prose=prose))
+    write_page('more-sections.html', 'More sections', desc_of('more-sections.html'), '\n'.join(parts))
 
 
 def build_product():
     parts = [page_head('Product page blocks', CPR.INTRO)]
+    parts.append(CSTU.shot('main-product', 'The product page of a lavender night cream', 'Product: the stage and the column, in the color of the product.')
+                 + CSTU.shot('main-product-gallery', 'The scene on its second media', 'Product: the scene is the gallery, here on its second media, 02 / 02.')
+                 + CSTU.shot('main-product-passport', 'The product passport', 'Product: the passport and the rows under it.'))
     parts.append(CPR.BODY_BEFORE)
     sc = D['sections']['main-product']
     table, count = settings_table(sc['settings'], collapse_bg=False)
@@ -631,39 +769,77 @@ def build_product():
     missing = known - set(order)
     if missing:
         raise SystemExit('product blocks without a place: ' + ', '.join(sorted(missing)))
+    gone = set(order) - set(D['blocks'])
+    if gone:
+        raise SystemExit('documented product blocks the theme no longer has: ' + ', '.join(sorted(gone)))
     parts.append('<nav class="contents" aria-label="All blocks"><ul class="contents__list contents__list--cols">'
                  + ''.join(f'<li><a href="#pb-{slug(k.lstrip("_"))}">{e(D["blocks"][k]["name"])}</a></li>' for k in order)
                  + '</ul></nav>')
+    pb_labels = {s.get('label') for s in sc['settings'] if s.get('label')}
     for k in order:
+        pb_labels |= {s.get('label') for s in D['blocks'][k]['settings'] if s.get('label')} | {D['blocks'][k]['name']}
+        pb_labels |= {o['label'] for s in D['blocks'][k]['settings'] for o in s.get('options', [])}
+    for k in order:
+        check_names(f'product block {k}', CPR.BLOCK_TEXT[k], pb_labels)
         parts.append(block_entry(k, prose=CPR.BLOCK_TEXT[k], id_prefix='pb-'))
+    check_names('product page', CPR.BODY_BEFORE, pb_labels | {'Products', 'Header behavior', 'Solid', 'Outline', 'Signature',
+                'Buttons (pills)', 'Dropdown menu', 'Color swatches', 'Image swatches', 'Signature pill', 'Packs menu', 'Product', 'Next product'})
     parts.append(CPR.BODY_AFTER)
-    write_page('product-page.html', 'Product page blocks', PAGES[3][2], '\n'.join(parts))
+    write_page('product-page.html', 'Product page blocks', desc_of('product-page.html'), '\n'.join(parts))
+
+
+def meta_table(owner, compact=False):
+    rows = ''.join(f'<tr><th scope="row" data-label="Key"><code>{e(k)}</code></th><td data-label="Type">{e(ty)}</td><td data-label="Use">{use}</td></tr>'
+                   for k, ty, use in CSTU.META[owner])
+    return ('<div class="table-wrap"><table class="settings"><thead><tr><th scope="col">Key</th><th scope="col">Type</th>'
+            '<th scope="col">Use</th></tr></thead><tbody>' + rows + '</tbody></table></div>')
+
+
+def build_metafields():
+    parts = [page_head('Metafields', CSTU.META_LEAD), CSTU.METAFIELDS_INTRO]
+    ids = {'product': 'products', 'variant': 'variants', 'collection': 'collections', 'article': 'articles', 'page': 'pages'}
+    for owner, title in CSTU.META_TITLES.items():
+        parts.append(f'<h2 id="{ids[owner]}">{e(title)}</h2>' + meta_table(owner))
+    parts.append(CSTU.META_RATINGS)
+    parts.append(CSTU.META_MORE)
+    write_page('metafields.html', 'Metafields', desc_of('metafields.html'), '\n'.join(parts))
+
+
+def build_getting_started():
+    tables = ''.join(f'<h3 id="meta-{o}">{e(t)}</h3>' + meta_table(o) for o, t in CSTU.META_TITLES.items())
+    body = page_head('Getting started', CSTU.GS_LEAD) + CSTU.GETTING_STARTED.replace('{META_TABLES}', tables)
+    write_page('index.html', 'Getting started', desc_of('index.html'), body)
 
 
 def build_changelog():
     md = open(f'{THEME}/CHANGELOG.md', encoding='utf-8').read()
     body = page_head('Changelog', 'What changed in each version of Balm Studio. The version installed in your store is shown in your theme library, under the theme name.')
     body += markdown(md)
-    write_page('changelog.html', 'Changelog', PAGES[8][2], body)
+    write_page('changelog.html', 'Changelog', desc_of('changelog.html'), body)
 
 
-def build_simple(fname, idx, title, lead, body):
-    write_page(fname, title, PAGES[idx][2], page_head(title, lead) + body)
+def build_simple(fname, title, lead, body):
+    write_page(fname, title, desc_of(fname), page_head(title, lead) + body)
 
 
 def main():
-    build_simple('index.html', 0, 'Getting started', CP.GS_LEAD, CP.GETTING_STARTED)
+    build_getting_started()
     build_theme_settings()
     build_sections()
+    build_more_sections()
     build_product()
-    build_simple('features.html', 4, 'Features', CP.FEATURES_LEAD, CP.FEATURES)
-    build_simple('metafields.html', 5, 'Metafields', CP.META_LEAD, CP.METAFIELDS)
-    build_simple('custom-code.html', 6, 'Custom code', CP.CODE_LEAD, CP.CUSTOM_CODE)
-    faq = ''.join(f'<section class="entry faq" id="{slug(q)[:60]}-entry"><h2 id="{slug(q)[:60]}">{e(q)}</h2>{a}</section>' for q, a in CP.FAQ)
-    build_simple('faq.html', 7, 'FAQ', CP.FAQ_LEAD, faq)
+    feat_labels = {s.get('label') for k in ('main-collection', 'lookbook', 'compare-products', 'recently-viewed', 'main-product') for s in D['sections'][k]['settings'] + [x for bl in D['sections'][k]['blocks'] for x in bl['settings']] if s.get('label')}
+    feat_labels |= {s.get('label') for g in D['settings'] for s in g['settings'] if s.get('label')}
+    check_names('features', CSTU.FEATURES, feat_labels | {'Sale', 'Sold out', 'New', 'Custom', '(mobile)'})
+    build_simple('features.html', 'Features', CSTU.FEATURES_LEAD, CSTU.FEATURES)
+    build_metafields()
+    build_simple('custom-code.html', 'Custom code', CP.CODE_LEAD, CP.CUSTOM_CODE)
+    faq = ''.join(f'<section class="entry faq" id="{slug(q)[:60]}-entry"><h2 id="{slug(q)[:60]}">{e(q)}</h2>{a}</section>' for q, a in CSTU.FAQ)
+    build_simple('faq.html', 'FAQ', CSTU.FAQ_LEAD, faq)
     build_changelog()
-    build_simple('support.html', 9, 'Support', CP.SUPPORT_LEAD, CP.SUPPORT)
-    # 404 page for GitHub Pages
+    build_simple('support.html', 'Support', CP.SUPPORT_LEAD, CP.SUPPORT)
+    if NAME_ERRORS:
+        raise SystemExit('names that are not in the theme:\n  ' + '\n  '.join(NAME_ERRORS))
     with open(os.path.join(OUT, '404.html'), 'w', encoding='utf-8') as fh:
         fh.write(layout('404.html', 'Page not found', 'This page does not exist.',
                         page_head('Page not found', 'This page does not exist, or it has moved.')
@@ -671,7 +847,7 @@ def main():
                         root='/'))
     with open(os.path.join(OUT, 'assets', 'search-index.js'), 'w', encoding='utf-8') as fh:
         fh.write('window.BALM_SEARCH=' + json.dumps(SEARCH, ensure_ascii=False, separators=(',', ':')) + ';\n')
-    print('pages written, search entries:', len(SEARCH))
+    print('pages written:', len(PAGES), 'search entries:', len(SEARCH))
 
 
 if __name__ == '__main__':

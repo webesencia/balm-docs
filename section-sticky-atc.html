@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sticky add to cart | Balm Studio theme documentation</title>
+<meta name="description" content="Sticky add to cart: the Balm Studio section, its settings and content tips.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<script>(function () { var d = document.documentElement, t = 'light'; d.classList.replace('no-js', 'js'); try { if (localStorage.getItem('balm-docs:theme') === 'dark') t = 'dark'; } catch (err) {} d.setAttribute('data-theme', t); })();</script>
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/search-index.js" defer></script>
+<script src="assets/docs.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="topbar">
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="sidebar"><span class="nav-toggle__bars" aria-hidden="true"></span><span class="nav-toggle__label">Menu</span></button>
+  <a class="brand" href="index.html"><span class="brand__mark" aria-hidden="true">B</span><span class="brand__name">Balm Studio</span><span class="brand__sub">Documentation</span></a>
+  <div class="search" role="search">
+    <label class="visually-hidden" for="search-input">Search the documentation</label>
+    <input id="search-input" type="search" placeholder="Search the docs" autocomplete="off" spellcheck="false" aria-describedby="search-hint" aria-controls="search-results">
+    <kbd class="search__key" aria-hidden="true">/</kbd>
+    <p id="search-hint" class="visually-hidden">Results appear below as you type. Use the arrow keys to move through them.</p>
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button class="theme-toggle" type="button" aria-label="Dark theme" aria-pressed="false"><svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg><svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+</header>
+<div class="layout">
+  <nav id="sidebar" class="sidebar" aria-label="Documentation">
+    <ul class="nav"><li><a href="index.html">Getting started</a></li><li><a href="theme-settings.html">Theme settings</a></li><li><a href="sections.html">Sections</a><ul class="toc toc--pages"><li><a href="section-hero-sequence.html">Hero sequence</a></li><li><a href="section-campaign.html">Campaign</a></li><li><a href="section-color-library.html">Color library</a></li><li><a href="section-lineup.html">Line-up</a></li><li><a href="section-day-in-color.html">A day in color</a></li><li><a href="section-routine-builder.html">Routine builder</a></li><li><a href="section-reviews.html">Reviews</a></li><li><a href="section-hue-finder.html">Hue finder</a></li><li><a href="section-atelier.html">Atelier</a></li><li><a href="section-texture.html">Texture</a></li><li class="current"><a href="section-sticky-atc.html" aria-current="page">Sticky add to cart</a><ul class="toc"><li><a href="#use">What it is for</a></li><li><a href="#how">How it works</a></li><li><a href="#tips">Content tips</a></li><li><a href="#settings">Settings</a></li></ul></li><li><a href="section-main-collection.html">Collection</a></li><li><a href="section-chapters.html">Chapters</a></li><li><a href="section-ingredient-atlas.html">Ingredient atlas</a></li><li><a href="section-numbers.html">Numbers</a></li><li><a href="section-main-contact.html">Contact</a></li><li><a href="section-main-journal.html">Journal</a></li><li><a href="section-main-journal-article.html">Journal article</a></li><li><a href="section-header.html">Header</a></li><li><a href="section-tone-footer.html">Footer</a></li><li><a href="section-cart-drawer.html">Cart drawer</a></li><li><a href="more-sections.html">More sections</a></li></ul></li><li><a href="product-page.html">Product page blocks</a></li><li><a href="features.html">Features</a></li><li><a href="metafields.html">Metafields</a></li><li><a href="custom-code.html">Custom code</a></li><li><a href="faq.html">FAQ</a></li><li><a href="changelog.html">Changelog</a></li><li><a href="support.html">Support</a></li></ul>
+  </nav>
+  <main id="main" class="content" tabindex="-1">
+    <article class="doc">
+<header class="doc-head"><h1>Sticky add to cart</h1><p class="lead">A bar at the bottom of the product page, with the product and its button, once the page button has scrolled away.</p></header>
+<p class="where"><span>Where</span>Only on product templates.</p>
+<figure class="shot shot--phone"><img class="shot__m" src="assets/shots/sticky-atc-mobile.jpg" width="390" height="844" alt="Sticky add to cart bar, on a phone" loading="lazy" decoding="async"><figcaption>Sticky add to cart: the bar at the bottom of the product page.</figcaption></figure>
+<h2 id="use">What it is for</h2><p>Keep the purchase one tap away on long product pages.</p>
+<h2 id="how">How it works</h2><p>The bar shows the product thumbnail, its name and its price, on Deep, and its button presses the page's
+own buy button, with the same words, for example Add to bag. It appears when the page button leaves the screen at the
+top, unless <strong>Always visible</strong> is on. Each part can be hidden per device. Without JavaScript the bar stays
+hidden: the page button remains the way to buy.</p>
+<h2 id="tips">Content tips</h2><ul><li>Hide the price on phones (<strong>Price (mobile)</strong>) to leave room for the name.</li></ul>
+<h2 id="settings">Settings</h2><details class="settings-details" open><summary>Section settings <span class="count">(7)</span></summary><div class="table-wrap"><table class="settings"><thead><tr><th scope="col">Setting</th><th scope="col">Values</th><th scope="col">Default</th><th scope="col">Notes</th></tr></thead><tbody><tr><th scope="row" data-label="Setting">Enable the bar</th><td data-label="Values">Checkbox</td><td data-label="Default">On</td><td data-label="Notes"></td></tr><tr class="group"><th colspan="4" scope="colgroup">Displayed content</th></tr><tr><th scope="row" data-label="Setting">Product thumbnail (desktop)</th><td data-label="Values">Checkbox</td><td data-label="Default">On</td><td data-label="Notes"></td></tr><tr><th scope="row" data-label="Setting">Product thumbnail (mobile)</th><td data-label="Values">Checkbox</td><td data-label="Default">On</td><td data-label="Notes"></td></tr><tr><th scope="row" data-label="Setting">Product title</th><td data-label="Values">Checkbox</td><td data-label="Default">On</td><td data-label="Notes"></td></tr><tr><th scope="row" data-label="Setting">Price (desktop)</th><td data-label="Values">Checkbox</td><td data-label="Default">On</td><td data-label="Notes"></td></tr><tr><th scope="row" data-label="Setting">Price (mobile)</th><td data-label="Values">Checkbox</td><td data-label="Default">Off</td><td data-label="Notes"></td></tr><tr class="group"><th colspan="4" scope="colgroup">Behavior</th></tr><tr><th scope="row" data-label="Setting">Always visible</th><td data-label="Values">Checkbox</td><td data-label="Default">Off</td><td data-label="Notes">Unchecked: the bar appears when the main buy button scrolls out of view.</td></tr></tbody></table></div></details>
+    </article>
+    <nav class="pager" aria-label="Previous and next page"><a class="prev" href="section-texture.html"><span>Previous</span>Texture</a><a class="next" href="section-main-collection.html"><span>Next</span>Collection</a></nav>
+    <footer class="site-footer"><p>Balm Studio theme documentation, version 1.0.0. Questions? See <a href="support.html">Support</a>.</p></footer>
+  </main>
+</div>
+</body>
+</html>
