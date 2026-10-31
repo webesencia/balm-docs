@@ -36,6 +36,10 @@ const SHOTS = {
   'main-product': ['/products/lavender-night-renewal', { y: 0, settle: 1500 }],
   'main-product-gallery': ['/products/lavender-night-renewal', { y: 0, slide: 1, settle: 1500 }],
   'main-product-passport': ['/products/lavender-night-renewal', { sel: '.mp-sp__list', screens: -0.2 }],
+  // The illustrations (texture, texture-gel and the three below) were taken on
+  // 2026-10-31 before the texture photos (T65): to take them again, set Source on
+  // Illustration in the editor first, else they show the photos.
+  'texture-photo': ['/products/lavender-night-renewal', { sel: '.txr', settle: 2600 }],
   texture: ['/products/lavender-night-renewal', { sel: '.txr', settle: 2200 }],
   'texture-gel': ['/products/rosewater-calm-gel', { sel: '.txr', settle: 2200 }],
   'texture-cream': ['/products/oat-comfort-cleanser', { sel: '.txr', settle: 2200 }],

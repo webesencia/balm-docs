@@ -158,9 +158,14 @@ store.</p>''',
      'shots': [('atelier', 'Atelier with a wide photo and two columns', 'Atelier: the photo, then the address and the appointments on Deep.')]},
 
     {'key': 'texture', 'group': 'product',
-     'lead': 'The matter of the product drawn across the screen in its color, with its texture, its skin feel and how to use it.',
+     'lead': 'A photo of the product\'s texture, or its matter drawn in its color, with its texture, its skin feel and how to use it.',
      'use': '<p>Under the product details, show what the formula feels like. The section belongs to the product template and reads the product of the page.</p>',
-     'how': '''<p><strong>Material</strong> picks one of five renderings, each clearly its own: Gel (a translucent dome
+     'how': '''<p><strong>Source</strong> on Automatic, the default, shows the texture photo of the product when it has
+one: the image of the <code>custom.texture_image</code> metafield (File, image), cut out, large and centered on the
+tinted paper with a soft shadow. As the section comes into view it slides in and spreads a little; without JavaScript or
+with reduced motion it stands still. A product without a photo, or the section with <strong>Source</strong> on
+Illustration, shows the illustration instead.</p>
+<p><strong>Material</strong> picks the illustration among five renderings, each clearly its own: Gel (a translucent dome
 with a sharp highlight and micro-bubbles), Cream (an opaque satin swirl with thick edges and soft peaks), Balm (a dense,
 waxy swatch with a light sheen), Fluid (a thin, wide spread with a liquid edge) and Serum (a drop running ahead of a
 glossy trail). On Automatic, the default, the section reads the texture metafield of the product
@@ -172,15 +177,17 @@ it: <strong>Subheading</strong> and the <strong>Texture</strong> line set large,
 <strong>Add to bag</strong>. Connect the three texts to product metafields so each product shows its own: empty,
 <strong>Texture</strong> reads <code>custom.texture</code> and <strong>Skin feel</strong> reads
 <code>custom.skin_feel</code>. An empty text is not printed.</p>''',
-     'tips': ['Connect How to use to <code>custom.how_to_use</code>, a multi-line text metafield (see <a href="metafields.html">Metafields</a>).',
+     'tips': ['For the photo, create the product metafield <code>custom.texture_image</code> of type File, accepting images (see <a href="metafields.html">Metafields</a>), and upload a PNG or WebP with a transparent background, about 2,000 px wide, the matter centered with some empty margin around it: the margin may pass under the texts, the matter stays between them.',
+              'Connect How to use to <code>custom.how_to_use</code>, a multi-line text metafield (see <a href="metafields.html">Metafields</a>).',
               'Write the texture of each product with one of the five words, for example Soft balm or Bouncy gel, and keep <strong>Material</strong> on Automatic: one template then serves the whole range.',
               'Choosing a variant with its own colors recolors the matter too.'],
-     'names': ['Material', 'Subheading', 'Texture', 'Skin feel label', 'Skin feel', 'How to use'],
-     'shots': [('texture', 'Texture of a balm', 'Texture: Balm, a dense waxy swatch, beside the texture and the skin feel.'),
-               ('texture-gel', 'Texture of a gel', 'Texture: Gel, a translucent dome with micro-bubbles.'),
-               ('texture-cream', 'Texture of a cream', 'Texture: Cream, an opaque swirl with soft peaks.'),
-               ('texture-fluid', 'Texture of a fluid', 'Texture: Fluid, a thin wide spread.'),
-               ('texture-serum', 'Texture of a serum', 'Texture: Serum, a drop and its glossy trail.')]},
+     'names': ['Source', 'Material', 'Subheading', 'Texture', 'Skin feel label', 'Skin feel', 'How to use'],
+     'shots': [('texture-photo', 'Texture with the photo of a balm', 'Texture: the photo of the texture, on the paper tinted by the product.'),
+               ('texture', 'Texture of a balm, illustrated', 'Illustration: Balm, a dense waxy swatch, beside the texture and the skin feel.'),
+               ('texture-gel', 'Texture of a gel, illustrated', 'Illustration: Gel, a translucent dome with micro-bubbles.'),
+               ('texture-cream', 'Texture of a cream, illustrated', 'Illustration: Cream, an opaque swirl with soft peaks.'),
+               ('texture-fluid', 'Texture of a fluid, illustrated', 'Illustration: Fluid, a thin wide spread.'),
+               ('texture-serum', 'Texture of a serum, illustrated', 'Illustration: Serum, a drop and its glossy trail.')]},
 
     {'key': 'sticky-atc', 'group': 'product',
      'lead': 'A bar at the bottom of the product page, with the product and its button, once the page button has scrolled away.',
@@ -606,7 +613,8 @@ META = {
         ('custom.skin_type', 'Single line text', 'Passport row Suited to; Compare products.'),
         ('custom.skin_feel', 'Single line text', 'Passport row Skin feel; Texture, Skin feel.'),
         ('custom.key_ingredients', 'Single line text', 'Passport row Key ingredients.'),
-        ('custom.texture', 'Single line text', 'Passport row Texture; Texture, the heading.'),
+        ('custom.texture', 'Single line text', 'Passport row Texture; Texture, the heading and the choice of its illustration.'),
+        ('custom.texture_image', 'File (image)', 'A photo of the texture, cut out on a transparent background. Texture shows it, large and centered, when its Source is on Automatic; without it, the illustration.'),
         ('custom.aroma', 'Single line text', 'Passport row Aroma.'),
         ('custom.dosage', 'Single line text', 'Passport row Dosage.'),
         ('custom.how_to_use', 'Multi-line text', 'The How to use row of the product page; Texture, How to use.'),
