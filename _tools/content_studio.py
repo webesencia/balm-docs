@@ -42,8 +42,8 @@ tagline, the price, <strong>View formula</strong> and <strong>Add to bag</strong
 while the next one rises, and the whole page glides to the next color, with a short pause on each product.</p>
 <p><strong>Scroll length per step</strong> sets how long each product stays, on desktop and on phones;
 <strong>Object height</strong> sets the size of the cutout; <strong>Bar surface</strong> paints the bar in Field,
-Deep or Paper. Without JavaScript each product is a still screen in its own color, and visitors who ask for reduced
-motion see each step at once.</p>''',
+Deep or Paper. Without JavaScript, and for visitors who ask for reduced motion, the products stand one under the
+other, each a still screen in its own color, and the page scrolls on to the next section.</p>''',
      'tips': ['Give each product its two colors, its cutout and its name lines (see <a href="metafields.html">Metafields</a>): the step uses all three.',
               'Write a tagline whose first sentence stands alone: the bar shows only that sentence.',
               'A block without a product is left out of the store.'],
@@ -285,9 +285,11 @@ articles follow as rows; pointing at a row gives it the dark color of its produc
      'lead': 'The article page: the title in the color of the article product, the text, the product and the next article.',
      'use': '<p>Long reads that end on the product they talk about.</p>',
      'how': '''<p>The page takes the color of the article's <code>custom.product</code>. The top shows the category, the
-reading time, the date, the title and the excerpt; the text follows on Paper, with the product beside it under
-<strong>Product label</strong>, then the next article in the color of its own product. <strong>Show the reading
-bar</strong> draws a thin bar at the top of the screen that follows the reading.</p>''',
+reading time, the date, the title and the excerpt; the text follows on Paper in a column centred on the page, with the
+product under <strong>Product label</strong> in the right margin on wide screens (1280 pixels and more) and under the
+text below, then the next article in the color of its own product. <strong>Show the reading bar</strong>, on by
+default, draws a thin bar at the top of the screen that fills as the visitor reads. It is a setting of this section,
+so the bar shows on article pages only, and on every article that uses the template.</p>''',
      'tips': ['A quote in the article (the Quote format of the editor) is set large in the color of the product.'],
      'names': ['Show the reading bar', "Show the article's product", 'Product label', 'Show the next article'],
      'shots': [('main-journal-article', 'Journal article at its top', 'Journal article: the title in the color of its product.')]},
@@ -299,7 +301,9 @@ bar</strong> draws a thin bar at the top of the screen that follows the reading.
 is the desktop navigation; a top item opens a mega menu when a Mega menu block names it in <strong>Linked menu
 item</strong>. Its <strong>Layout</strong> can be an Index (the categories set large with their product count, the
 products of the category in view and a preview in the product color), Chapters, Links and images, Images only, Links
-only or Custom blocks.</p>
+only or Custom blocks. In Chapters, each chapter links to the sub-link of the menu item at its place: the first chapter
+to the first sub-link, and so on. A link to a part of the page, such as <code>/#day</code> to a section whose
+<strong>Anchor</strong> is <code>day</code>, closes the menu and scrolls to the section, under the header.</p>
 <p>In the Index, <strong>Show an All entry</strong> adds All after the categories, with the number of products of
 <strong>All entry collection</strong> (empty: all products, <code>/collections/all</code>). Pointing at it lists those
 products in the middle column, then a link set by <strong>All entry link label</strong> (View all formulas on the
@@ -752,6 +756,11 @@ sits on. There is nothing to set per section.</p>'''),
 <p>Create a product for the wrapping, with its price. In <a href="theme-settings.html#ts-gift-wrapping">Theme settings, Gift
 wrapping</a>, turn on <strong>Offer gift wrapping</strong> and pick it in <strong>Wrapping product</strong>. The checkbox
 then shows in the cart.</p>'''),
+    ('Why do some home page sections not show after I install the theme?', '''
+<p>The theme installs the layout of the demo store without its content: no products, collections, pictures or menus
+of the demo. Hero sequence, Color library, Line-up, A day in color and Hue finder show the products you choose in
+them; until you choose some, they show a placeholder in the theme editor and nothing on your store. Texts show an
+example that says what to write.</p>'''),
     ('How do I show a free shipping progress bar?', '''
 <p>In <a href="theme-settings.html#ts-cart">Theme settings, Cart</a>, keep <strong>Show the free shipping bar</strong> on
 and type the amount in <strong>Free shipping threshold</strong>. The bar only displays progress: create the matching free
@@ -793,7 +802,7 @@ MEGA_INTRO = ('<p>A mega menu is a panel that opens under a top item of the main
               'block to the Header, type the exact title of that menu item in <strong>Linked menu item</strong> and choose its '
               '<strong>Layout</strong>. On phones the menu sheet lists the Main links instead.</p>')
 MEGA_TEXT = {
-    '_mega-menu': '<p>The panel itself. <strong>Layout</strong> builds it from the sub-links of the linked menu item: Index (the categories set large with their product count, the products of the category in view and a preview of the product in its colors, as on the demo Shop menu), Chapters (the sub-links as numbered chapters, as on the demo Rituals menu), Links and images, Images only or Links only; or from the blocks you add inside it, with Custom blocks.</p>',
+    '_mega-menu': '<p>The panel itself. <strong>Layout</strong> builds it from the sub-links of the linked menu item: Index (the categories set large with their product count, the products of the category in view and a preview of the product in its colors, as on the demo Shop menu), Chapters (Promo blocks without an image as numbered chapters, each linked to the sub-link of the menu item at its place, as on the demo Rituals menu), Links and images, Images only or Links only; or from the blocks you add inside it, with Custom blocks.</p>',
     '_mega-column': '<p>A list of links from a menu: all its links, or only those under a <strong>Parent link</strong>, with an optional heading.</p>',
     '_mega-image': '<p>An image with an optional caption, subtitle and link. Nothing shows on your store without a picture.</p>',
     '_mega-cards': '<p>A row of picture cards. With <strong>Image source</strong> on Automatic, each card shows what a sub-link of the linked menu item points to: a collection, a product with its price, a blog post, or a page through its <code>custom.image</code> metafield. With Custom cards, it shows the Image card blocks you add inside it.</p>',

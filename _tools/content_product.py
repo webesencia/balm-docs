@@ -6,9 +6,12 @@ BODY_BEFORE = '''
 <p>The <strong>Product</strong> section has two sides. The scene shows the product name set large in layers around the
 cutout of the product, with <strong>Next product</strong> at the bottom: the name of the next product, which opens it.
 The scene is also the gallery: the product's other media follow the cutout, over the same name, and shoppers move
-through them with a swipe, a mouse drag, a trackpad or the arrow keys once the scene has the focus. A counter (01 / 02)
-and the zoom button sit at the bottom right; a product with one media shows no counter. Choosing a variant brings its
-image: in the scene when the variant has its own cutout or no cutout is set, else on the variant's slide.</p>
+through them with a swipe, a mouse drag (the pointer shows a hand over the scene), a trackpad, the arrow keys once the
+scene has the focus, or the two small arrows on each side of the counter (01 / 02), at the bottom right next to the
+zoom button; the arrows go round from the last media to the first. On phones the next media shows at the edge of the
+screen, to say that a swipe goes on. A product with one media shows no counter and no arrows. Choosing a variant
+brings its image: in the scene when the variant has its own cutout or no cutout is set, else on the variant's
+slide.</p>
 <p>The column holds the blocks you add, remove and reorder in the theme editor (open <strong>Products</strong> in the page
 menu at the top of the editor). The section also accepts app blocks and the general
 <a href="more-sections.html#theme-blocks">theme blocks</a>.</p>
