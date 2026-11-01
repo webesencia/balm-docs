@@ -34,6 +34,11 @@ const SHOTS = {
   header: ['/', { y: 0, hover: '.header__nav-item.has-mega', hover2: '[data-mmi-cat="all"]', d: true, settle: 1500 }],
   'header-sheet': ['/', { y: 0, click: '.header__burger', m: true, settle: 1500 }],
   'main-product': ['/products/lavender-night-renewal', { y: 0, settle: 1500 }],
+  // The two below (T72) need the demo's settings changed for the capture: the Hero
+  // sequence on First and last lines in front at 80 %, the product page on Last line in
+  // front and Auto; the demo is put back after.
+  'hero-sequence-name': ['/', { y: 0, settle: 2600 }],
+  'main-product-name': ['/products/lavender-night-renewal', { y: 0, settle: 2000 }],
   'main-product-gallery': ['/products/lavender-night-renewal', { y: 0, slide: 1, settle: 1500 }],
   'main-product-passport': ['/products/lavender-night-renewal', { sel: '.mp-sp__list', screens: -0.2 }],
   // The illustrations (texture, texture-gel and the three below) were taken on

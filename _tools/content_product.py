@@ -12,6 +12,9 @@ zoom button; the arrows go round from the last media to the first. On phones the
 screen, to say that a swipe goes on. A product with one media shows no counter and no arrows. Choosing a variant
 brings its image: in the scene when the variant has its own cutout or no cutout is set, else on the variant's
 slide.</p>
+<p>The name in the scene follows the settings of <a href="sections.html#large-name">The large name</a>: every line
+behind the product by default, or some in front of it with <strong>Default layering</strong>, which leave as another
+media slides in; <strong>Name size</strong> and <strong>Scale</strong> set its size.</p>
 <p>The column holds the blocks you add, remove and reorder in the theme editor (open <strong>Products</strong> in the page
 menu at the top of the editor). The section also accepts app blocks and the general
 <a href="more-sections.html#theme-blocks">theme blocks</a>.</p>

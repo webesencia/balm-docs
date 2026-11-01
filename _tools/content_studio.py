@@ -45,10 +45,12 @@ while the next one rises, and the whole page glides to the next color, with a sh
 Deep or Paper. Without JavaScript, and for visitors who ask for reduced motion, the products stand one under the
 other, each a still screen in its own color, and the page scrolls on to the next section.</p>''',
      'tips': ['Give each product its two colors, its cutout and its name lines (see <a href="metafields.html">Metafields</a>): the step uses all three.',
+              'A block\'s <strong>Name lines</strong> cut that step\'s name as you like, for example Sage|Balance|Serum; <strong>Use custom layering</strong> chooses which of its lines stand in front of the product. See <a href="sections.html#large-name">The large name</a>.',
               'Write a tagline whose first sentence stands alone: the bar shows only that sentence.',
               'Until you choose a product in one of its blocks, the section shows the first products of your store, one per block. Once you choose one, a block without a product is left out of the store.'],
-     'names': ['Product', 'Scroll length per step (desktop)', 'Object height (desktop)', 'Bar surface'],
-     'shots': [('hero-sequence', 'Hero sequence on its first product', 'Hero sequence: the first product, its name in layers around the cutout.')]},
+     'names': ['Product', 'Scroll length per step (desktop)', 'Object height (desktop)', 'Bar surface', 'Name lines', 'Use custom layering', 'Default layering', 'Name size'],
+     'shots': [('hero-sequence', 'Hero sequence on its first product', 'Hero sequence: the first product, its name in layers around the cutout.'),
+               ('hero-sequence-name', 'Hero sequence with the first and last lines in front', 'Hero sequence: Default layering on First and last lines in front, Opacity of lines in front at 80 percent.')]},
 
     {'key': 'campaign', 'group': 'home',
      'lead': 'A photograph and a short text on a flat panel: the story of a season or of a launch.',
@@ -72,6 +74,7 @@ the product upright with its name, type, tagline, price, <strong>View formula</s
 and gives the section and the page that product's color. <strong>Band open at start</strong> chooses the band open
 first. On phones the bands stack as an accordion. Without JavaScript each band opens and closes on its own.</p>''',
      'tips': ['Give every product its two colors: without them, each product takes a color of its own derived from the house pair.',
+              'The large word of the open band is the first word of the name, or its first line: <strong>Number of lines</strong> shows up to four lines, and <strong>Default layering</strong> can bring them in front of the product. See <a href="sections.html#large-name">The large name</a>.',
               'Order the products from light to dark, or by family: the row of colors is the first thing seen.'],
      'names': ['Products', 'Collection', 'Band open at start', 'Show price', 'Show add to cart button'],
      'shots': [('color-library', 'Color library with one band open', 'Color library: one band open, the others in their colors.')]},
@@ -373,6 +376,18 @@ glides from one color to the next as the visitor scrolls. Pages without a produc
 <a href="theme-settings.html#ts-tone">Theme settings, Tone</a>. A product without its own colors takes a color of its
 own, derived from the house pair: the same on its page, its tile, the menu, the cart and every section that shows
 it, different from one product to the next, never gray.</p>
+
+<h2 id="large-name">The large name</h2>
+<p>Hero sequence, Color library, the product page and Featured product set the product's name large behind the
+product. Its lines come from <strong>Name lines</strong> in a Hero sequence block, else from the product's
+<code>custom.name_lines</code> metafield (a bar | at each break, four lines at most), else from its title, cut into
+<strong>Number of lines</strong> (Auto: three at most). <strong>Default layering</strong> brings lines in front of the
+product: Behind the product, Last line in front, First and last lines in front or All in front; in a Hero sequence
+block, <strong>Use custom layering</strong> and <strong>Line 1 in front</strong> to <strong>Line 4 in front</strong>
+choose line by line. <strong>Opacity of lines in front</strong> lets the product show through them.
+<strong>Name size</strong> Fixed follows the screen, Auto sizes the longest line to most of the width of the scene;
+<strong>Scale</strong> makes it smaller or larger, from 60 to 130 percent. Whatever the settings, no line runs off the
+screen or under the header, and the name keeps its size for visitors who ask for reduced motion.</p>
 
 <h2 id="shared-settings">Settings most sections share</h2>
 <section class="entry" id="section-background-entry">
