@@ -48,7 +48,9 @@ The theme works out six colors from them on the server, with the contrast of eve
 (Field), the color itself (Tone), the text (Ink), a dark ground (Deep), a color for large text on Deep, and an almost
 white ground (Paper). A product page, a collection or a section that shows a product takes these colors, and the page
 glides from one color to the next as the visitor scrolls. Pages without a product color use the house pair of
-<a href="theme-settings.html#ts-tone">Theme settings, Tone</a>.</p>
+<a href="theme-settings.html#ts-tone">Theme settings, Tone</a>. In a section that lists products, a product without
+its own colors takes a color of its own, derived from the house pair and different for each place in the list, never
+gray.</p>
 
 <h2 id="shared-settings">Settings most sections share</h2>
 <section class="entry" id="section-background-entry">
@@ -93,7 +95,8 @@ editor to preview both.</p>
 <section class="entry" id="empty-entry">
 <h3 id="empty">Empty content</h3>
 <p>An empty text prints nothing on your store, and a block that misses what it needs (a review without a quote, a step
-without a product) is left out. In the theme editor such a block keeps its frame with a short note that says why it is
+without a product, once the section has products) is left out. A section of products where you have chosen none shows
+the first products of your store, and a store without products shows Shopify's product placeholders there. In the theme editor such a block keeps its frame with a short note that says why it is
 hidden, so you can still select it.</p>
 </section>
 

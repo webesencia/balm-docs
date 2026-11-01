@@ -46,7 +46,7 @@ Deep or Paper. Without JavaScript, and for visitors who ask for reduced motion, 
 other, each a still screen in its own color, and the page scrolls on to the next section.</p>''',
      'tips': ['Give each product its two colors, its cutout and its name lines (see <a href="metafields.html">Metafields</a>): the step uses all three.',
               'Write a tagline whose first sentence stands alone: the bar shows only that sentence.',
-              'A block without a product is left out of the store.'],
+              'Until you choose a product in one of its blocks, the section shows the first products of your store, one per block. Once you choose one, a block without a product is left out of the store.'],
      'names': ['Product', 'Scroll length per step (desktop)', 'Object height (desktop)', 'Bar surface'],
      'shots': [('hero-sequence', 'Hero sequence on its first product', 'Hero sequence: the first product, its name in layers around the cutout.')]},
 
@@ -67,11 +67,11 @@ with reduced motion it is at rest. Without a photo the text stands alone.</p>'''
      'lead': 'The whole range at a glance: one tall band per product, each in its color.',
      'use': '<p>Let visitors browse by color. Each band carries a product name written upright; opening it shows the product, its text and the buttons to buy it.</p>',
      'how': '''<p>Pick up to 12 products in <strong>Products</strong>, or a <strong>Collection</strong>, whose first 12
-products are used when no product is picked. Opening a band, on hover, on click or with the keyboard, widens it, shows
+products are used when no product is picked; with neither, the first 12 products of your store. Opening a band, on hover, on click or with the keyboard, widens it, shows
 the product upright with its name, type, tagline, price, <strong>View formula</strong> and <strong>Add to bag</strong>,
 and gives the section and the page that product's color. <strong>Band open at start</strong> chooses the band open
 first. On phones the bands stack as an accordion. Without JavaScript each band opens and closes on its own.</p>''',
-     'tips': ['Every product needs its two colors, or its band falls back to the house pair.',
+     'tips': ['Give every product its two colors: without them, each band takes a color of its own derived from the house pair.',
               'Order the products from light to dark, or by family: the row of colors is the first thing seen.'],
      'names': ['Products', 'Collection', 'Band open at start', 'Show price', 'Show add to cart button'],
      'shots': [('color-library', 'Color library with one band open', 'Color library: one band open, the others in their colors.')]},
@@ -84,7 +84,7 @@ millimeters, that you type. Pointing at a product or focusing it gives the secti
 type, format, height, price and link in the caption; the others fade. <strong>Word at rest</strong> is set large behind
 the products until one is chosen. <strong>Show the height range</strong> prints the shortest and the tallest heights.
 On phones the line-up scrolls sideways and the product in the middle is the chosen one.</p>''',
-     'tips': ['Measure the products as they stand, cap included.', 'A block without a product is left out of the store.'],
+     'tips': ['Measure the products as they stand, cap included.', 'Until you choose a product in one of its blocks, the section shows the first products of your store, one per block. Once you choose one, a block without a product is left out of the store.'],
      'names': ['Height', 'Word at rest', 'Show the height range', 'Caption heading'],
      'shots': [('lineup', 'Line-up with the products on the ruler', 'Line-up: the products at true scale on the ruler.')]},
 
@@ -98,7 +98,8 @@ color change from one step to the next, and a line of hours under the stage mark
 <strong>Scroll length per step</strong> sets how long each step stays. Without JavaScript the steps are a list, each in
 its own color.</p>''',
      'tips': ['Write the hours as people read them, for example 7:00 and 22:00.',
-              'Keep each How to use line to one sentence.', 'A step without a product is left out of the store.'],
+              'Keep each How to use line to one sentence.',
+              'Until you choose a product in one of its steps, the section shows the first products of your store, one per step, and an empty Label or How to use shows the product\'s type or its tagline. Once you choose one, a step without a product is left out of the store.'],
      'names': ['Time', 'Label', 'Product', 'How to use', 'Ground', 'Scroll length per step (desktop)'],
      'shots': [('day-in-color', 'A day in color on its morning step', 'A day in color: the morning step on the light ground of its product.')]},
 
@@ -114,7 +115,8 @@ reduced total, rounded as your money format prints prices (to the unit when it h
 chosen products together and opens the cart.
 Without JavaScript each step is a group of radio buttons in a real add to cart form.</p>''',
      'tips': ['To offer a discount on the routine, create it in your admin (Discounts), describe it in <strong>Offer text</strong> and type its percent in <strong>Discount in percent</strong>. See <a href="index.html#routine-discount">The routine discount</a>.',
-              'Pick products that are in stock: a step starts on its first available product.'],
+              'Pick products that are in stock: a step starts on its first available product.',
+              'Until you choose a product in a step or inline, the steps share the first products of your store (seven products give two, two and three), and each inline product is the first one of its step.'],
      'names': ['Paragraph', 'Inline product 1', 'Offer text', 'Button label', 'Label', 'Products', 'Surface'],
      'shots': [('routine-builder', 'Routine builder with three steps', 'Routine builder: the paragraph with its inline products, then the steps.')]},
 
@@ -141,7 +143,9 @@ dark color of <strong>Starting color</strong>. <strong>Remember the result for 3
 the result on the visitor's device and adds a link to forget it; off, nothing is saved. Without JavaScript the first
 question shows and each answer links to its first product.</p>''',
      'tips': ['Ask about what the shopper feels, not about the product: "How does your skin feel by midday?"',
-              'Keep answers to one or two words.', 'A question without text, or without an answer that has products, is skipped.'],
+              'Keep answers to one or two words.',
+              'Until you choose products for an answer, the answers share the first products of your store, so the quiz works from the start.',
+              'Once you choose products, a question without text, or without an answer that has products, is skipped.'],
      'names': ['Question', 'Products for answer 1', 'Starting color', 'Remember the result for 30 days', 'Note'],
      'shots': [('hue-finder', 'Hue finder on its first question', 'Hue finder: a question and its answers in words.')]},
 
@@ -361,7 +365,9 @@ The theme works out six colors from them on the server, with the contrast of eve
 (Field), the color itself (Tone), the text (Ink), a dark ground (Deep), a color for large text on Deep, and an almost
 white ground (Paper). A product page, a collection or a section that shows a product takes these colors, and the page
 glides from one color to the next as the visitor scrolls. Pages without a product color use the house pair of
-<a href="theme-settings.html#ts-tone">Theme settings, Tone</a>.</p>
+<a href="theme-settings.html#ts-tone">Theme settings, Tone</a>. In a section that lists products, a product without
+its own colors takes a color of its own, derived from the house pair and different for each place in the list, never
+gray.</p>
 
 <h2 id="shared-settings">Settings most sections share</h2>
 <section class="entry" id="section-background-entry">
@@ -406,7 +412,8 @@ editor to preview both.</p>
 <section class="entry" id="empty-entry">
 <h3 id="empty">Empty content</h3>
 <p>An empty text prints nothing on your store, and a block that misses what it needs (a review without a quote, a step
-without a product) is left out. In the theme editor such a block keeps its frame with a short note that says why it is
+without a product, once the section has products) is left out. A section of products where you have chosen none shows
+the first products of your store, and a store without products shows Shopify's product placeholders there. In the theme editor such a block keeps its frame with a short note that says why it is
 hidden, so you can still select it.</p>
 </section>
 '''
@@ -529,7 +536,8 @@ almost white ground, and it checks the contrast of every text before the page is
   <li>the product page, its header and its footer wear the colors of the product, and a variant with its own colors recolors the page when it is chosen;</li>
   <li>tiles, bands and steps show each product in its colors, and the page glides from one color to the next as the visitor scrolls;</li>
   <li>a collection with its own two colors tints its head;</li>
-  <li>a page without a product color uses the house pair of the preset.</li>
+  <li>a page without a product color uses the house pair of the preset, and in a section that lists products each product
+  without colors takes a color of its own derived from it.</li>
 </ul>
 <p>Everything reads correctly without JavaScript, and visitors who ask for reduced motion see each color at once. Give
 every product its two colors before anything else: it is what makes the store look like the demo.</p>
@@ -722,7 +730,8 @@ carried over; see <a href="custom-code.html">Custom code</a>.</p>'''),
 <a href="metafields.html#colors">Metafields, The two colors</a>.</p>'''),
     ('Why does a product show the violet house colors?', '''
 <p>The product has no colors of its own yet: fill its two color metafields. Until then it takes the house pair of
-<a href="theme-settings.html#ts-tone">Theme settings, Tone</a>, the violet of the preset.</p>'''),
+<a href="theme-settings.html#ts-tone">Theme settings, Tone</a>, the violet of the preset, and in the home page
+sections that list products, a color of its own derived from that pair.</p>'''),
     ('Why is my product shown as a square photo instead of standing upright?', '''
 <p>It has no cutout. Upload a PNG of the product on a transparent background, cropped tight, in its
 <code>custom.cutout</code> metafield. See <a href="metafields.html#cutout">Metafields, The cutout</a>.</p>'''),
@@ -756,11 +765,14 @@ sits on. There is nothing to set per section.</p>'''),
 <p>Create a product for the wrapping, with its price. In <a href="theme-settings.html#ts-gift-wrapping">Theme settings, Gift
 wrapping</a>, turn on <strong>Offer gift wrapping</strong> and pick it in <strong>Wrapping product</strong>. The checkbox
 then shows in the cart.</p>'''),
-    ('Why do some home page sections not show after I install the theme?', '''
-<p>The theme installs the layout of the demo store without its content: no products, collections, pictures or menus
-of the demo. Hero sequence, Color library, Line-up, A day in color and Hue finder show the products you choose in
-them; until you choose some, they show a placeholder in the theme editor and nothing on your store. Texts show an
-example that says what to write.</p>'''),
+    ('What do the product sections of the home page show after I install the theme?', '''
+<p>Your products. The theme installs the layout of the demo store without its content: no products, collections,
+pictures or menus of the demo. Without a product chosen in them, Hero sequence, Color library, Line-up, A day in color,
+Routine builder and Hue finder show the products of your store, in the order of your All products collection, as many
+as each section has places for, each in its own two colors or, without them, in a color derived from
+<a href="theme-settings.html#ts-tone">Theme settings, Tone</a>. As soon as you choose a product in a section, it shows
+your choice. A store without products shows Shopify's product placeholders in the same places, on the store too. Texts
+show an example that says what to write.</p>'''),
     ('How do I show a free shipping progress bar?', '''
 <p>In <a href="theme-settings.html#ts-cart">Theme settings, Cart</a>, keep <strong>Show the free shipping bar</strong> on
 and type the amount in <strong>Free shipping threshold</strong>. The bar only displays progress: create the matching free
