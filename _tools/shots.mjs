@@ -33,6 +33,7 @@ const SHOTS = {
   'tone-footer': ['/', { sel: '.tft' }],
   header: ['/', { y: 0, hover: '.header__nav-item.has-mega', hover2: '[data-mmi-cat="all"]', d: true, settle: 1500 }],
   'header-sheet': ['/', { y: 0, click: '.header__burger', m: true, settle: 1500 }],
+  'header-mobile': ['/', { y: 0, m: true, settle: 1200 }],
   'main-product': ['/products/lavender-night-renewal', { y: 0, settle: 1500 }],
   // The two below (T72) need the demo's settings changed for the capture: the Hero
   // sequence on First and last lines in front at 80 %, the product page on Last line in

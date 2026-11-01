@@ -88,16 +88,19 @@ first. On phones the bands stack as an accordion. Without JavaScript each band o
      'shots': [('color-library', 'Color library with one band open', 'Color library: one band open, the others in their colors.')]},
 
     {'key': 'lineup', 'group': 'home',
-     'lead': 'Your products standing side by side on a ruler, each at its real height.',
+     'lead': 'Your products standing side by side on a shelf, each at its real height.',
      'use': '<p>Show how big each product really is, for a range with several formats. The tallest product fills the shelf and the others are drawn on the same scale.</p>',
      'how': '''<p>Each <strong>Product</strong> block has a <strong>Product</strong> and a <strong>Height</strong>, in
-millimeters, that you type. Pointing at a product or focusing it gives the section its color and shows its name,
-type, format, height, price and link in the caption; the others fade. <strong>Word at rest</strong> is set large behind
-the products until one is chosen. <strong>Show the height range</strong> prints the shortest and the tallest heights.
-On phones the line-up scrolls sideways and the product in the middle is the chosen one.</p>''',
+millimeters, that you type. The products stand on a thin shelf, each with a soft shadow under it and its short name
+and price below. Pointing at a product or focusing it lifts it a little off the shelf, gives the section its color
+and shows its full name, type, format, price and View formula in the caption; the others fade. Each product opens its
+page. <strong>Word at rest</strong> is set large behind the products until one is chosen. <strong>Show the height
+range</strong> prints the shortest and the tallest heights; <strong>Show sizes in mm</strong> writes each height above
+its product and <strong>Show ruler</strong> draws a graduated ruler on the shelf, both off by default. On phones the
+shelf scrolls sideways, product by product, and the product in the middle is the chosen one.</p>''',
      'tips': ['Measure the products as they stand, cap included.', 'Until you choose a product in one of its blocks, the section shows the first products of your store, one per block. Once you choose one, a block without a product is left out of the store.'],
-     'names': ['Height', 'Word at rest', 'Show the height range', 'Caption heading'],
-     'shots': [('lineup', 'Line-up with the products on the ruler', 'Line-up: the products at true scale on the ruler.')]},
+     'names': ['Height', 'Word at rest', 'Show the height range', 'Caption heading', 'Show sizes in mm', 'Show ruler'],
+     'shots': [('lineup', 'Line-up with the products on the shelf', 'Line-up: the products at true scale on the shelf, their short names and prices under it.')]},
 
     {'key': 'day-in-color', 'group': 'home',
      'lead': 'A day told in steps, from morning to night, each with the product that fits it.',
@@ -192,12 +195,14 @@ it: <strong>Subheading</strong> and the <strong>Texture</strong> line set large,
 <strong>Skin feel label</strong> and <strong>Skin feel</strong>; under it, <strong>How to use</strong>, the price and
 <strong>Add to bag</strong>. Connect the three texts to product metafields so each product shows its own: empty,
 <strong>Texture</strong> reads <code>custom.texture</code> and <strong>Skin feel</strong> reads
-<code>custom.skin_feel</code>. An empty text is not printed.</p>''',
+<code>custom.skin_feel</code>. An empty text is not printed.</p>
+<p><strong>Hide when the product has no texture</strong>, on by default, leaves the section out for a gift card and for
+a product with no texture and no texture photo (Gift wrapping on the demo); the theme editor shows a note instead.</p>''',
      'tips': ['For the photo, create the product metafield <code>custom.texture_image</code> of type File, accepting images (see <a href="metafields.html">Metafields</a>), and upload a PNG or WebP with a transparent background, about 2,000 px wide, the matter centered with some empty margin around it: the margin may pass under the texts, the matter stays between them.',
               'Connect How to use to <code>custom.how_to_use</code>, a multi-line text metafield (see <a href="metafields.html">Metafields</a>).',
               'Write the texture of each product with one of the five words, for example Soft balm or Bouncy gel, and keep <strong>Material</strong> on Automatic: one template then serves the whole range.',
               'Choosing a variant with its own colors recolors the matter too.'],
-     'names': ['Source', 'Material', 'Subheading', 'Texture', 'Skin feel label', 'Skin feel', 'How to use'],
+     'names': ['Source', 'Material', 'Subheading', 'Texture', 'Skin feel label', 'Skin feel', 'How to use', 'Hide when the product has no texture'],
      'shots': [('texture-photo', 'Texture with the photo of a balm', 'Texture: the photo of the texture, on the paper tinted by the product.'),
                ('texture', 'Texture of a balm, illustrated', 'Illustration: Balm, a dense waxy swatch, beside the texture and the skin feel.'),
                ('texture-gel', 'Texture of a gel, illustrated', 'Illustration: Gel, a translucent dome with micro-bubbles.'),
@@ -347,7 +352,9 @@ demo); <strong>All entry label</strong> names the entry.</p>
 <p>On phones the menu opens as a sheet: its large links are the <strong>Main links</strong> menu, each with the number
 of products of its collection (the demo uses the <code>shop</code> menu), followed by <strong>Secondary links</strong>
 (the demo uses <code>more</code>). Search opens full screen, with your <strong>Popular products</strong> and your
-<strong>Search suggestions</strong> as words.</p>
+<strong>Search suggestions</strong> as words. On screens narrower than 750 px the bar keeps Menu, the logo exactly in
+the middle and Bag: Search moves to the foot of the menu, and the announcement bar holds its message on one line,
+its text a little smaller on the narrowest screens.</p>
 <p>With <strong>Header behavior</strong> on Transparent at top, the header lies over a first section that allows it.
 As the page scrolls, it takes the surface of the section under it, with its text kept readable, hides on the way down
 and comes back on the way up.</p>''',
@@ -356,7 +363,8 @@ and comes back on the way up.</p>''',
      'names': ['Logo type', 'Menu', 'Main links', 'Secondary links', 'Popular products', 'Search suggestions', 'Header behavior', 'Logo for dark backgrounds', 'Show an All entry', 'All entry collection', 'All entry label', 'All entry link label'],
      'extra_sections': ['announcement-bar'],
      'shots': [('header', 'The header with the Shop mega menu open on All', 'Header: the Shop mega menu, an index of categories on Deep, All listing every formula.', False),
-               ('header-sheet', 'The menu sheet', 'Header on a phone: the menu sheet on Deep.', True, False)]},
+               ('header-mobile', 'The header on a phone', 'Header on a phone: Menu, the logo in the middle and Bag, the announcement on one line.', True, False),
+               ('header-sheet', 'The menu sheet', 'Header on a phone: the menu sheet on Deep, Search at its foot.', True, False)]},
 
     {'key': 'tone-footer', 'group': 'everywhere',
      'lead': 'The newsletter, your menus, your store name set across the page and the legal lines.',
