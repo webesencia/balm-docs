@@ -196,6 +196,21 @@ it: <strong>Subheading</strong> and the <strong>Texture</strong> line set large,
                ('texture-fluid', 'Texture of a fluid, illustrated', 'Illustration: Fluid, a thin wide spread.'),
                ('texture-serum', 'Texture of a serum, illustrated', 'Illustration: Serum, a drop and its glossy trail.')]},
 
+    {'key': 'next-product', 'group': 'product',
+     'lead': 'A band the full width of the page at the foot of the product page, in the colors of the next product, its name set large.',
+     'use': '<p>Lead visitors from one product to the next, as the next note at the end of an article does. The section belongs to the product template and reads the product of the page; the demo places it last, just before the footer.</p>',
+     'how': '''<p>The band shows <strong>Label</strong> (Next formula unless you write your own) and the name of the next
+product, set large, on the colors that product wears on its own page; the whole band is one link. The next product is
+the product's <code>custom.next_product</code> metafield, else the next one in <strong>Collection</strong>, in
+<code>custom.primary_collection</code> or in the product's first collection, from the start again with
+<strong>Loop around</strong>; only the first 50 products of the collection are read. With <strong>Show the next
+product</strong> off, or for a product without a next one, nothing is printed on your store; in the theme editor a note
+says why.</p>''',
+     'tips': ['Set <code>custom.next_product</code> on each product to choose the order of the range yourself (see <a href="metafields.html">Metafields</a>).',
+              'Keep the section last in the product template, just before the footer.'],
+     'names': ['Label', 'Collection', 'Loop around', 'Show the next product'],
+     'shots': [('next-product', 'Next product band', 'Next product: the band under Lavender Night Renewal, in the colors of Sage Balance Serum.')]},
+
     {'key': 'sticky-atc', 'group': 'product',
      'lead': 'A bar at the bottom of the product page, with the product and its button, once the page button has scrolled away.',
      'use': '<p>Keep the purchase one tap away on long product pages.</p>',

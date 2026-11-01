@@ -61,6 +61,7 @@ const SHOTS = {
   'main-journal': ['/blogs/journal', { y: 0 }],
   'main-journal-article': ['/blogs/journal/why-we-only-make-seven-formulas', { y: 0 }],
   'cart-drawer': ['/products/lavender-night-renewal', { y: 0, cart: true, click: '.header__action--cart', settle: 1800 }],
+  'next-product': ['/products/lavender-night-renewal', { sel: '.next-band', screens: -0.35, settle: 1500 }],
 };
 
 fs.mkdirSync(OUT, { recursive: true });

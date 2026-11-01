@@ -4,11 +4,10 @@ INTRO = ('Balm Studio ships one product page, and every product uses it. The pag
 BODY_BEFORE = '''
 <h2 id="how-it-is-built">How the page is built</h2>
 <p>The <strong>Product</strong> section has two sides. The scene shows the product name set large in layers around the
-cutout of the product, with <strong>Next product</strong> at the bottom: the name of the next product, which opens it.
-The scene is also the gallery: the product's other media follow the cutout, over the same name, and shoppers move
+cutout of the product. The scene is also the gallery: the product's other media follow the cutout, over the same name, and shoppers move
 through them with a swipe, a mouse drag (the pointer shows a hand over the scene), a trackpad, the arrow keys once the
-scene has the focus, or the two small arrows on each side of the counter (01 / 02), at the bottom right next to the
-zoom button; the arrows go round from the last media to the first. On phones the next media shows at the edge of the
+scene has the focus, or the two small arrows on each side of the counter (01 / 02), at the bottom of the scene, centered under the
+product next to the zoom button; the arrows go round from the last media to the first. On phones the next media shows at the edge of the
 screen, to say that a swipe goes on. A product with one media shows no counter and no arrows. Choosing a variant
 brings its image: in the scene when the variant has its own cutout or no cutout is set, else on the variant's
 slide.</p>
@@ -20,8 +19,9 @@ menu at the top of the editor). The section also accepts app blocks and the gene
 <a href="more-sections.html#theme-blocks">theme blocks</a>.</p>
 <p>The whole page wears the colors of the product (see <a href="index.html#tone-on-tone">Tone on tone</a>), and choosing
 a variant that has its own colors recolors it. <strong>Surface</strong> picks the ground of the section, Field by
-default. <strong>Sticky scene (desktop)</strong> keeps the scene in view while the column scrolls, until the end of the
-section; on phones the scene sits above the column.</p>
+default. On desktop the scene fills the screen under the header, the product and its name centered in it, and
+<strong>Sticky scene (desktop)</strong> keeps it there while the column scrolls, until the end of the section; on phones
+the scene sits above the column.</p>
 <p>The demo template starts with this stack:</p>
 <div class="table-wrap"><table class="plain">
 <thead><tr><th scope="col">Order</th><th scope="col">Block</th><th scope="col">What it does on the demo</th></tr></thead>
@@ -43,7 +43,8 @@ section; on phones the scene sits above the column.</p>
 <tr><td>20</td><td>Description</td><td>The product description.</td></tr>
 </tbody></table></div>
 <p>Payment icons and Product upsell are in the template too, turned off. Below the section the template places the
-<a href="section-texture.html">Texture</a> section and the <a href="section-sticky-atc.html">Sticky add to cart</a> bar.
+<a href="section-texture.html">Texture</a> section, the <a href="section-next-product.html">Next product</a> band, just
+before the footer, and the <a href="section-sticky-atc.html">Sticky add to cart</a> bar.
 A block whose text is empty shows nothing on your store, not even its spacing.</p>
 
 <h2 id="buy-button-styles">Buy button styles</h2>
@@ -144,7 +145,7 @@ BLOCK_TEXT = {
     '_product-spin-badge': '''<p>The product's <code>custom.badge_label</code> text turning around a ring. The ring has no text field of its own: each product says its own words through the metafield, and a product without it shows no ring. In the theme editor, an example stands in.</p>
 <p><strong>Position (desktop)</strong> and <strong>Position (mobile)</strong> place the ring on a corner of the gallery (top left, top right, bottom left, bottom right) or <strong>Next to the title</strong>, on the title's row. Desktop starts at 768 px wide, and the ring moves when the screen crosses that width. Next to the title needs a Title block; without one, the ring shows where the Spinning badge block sits. <strong>Place behind the product</strong> slides the ring behind the product image, which cuts into it, on the gallery positions only. Size and offsets are set per device. The rotation stops for visitors who ask for reduced motion.</p>''',
     '_product-share': '<p>Share links for X, Facebook and Pinterest, and a copy link button.</p>',
-    '_product-nav': '<p>A static block of the scene: <strong>Next label</strong> and the name of the next product, which opens it. The next product is the product\'s <code>custom.next_product</code> metafield, else the next one in <strong>Collection</strong>, in <code>custom.primary_collection</code> or in its first collection, from the start again with <strong>Loop around</strong>.</p>',
+    '_product-nav': '<p>For the Featured product section: <strong>Next label</strong> and the name of the next product, bottom left of its scene, which opens it. On the product page, the <a href="section-next-product.html">Next product</a> band at the foot of the page does this. The next product is the product\'s <code>custom.next_product</code> metafield, else the next one in <strong>Collection</strong>, in <code>custom.primary_collection</code> or in its first collection, from the start again with <strong>Loop around</strong>.</p>',
     '_product-liquid': '<p>Your own Liquid or HTML, or the insertion code of an app that has no app block. See <a href="custom-code.html">Custom code</a>.</p>',
 }
 
