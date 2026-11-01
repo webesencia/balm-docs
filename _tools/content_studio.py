@@ -291,11 +291,16 @@ articles follow as rows; pointing at a row gives it the dark color of its produc
      'how': '''<p>The page takes the color of the article's <code>custom.product</code>. The top shows the category, the
 reading time, the date, the title and the excerpt; the text follows on Paper in a column centred on the page, with the
 product under <strong>Product label</strong> in the right margin on wide screens (1280 pixels and more) and under the
-text below, then the next article in the color of its own product. <strong>Show the reading bar</strong>, on by
+text below, then the next article in the color of its own product. In the left margin, on the same wide screens, the
+meta column sets the category, the reading time, the date, a link back to the blog and a Copy link button
+against the text, and stays in view with the product as the visitor reads; on smaller
+screens it is one line above the text. Copy link copies the article's address and says Link copied, which screen
+readers announce. <strong>Show tag</strong>, <strong>Show reading time</strong>, <strong>Show date</strong>,
+<strong>Show link to the blog</strong> and <strong>Show copy link button</strong> turn each part on or off. <strong>Show the reading bar</strong>, on by
 default, draws a thin bar at the top of the screen that fills as the visitor reads. It is a setting of this section,
 so the bar shows on article pages only, and on every article that uses the template.</p>''',
      'tips': ['A quote in the article (the Quote format of the editor) is set large in the color of the product.'],
-     'names': ['Show the reading bar', "Show the article's product", 'Product label', 'Show the next article'],
+     'names': ['Show the reading bar', "Show the article's product", 'Product label', 'Show the next article', 'Show tag', 'Show reading time', 'Show date', 'Show link to the blog', 'Show copy link button'],
      'shots': [('main-journal-article', 'Journal article at its top', 'Journal article: the title in the color of its product.')]},
 
     {'key': 'header', 'group': 'everywhere',
