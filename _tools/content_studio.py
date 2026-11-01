@@ -58,11 +58,19 @@ other, each a still screen in its own color, and the page scrolls on to the next
      'how': '''<p><strong>Image position (desktop)</strong> puts the photo left or right; <strong>Image position
 (mobile)</strong> above or below the text. <strong>Surface</strong> paints the text panel in the Paper, Field or Deep
 of the page color. The photo settles once, with a slow zoom, when the section comes into view; without JavaScript or
-with reduced motion it is at rest. Without a photo the text stands alone.</p>''',
+with reduced motion it is at rest. Without a photo, its half keeps Shopify's placeholder drawing, in the colors of the
+section, until you choose one.</p>
+<p>On a product page, Campaign tells the story of each product: connect the image, the heading, the text and the credit
+to product metafields with the dynamic source icon, and the section wears the colors of the product. With
+<strong>Hide when the image is empty</strong> on (the default), a product whose image metafield is not filled does not
+show the section on your store; the theme editor shows a note instead. Elsewhere an empty image keeps its
+placeholder. The demo's product template connects it to <code>custom.story_image</code>,
+<code>custom.story_heading</code> and <code>custom.story_text</code>, after Texture.</p>''',
      'tips': ['Keep the heading short: it is set very large, a few words per line.',
               'Credit the photographer in <strong>Credit</strong>.',
-              'Use <strong>Anchor</strong> to link to the section from a menu (for example <code>/#campaign</code>).'],
-     'names': ['Image position (desktop)', 'Image position (mobile)', 'Surface', 'Credit', 'Anchor'],
+              'Use <strong>Anchor</strong> to link to the section from a menu (for example <code>/#campaign</code>).',
+              'On the product template, create the three story metafields (see <a href="metafields.html">Metafields</a>) and fill them only for the products that have a story: the others do not show the section.'],
+     'names': ['Image position (desktop)', 'Image position (mobile)', 'Surface', 'Credit', 'Anchor', 'Hide when the image is empty'],
      'shots': [('campaign', 'Campaign with a photo and a short heading', 'Campaign: the photo, then the text on Paper.')]},
 
     {'key': 'color-library', 'group': 'home',
@@ -99,11 +107,12 @@ On phones the line-up scrolls sideways and the product in the middle is the chos
 color of that product: light for the day, dark for the evening. As the visitor scrolls, the hour, the product and the
 color change from one step to the next, and a line of hours under the stage marks the current one.
 <strong>Scroll length per step</strong> sets how long each step stays. Without JavaScript the steps are a list, each in
-its own color.</p>''',
+its own color. Beside the price and Add to bag, View formula opens the step's product page; <strong>Show View
+formula</strong> turns it off and <strong>View formula label</strong> changes its words.</p>''',
      'tips': ['Write the hours as people read them, for example 7:00 and 22:00.',
               'Keep each How to use line to one sentence.',
               'Until you choose a product in one of its steps, the section shows the first products of your store, one per step, and an empty Label or How to use shows the product\'s type or its tagline. Once you choose one, a step without a product is left out of the store.'],
-     'names': ['Time', 'Label', 'Product', 'How to use', 'Ground', 'Scroll length per step (desktop)'],
+     'names': ['Time', 'Label', 'Product', 'How to use', 'Ground', 'Scroll length per step (desktop)', 'Show View formula', 'View formula label'],
      'shots': [('day-in-color', 'A day in color on its morning step', 'A day in color: the morning step on the light ground of its product.')]},
 
     {'key': 'routine-builder', 'group': 'home',
@@ -655,6 +664,9 @@ META = {
         ('custom.volume', 'Single line text', 'The format, for example <code>50 ml</code>. Hero sequence, Color library, Line-up, index rows.'),
         ('custom.tagline', 'Single line text', 'A short description. Hero sequence (its first sentence), Color library, Hue finder, and the Text block of the product page with its Source on Tagline.'),
         ('custom.next_product', 'Product', 'The product Next product opens on the product page. Without it, the next one in the collection.'),
+        ('custom.story_image', 'File (image)', 'The photo of the product page\'s Campaign. A product without it does not show the section (Hide when the image is empty).'),
+        ('custom.story_heading', 'Single line text', 'The heading of the product page\'s Campaign.'),
+        ('custom.story_text', 'Multi-line text', 'The text of the product page\'s Campaign.'),
         ('custom.primary_collection', 'Collection', 'The collection of the breadcrumb and of Next product.'),
         ('custom.badge_label', 'Single line text', 'The text of the custom badge.'),
         ('custom.skin_type', 'Single line text', 'Passport row Suited to; Compare products.'),
