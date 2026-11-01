@@ -71,7 +71,7 @@ products are used when no product is picked; with neither, the first 12 products
 the product upright with its name, type, tagline, price, <strong>View formula</strong> and <strong>Add to bag</strong>,
 and gives the section and the page that product's color. <strong>Band open at start</strong> chooses the band open
 first. On phones the bands stack as an accordion. Without JavaScript each band opens and closes on its own.</p>''',
-     'tips': ['Give every product its two colors: without them, each band takes a color of its own derived from the house pair.',
+     'tips': ['Give every product its two colors: without them, each product takes a color of its own derived from the house pair.',
               'Order the products from light to dark, or by family: the row of colors is the first thing seen.'],
      'names': ['Products', 'Collection', 'Band open at start', 'Show price', 'Show add to cart button'],
      'shots': [('color-library', 'Color library with one band open', 'Color library: one band open, the others in their colors.')]},
@@ -365,9 +365,9 @@ The theme works out six colors from them on the server, with the contrast of eve
 (Field), the color itself (Tone), the text (Ink), a dark ground (Deep), a color for large text on Deep, and an almost
 white ground (Paper). A product page, a collection or a section that shows a product takes these colors, and the page
 glides from one color to the next as the visitor scrolls. Pages without a product color use the house pair of
-<a href="theme-settings.html#ts-tone">Theme settings, Tone</a>. In a section that lists products, a product without
-its own colors takes a color of its own, derived from the house pair and different for each place in the list, never
-gray.</p>
+<a href="theme-settings.html#ts-tone">Theme settings, Tone</a>. A product without its own colors takes a color of its
+own, derived from the house pair: the same on its page, its tile, the menu, the cart and every section that shows
+it, different from one product to the next, never gray.</p>
 
 <h2 id="shared-settings">Settings most sections share</h2>
 <section class="entry" id="section-background-entry">
@@ -536,8 +536,8 @@ almost white ground, and it checks the contrast of every text before the page is
   <li>the product page, its header and its footer wear the colors of the product, and a variant with its own colors recolors the page when it is chosen;</li>
   <li>tiles, bands and steps show each product in its colors, and the page glides from one color to the next as the visitor scrolls;</li>
   <li>a collection with its own two colors tints its head;</li>
-  <li>a page without a product color uses the house pair of the preset, and in a section that lists products each product
-  without colors takes a color of its own derived from it.</li>
+  <li>a page without a product color uses the house pair of the preset, and a product without colors takes a color of
+  its own derived from it, the same on every page.</li>
 </ul>
 <p>Everything reads correctly without JavaScript, and visitors who ask for reduced motion see each color at once. Give
 every product its two colors before anything else: it is what makes the store look like the demo.</p>
@@ -693,7 +693,7 @@ SETTINGS_INTRO = ('Theme settings apply to the whole store. Open them from the g
 
 SETTINGS_GROUPS = {
     'Colors': '<p>The color schemes of the store. A section uses a scheme when its <strong>Surface</strong> is Color scheme or Image, and the header, the mega menu and some template pages pick one. Most demo sections use the colors of the products instead.</p>',
-    'Tone': '<p>The house pair: the dark and the light colors of every page that shows no product, such as the cart page, a plain page or the 404. The theme derives every ground and text color from them, as it does for a product, and checks their contrast.</p>',
+    'Tone': '<p>The house pair: the dark and the light colors of every page that shows no product, such as the cart page, a plain page or the 404. The theme derives every ground and text color from them, as it does for a product, and checks their contrast. A product without colors of its own takes a color derived from this pair, turned to a hue of its own.</p>',
     'Typography': '<p>The heading font and the text font, the two scales that enlarge or reduce every heading and every text at once, and the shared recipes of headings, button labels and small labels: case, style, weight and letter spacing. Gloock, the heading font of the preset, has one weight: a heavier Heading weight does not make it bolder.</p>',
     'Layout': '<p><strong>Page width</strong> sets how wide the product, collection and search pages run; <strong>Default section width</strong> is the width of every section left on Theme default; <strong>Section side margins</strong> sets the margins of Full width with margins, on desktop and on phones.</p>',
     'Buttons': '<p>The size, the border width and the font weight of every button of the theme, the filled Add to bag button included.</p>',
@@ -728,10 +728,12 @@ carried over; see <a href="custom-code.html">Custom code</a>.</p>'''),
 <p>Create the two color metafields, <code>custom.background_color</code> (the dark color) and
 <code>custom.background_color_end</code> (the light color), then fill them on each product. See
 <a href="metafields.html#colors">Metafields, The two colors</a>.</p>'''),
-    ('Why does a product show the violet house colors?', '''
-<p>The product has no colors of its own yet: fill its two color metafields. Until then it takes the house pair of
-<a href="theme-settings.html#ts-tone">Theme settings, Tone</a>, the violet of the preset, and in the home page
-sections that list products, a color of its own derived from that pair.</p>'''),
+    ('Why does a product without colors show a color I did not choose?', '''
+<p>The product has no colors of its own yet: fill its two color metafields. Until then it takes a color of its own,
+derived from the house pair of <a href="theme-settings.html#ts-tone">Theme settings, Tone</a>, the same on its page,
+its tile, the menu and the cart. The color follows the product's place in your All products collection (its first
+50 products; after them, the product's ID), so it changes if that order changes. Its own two colors always come
+first.</p>'''),
     ('Why is my product shown as a square photo instead of standing upright?', '''
 <p>It has no cutout. Upload a PNG of the product on a transparent background, cropped tight, in its
 <code>custom.cutout</code> metafield. See <a href="metafields.html#cutout">Metafields, The cutout</a>.</p>'''),
