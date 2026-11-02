@@ -1,4 +1,4 @@
-"""Prose of the Balm Studio pages: Getting started, the Sections overview, one page per
+"""Prose of the Undertone pages: Getting started, the Sections overview, one page per
 section of the demo store, More sections, Theme settings, Metafields and FAQ.
 
 Every section, block and setting named here is checked against the theme by
@@ -394,7 +394,7 @@ When the cart is empty it shows your empty cart message and button.</p>''',
      'shots': [('cart-drawer', 'The cart drawer', 'Cart drawer: the lines, the gift wrap checkbox and the total.')]},
 ]
 
-SECTIONS_LEAD = ('Balm Studio is built from sections you add, remove and reorder in the theme editor. Each section of the demo '
+SECTIONS_LEAD = ('Undertone is built from sections you add, remove and reorder in the theme editor. Each section of the demo '
                  'store has its own page; the sections of the first version of the theme are on '
                  '<a href="more-sections.html">More sections</a>.')
 
@@ -471,7 +471,7 @@ hidden, so you can still select it.</p>
 '''
 
 # ------------------------------------------------------------------ More sections
-MORE_INTRO = '''<p>These sections come from the first version of Balm Studio. They follow the same colors, fonts and
+MORE_INTRO = '''<p>These sections come from the first version of Undertone. They follow the same colors, fonts and
 square corners as the rest of the theme, and they are not used by the demo store. Add them from <strong>Add
 section</strong> in the theme editor.</p>'''
 
@@ -538,7 +538,7 @@ MORE_TEXT = {
 
 
 # ------------------------------------------------------------------ Getting started
-GS_LEAD = ('Balm Studio is a Shopify theme where every product dresses the store in its own color. This guide takes you '
+GS_LEAD = ('Undertone is a Shopify theme where every product dresses the store in its own color. This guide takes you '
            'from installation to a store ready to publish: the preset, the color of each product, the metafields and '
            'menus to create, and the first settings.')
 
@@ -552,24 +552,24 @@ GETTING_STARTED = '''
   <li><a href="faq.html"><strong>FAQ</strong><span>Answers to the questions merchants ask most.</span></a></li>
 </ul>
 
-<h2 id="install">Install Balm Studio</h2>
+<h2 id="install">Install Undertone</h2>
 <ol class="steps">
-  <li>Open the Balm Studio page on the <a href="https://themes.shopify.com/">Shopify Theme Store</a> while logged in to your store.</li>
-  <li>Select <strong>View demo store</strong> to browse Balm Studio with its content before you install it.</li>
+  <li>Open the Undertone page on the <a href="https://themes.shopify.com/">Shopify Theme Store</a> while logged in to your store.</li>
+  <li>Select <strong>View demo store</strong> to browse Undertone with its content before you install it. The demo store is a fictional skin care brand, Balm Studio: its name, its logo and its products are the demo's, not the theme's.</li>
   <li>Select <strong>Try theme</strong> to add a trial copy to your theme library, or buy the theme. A trial lets you customize everything; you pay when you publish.</li>
-  <li>In your admin, go to <strong>Online Store, Themes</strong> and select <strong>Customize</strong> on Balm Studio to open the theme editor.</li>
+  <li>In your admin, go to <strong>Online Store, Themes</strong> and select <strong>Customize</strong> on Undertone to open the theme editor.</li>
   <li>When the store is ready, open the theme's <strong>...</strong> menu in the theme library and choose <strong>Publish</strong>.</li>
 </ol>
-<p>Balm Studio needs no app. Apps that offer app blocks, such as reviews or subscriptions, plug into the product page and
+<p>Undertone needs no app. Apps that offer app blocks, such as reviews or subscriptions, plug into the product page and
 into most sections.</p>
-<h3 id="updates">Updating Balm Studio</h3>
+<h3 id="updates">Updating Undertone</h3>
 <p>When a new version is released, your theme library shows a notice. Shopify adds the new version as a separate copy
 that keeps your theme editor settings and content, so you can review it before publishing it. Changes made in the theme
 code are not carried over: see <a href="custom-code.html">Custom code</a>. What changed is listed in the
 <a href="changelog.html">Changelog</a>.</p>
 
-<h2 id="preset">The Balm Studio preset</h2>
-<p>Balm Studio comes with one preset, also named Balm Studio, and your store starts from it:</p>
+<h2 id="preset">The Undertone preset</h2>
+<p>Undertone comes with one preset, also named Undertone, and your store starts from it:</p>
 <ul>
   <li><strong>Fonts.</strong> Headings in Gloock, text in Instrument Sans, on one fluid type scale.</li>
   <li><strong>House colors.</strong> A deep violet (<code>#2A1F5E</code>) and a lavender (<code>#7464B6</code>): the colors of every page that shows no product, set in <a href="theme-settings.html#ts-tone">Theme settings, Tone</a>.</li>
@@ -658,7 +658,7 @@ editor.</p>
 
 <h2 id="help">Need help?</h2>
 <p>Search this documentation with the box at the top of the page, read the <a href="faq.html">FAQ</a>, or contact
-<a href="support.html">Balm Studio support</a>.</p>
+<a href="support.html">Undertone support</a>.</p>
 '''
 
 # ------------------------------------------------------------------ Metafields
@@ -710,7 +710,7 @@ META = {
 META_TITLES = {'product': 'Products', 'variant': 'Variants', 'collection': 'Collections', 'article': 'Articles (blog posts)', 'page': 'Pages'}
 
 META_LEAD = ('Metafields give each product, variant, collection and article its own colors, cutout and texts. This page '
-             'lists every metafield Balm Studio reads, with its key and its type.')
+             'lists every metafield Undertone reads, with its key and its type.')
 
 METAFIELDS_INTRO = '''
 <p>Create each definition in your admin, under <strong>Settings, Custom data</strong>, then choose the owner (Products,
@@ -769,13 +769,13 @@ SETTINGS_GROUPS = {
 }
 
 # ------------------------------------------------------------------ FAQ
-FAQ_LEAD = 'Answers to the questions merchants ask most about Balm Studio.'
+FAQ_LEAD = 'Answers to the questions merchants ask most about Undertone.'
 
 FAQ = [
-    ('Can I use Balm Studio on more than one store?', '''
-<p>A theme bought from the Shopify Theme Store is licensed for one store. To use Balm Studio on another store, buy it again
+    ('Can I use Undertone on more than one store?', '''
+<p>A theme bought from the Shopify Theme Store is licensed for one store. To use Undertone on another store, buy it again
 from that store. Trying the theme is free on any store.</p>'''),
-    ('How do I update Balm Studio without losing my settings?', '''
+    ('How do I update Undertone without losing my settings?', '''
 <p>When an update is available, your theme library shows a notice. Shopify adds the new version as a separate copy that
 keeps your theme editor settings and content. Preview it, then publish it. Changes you made in the theme code are not
 carried over; see <a href="custom-code.html">Custom code</a>.</p>'''),
@@ -848,7 +848,7 @@ later, use a pre-order app.</p>'''),
 <p>Set <strong>Breadcrumbs on this page</strong> to Hide in the main section of that page, or turn them off for the whole
 store in <a href="theme-settings.html#ts-breadcrumbs">Theme settings, Breadcrumbs</a>.</p>'''),
     ('How do I translate my store?', '''
-<p>Add and publish your languages in Settings, Languages. Balm Studio's own texts are already translated into French,
+<p>Add and publish your languages in Settings, Languages. Undertone's own texts are already translated into French,
 German, Italian and Spanish. Translate what you typed in the editor with Shopify's Translate and Adapt app.</p>'''),
 ]
 
@@ -1084,7 +1084,7 @@ once for visitors who ask for reduced motion.</p>
 
 <section class="entry" id="translations-entry">
 <h2 id="translations">Translations</h2>
-<p>Balm Studio ships in English, French, German, Italian and Spanish: every storefront text of the theme and the theme
+<p>Undertone ships in English, French, German, Italian and Spanish: every storefront text of the theme and the theme
 editor itself, which follows the language of your admin. Add and publish your languages in Settings, Languages, then
 translate the content you typed in the editor with Shopify's Translate and Adapt app. To change the wording of a theme
 text, use Edit default theme content in the theme's <strong>...</strong> menu in your theme library.</p>

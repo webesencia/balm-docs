@@ -1,4 +1,4 @@
-INTRO = ('Balm Studio ships one product page, and every product uses it. The page wears the colors of the product, '
+INTRO = ('Undertone ships one product page, and every product uses it. The page wears the colors of the product, '
          'and metafields give each product its own cutout, name lines and texts, so one template serves the whole range.')
 
 BODY_BEFORE = '''
@@ -85,7 +85,7 @@ width and its place set per device.</p>
 under the buy button. Which ones appear depends on the payment methods of your store and on the visitor's browser. The
 row is hidden while the selected variant is sold out and comes back with a variant that can be bought; a pre-order
 variant keeps it. Quick view and the sticky add to cart bar have no accelerated checkout buttons.</p>
-<p>These buttons are drawn by Shopify. Balm Studio sets what Shopify allows from your buy button:</p>
+<p>These buttons are drawn by Shopify. Undertone sets what Shopify allows from your buy button:</p>
 <div class="table-wrap"><table class="plain"><thead><tr><th scope="col">What</th><th scope="col">Follows</th></tr></thead><tbody>
 <tr><td>Height</td><td>Your <strong>Button height</strong>, within Shopify's range of 25 to 55 px</td></tr>
 <tr><td>Corners</td><td>Square, like the buy button</td></tr>
@@ -160,7 +160,7 @@ for one of those, create a second template: in the theme editor, open <strong>Pr
 page, under <strong>Theme template</strong>.</p>
 
 <h2 id="older-templates">Products that used an older template</h2>
-<p>Early versions of Balm Studio shipped extra product templates. They have been folded into the default one. A product still
+<p>Early versions of Undertone shipped extra product templates. They have been folded into the default one. A product still
 assigned to one of them falls back to the default product template and renders normally. To clear the setting, open the
 product in the admin and choose <strong>Default product</strong> under <strong>Theme template</strong>.</p>
 '''

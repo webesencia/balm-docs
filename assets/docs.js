@@ -1,4 +1,4 @@
-/* Balm Studio theme documentation: mobile menu, client side search, and settings opened on a deep link. */
+/* Undertone theme documentation: mobile menu, client side search, and settings opened on a deep link. */
 (function () {
   'use strict';
 

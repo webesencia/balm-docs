@@ -1,4 +1,4 @@
-"""Builds the Balm Studio documentation site from the theme's schemas.
+"""Builds the Undertone documentation site from the theme's schemas.
 
 Usage, from the repository root: python3 _tools/build.py /path/to/balm-theme
 
@@ -341,21 +341,21 @@ def markdown(md, id_prefix='v'):
 import content_studio as CSTU  # noqa: E402
 
 SECTION_PAGES = [(f'section-{d["key"]}.html', D['sections'][d['key']]['name'],
-                  f'{D["sections"][d["key"]]["name"]}: the Balm Studio section, its settings and content tips.', 'sections.html')
+                  f'{D["sections"][d["key"]]["name"]}: the Undertone section, its settings and content tips.', 'sections.html')
                  for d in CSTU.DEMO]
 PAGES = [
-    ('index.html', 'Getting started', 'Install Balm Studio and set up your store, step by step.', None),
-    ('theme-settings.html', 'Theme settings', 'Every group of Balm Studio theme settings, explained in the order of the theme editor.', None),
-    ('sections.html', 'Sections', 'The sections of the Balm Studio demo store, one page each, and the settings they share.', None),
+    ('index.html', 'Getting started', 'Install Undertone and set up your store, step by step.', None),
+    ('theme-settings.html', 'Theme settings', 'Every group of Undertone theme settings, explained in the order of the theme editor.', None),
+    ('sections.html', 'Sections', 'The sections of the demo store, Balm Studio, one page each, and the settings they share.', None),
 ] + SECTION_PAGES + [
-    ('more-sections.html', 'More sections', 'The sections of the first version of Balm Studio, and the blocks they accept.', 'sections.html'),
-    ('product-page.html', 'Product page blocks', 'The Balm Studio product page and its blocks.', None),
-    ('features.html', 'Features', 'Quick view, badges, age verifier, gift wrapping and the other Balm Studio features.', None),
-    ('metafields.html', 'Metafields', 'The product, variant, collection, article and page metafields Balm Studio reads, with their keys and types.', None),
-    ('custom-code.html', 'Custom code', 'What to know before editing the Balm Studio theme code.', None),
-    ('faq.html', 'FAQ', 'Answers to the questions merchants ask most about Balm Studio.', None),
-    ('changelog.html', 'Changelog', 'What changed in each version of Balm Studio.', None),
-    ('support.html', 'Support', 'What Balm Studio support covers and how to reach it.', None),
+    ('more-sections.html', 'More sections', 'The sections of the first version of Undertone, and the blocks they accept.', 'sections.html'),
+    ('product-page.html', 'Product page blocks', 'The Undertone product page and its blocks.', None),
+    ('features.html', 'Features', 'Quick view, badges, age verifier, gift wrapping and the other Undertone features.', None),
+    ('metafields.html', 'Metafields', 'The product, variant, collection, article and page metafields Undertone reads, with their keys and types.', None),
+    ('custom-code.html', 'Custom code', 'What to know before editing the Undertone theme code.', None),
+    ('faq.html', 'FAQ', 'Answers to the questions merchants ask most about Undertone.', None),
+    ('changelog.html', 'Changelog', 'What changed in each version of Undertone.', None),
+    ('support.html', 'Support', 'What Undertone support covers and how to reach it.', None),
 ]
 PAGE_BY = {p[0]: p for p in PAGES}
 
@@ -449,7 +449,7 @@ def layout(fname, title, desc, body, toc, root=''):
         pager += (f'<a class="prev" href="{root}{prev_p[0]}"><span>Previous</span>{e(prev_p[1])}</a>' if prev_p else '<span></span>')
         pager += (f'<a class="next" href="{root}{next_p[0]}"><span>Next</span>{e(next_p[1])}</a>' if next_p else '<span></span>')
         pager += '</nav>'
-    page_title = f'{title} | Balm Studio theme documentation' if fname != 'index.html' else 'Balm Studio theme documentation'
+    page_title = f'{title} | Undertone theme documentation' if fname != 'index.html' else 'Undertone theme documentation'
     version = next(g for g in RAW_SETTINGS if g.get('name') == 'theme_info')['theme_version']
     return f'''<!doctype html>
 <html lang="en" class="no-js">
@@ -469,7 +469,7 @@ def layout(fname, title, desc, body, toc, root=''):
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="topbar">
   <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="sidebar"><span class="nav-toggle__bars" aria-hidden="true"></span><span class="nav-toggle__label">Menu</span></button>
-  <a class="brand" href="{root}index.html"><span class="brand__mark" aria-hidden="true">B</span><span class="brand__name">Balm Studio</span><span class="brand__sub">Documentation</span></a>
+  <a class="brand" href="{root}index.html"><span class="brand__mark" aria-hidden="true">U</span><span class="brand__name">Undertone</span><span class="brand__sub">Documentation</span></a>
   <div class="search" role="search">
     <label class="visually-hidden" for="search-input">Search the documentation</label>
     <input id="search-input" type="search" placeholder="Search the docs" autocomplete="off" spellcheck="false" aria-describedby="search-hint" aria-controls="search-results">
@@ -488,7 +488,7 @@ def layout(fname, title, desc, body, toc, root=''):
 {body}
     </article>
     {pager}
-    <footer class="site-footer"><p>Balm Studio theme documentation, version {e(version)}. Questions? See <a href="{root}support.html">Support</a>.</p></footer>
+    <footer class="site-footer"><p>Undertone theme documentation, version {e(version)}. Questions? See <a href="{root}support.html">Support</a>.</p></footer>
   </main>
 </div>
 </body>
@@ -732,7 +732,7 @@ def more_entry(key):
 
 
 def build_more_sections():
-    parts = [page_head('More sections', 'The sections of the first version of Balm Studio, restyled with the rest of the theme, and the template sections the demo store does not use.')]
+    parts = [page_head('More sections', 'The sections of the first version of Undertone, restyled with the rest of the theme, and the template sections the demo store does not use.')]
     parts.append(CSTU.MORE_INTRO)
     parts.append('<nav class="contents" aria-label="All sections"><div class="contents__groups">'
                  + ''.join(f'<div><h3 class="contents__group"><a href="#{gid}">{e(gt)}</a></h3><ul class="contents__list">'
@@ -814,7 +814,7 @@ def build_getting_started():
 
 def build_changelog():
     md = open(f'{THEME}/CHANGELOG.md', encoding='utf-8').read()
-    body = page_head('Changelog', 'What changed in each version of Balm Studio. The version installed in your store is shown in your theme library, under the theme name.')
+    body = page_head('Changelog', 'What changed in each version of Undertone. The version installed in your store is shown in your theme library, under the theme name.')
     body += markdown(md)
     write_page('changelog.html', 'Changelog', desc_of('changelog.html'), body)
 

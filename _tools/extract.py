@@ -1,4 +1,4 @@
-"""Reads the Balm Studio theme schemas and resolves every t: key to its English label."""
+"""Reads the Undertone theme schemas and resolves every t: key to its English label."""
 import glob
 import json
 import os
